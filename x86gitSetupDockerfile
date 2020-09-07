@@ -16,6 +16,7 @@ RUN echo "Threebe" > /root/projects.list
 RUN echo '#!/usr/bin/fossil' > /usr/lib/cgi-bin/fossil.cgi
 RUN echo "repository: /root/fossilRepo.fossil" >> /usr/lib/cgi-bin/fossil.cgi
 RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/
+RUN cd /root && fossil init --user root fossilRepo.fossil > rootPassword.txt
 
 # PASSWORD FOR FOSSIL ROOT USER CAN BE OBTAINED USING THIS COMMAND: docker logs <containerName> (there will be a line beggining with: admin-user)
 
@@ -24,4 +25,5 @@ RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/
 
 EXPOSE 80
 
-CMD ["/bin/bash", "-c", "cd /root", "&&", "fossil", "init", "--user", "root", "fossilRepo.fossil", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
+CMD ["cat", "/root/rootPassword.txt", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
+# CMD ["/bin/bash", "-c", "cd /root", "&&", "fossil", "init", "--user", "root", "fossilRepo.fossil", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
