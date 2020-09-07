@@ -19,8 +19,8 @@ RUN echo '#!/bin/bash' > /start.sh
 RUN echo "cat /root/rootPassword.txt" >> /start.sh
 RUN echo "service apache2 start" >> /start.sh
 RUN echo "/bin/bash" >> /start.sh
-RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/ && chmod 777 /start.sh
 RUN cd /root && fossil init --user root fossilRepo.fossil > rootPassword.txt
+RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/ && chmod 777 /start.sh
 
 # PASSWORD FOR FOSSIL ROOT USER CAN BE OBTAINED USING THIS COMMAND: docker logs <containerName> (there will be a line beggining with: admin-user)
 
