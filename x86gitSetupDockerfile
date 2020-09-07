@@ -24,4 +24,4 @@ RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/
 
 EXPOSE 80
 
-CMD ["fossil", "init", "--user", "root", "/root/fossilRepo.fossil", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
+CMD ["cd", "/root", "&&", "fossil", "init", "--user", "root", "fossilRepo.fossil", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
