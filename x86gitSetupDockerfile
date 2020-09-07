@@ -3,8 +3,19 @@ FROM ubuntu:latest
 MAINTAINER Ernest1338 version: 0.1
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y fossil
+RUN apt update && apt install -y fossil git cgit apache2
+RUN mkdir /root/repos && cd /root/repos && git clone https://github.com/Ernest1338/Threebe
+RUN a2enmod cgi
+RUN cp -r /usr/lib/cgit/* /usr/lib/cgi-bin/
+RUN echo "favicon=/cgit-css/favicon.ico" >> /etc/cgitrc
+RUN echo "project-list=/root/projects.list" >> /etc/cgitrc
+RUN echo "scan-path=/root/repos" >> /etc/cgitrc
+RUN echo "Threebe" > /root/projects.list
+RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/
+RUN service apache2 start
 
-EXPOSE 8080
 
-CMD ["fossil", "server", "--create", "--user", "root", "/root/test.fossil"]
+EXPOSE 80
+
+CMD ["/bin/bash"]
+# CMD ["fossil", "server", "--create", "--user", "root", "/root/test.fossil"]
