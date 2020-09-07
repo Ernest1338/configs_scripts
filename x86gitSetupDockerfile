@@ -16,7 +16,7 @@ RUN echo "Threebe" > /root/projects.list
 RUN echo '#!/usr/bin/fossil' > /usr/lib/cgi-bin/fossil.cgi
 RUN echo "repository: /root/fossilRepo.fossil" >> /usr/lib/cgi-bin/fossil.cgi
 RUN echo '#!/bin/bash' > /root/start.sh
-RUN echo "cat /root/rootPasword.txt" >> /root/start.sh
+RUN echo "cat /root/rootPassword.txt" >> /root/start.sh
 RUN echo "service apache2 start" >> /root/start.sh
 RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/
 RUN cd /root && fossil init --user root fossilRepo.fossil > rootPassword.txt
