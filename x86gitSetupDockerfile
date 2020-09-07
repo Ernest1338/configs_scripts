@@ -15,9 +15,9 @@ RUN echo "scan-path=/root/repos" >> /etc/cgitrc
 RUN echo "Threebe" > /root/projects.list
 RUN echo '#!/usr/bin/fossil' > /usr/lib/cgi-bin/fossil.cgi
 RUN echo "repository: /root/fossilRepo.fossil" >> /usr/lib/cgi-bin/fossil.cgi
-RUN echo '#!/bin/bash' > /root/start.sh
-RUN echo "cat /root/rootPassword.txt" >> /root/start.sh
-RUN echo "service apache2 start" >> /root/start.sh
+RUN echo '#!/bin/bash' > /start.sh
+RUN echo "cat /root/rootPassword.txt" >> /start.sh
+RUN echo "service apache2 start" >> /start.sh
 RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/
 RUN cd /root && fossil init --user root fossilRepo.fossil > rootPassword.txt
 
@@ -28,7 +28,7 @@ RUN cd /root && fossil init --user root fossilRepo.fossil > rootPassword.txt
 
 EXPOSE 80
 
-CMD ["/root/start.sh"]
+CMD ["/start.sh"]
 # CMD ["sh", "-c", "cat", "/root/rootPassword.txt", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
 # CMD ["cat", "/root/rootPassword.txt", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
 # CMD ["/bin/bash", "-c", "cd /root", "&&", "fossil", "init", "--user", "root", "fossilRepo.fossil", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
