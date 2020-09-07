@@ -25,5 +25,6 @@ RUN cd /root && fossil init --user root fossilRepo.fossil > rootPassword.txt
 
 EXPOSE 80
 
-CMD ["cat", "/root/rootPassword.txt", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
+CMD ["/bin/bash", "-c", '"cat /root/rootPassword.txt && service apache2 start && /bin/bash"']
+# CMD ["cat", "/root/rootPassword.txt", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
 # CMD ["/bin/bash", "-c", "cd /root", "&&", "fossil", "init", "--user", "root", "fossilRepo.fossil", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
