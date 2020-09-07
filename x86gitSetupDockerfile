@@ -3,8 +3,8 @@ FROM ubuntu:latest
 MAINTAINER Ernest1338 version: 0.1
 
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y fossil && cd ~ && fossil init --user root test.fossil
+RUN apt update && apt install -y fossil && fossil init --user root /root/test.fossil
 
 EXPOSE 8080
 
-CMD ["fossil", "server", "~/test.fossil"]
+CMD ["fossil", "server", "/root/test.fossil"]
