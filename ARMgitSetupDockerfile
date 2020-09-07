@@ -1,6 +1,6 @@
 FROM balenalib/rpi-raspbian:latest
 
-MAINTAINER Ernest1338 version: 0.1
+MAINTAINER Ernest1338 version: 1
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt install -y fossil git cgit apache2
