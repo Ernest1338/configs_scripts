@@ -11,11 +11,12 @@ RUN echo "favicon=/cgit-css/favicon.ico" >> /etc/cgitrc
 RUN echo "project-list=/root/projects.list" >> /etc/cgitrc
 RUN echo "scan-path=/root/repos" >> /etc/cgitrc
 RUN echo "Threebe" > /root/projects.list
+RUN echo '#!/r/bin/fossil" > /usr/lib/cgi-bin/fossil.cgi
+RUN echo "repository: /root/fossilRepo.fossil" >> /usr/lib/cgi-bin/fossil.cgi
 RUN chmod 777 -R /root/ && chmod 777 -R /usr/lib/cgi-bin/
-RUN service apache2 start
 
 
 EXPOSE 80
 
-CMD ["/bin/bash"]
+CMD ["fossil", "init", "--user", "root", "/root/fossilRepo.fossil", "&&", "service", "apache2", "start", "&&", "/bin/bash"]
 # CMD ["fossil", "server", "--create", "--user", "root", "/root/test.fossil"]
