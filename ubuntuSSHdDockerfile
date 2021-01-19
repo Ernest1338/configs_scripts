@@ -1,0 +1,25 @@
+# Ubuntu + sshd
+#
+# Login using:
+# user: root
+# pass: 12345
+#
+# Author: Dawid J. (Ernest Gupik)
+
+FROM ubuntu:latest
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN \
+apt update -y && \
+apt install -y --no-install-recommends openssh-server && \
+mkdir -p /run/sshd && \
+apt clean && \
+rm -rf /var/lib/apt/lists/* && \
+echo 'PermitRootLogin yes' > /etc/ssh/sshd_config && \
+echo 'root:12345' | chpasswd
+
+EXPOSE 22
+EXPOSE 80
+
+ENTRYPOINT ["/usr/sbin/sshd", "-D", "-p", "22"]
