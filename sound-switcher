@@ -1,0 +1,19 @@
+[Desktop Entry]
+Comment[en_US]=
+Comment=
+Exec=fish /home/dvdmanjaro/Desktop/Files/toggle-sound-output-port.fish
+GenericName[en_US]=
+GenericName=
+Icon=hwmixvolume
+MimeType=
+Name[en_US]=sound-switcher
+Name=sound-switcher
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
