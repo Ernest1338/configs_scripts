@@ -1,10 +1,10 @@
 [Desktop Entry]
 Comment[en_US]=
 Comment=
-Exec=fish /home/dvdmanjaro/Desktop/Files/toggle-sound-output-port.fish
+Exec=bash /home/dvdmanjaro/Desktop/Files/sound-switcher-bash-rewrite.sh
 GenericName[en_US]=
 GenericName=
-Icon=hwmixvolume
+Icon=multimedia-audio-player-symbolic
 MimeType=
 Name[en_US]=sound-switcher
 Name=sound-switcher
