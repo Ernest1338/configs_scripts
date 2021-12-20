@@ -114,8 +114,8 @@ alias VPSon='python3 /home/dvdmanjaro/Desktop/Hacking/others/vps/tkScripts.py & 
 alias startdocker='sudo systemctl start docker'
 alias dockergui='docker run --rm -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix archlinux'
 alias cachec='sudo bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"'
-alias gamingcont='docker run --rm -it -e DISPLAY --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
-alias gamingcontsock='docker run --rm -it -e DISPLAY -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
+alias gamingcont='docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
+alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
 
 xhost +local:root > /dev/null 2>&1
 
