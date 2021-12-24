@@ -117,7 +117,7 @@ alias dockergui='docker run --rm -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix
 alias cachec='sudo bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"'
 alias gamingcont='docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
 alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
-alias gaming='if [ "$( docker container inspect -f "{{.State.Running}}" "gaming_container" )" == "true" ]; then docker stop "gaming_container" &>/dev/null; echo "Gaming container has been stopped"; else docker start "gaming_container" &>/dev/null; echo "Gaming container has been started"; fi'
+alias gaming='docker start "gaming_container" &>/dev/null; docker exec -it "gaming_container" bash && docker stop "gaming_container" &>/dev/null'
 
 xhost +local:root > /dev/null 2>&1
 
