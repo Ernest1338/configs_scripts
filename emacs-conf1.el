@@ -6,11 +6,11 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 ;; M-x package-install RET evil-mode RET
-(evil-mode 1)
+(evil-mode)
 (load-theme 'wombat)
-(setq initial-buffer-choice t)
-(setq-default tab-width 4)
-(setq make-backup-files nil)
+(setq initial-buffer-choice 't)
+(setq-default tab-width '4)
+(setq make-backup-files 'nil)
 (toggle-frame-maximized)
 (load "~/.emacs.d/basic-rust-mode.el")
 (custom-set-variables
