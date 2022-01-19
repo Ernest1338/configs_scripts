@@ -8,6 +8,7 @@
 (evil-mode 1)
 (load-theme 'wombat)
 (setq initial-buffer-choice 't)
+(setq-default tab-width 4)
 (toggle-frame-maximized)
 (load "~/.emacs.d/basic-rust-mode.el")
 (custom-set-variables
