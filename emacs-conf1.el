@@ -1,3 +1,4 @@
+;; rename this file to init.el to use it
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
