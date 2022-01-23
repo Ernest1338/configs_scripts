@@ -117,7 +117,7 @@ alias dockergui='docker run --rm -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix
 alias cachec='sudo bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"'
 alias gamingcont='docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
 alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
-alias gaming='docker start "gaming_container" &>/dev/null; docker exec -it "gaming_container" bash && docker stop "gaming_container" &>/dev/null'
+alias gaming='docker start "gaming_container" &>/dev/null; docker exec -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null'
 alias music_prod='docker start "music_prod" &>/dev/null; docker exec -it "music_prod" bash && docker stop "music_prod" &>/dev/null'
 alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
 
