@@ -1,4 +1,4 @@
-;; rename this file to init.el to use it
+;; rename this file to init.el to use it (file system path: ~/.emacs.d/init.el or ~/.config/emacs/init.el)
 ;; setup evil-mode:
 ;; cd ~/.emacs.d && git clone --depth 1 https://github.com/emacs-evil/evil.git
 
