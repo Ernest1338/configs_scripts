@@ -21,6 +21,9 @@
       make-backup-files 'nil)    ;; don't create backup files
 (setq-default tab-width '4)
 
+;; Display line numbers in every buffer
+;;(global-display-line-numbers-mode 1)
+
 (toggle-frame-maximized)
 
 (load "~/.emacs.d/basic-rust-mode.el")
