@@ -16,7 +16,7 @@
 
 (load-theme 'wombat)
 
-(setq initial-buffer-choice 't)
+(setq inhibit-startup-message 't)
 (setq-default tab-width '4)
 (setq make-backup-files 'nil)
 
