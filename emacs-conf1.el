@@ -9,16 +9,16 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; deprecated: M-x package-install RET evil-mode RET
+;; setting up and enabling evil-mode
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
 
 (load-theme 'wombat)
 
-(setq inhibit-startup-message 't)
+(setq inhibit-startup-message 't ;; skip welcome screen
+      make-backup-files 'nil)    ;; don't create backup files
 (setq-default tab-width '4)
-(setq make-backup-files 'nil)
 
 (toggle-frame-maximized)
 
