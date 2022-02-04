@@ -1,5 +1,6 @@
 ;; rename this file to init.el to use it
-;; setup evil-mode: cd ~/.emacs.d && git clone --depth 1 https://github.com/emacs-evil/evil.git
+;; setup evil-mode:
+;; cd ~/.emacs.d && git clone --depth 1 https://github.com/emacs-evil/evil.git
 
 ;;(require 'package)
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
