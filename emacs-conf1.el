@@ -19,7 +19,8 @@
 
 (setq inhibit-startup-message 't ;; skip welcome screen
       make-backup-files 'nil)    ;; don't create backup files
-(setq-default tab-width '4)
+(setq-default indent-tabs-mode 'nil ;; use spaces instead of tabs for indentation
+              tab-width '4)         ;; tab width -> 4
 
 ;; Display line numbers in every buffer
 ;;(global-display-line-numbers-mode 1)
