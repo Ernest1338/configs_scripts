@@ -1,6 +1,6 @@
-;; rename this file to init.el to use it (file system path: ~/.emacs.d/init.el or ~/.config/emacs/init.el)
-;; setup evil-mode:
-;; cd ~/.emacs.d && git clone --depth 1 https://github.com/emacs-evil/evil.git
+;; Rename this file to init.el to use it (file system path: ~/.emacs.d/init.el or ~/.config/emacs/init.el (adjust paths elsewere))
+;; Setup evil-mode and rust mode:
+;; cd ~/.emacs.d && git clone --depth 1 https://github.com/emacs-evil/evil.git && git clone https://github.com/rust-lang/rust-mode.git
 
 ;;(require 'package)
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -10,11 +10,17 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; setting up and enabling evil-mode
+;; Setting up and enabling evil-mode
 (add-to-list 'load-path "~/.emacs.d/evil")
 (require 'evil)
 (evil-mode 1)
 
+;; Setting up and enabling rust-mode
+(add-to-list 'load-path "~/.emacs.d/rust-mode")
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
+;; Setting up the theme
 (load-theme 'wombat)
 
 (setq inhibit-startup-message 't ;; skip welcome screen
@@ -22,9 +28,11 @@
 (setq-default indent-tabs-mode 'nil ;; use spaces instead of tabs for indentation
               tab-width '4)         ;; tab width -> 4
 
+;; Start with maximized window
+(toggle-frame-maximized)
+
 ;; Display line numbers in every buffer
 ;;(global-display-line-numbers-mode 1)
 
-(toggle-frame-maximized)
-
-(load "~/.emacs.d/basic-rust-mode.el")
+;; Enable my basic-rust-mode
+;;(load "~/.emacs.d/basic-rust-mode.el")
