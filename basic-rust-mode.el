@@ -1,5 +1,8 @@
 ;;; basic-rust-mode.el --- Major Mode for editing Rust source code -*- lexical-binding: t -*-
 
+;; NOTE: This version has problems with keywords like
+;; - 'static
+
 (defconst basic-rust-mode-syntax-table
   (with-syntax-table (copy-syntax-table)
     ;; C/C++ style comments
