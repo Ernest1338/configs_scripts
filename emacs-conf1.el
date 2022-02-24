@@ -6,9 +6,13 @@
 ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;;(package-initialize)
 
+;; Disable the tool bar, menu bar and the scroll bar
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+
+;; Revert buffers when the underlying file has changed
+(global-auto-revert-mode 1)
 
 ;; Setting up and enabling evil-mode
 (add-to-list 'load-path "~/.emacs.d/evil")
