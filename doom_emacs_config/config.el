@@ -56,7 +56,7 @@
 ;; My Changes
 
 ;; Disable flycheck for some modes
-(setq flycheck-global-modes '(not rustic-mode)) ;; to disable more modes, add a space after rustic-mode and another mode name after that space
+;;(setq flycheck-global-modes '(not rustic-mode)) ;; to disable more modes, add a space after rustic-mode and another mode name after that space
 ;; Make rustic flycheck mode work for Stable release channel
 (setq rustic-flycheck-clippy-params "--message-format=json")
 
@@ -68,5 +68,5 @@
 (scroll-bar-mode 1)
 
 ;; Making Emacs start in fullscreen mode
-(toggle-frame-fullscreen) ;; fullscreen
-;; (toggle-frame-maximized) ;; maximized (still as a floating window)
+;;(toggle-frame-fullscreen) ;; fullscreen
+(toggle-frame-maximized) ;; maximized (still as a floating window)
