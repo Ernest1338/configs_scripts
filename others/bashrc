@@ -96,8 +96,9 @@ unset use_color safe_term match_lhs sh
 #export PS1="\033[1m\033[7m\033[93m$\[\033[00m\] \[\033[01;37m\]\W\[\033[01;93m\]>\[\033[00m\] "
 #export PS1="\033[1m\033[7m\033[93m\u\[\033[00m\] \[\033[01;37m\]\W\[\033[01;93m\]>\[\033[00m\] "
 export PS1="\[$(tput bold)\]\[\033[38;5;0m\]\[\033[48;5;11m\]\u\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;255m\]\W\[$(tput sgr0)\]\[\033[38;5;11m\]>\[$(tput sgr0)\] \[$(tput sgr0)\]"
+export EDITOR='nvim'
 
-alias cp="cp -i"                          # confirm before overwriting something
+alias cp='cp -i'                          # confirm before overwriting something
 alias np='nano -w PKGBUILD'
 alias more=less
 alias ll='ls -lah --color=auto'
@@ -119,6 +120,7 @@ alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_D
 alias gaming='docker start "gaming_container" &>/dev/null; docker exec -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null'
 alias music_prod='docker start "music_prod" &>/dev/null; docker exec -it "music_prod" bash && docker stop "music_prod" &>/dev/null'
 alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
+alias vim='nvim'
 
 xhost +local:root > /dev/null 2>&1
 
