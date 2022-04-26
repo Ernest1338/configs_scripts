@@ -103,6 +103,7 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias ll='ls -lah --color=auto'
 alias ip='ip --color=auto'
+alias sudo='sudo '
 alias fixscreen='sxiv -fb /home/dvdmanjaro/Desktop/Files/black.jpg'
 alias alpvm='docker run --rm -it alpine'
 alias threebe='cd /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe; code /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe'
