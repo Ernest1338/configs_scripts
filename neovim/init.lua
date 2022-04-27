@@ -8,3 +8,7 @@ vim.opt.smartcase = true
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
+
+-- load the packer plugins file
+require('plugins')
+
