@@ -21,4 +21,5 @@
 - magit but nvim ```https://github.com/TimUntersberger/neogit```
 - cool color theme ```https://github.com/folke/tokyonight.nvim```
 - telescope ```https://github.com/nvim-telescope/telescope.nvim```
+- auto brackets ```https://github.com/windwp/nvim-autopairs```
 

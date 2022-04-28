@@ -22,15 +22,28 @@ vim.o.mouse = 'a'
 
 -- set colorscheme
 vim.o.termguicolors = true
-vim.cmd('colorscheme desert')
+vim.g.tokyonight_style = "night"
+vim.cmd('colorscheme tokyonight')
 
 -- remap space as leader key
---[[
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
---]]
+
+-- PLUGINS SECTION
 
 -- load the packer plugins file
 require('plugins')
 
+-- setting up the lualine plugin
+require('lualine').setup {
+  options = {
+	  theme = 'tokyonight'
+  }
+}
+
+-- setting up the auto brackets plugin
+require('nvim-autopairs').setup{}
+
+-- setting up the "magit" plugin
+require('neogit').setup{}
