@@ -10,6 +10,9 @@ vim.o.syntax = 'on'
 -- incremental search
 vim.o.incsearch = true
 
+-- hide the searches
+vim.o.hlsearch = false
+
 -- smart tab + tab width to 4
 vim.o.shiftwidth = 4
 vim.o.smartcase = true
@@ -67,20 +70,19 @@ cmp.setup{
 	},
 	sources = {
         {name = 'buffer',option = {keyword_length = 2}}, {name = 'nvim_lsp'}, {name = 'luasnip'}, {name = 'path'},
-    },
+	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-u>'] = cmp.mapping.scroll_docs(-4),
 		['<C-d>'] = cmp.mapping.scroll_docs(4),
 		['<C-k>'] = cmp.mapping.select_prev_item(),
 		['<C-j>'] = cmp.mapping.select_next_item(),
-		['<C-Space>'] = cmp.mapping.complete(),
 		['<C-e>'] = cmp.mapping.abort(),
 		['<Tab>'] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Insert,
+			--behavior = cmp.ConfirmBehavior.Insert,
 			select = true
 		}),
 		['<CR>'] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Insert,
+			--behavior = cmp.ConfirmBehavior.Insert,
 			select = true
 		}),
     }),
