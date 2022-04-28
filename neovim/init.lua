@@ -66,7 +66,7 @@ cmp.setup{
 		end,
 	},
 	sources = {
-        {name = 'buffer',option = {keyword_length = 1}}, {name = 'nvim_lsp'}, {name = 'luasnip'}, {name = 'path'},
+        {name = 'buffer',option = {keyword_length = 2}}, {name = 'nvim_lsp'}, {name = 'luasnip'}, {name = 'path'},
     },
 	mapping = cmp.mapping.preset.insert({
 		['<C-u>'] = cmp.mapping.scroll_docs(-4),
