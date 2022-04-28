@@ -18,4 +18,7 @@
 - org mode in nvim ```https://github.com/nvim-neorg/neorg```
 	```https://github.com/nvim-orgmode/orgmode```
 - auto completition ```https://github.com/hrsh7th/nvim-cmp```
+- magit but nvim ```https://github.com/TimUntersberger/neogit```
+- cool color theme ```https://github.com/folke/tokyonight.nvim```
+- telescope ```https://github.com/nvim-telescope/telescope.nvim```
 
