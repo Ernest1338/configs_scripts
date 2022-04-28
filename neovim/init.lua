@@ -22,7 +22,7 @@ vim.o.mouse = 'a'
 
 -- set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme desert]]
+vim.cmd('colorscheme desert')
 
 -- remap space as leader key
 --[[
