@@ -47,3 +47,4 @@ require('nvim-autopairs').setup{}
 
 -- setting up the "magit" plugin
 require('neogit').setup{}
+

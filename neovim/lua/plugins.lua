@@ -21,3 +21,4 @@ return require('packer').startup(function()
     -- auto brackets
     use 'windwp/nvim-autopairs'
 end)
+
