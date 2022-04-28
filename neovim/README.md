@@ -9,3 +9,6 @@
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
   ```
 - execute ```:PackerInstall```
+
+# Other notes
+- cool setup to be inspired by ```https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua```
