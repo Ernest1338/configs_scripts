@@ -57,3 +57,36 @@ require('neogit').setup{}
 -- setting up the file tree plugin
 require('nvim-tree').setup{}
 
+-- settings up the completition framework
+local cmp = require('cmp')
+cmp.setup{
+	snippet = {
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+		end,
+	},
+	sources = {
+        {name = 'buffer',option = {keyword_length = 1}}, {name = 'nvim_lsp'}, {name = 'luasnip'}, {name = 'path'},
+    },
+	mapping = cmp.mapping.preset.insert({
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-u>'] = cmp.mapping.scroll_docs(4),
+		['<C-k>'] = cmp.mapping.select_prev_item(),
+		['<C-j>'] = cmp.mapping.select_next_item(),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.abort(),
+		['<Tab>'] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Insert,
+			select = true
+		}),
+		['<CR>'] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Insert,
+			select = true
+		}),
+    }),
+}
+
+-- LSP settings
+-- Rust
+require('lspconfig').rust_analyzer.setup{}
+
