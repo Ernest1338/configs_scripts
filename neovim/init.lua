@@ -23,11 +23,6 @@ vim.o.cursorline = true
 -- enable mouse support
 vim.o.mouse = 'a'
 
--- set colorscheme
-vim.o.termguicolors = true
-vim.g.tokyonight_style = 'night'
-vim.cmd('colorscheme tokyonight')
-
 -- set the long line highlight
 vim.o.colorcolumn = '90'
 
@@ -36,10 +31,15 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- PLUGINS SECTION
+-- PLUGINS CONFIG SECTION
 
 -- load the packer plugins file
 require('plugins')
+
+-- set the colorscheme now that the theme plugin is loaded
+vim.o.termguicolors = true
+vim.g.tokyonight_style = 'night'
+vim.cmd('colorscheme tokyonight')
 
 -- setting up the lualine plugin
 require('lualine').setup {
