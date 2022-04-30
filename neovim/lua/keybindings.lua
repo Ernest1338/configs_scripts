@@ -53,6 +53,7 @@ wk.register({
 			j = { "<cmd>wincmd j<cr>", "Down window" },
 			k = { "<cmd>wincmd k<cr>", "Up window" },
 			l = { "<cmd>wincmd l<cr>", "Right window" },
+			w = { "<C-w>w", "Cycle windows" },
 		},
 		b = {
 			name = "Buffers",
@@ -70,6 +71,8 @@ wk.register({
 			e = { "<cmd>edit "..os.getenv('HOME').."/.local/share/nvim/telescope-projects.txt<cr>", "Edit the projects file" },
 			['/'] = { "<cmd>Telescope live_grep<cr>", "Project search" },
 		},
+		['/'] = { "<cmd>Telescope live_grep<cr>", "Search" },
+		['?'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current file search" },
 	},
 })
 

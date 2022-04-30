@@ -51,7 +51,17 @@ require('todo-comments').setup{}
 require('orgmode').setup{}
 require('orgmode').setup_ts_grammar()
 
--- settings up the telescope addons
+-- settings up the telescope and addons
+require('telescope').setup{
+	defaults = {
+		mappings = {
+			i = {
+				["<C-j>"] = require('telescope.actions').move_selection_next,
+				["<C-k>"] = require('telescope.actions').move_selection_previous,
+			},
+		},
+	},
+}
 require('telescope').load_extension('file_browser')
 require('telescope').load_extension('project')
 
