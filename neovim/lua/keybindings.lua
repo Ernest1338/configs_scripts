@@ -71,6 +71,13 @@ wk.register({
 			e = { "<cmd>edit "..os.getenv('HOME').."/.local/share/nvim/telescope-projects.txt<cr>", "Edit the projects file" },
 			['/'] = { "<cmd>Telescope live_grep<cr>", "Project search" },
 		},
+		o = {
+			name = "Open",
+			f = { "<cmd>Telescope file_browser cwd=~<cr>", "Open file" },
+		},
+		[';'] = {
+			name = "Prefix",
+		},
 		['/'] = { "<cmd>Telescope live_grep<cr>", "Search" },
 		['?'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current file search" },
 	},
