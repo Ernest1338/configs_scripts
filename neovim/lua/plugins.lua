@@ -27,6 +27,8 @@ return require('packer').startup(function()
 	} 
 	-- magit but its nvim
 	use 'TimUntersberger/neogit'
+	-- git decorations
+	use 'lewis6991/gitsigns.nvim'
 	-- auto brackets
 	use 'windwp/nvim-autopairs'
 	-- file explorer / file tree

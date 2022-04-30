@@ -38,6 +38,9 @@ require('nvim-autopairs').setup{}
 -- setting up the "magit" plugin
 require('neogit').setup{}
 
+-- settings up the git decorations plugin
+require('gitsigns').setup{}
+
 -- setting up the file tree plugin
 require('nvim-tree').setup{}
 
@@ -45,7 +48,13 @@ require('nvim-tree').setup{}
 require('todo-comments').setup{}
 
 -- setting up the which key plugin
-require('which-key').setup{}
+require('which-key').setup{
+	key_labels = {
+		['<space>'] = "SPC",
+		['<cr>'] = "RET",
+		['<tab>'] = "TAB",
+	}
+}
 -- show which key after 500ms
 vim.o.timeoutlen = 500
 
