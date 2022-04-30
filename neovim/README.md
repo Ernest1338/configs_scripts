@@ -10,6 +10,9 @@
   ```
 - execute `:PackerInstall`
 - install treesitter languages with: `:TSInstall <language>` (eg rust, lua, ...)
+- install LSP servers with: `:LspInstall <server_name>` (eg `rust_analyzer`, ...)
+- (or use just `:LspInstall` for automatic server installation)
+	
 
 # Other notes
 - nvim plugins `https://neovimcraft.com/`

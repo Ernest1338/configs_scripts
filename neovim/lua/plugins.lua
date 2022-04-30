@@ -33,5 +33,9 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-tree.lua'
 	-- lsp configs
 	use 'neovim/nvim-lspconfig'
+	-- lsp installer
+	use 'williamboman/nvim-lsp-installer'
+	-- highlight TODO, ...
+	use 'folke/todo-comments.nvim'
 end)
 

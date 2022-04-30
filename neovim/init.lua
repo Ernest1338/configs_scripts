@@ -41,6 +41,9 @@ require('neogit').setup{}
 -- setting up the file tree plugin
 require('nvim-tree').setup{}
 
+-- setting up the TODO highlight plugin
+require('todo-comments').setup{}
+
 -- settings up the completition framework
 local cmp = require('cmp')
 cmp.setup{
@@ -73,6 +76,8 @@ cmp.setup{
 }
 
 -- LSP settings
+
+require('nvim-lsp-installer').setup{}
 
 -- Rust
 require('lspconfig').rust_analyzer.setup{}
