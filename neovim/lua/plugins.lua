@@ -8,14 +8,19 @@ return require('packer').startup(function()
 	-- telescope
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim',
-		-- treesitter
-			'nvim-treesitter/nvim-treesitter'} }
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-treesitter/nvim-treesitter'
+		}
 	}
+	-- telescope file browser addon
+	use 'nvim-telescope/telescope-file-browser.nvim'
+	-- telescope project management addon
+	use 'nvim-telescope/telescope-project.nvim'
 	-- status line
 	use {
 		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+		requires = { 'kyazdani42/nvim-web-devicons' }
 	}
 	-- completition framework
 	use {
@@ -29,6 +34,8 @@ return require('packer').startup(function()
 	use 'TimUntersberger/neogit'
 	-- git decorations
 	use 'lewis6991/gitsigns.nvim'
+	-- org in nvim
+	use 'nvim-orgmode/orgmode'
 	-- auto brackets
 	use 'windwp/nvim-autopairs'
 	-- file explorer / file tree

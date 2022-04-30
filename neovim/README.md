@@ -9,8 +9,8 @@
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
   ```
 - execute `:PackerInstall`
-- install treesitter languages with: `:TSInstall <language>` (eg rust, lua, ...)
-- install LSP servers with: `:LspInstall <server_name>` (eg `rust_analyzer`, ...)
+- install treesitter languages with: `:TSInstall <language>` (rust, lua, org, ...)
+- install LSP servers with: `:LspInstall <server_name>` (`rust_analyzer`, ...)
 - (or use just `:LspInstall` for automatic server installation)
 	
 
@@ -26,4 +26,5 @@
 - cool color theme `https://github.com/folke/tokyonight.nvim`
 - telescope `https://github.com/nvim-telescope/telescope.nvim`
 - auto brackets `https://github.com/windwp/nvim-autopairs`
+- the project file edit shortcut is a workaround for a missing feature in telescope-project
 

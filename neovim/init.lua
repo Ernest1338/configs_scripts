@@ -47,6 +47,14 @@ require('nvim-tree').setup{}
 -- setting up the TODO highlight plugin
 require('todo-comments').setup{}
 
+-- setting up the org mode plugin
+require('orgmode').setup{}
+require('orgmode').setup_ts_grammar()
+
+-- settings up the telescope addons
+require('telescope').load_extension('file_browser')
+require('telescope').load_extension('project')
+
 -- setting up the which key plugin
 require('which-key').setup{
 	key_labels = {
