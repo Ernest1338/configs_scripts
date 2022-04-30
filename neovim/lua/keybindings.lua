@@ -16,7 +16,7 @@ wk.register({
 			n = { "<cmd>enew<cr>", "New File" },
 			s = { "<cmd>w<cr>", "Save file" },
 			c = { "<cmd>wq<cr>", "Save and quit" },
-			x = { "<cmd>wq!<cr>", "Force save and quit" },
+			C = { "<cmd>wq!<cr>", "Force save and quit" },
 			S = { "<cmd>Telescope live_grep<cr>", "Global search" },
 			['/'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find" },
 		},
