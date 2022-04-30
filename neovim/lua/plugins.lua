@@ -37,5 +37,7 @@ return require('packer').startup(function()
 	use 'williamboman/nvim-lsp-installer'
 	-- highlight TODO, ...
 	use 'folke/todo-comments.nvim'
+	-- doom emacs style key showcase
+	use 'folke/which-key.nvim'
 end)
 

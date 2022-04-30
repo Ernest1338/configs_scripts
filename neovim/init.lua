@@ -44,6 +44,11 @@ require('nvim-tree').setup{}
 -- setting up the TODO highlight plugin
 require('todo-comments').setup{}
 
+-- setting up the which key plugin
+require('which-key').setup{}
+-- show which key after 500ms
+vim.o.timeoutlen = 500
+
 -- settings up the completition framework
 local cmp = require('cmp')
 cmp.setup{
