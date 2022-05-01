@@ -6,9 +6,6 @@
 vim.o.number = true
 vim.o.relativenumber = true
 
--- enable syntax highlighting
-vim.o.syntax = 'on'
-
 -- incremental search
 vim.o.incsearch = true
 
