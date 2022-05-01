@@ -13,7 +13,7 @@ if [ $1 == "install" ] || [ $1 == "update" ]; then
 		git pull &&
 		mkdir -p ~/.config/nvim/lua/ &&
 		echo "Installing fresh configs..." &&
-		sudo cat ../neovim_global/sysinit.vim > /etc/xdg/nvim/sysinit.vim &&
+		cat ../neovim_global/sysinit.vim > /etc/xdg/nvim/sysinit.vim &&
 		cat ./init.lua > ~/.config/nvim/init.lua &&
 		cat ./lua/config.lua > ~/.config/nvim/lua/config.lua &&
 		cat ./lua/keybindings.lua > ~/.config/nvim/lua/keybindings.lua &&
