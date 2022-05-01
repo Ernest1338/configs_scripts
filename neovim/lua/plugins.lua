@@ -4,7 +4,7 @@ return require('packer').startup(function()
 	-- package manager
 	use 'wbthomason/packer.nvim'
 	-- theme (potentially not necessary)
-	use 'folke/tokyonight.nvim'
+	use 'ayu-theme/ayu-vim'
 	-- telescope
 	use {
 		'nvim-telescope/telescope.nvim',
@@ -27,7 +27,8 @@ return require('packer').startup(function()
 		'hrsh7th/nvim-cmp',
 		requires = { -- (some potentially not necessary)
 			'hrsh7th/cmp-buffer', 'hrsh7th/cmp-nvim-lsp',
-			'L3MON4D3/LuaSnip', 'hrsh7th/cmp-path',
+			'dcampos/nvim-snippy', 'hrsh7th/cmp-path',
+			'dcampos/cmp-snippy'
 		}
 	} 
 	-- magit but its nvim

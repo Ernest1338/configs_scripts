@@ -12,14 +12,14 @@ require('config')
 -- PLUGINS CONFIG SECTION
 
 -- setting up the lualine plugin
-require('lualine').setup {
-  options = {
-	  theme = 'tokyonight'
-  }
+require('lualine').setup{
+	options = {
+		theme = 'ayu_mirage'
+	}
 }
 
 -- setting up treesitter
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup{
 	highlight = {
 		enable = true,
 	},
@@ -81,13 +81,13 @@ local cmp = require('cmp')
 cmp.setup{
 	snippet = {
 		expand = function(args)
-			require('luasnip').lsp_expand(args.body)
+			require('snippy').expand_snippet(args.body)
 		end,
 	},
 	sources = {
         {name = 'buffer', option = {keyword_length = 2}},
 		{name = 'nvim_lsp'},
-		{name = 'luasnip'},
+		{name = 'snippy'},
 		{name = 'path'},
 	},
 	mapping = cmp.mapping.preset.insert({
