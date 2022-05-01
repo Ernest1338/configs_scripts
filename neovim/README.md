@@ -1,14 +1,13 @@
 # Setting up neovim
 - install neovim, git
 - get the bashrc
-- put everything from this dir to ~/.config/nvim
-  and the global config to /etc/xdg/nvim
+- install this config using `sudo ./config.sh install`
 - install packer.nvim with git
   ```bash
   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
   ```
-- execute `:PackerInstall`
+- launch nvim and execute `:PackerInstall`
 - install treesitter languages with: `:TSInstall <language>` (rust, lua, org, ...)
 - install LSP servers with: `:LspInstall <server_name>` (`rust_analyzer`, ...)
 - (or use just `:LspInstall` for automatic server installation)
