@@ -3,7 +3,7 @@
 return require('packer').startup(function()
 	-- package manager
 	use 'wbthomason/packer.nvim'
-	-- theme
+	-- theme (potentially not necessary)
 	use 'folke/tokyonight.nvim'
 	-- telescope
 	use {
@@ -25,14 +25,14 @@ return require('packer').startup(function()
 	-- completition framework
 	use {
 		'hrsh7th/nvim-cmp',
-		requires = {
+		requires = { -- (some potentially not necessary)
 			'hrsh7th/cmp-buffer', 'hrsh7th/cmp-nvim-lsp',
 			'L3MON4D3/LuaSnip', 'hrsh7th/cmp-path',
 		}
 	} 
 	-- magit but its nvim
 	use 'TimUntersberger/neogit'
-	-- git decorations
+	-- git decorations (potentially not necessary)
 	use 'lewis6991/gitsigns.nvim'
 	-- org in nvim
 	use 'nvim-orgmode/orgmode'
@@ -42,9 +42,9 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-tree.lua'
 	-- lsp configs
 	use 'neovim/nvim-lspconfig'
-	-- lsp installer
+	-- lsp installer (potentially not necessary)
 	use 'williamboman/nvim-lsp-installer'
-	-- highlight TODO, ...
+	-- highlight TODO, ... (potentially not necessary)
 	use 'folke/todo-comments.nvim'
 	-- doom emacs style key showcase
 	use 'folke/which-key.nvim'
