@@ -27,4 +27,5 @@
 - telescope `https://github.com/nvim-telescope/telescope.nvim`
 - auto brackets `https://github.com/windwp/nvim-autopairs`
 - the project file edit shortcut is a workaround for a missing feature in telescope-project
+- play around with packer's lazy loading functionality
 

@@ -5,6 +5,9 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- use f2 fo show whichkey window in normal mode
+vim.api.nvim_set_keymap('n', '<f2>', "<cmd>WhichKey<cr>", {})
+
 -- which key bindings
 local wk = require('which-key')
 wk.register({
@@ -20,6 +23,7 @@ wk.register({
 			Q = { "<cmd>wq!<cr>", "Force save and quit" },
 			c = { "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", "Edit neovim configs" },
 			o = { "<cmd>Telescope file_browser cwd=~<cr>", "Open file" },
+			O = { "<cmd>Telescope find_files cwd=~<cr>", "Global find file" },
 			['/'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find" },
 		},
 		q = {
@@ -49,6 +53,7 @@ wk.register({
 		w = {
 			name = "Window",
 			c = { "<cmd>q<cr>", "Close" },
+			n = { "<C-w>vnew", "New window" },
 			h = { "<cmd>wincmd h<cr>", "Left window" },
 			j = { "<cmd>wincmd j<cr>", "Down window" },
 			k = { "<cmd>wincmd k<cr>", "Up window" },
@@ -60,13 +65,13 @@ wk.register({
 			b = { "<cmd>Telescope buffers<cr>", "Switch buffer" },
 			d = { "<cmd>bdelete<cr>", "Delete buffer" },
 			n = { "<cmd>bnext<cr>", "Next buffer" },
+			['<tab>'] = { "<cmd>bnext<cr>", "Next buffer" },
 			p = { "<cmd>bprevious<cr>", "Previous buffer" },
 			c = { "<cmd>enew<cr>", "Create new buffer" },
 
 		},
 		p = {
 			name = "Projects",
-			-- Projects / Repos directory: ~/Programming/Repos
 			p = { "<cmd>Telescope project<cr>", "Project menu" },
 			e = { "<cmd>edit "..os.getenv('HOME').."/.local/share/nvim/telescope-projects.txt<cr>", "Edit the projects file" },
 			['/'] = { "<cmd>Telescope live_grep<cr>", "Project search" },
@@ -74,9 +79,19 @@ wk.register({
 		o = {
 			name = "Open",
 			f = { "<cmd>Telescope file_browser cwd=~<cr>", "Open file" },
+			F = { "<cmd>Telescope find_files cwd=~<cr>", "Global find file" },
+		},
+		[','] = {
+			name = "Tab",
+			[','] = { "<cmd>tabnew<cr>", "New tab" },
+			n = { "<cmd>tabnext<cr>", "Next tab" },
+			['<tab>'] = { "<cmd>tabnext<cr>", "Switch tab" },
 		},
 		[';'] = {
 			name = "Prefix",
+		},
+		['<tab>'] = {
+			name = "Workspace",
 		},
 		['/'] = { "<cmd>Telescope live_grep<cr>", "Search" },
 		['?'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current file search" },
