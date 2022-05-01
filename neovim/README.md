@@ -26,6 +26,9 @@
 - cool color theme `https://github.com/folke/tokyonight.nvim`
 - telescope `https://github.com/nvim-telescope/telescope.nvim`
 - auto brackets `https://github.com/windwp/nvim-autopairs`
+- orgmode has a bug with folds, workaround - `zx`
 - the project file edit shortcut is a workaround for a missing feature in telescope-project
 - play around with packer's lazy loading functionality
+- features missing:
+	- workspaces, (tab) switching - will be implemented in telescope-project
 

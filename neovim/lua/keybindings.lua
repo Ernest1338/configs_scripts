@@ -29,7 +29,7 @@ wk.register({
 		q = {
 			name = "Quit",
 			q = { "<cmd>q<cr>", "Quit" },
-			Q = { "<cmd>q!<cr>", "Force quit" },
+			Q = { "<cmd>qall!<cr>", "Force quit" },
 		},
 		g = {
 			name = "Git",
@@ -84,8 +84,10 @@ wk.register({
 		[','] = {
 			name = "Tab",
 			[','] = { "<cmd>tabnew<cr>", "New tab" },
-			n = { "<cmd>tabnext<cr>", "Next tab" },
 			['<tab>'] = { "<cmd>tabnext<cr>", "Switch tab" },
+			n = { "<cmd>tabnext<cr>", "Next tab" },
+			p = { "<cmd>tabprevious<cr>", "Previous tab" },
+			c = { "<cmd>tabclose<cr>", "Close tab" },
 		},
 		[';'] = {
 			name = "Prefix",
