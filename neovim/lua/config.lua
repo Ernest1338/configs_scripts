@@ -22,6 +22,9 @@ vim.o.tabstop = 4
 -- hightlight current line
 vim.o.cursorline = true
 
+-- scroll when the cursor is 4 line from the bottom
+vim.o.scrolloff = 4
+
 -- enable mouse support
 vim.o.mouse = 'a'
 
