@@ -27,6 +27,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - orgmode has a bug with folds, workaround - ~zx~
 - the project file edit shortcut is a workaround for a missing feature in telescope-project
 - play around with packer's lazy loading functionality
+- think of NvChad ~https://github.com/NvChad/NvChad~
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project
 

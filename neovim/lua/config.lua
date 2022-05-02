@@ -33,6 +33,5 @@ vim.o.colorcolumn = '90'
 
 -- set the colorscheme
 vim.o.termguicolors = true
-vim.g.ayucolor = 'mirage'
-vim.cmd('colorscheme ayu')
+--vim.cmd('colorscheme material')
 

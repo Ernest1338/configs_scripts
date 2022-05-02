@@ -14,7 +14,7 @@ require('config')
 -- setting up the lualine plugin
 require('lualine').setup{
 	options = {
-		theme = 'ayu_mirage'
+		theme = 'palenight',
 	}
 }
 
@@ -31,6 +31,11 @@ require('nvim-treesitter.configs').setup{
 -- folding support with treesitter
 --vim.o.foldmethod = "expr"
 --vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- setting up the color scheme
+require('nebulous').setup{
+	variant = 'midnight',
+}
 
 -- setting up the auto brackets plugin
 require('nvim-autopairs').setup{}

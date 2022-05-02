@@ -59,6 +59,7 @@ wk.register({
 			k = { "<cmd>wincmd k<cr>", "Up window" },
 			l = { "<cmd>wincmd l<cr>", "Right window" },
 			w = { "<C-w>w", "Cycle windows" },
+			['<tab>'] = { "<C-w>w", "Cycle windows" },
 		},
 		b = {
 			name = "Buffers",
