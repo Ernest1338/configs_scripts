@@ -3,6 +3,8 @@
 return require('packer').startup(function()
 	-- package manager
 	use 'wbthomason/packer.nvim'
+	-- improve startup time by caching some plugins
+	use 'lewis6991/impatient.nvim'
 	-- theme (potentially not necessary)
 	use 'tanvirtin/monokai.nvim'
 	-- telescope

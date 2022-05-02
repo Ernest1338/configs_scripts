@@ -2,7 +2,8 @@
 
 -- REQUIRE SECTION
 
--- load the packer plugins file
+-- load impatient and the packer plugins file
+require('impatient')
 require('plugins')
 -- keybindings file
 require('keybindings')
