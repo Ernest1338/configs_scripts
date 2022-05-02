@@ -4,7 +4,7 @@ return require('packer').startup(function()
 	-- package manager
 	use 'wbthomason/packer.nvim'
 	-- theme (potentially not necessary)
-	use 'Yagua/nebulous.nvim'
+	use 'tanvirtin/monokai.nvim'
 	-- telescope
 	use {
 		'nvim-telescope/telescope.nvim',

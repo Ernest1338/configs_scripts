@@ -33,5 +33,5 @@ vim.o.colorcolumn = '90'
 
 -- set the colorscheme
 vim.o.termguicolors = true
---vim.cmd('colorscheme material')
+vim.cmd('colorscheme monokai_pro')
 
