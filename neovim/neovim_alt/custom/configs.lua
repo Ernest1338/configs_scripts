@@ -1,5 +1,3 @@
--- file location: ~/.config/nvim/config.lua
-
 -- CONFIGS
 
 -- show numbers
@@ -33,5 +31,7 @@ vim.o.colorcolumn = '90'
 
 -- set the colorscheme
 vim.o.termguicolors = true
---vim.cmd('colorscheme material')
+
+-- show which key after 500ms
+vim.o.timeoutlen = 500
 

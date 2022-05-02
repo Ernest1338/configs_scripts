@@ -1,5 +1,3 @@
--- file location: ~/.config/nvim/lua/keybindings.lua
-
 -- remap space as leader key
 --vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
@@ -8,7 +6,7 @@ vim.g.maplocalleader = ' '
 -- use f2 fo show whichkey window in normal mode
 vim.api.nvim_set_keymap('n', '<f2>', "<cmd>WhichKey<cr>", {})
 
--- which key bindings
+-- which key mappings
 local wk = require('which-key')
 wk.register({
 	['<leader>'] = {
@@ -100,4 +98,16 @@ wk.register({
 		['?'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current file search" },
 	},
 })
+
+-- telescope mappings
+require('telescope').setup{
+	defaults = {
+		mappings = {
+			i = {
+				["<C-j>"] = require('telescope.actions').move_selection_next,
+				["<C-k>"] = require('telescope.actions').move_selection_previous,
+			},
+		},
+	},
+}
 
