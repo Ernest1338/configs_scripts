@@ -90,8 +90,9 @@ wk.register({
 		},
 		[','] = {
 			name = "Tab",
-			[','] = { "<cmd>tabnew<cr>", "New tab" },
+			c = { "<cmd>tabnew<cr>", "Create cew tab" },
 			['<tab>'] = { "<cmd>tabnext<cr>", "Switch tab" },
+			[','] = { "<cmd>tabnext<cr>", "Switch tab" },
 			n = { "<cmd>tabnext<cr>", "Next tab" },
 			p = { "<cmd>tabprevious<cr>", "Previous tab" },
 			d = { "<cmd>tabclose<cr>", "Delete tab" },
