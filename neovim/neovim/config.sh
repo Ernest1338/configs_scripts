@@ -4,7 +4,7 @@ if [ -z "$1" ]; then # if $1 is zero, display usage
 	echo "Usage: ./config.sh install/update/repo" && exit 1
 fi
 if [ $1 == "install" ] || [ $1 == "update" ]; then
-	read -p "About to overwrite your current config, proceed? [y/n]: " confirm
+	read -p "About to overwrite your current config, proceed? [y/n]: " confirm &&
 	if [[ "$confirm" == [yY] ]]; then
 		echo "Git pull:" &&
 		git pull &&
@@ -13,7 +13,8 @@ if [ $1 == "install" ] || [ $1 == "update" ]; then
 		cat ./init.lua > $HOME/.config/nvim/init.lua &&
 		cat ./lua/config.lua > $HOME/.config/nvim/lua/config.lua &&
 		cat ./lua/keybindings.lua > $HOME/.config/nvim/lua/keybindings.lua &&
-		cat ./lua/plugins.lua > $HOME/.config/nvim/lua/plugins.lua
+		cat ./lua/plugins.lua > $HOME/.config/nvim/lua/plugins.lua &&
+		echo "Done"
 	else
 		echo "Aborting..."
 	fi
