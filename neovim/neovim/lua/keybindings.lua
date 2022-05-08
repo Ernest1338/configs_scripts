@@ -8,6 +8,9 @@ vim.g.maplocalleader = ' '
 -- use f2 fo show whichkey window in normal mode
 vim.api.nvim_set_keymap('n', '<f2>', "<cmd>WhichKey<cr>", {})
 
+-- LSP mappings
+vim.api.nvim_buf_set_keymap(0, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {noremap = true})
+
 -- which key bindings
 local wk = require('which-key')
 wk.register({
