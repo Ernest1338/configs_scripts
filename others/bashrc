@@ -122,6 +122,7 @@ alias gaming='docker start "gaming_container" &>/dev/null; docker exec -it "gami
 alias music_prod='docker start "music_prod" &>/dev/null; docker exec -it "music_prod" bash && docker stop "music_prod" &>/dev/null'
 alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
 alias vim='nvim'
+alias v='nvim'
 alias vi='nvim --noplugin'
 alias vimg='neovide --multigrid'
 
