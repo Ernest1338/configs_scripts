@@ -78,13 +78,13 @@ local cmp = require('cmp')
 cmp.setup{
 	snippet = {
 		expand = function(args)
-			require('snippy').expand_snippet(args.body)
+			require('luasnip').lsp_expand(args.body)
 		end,
 	},
 	sources = {
         {name = 'buffer', option = {keyword_length = 2}},
 		{name = 'nvim_lsp'},
-		{name = 'snippy'},
+		{name = 'luasnip'},
 		{name = 'path'},
 	},
 	mapping = cmp.mapping.preset.insert({

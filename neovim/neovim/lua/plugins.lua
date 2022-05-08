@@ -24,13 +24,14 @@ return require('packer').startup(function()
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons' }
 	}
+	-- great snippets plugin, needs setting up (slowest plugin but whatever)
+	use 'L3MON4D3/LuaSnip'
 	-- completition framework
 	use {
 		'hrsh7th/nvim-cmp',
 		requires = { -- (some potentially not necessary)
 			'hrsh7th/cmp-buffer', 'hrsh7th/cmp-nvim-lsp',
-			'dcampos/nvim-snippy', 'hrsh7th/cmp-path',
-			'dcampos/cmp-snippy'
+			'hrsh7th/cmp-path', 'saadparwaiz1/cmp_luasnip'
 		}
 	} 
 	-- magit but its nvim
