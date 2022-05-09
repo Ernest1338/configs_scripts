@@ -60,7 +60,7 @@ wk.register({
 		},
 		l = {
 			name = "LSP",
-			a = { "<cmd>lua vim.lsp.buf.code_actions()<cr>", "LSP code actions" },
+			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP code actions" },
 			d = { "<cmd>Telescope diagnostics<cr>", "LSP diagnostics" },
 			f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "LSP format buffer" },
 			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" },
