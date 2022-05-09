@@ -106,7 +106,7 @@ cmp.setup{
 
 -- LSP settings
 
-require('nvim-lsp-installer').setup{}
+--require('nvim-lsp-installer').setup{}
 
 -- Rust
 require('lspconfig').rust_analyzer.setup{}

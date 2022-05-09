@@ -47,7 +47,8 @@ return require('packer').startup(function()
 	-- lsp configs
 	use 'neovim/nvim-lspconfig'
 	-- lsp installer (potentially not necessary)
-	use 'williamboman/nvim-lsp-installer'
+	-- deprecated, as using the package manager is a better idea
+	--use 'williamboman/nvim-lsp-installer'
 	-- highlight TODO, ... (potentially not necessary)
 	use 'folke/todo-comments.nvim'
 	-- doom emacs style key showcase
