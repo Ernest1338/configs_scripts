@@ -6,7 +6,7 @@
 #+begin_src bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim-lua
 #+end_src
-- comment impatient line from ~$HOME/.config/nvim/lua/plugins.lua~
+- comment impatient line from ~$HOME/.config/nvim/init.lua~
 - launch nvim, ignore errors and execute ~:PackerInstall~
 - uncomment impatient line from the same file
 - install treesitter languages with: ~:TSInstall <language(s)>~ (rust, lua, org, ...)

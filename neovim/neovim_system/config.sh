@@ -9,8 +9,6 @@ fi
 if [ $1 == "install" ] || [ $1 == "update" ]; then
 	read -p "About to overwrite your current config, proceed? [y/n]: " confirm &&
 	if [[ "$confirm" == [yY] ]]; then
-		echo "Git pull:" &&
-		git pull &&
 		echo "Installing global configs..." &&
 		mkdir -p /etc/xdg/nvim/ &&
 		cat ./sysinit.vim > /etc/xdg/nvim/sysinit.vim &&
