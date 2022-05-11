@@ -39,7 +39,7 @@ return require('packer').startup(function()
 	-- git decorations (potentially not necessary)
 	use 'lewis6991/gitsigns.nvim'
 	-- org in nvim
-	use 'nvim-orgmode/orgmode'
+	--use 'nvim-orgmode/orgmode'
 	-- auto brackets
 	use 'windwp/nvim-autopairs'
 	-- file explorer / file tree

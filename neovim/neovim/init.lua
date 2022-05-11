@@ -45,8 +45,8 @@ require('nvim-tree').setup{}
 require('todo-comments').setup{}
 
 -- setting up the org mode plugin
-require('orgmode').setup{}
-require('orgmode').setup_ts_grammar()
+--require('orgmode').setup{}
+--require('orgmode').setup_ts_grammar()
 
 -- settings up the telescope and addons
 require('telescope').setup{

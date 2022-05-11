@@ -9,7 +9,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - comment impatient line from `$HOME/.config/nvim/init.lua`
 - launch nvim, ignore errors and execute `:PackerInstall`
 - uncomment impatient line from the same file
-- install treesitter languages with: `:TSInstall <language(s)>` (rust, lua, org, ...)
+- install treesitter languages with: `:TSInstall <language(s)>` (rust, lua, markdown, ...)
 - install LSP servers with: `:LspInstall <server_name>` (rust_analyzer, ...)
 - (or use just `:LspInstall` for automatic server installation)
 
