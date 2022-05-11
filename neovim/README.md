@@ -1,9 +1,9 @@
-* neovim
+# neovim
 	this directory contains the main config
 
-* neovim_alt
+# neovim_alt
 	this directory contains the alternative NvChad config
 
-* neovim_system
+# neovim_system
 	this directory contains the system wide config (cursor restore)
 
