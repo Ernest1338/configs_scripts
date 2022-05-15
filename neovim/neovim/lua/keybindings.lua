@@ -1,6 +1,7 @@
 -- file location: ~/.config/nvim/lua/keybindings.lua
 
 -- NOTE: mapping to toggle comments would be cool
+-- (https://github.com/terrortylor/nvim-comment)
 
 -- remap space as leader key
 --vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
