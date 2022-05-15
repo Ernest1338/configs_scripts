@@ -1,5 +1,7 @@
 -- file location: ~/.config/nvim/lua/keybindings.lua
 
+-- NOTE: mapping to toggle comments would be cool
+
 -- remap space as leader key
 --vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.g.mapleader = ' '
@@ -63,8 +65,8 @@ wk.register({
 			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP code actions" },
 			d = { "<cmd>Telescope diagnostics<cr>", "LSP diagnostics" },
 			f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "LSP format buffer" },
-			r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" },
-			R = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
+			R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" },
+			r = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
 			S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "LSP signature" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "LSP symbols" },
 			-- TODO: Add more LSP mappings
@@ -123,6 +125,9 @@ wk.register({
 			n = { "<C-w>vnew", "New window" },
 			w = { "<C-w>w", "Cycle windows" },
 		},
+	},
+	g = {
+		D = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
 	},
 })
 
