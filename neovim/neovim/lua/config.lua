@@ -35,6 +35,9 @@ vim.o.colorcolumn = '90'
 vim.o.termguicolors = true
 vim.cmd("colorscheme monokai_pro")
 
+-- clipboard shared with the system
+vim.cmd("set clipboard+=unnamedplus")
+
 -- highlight trailing spaces
 --vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
 --vim.cmd([[match EoLSpace /\s\+$/]])

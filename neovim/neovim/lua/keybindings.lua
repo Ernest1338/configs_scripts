@@ -34,6 +34,7 @@ wk.register({
 		[';'] = {
 			name = "Prefix",
 		},
+		[':'] = { "<cmd>Telescope commands<cr>", "Commands" },
 		b = {
 			name = "Buffers",
 			['<tab>'] = { "<cmd>bnext<cr>", "Next buffer" },
