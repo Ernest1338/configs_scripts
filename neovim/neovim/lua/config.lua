@@ -38,6 +38,9 @@ vim.cmd("colorscheme monokai_pro")
 -- clipboard shared with the system
 vim.cmd("set clipboard+=unnamedplus")
 
+-- prevent jumping of the screen
+vim.cmd("set signcolumn=yes")
+
 -- highlight trailing spaces
 --vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
 --vim.cmd([[match EoLSpace /\s\+$/]])
