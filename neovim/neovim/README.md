@@ -25,6 +25,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - cool color theme `https://github.com/folke/tokyonight.nvim`
 - telescope `https://github.com/nvim-telescope/telescope.nvim`
 - auto brackets `https://github.com/windwp/nvim-autopairs`
+- lightweight lsp plugin with performant ui `https://github.com/glepnir/lspsaga.nvim`
 - orgmode has a bug with folds, workaround - `zx`
 - the project file edit shortcut is a workaround for a missing feature in telescope-project
 - play around with packer's lazy loading functionality
