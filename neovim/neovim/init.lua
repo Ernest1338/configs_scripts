@@ -5,8 +5,8 @@
 -- load impatient and the packer plugins file
 require('impatient')
 require('plugins')
--- keybindings file
-require('keybindings')
+-- mappings file
+require('mappings')
 -- editor configs
 require('config')
 

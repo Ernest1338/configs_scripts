@@ -1,6 +1,6 @@
--- file location: ~/.config/nvim/lua/keybindings.lua
+-- file location: ~/.config/nvim/lua/mappings.lua
 
--- NOTE: mapping to toggle comments would be cool
+-- TODO: mapping to toggle comments would be cool
 -- (https://github.com/terrortylor/nvim-comment)
 
 -- remap space as leader key
@@ -13,6 +13,8 @@ vim.api.nvim_set_keymap('n', '<f2>', "<cmd>WhichKey<cr>", {})
 
 -- LSP mappings
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {})
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', {})
+vim.api.nvim_set_keymap('n', 'gD', '<cmd>Telescope lsp_references<cr>', {})
 
 -- which key mappings
 local wk = require('which-key')
@@ -61,17 +63,27 @@ wk.register({
 		g = {
 			name = "Git",
 			g = { "<cmd>Neogit<cr>", "Neogit" },
+			s = { "<cmd>Gitsigns toggle_signs<cr>", "Toggle signs" },
+			l = { "<cmd>Gitsigns blame_line<cr>", "Blame line" },
+			d = { "<cmd>Gitsigns diffthis<cr>", "Diff this" },
+			n = { "<cmd>Gitsigns next_hunk<cr>", "Next hunk" },
+			p = { "<cmd>Gitsigns prev_hunk<cr>", "Previous hunk" },
+			x = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle deleted" },
+			c = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle current line blame" },
+			w = { "<cmd>Gitsigns toggle_word_diff<cr>", "Toggle word diff" },
 		},
 		l = {
 			name = "LSP",
 			a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP code actions" },
 			d = { "<cmd>Telescope diagnostics<cr>", "LSP diagnostics" },
-			f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "LSP format buffer" },
+			f = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 500)<cr>", "LSP format buffer" },
 			R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" },
 			r = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
 			S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "LSP signature" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "LSP symbols" },
-			-- TODO: Add more LSP mappings
+			i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "LSP implementation" },
+			t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "LSP type definition" },
+			-- TODO: Even more mappings?
 		},
 		o = {
 			name = "Open",
@@ -127,9 +139,6 @@ wk.register({
 			n = { "<C-w>vnew", "New window" },
 			w = { "<C-w>w", "Cycle windows" },
 		},
-	},
-	g = {
-		D = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
 	},
 })
 

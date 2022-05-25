@@ -53,5 +53,9 @@ return require('packer').startup(function()
 	use 'folke/todo-comments.nvim'
 	-- doom emacs style key showcase
 	use 'folke/which-key.nvim'
+	-- support for DAP protocol for debugging
+	--use 'mfussenegger/nvim-dap'
+	-- ui for debugging
+	--use 'rcarriga/nvim-dap-ui'
 end)
 

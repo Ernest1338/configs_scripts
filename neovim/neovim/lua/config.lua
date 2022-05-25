@@ -41,6 +41,9 @@ vim.cmd("set clipboard+=unnamedplus")
 -- prevent jumping of the screen
 vim.cmd("set signcolumn=yes")
 
+-- auto format on write
+--vim.cmd("autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)")
+
 -- highlight trailing spaces
 --vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
 --vim.cmd([[match EoLSpace /\s\+$/]])
