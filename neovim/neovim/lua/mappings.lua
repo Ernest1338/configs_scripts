@@ -57,6 +57,7 @@ wk.register({
 			O = { "<cmd>Telescope find_files cwd=~<cr>", "Global find file" },
 			q = { "<cmd>wq<cr>", "Save and quit" },
 			Q = { "<cmd>wq!<cr>", "Force save and quit" },
+			r = { "<cmd>edit!<cr>", "Reload file" },
 			s = { "<cmd>w<cr>", "Save file" },
 			t = { "<cmd>Telescope filetypes<cr>", "File type" },
 		},
