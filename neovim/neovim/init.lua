@@ -44,6 +44,9 @@ require('nvim-tree').setup{}
 -- setting up the TODO highlight plugin
 require('todo-comments').setup{}
 
+-- setting up the catppuccin theme plugin
+--require('catppuccin').setup{}
+
 -- setting up the org mode plugin
 --require('orgmode').setup{}
 --require('orgmode').setup_ts_grammar()

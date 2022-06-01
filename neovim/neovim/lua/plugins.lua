@@ -7,6 +7,7 @@ return require('packer').startup(function()
 	use 'lewis6991/impatient.nvim'
 	-- theme (potentially not necessary)
 	use 'tanvirtin/monokai.nvim'
+	--use 'catppuccin/nvim'
 	-- telescope
 	use {
 		'nvim-telescope/telescope.nvim',
