@@ -101,6 +101,7 @@ export EDITOR='nvim'
 alias cp='cp -i'                          # confirm before overwriting something
 alias np='nano -w PKGBUILD'
 alias more=less
+alias l='ls --color=auto'
 alias ll='ls -lah --color=auto'
 alias ip='ip --color=auto'
 alias sudo='sudo '                        # this makes the aliases with with sudo
