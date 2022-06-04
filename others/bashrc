@@ -92,22 +92,23 @@ unset use_color safe_term match_lhs sh
 
 # EXPORTS
 
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state"
-export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME"/.local/share
+export XDG_CONFIG_HOME="$HOME"/.config
+export XDG_STATE_HOME="$HOME"/.local/state
+export XDG_CACHE_HOME="$HOME"/.cache
 export PS1="\[$(tput bold)\]\[\033[38;5;0m\]\[\033[48;5;11m\]\u\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;255m\]\W\[$(tput sgr0)\]\[\033[38;5;11m\]>\[$(tput sgr0)\] \[$(tput sgr0)\]"
 export EDITOR="nvim"
-export ANDROID_HOME="$XDG_DATA_HOME/android"
-export HISTFILE="$XDG_STATE_HOME/bash/history"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-export KDEHOME="$XDG_CONFIG_HOME/kde"
-export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
-export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export ANDROID_HOME="$XDG_DATA_HOME"/android
+export HISTFILE="$XDG_STATE_HOME"/bash/history
+#export CARGO_HOME="$XDG_DATA_HOME"/cargo
+#export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export KDEHOME="$XDG_CONFIG_HOME"/kde
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
+#export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 
 alias cp='cp -i'                          # confirm before overwriting something
 alias np='nano -w PKGBUILD'
@@ -190,4 +191,5 @@ man() {
 
     command man "$@"
 }
-source "$XDG_DATA_HOME/cargo/env"
+source "$HOME"/.cargo/env
+. "$HOME/.cargo/env"
