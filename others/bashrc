@@ -108,7 +108,6 @@ export KDEHOME="$XDG_CONFIG_HOME/kde"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
 alias cp='cp -i'                          # confirm before overwriting something
 alias np='nano -w PKGBUILD'
