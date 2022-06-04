@@ -1,0 +1,8 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+#vblank_mode=0
+CARGO_HOME="$XDG_DATA_HOME/cargo"
+RUSTUP_HOME="$XDG_DATA_HOME/rustup"
