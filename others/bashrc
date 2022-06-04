@@ -192,4 +192,3 @@ man() {
     command man "$@"
 }
 source "$XDG_DATA_HOME/cargo/env"
-. "/home/dvdmanjaro/.local/share/cargo/env"
