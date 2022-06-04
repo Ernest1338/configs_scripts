@@ -90,13 +90,25 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-#OLD# export PS1="\[\033[01;32m\][\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] "
-#export PS1="\[\033[01;32m\]\u\[\033[01;37m\] \W\[\033[01;32m\]\$\[\033[00m\] "
-#export PS1="\033[1m\033[7m\033[93m$\[\033[00m\] \e[47m\[\033[01;34m\]\W\e[40m\[\033[01;93m\]>\[\033[00m\] "
-#export PS1="\033[1m\033[7m\033[93m$\[\033[00m\] \[\033[01;37m\]\W\[\033[01;93m\]>\[\033[00m\] "
-#export PS1="\033[1m\033[7m\033[93m\u\[\033[00m\] \[\033[01;37m\]\W\[\033[01;93m\]>\[\033[00m\] "
+# EXPORTS
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
 export PS1="\[$(tput bold)\]\[\033[38;5;0m\]\[\033[48;5;11m\]\u\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;255m\]\W\[$(tput sgr0)\]\[\033[38;5;11m\]>\[$(tput sgr0)\] \[$(tput sgr0)\]"
-export EDITOR='nvim'
+export EDITOR="nvim"
+export ANDROID_HOME="$XDG_DATA_HOME/android"
+export HISTFILE="$XDG_STATE_HOME/bash/history"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export KDEHOME="$XDG_CONFIG_HOME/kde"
+export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
 alias cp='cp -i'                          # confirm before overwriting something
 alias np='nano -w PKGBUILD'
@@ -104,8 +116,11 @@ alias more=less
 alias l='ls --color=auto'
 alias ll='ls -lah --color=auto'
 alias ip='ip --color=auto'
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 alias sudo='sudo '                        # this makes the aliases with with sudo
+alias fixscreen='sxiv -fb /home/dvdmanjaro/Desktop/Files/black.jpg'
 alias alpvm='docker run --rm -it alpine'
+alias threebe='cd /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe; code /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe'
 #alias alpssh='alpsshname=$(docker run --rm -d -t alpine); docker exec -t $alpsshname apk add openssh; docker exec -it $alpsshname sh'
 alias hostVPNadd='nmcli connection delete client-wg0; nmcli connection import type wireguard file /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nmcli con mod client-wg0 connection.autoconnect no'
 alias hostVPNedit='echo "" > /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nano /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf'
@@ -176,4 +191,5 @@ man() {
 
     command man "$@"
 }
-source "$HOME/.cargo/env"
+source "$XDG_DATA_HOME/cargo/env"
+. "/home/dvdmanjaro/.local/share/cargo/env"
