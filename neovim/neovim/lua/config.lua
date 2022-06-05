@@ -35,13 +35,20 @@ vim.o.colorcolumn = '90'
 vim.o.termguicolors = true
 --vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 --vim.cmd[[colorscheme catppuccin]]
-vim.cmd[[colorscheme monokai_pro]]
+vim.cmd("colorscheme monokai_pro")
 
 -- clipboard shared with the system
 vim.cmd("set clipboard+=unnamedplus")
 
 -- prevent jumping of the screen
 vim.cmd("set signcolumn=yes")
+
+-- neovide configs
+vim.g.neovide_remember_window_size = true
+vim.g.neovide_remember_window_position = true
+vim.g.neovide_cursor_antialiasing = true
+vim.g.neovide_refresh_rate = 75
+vim.g.neovide_fullscreen = true
 
 -- auto format on write
 --vim.cmd("autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)")
