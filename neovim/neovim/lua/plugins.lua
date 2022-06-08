@@ -27,6 +27,8 @@ return require('packer').startup(function()
 	}
 	-- great snippets plugin, needs setting up (slowest plugin but whatever)
 	use 'L3MON4D3/LuaSnip'
+	-- snippets collection
+	use 'rafamadriz/friendly-snippets'
 	-- completition framework
 	use {
 		'hrsh7th/nvim-cmp',

@@ -44,6 +44,9 @@ require('nvim-tree').setup{}
 -- setting up the TODO highlight plugin
 require('todo-comments').setup{}
 
+-- set up snippets from the friendly-snippets plugin
+require("luasnip.loaders.from_vscode").lazy_load()
+
 -- setting up the catppuccin theme plugin
 --require('catppuccin').setup{}
 
