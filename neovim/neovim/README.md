@@ -30,6 +30,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - the project file edit shortcut is a workaround for a missing feature in telescope-project
 - play around with packer's lazy loading functionality
 - think of using NvChad (alt config) `https://github.com/NvChad/NvChad`
+- creating files from nvim: go to git using telescope file_browser, normal mode: `c` to create file
+- real time collaborative editing plugin - `https://github.com/jbyuki/instant.nvim`
+- FIXME `https://github.com/nvim-telescope/telescope-file-browser.nvim/pull/117` doesnt work but should
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project
 
