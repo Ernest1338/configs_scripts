@@ -14,6 +14,7 @@ if [ $1 == "install" ] || [ $1 == "update" ]; then
 		cat ./lua/config.lua > $HOME/.config/nvim/lua/config.lua &&
 		cat ./lua/mappings.lua > $HOME/.config/nvim/lua/mappings.lua &&
 		cat ./lua/plugins.lua > $HOME/.config/nvim/lua/plugins.lua &&
+		cat ./lua/snippets.lua > $HOME/.config/nvim/lua/snippets.lua &&
 		echo "Done"
 	else
 		echo "Aborting..."
@@ -24,6 +25,7 @@ elif [ $1 == "repo" ]; then
 	cat $HOME/.config/nvim/lua/config.lua > ./lua/config.lua &&
 	cat $HOME/.config/nvim/lua/mappings.lua > ./lua/mappings.lua &&
 	cat $HOME/.config/nvim/lua/plugins.lua > ./lua/plugins.lua
+	cat $HOME/.config/nvim/lua/snippets.lua > ./lua/snippets.lua
 else
 	echo "Usage: ./config.sh install/update/repo"
 fi
