@@ -8,13 +8,22 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- use f2 fo show whichkey window in normal mode
-vim.api.nvim_set_keymap('n', '<f2>', "<cmd>WhichKey<cr>", {})
+-- use f2 fo show whichkey window
+vim.keymap.set({ "n", "v", "i", "s" }, "<f2>", "<cmd>WhichKey<cr>", { silent = true })
 
 -- LSP mappings
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', {})
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', {})
-vim.api.nvim_set_keymap('n', 'gD', '<cmd>Telescope lsp_references<cr>', {})
+vim.keymap.set({ "n" }, "K", function() vim.lsp.buf.hover() end, { silent = true })
+vim.keymap.set({ "n" }, "gd", function() vim.lsp.buf.definition() end, { silent = true })
+vim.keymap.set({ "n" }, "gD", "<cmd>Telescope lsp_references<cr>", { silent = true })
+
+-- luasnip mappings
+local ls = require("luasnip")
+-- ctrl+; for snippet completition
+vim.keymap.set({ "i", "s" }, "<c-;>", function()
+	if ls.expand_or_jumpable() then
+		ls.expand_or_jump()
+	end
+end, { silent = true })
 
 -- which key mappings
 local wk = require('which-key')
