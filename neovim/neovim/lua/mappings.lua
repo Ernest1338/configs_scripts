@@ -4,9 +4,9 @@
 -- (https://github.com/terrortylor/nvim-comment)
 
 -- remap space as leader key
---vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+--vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- use f2 fo show whichkey window
 vim.keymap.set({ "n", "v", "i", "s" }, "<f2>", "<cmd>WhichKey<cr>", { silent = true })
@@ -32,29 +32,29 @@ vim.keymap.set({ "i", "s" }, "<c-:>", function()
 end, { silent = true })
 
 -- which key mappings
-local wk = require('which-key')
+local wk = require("which-key")
 wk.register({
-	['<leader>'] = {
-		['/'] = { "<cmd>Telescope live_grep<cr>", "Search" },
-		['?'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current file search" },
-		['<leader>'] = { "<cmd>Telescope find_files<cr>", "Find File" },
+	["<leader>"] = {
+		["/"] = { "<cmd>Telescope live_grep<cr>", "Search" },
+		["?"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current file search" },
+		["<leader>"] = { "<cmd>Telescope find_files<cr>", "Find File" },
 		T = { "<cmd>NvimTreeToggle<cr>", "Tree" },
-		[','] = {
+		[","] = {
 			name = "Tab",
-			[','] = { "<cmd>tabnext<cr>", "Switch tab" },
-			['<tab>'] = { "<cmd>tabnext<cr>", "Switch tab" },
+			[","] = { "<cmd>tabnext<cr>", "Switch tab" },
+			["<tab>"] = { "<cmd>tabnext<cr>", "Switch tab" },
 			c = { "<cmd>tabnew<cr>", "Create cew tab" },
 			d = { "<cmd>tabclose<cr>", "Delete tab" },
 			n = { "<cmd>tabnext<cr>", "Next tab" },
 			p = { "<cmd>tabprevious<cr>", "Previous tab" },
 		},
-		[';'] = {
+		[";"] = {
 			name = "Prefix",
 		},
-		[':'] = { "<cmd>Telescope commands<cr>", "Commands" },
+		[":"] = { "<cmd>Telescope commands<cr>", "Commands" },
 		b = {
 			name = "Buffers",
-			['<tab>'] = { "<cmd>bnext<cr>", "Next buffer" },
+			["<tab>"] = { "<cmd>bnext<cr>", "Next buffer" },
 			b = { "<cmd>Telescope buffers<cr>", "Switch buffer" },
 			c = { "<cmd>enew<cr>", "Create new buffer" },
 			d = { "<cmd>bdelete<cr>", "Delete buffer" },
@@ -64,7 +64,7 @@ wk.register({
 		},
 		f = {
 			name = "File",
-			['/'] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find" },
+			["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find" },
 			c = { "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", "Edit neovim configs" },
 			f = { "<cmd>Telescope find_files<cr>", "Find File" },
 			n = { "<cmd>enew<cr>", "New File" },
@@ -108,8 +108,8 @@ wk.register({
 		},
 		p = {
 			name = "Projects",
-			['/'] = { "<cmd>Telescope live_grep<cr>", "Project search" },
-			e = { "<cmd>edit "..os.getenv('HOME').."/.local/share/nvim/telescope-projects.txt<cr>", "Edit the projects file" },
+			["/"] = { "<cmd>Telescope live_grep<cr>", "Project search" },
+			e = { "<cmd>edit "..os.getenv("HOME").."/.local/share/nvim/telescope-projects.txt<cr>", "Edit the projects file" },
 			p = { "<cmd>Telescope project<cr>", "Project menu" },
 		},
 		q = {
@@ -119,7 +119,7 @@ wk.register({
 		},
 		r = {
 			name = "Remove",
-			['<space>'] = { [[<cmd>%s/\s\+$//e<cr>]], "Remove trailing spaces" },
+			["<space>"] = { [[<cmd>%s/\s\+$//e<cr>]], "Remove trailing spaces" },
 			--r = { "<cmd>source $MYVIMRC<cr>", "Reload config" }, -- TODO: reload config mapping
 		},
 		s = {
@@ -133,16 +133,16 @@ wk.register({
 			f = { "<cmd>Telescope file_browser<cr>", "File browser" },
 			g = { "<cmd>Telescope git_files<cr>", "Find git files" },
 			s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-			['<space>'] = { "<cmd>Telescope<cr>", "Telescope" },
+			["<space>"] = { "<cmd>Telescope<cr>", "Telescope" },
 			t = { "<cmd>tabnext<cr>", "Next tab" },
 			T = { "<cmd>TodoTelescope<cr>", "Telescope TODO list" },
 		},
-		['<tab>'] = {
+		["<tab>"] = {
 			name = "Workspace",
 		},
 		w = {
 			name = "Window",
-			['<tab>'] = { "<C-w>w", "Cycle windows" },
+			["<tab>"] = { "<C-w>w", "Cycle windows" },
 			c = { "<cmd>q<cr>", "Close window" },
 			d = { "<cmd>q<cr>", "Delete window" },
 			H = { "<C-w><", "Resize left" },

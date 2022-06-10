@@ -26,10 +26,10 @@ vim.o.cursorline = true
 vim.o.scrolloff = 4
 
 -- enable mouse support
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- set the long line highlight
-vim.o.colorcolumn = '90'
+vim.o.colorcolumn = "90"
 
 -- set the colorscheme
 vim.o.termguicolors = true
