@@ -18,6 +18,7 @@ vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.softtabstop = 4
 vim.o.tabstop = 4
+vim.o.expandtab = true
 
 -- hightlight current line
 vim.o.cursorline = true
