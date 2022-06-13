@@ -44,6 +44,10 @@ vim.cmd("set clipboard+=unnamedplus")
 -- prevent jumping of the screen
 vim.cmd("set signcolumn=yes")
 
+-- gives one more line to work with
+-- TODO: uncomment once v0.8 dropps
+--vim.cmd("set cmdheight=0")
+
 -- neovide configs
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_remember_window_position = true
