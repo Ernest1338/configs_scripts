@@ -56,9 +56,9 @@ wk.register({
         T = { "<cmd>NvimTreeToggle<cr>", "Tree" },
         [","] = {
             name = "Tab",
-            [","] = { "<cmd>tabnext<cr>", "Switch tab" },
+            [","] = { "<cmd>tabnew<cr>", "New tab" },
             ["<tab>"] = { "<cmd>tabnext<cr>", "Switch tab" },
-            c = { "<cmd>tabnew<cr>", "Create cew tab" },
+            c = { "<cmd>tabnew<cr>", "Create new tab" },
             d = { "<cmd>tabclose<cr>", "Delete tab" },
             n = { "<cmd>tabnext<cr>", "Next tab" },
             p = { "<cmd>tabprevious<cr>", "Previous tab" },
@@ -150,6 +150,7 @@ wk.register({
             s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
             ["<space>"] = { "<cmd>Telescope<cr>", "Telescope" },
             t = { "<cmd>tabnext<cr>", "Next tab" },
+            n = { "<cmd>tabnew<cr>", "New tab" },
             T = { "<cmd>TodoTelescope<cr>", "Telescope TODO list" },
         },
         ["<tab>"] = {
