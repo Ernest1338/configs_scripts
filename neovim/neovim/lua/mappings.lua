@@ -24,8 +24,14 @@ vim.keymap.set({ "i", "s" }, "<c-;>", function()
         ls.expand_or_jump()
     end
 end, { silent = true })
--- ctrl+: for snippet choice list toggle
+-- ctrl+: for jumping back
 vim.keymap.set({ "i", "s" }, "<c-:>", function()
+    if ls.jumpable(-1) then
+        ls.jump(-1)
+    end
+end, { silent = true })
+-- ctrl+alt+; for snippet choice list toggle
+vim.keymap.set({ "i", "s" }, "<c-a-;>", function()
     if ls.choice_active() then
         ls.change_choice(1)
     end
