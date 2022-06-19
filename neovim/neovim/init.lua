@@ -15,7 +15,11 @@ require("snippets")
 -- PLUGINS CONFIG SECTION
 
 -- setting up the lualine plugin
-require("lualine").setup{}
+require("lualine").setup{
+    --options = {
+        --path = 3,
+    --}
+}
 
 -- setting up treesitter
 require("nvim-treesitter.configs").setup{

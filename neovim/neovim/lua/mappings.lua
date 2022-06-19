@@ -89,6 +89,7 @@ wk.register({
             c = { "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", "Edit neovim configs" },
             f = { "<cmd>Telescope find_files<cr>", "Find File" },
             n = { "<cmd>enew<cr>", "New File" },
+            i = { "<cmd>f!<cr>", "File info (path)" },
             o = { "<cmd>Telescope file_browser cwd=~<cr>", "Open file" },
             O = { "<cmd>Telescope find_files cwd=~<cr>", "Global find file" },
             q = { "<cmd>wq<cr>", "Save and quit" },
