@@ -36,17 +36,17 @@ vim.o.colorcolumn = "90"
 vim.o.termguicolors = true
 --vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 --vim.cmd[[colorscheme catppuccin]]
-vim.cmd("colorscheme monokai_pro")
+vim.cmd([[colorscheme monokai_pro]])
 
 -- clipboard shared with the system
-vim.cmd("set clipboard+=unnamedplus")
+vim.cmd([[set clipboard+=unnamedplus]])
 
 -- prevent jumping of the screen
-vim.cmd("set signcolumn=yes")
+vim.cmd([[set signcolumn=yes]])
 
 -- gives one more line to work with
 -- TODO: uncomment once v0.8 dropps
---vim.cmd("set cmdheight=0")
+--vim.cmd([[set cmdheight=0]])
 
 -- neovide configs
 vim.g.neovide_remember_window_size = true
@@ -56,7 +56,10 @@ vim.g.neovide_refresh_rate = 75
 vim.g.neovide_fullscreen = true
 
 -- auto format on write
---vim.cmd("autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)")
+--vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)]])
+
+-- auto remove trailing spaces on write
+--vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 
 -- highlight trailing spaces
 --vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])

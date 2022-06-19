@@ -37,7 +37,7 @@ return require("packer").startup(function()
             "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path", "saadparwaiz1/cmp_luasnip"
         }
-    } 
+    }
     -- magit but its nvim
     use "TimUntersberger/neogit"
     -- git decorations (potentially not necessary)

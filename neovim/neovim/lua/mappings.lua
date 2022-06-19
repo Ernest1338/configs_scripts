@@ -111,6 +111,10 @@ wk.register({
             c = { "<cmd>Gitsigns toggle_current_line_blame<cr>", "Toggle current line blame" },
             w = { "<cmd>Gitsigns toggle_word_diff<cr>", "Toggle word diff" },
         },
+        h = {
+            name = "Highlight", -- maybe something different, for now - highlight
+            t = { [[<cmd>hi EoLSpace ctermbg=238 guibg=#802020<cr><cmd>match EoLSpace /\s\+$/<cr>]], "Highlight trailing spaces" },
+        },
         l = {
             name = "LSP",
             a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP code actions" },
