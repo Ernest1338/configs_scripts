@@ -12,9 +12,17 @@ vim.g.maplocalleader = " "
 vim.keymap.set({ "n", "v", "i", "s" }, "<f2>", "<cmd>WhichKey<cr>", { silent = true })
 
 -- LSP mappings
-vim.keymap.set({ "n" }, "K", function() vim.lsp.buf.hover() end, { silent = true })
+vim.keymap.set({ "n" }, "K", function()
+    local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
+    if vim.tbl_isempty(line_diagnostics) then
+        vim.lsp.buf.hover()
+    else
+        vim.diagnostic.open_float()
+    end
+end, { silent = true })
 vim.keymap.set({ "n" }, "gd", function() vim.lsp.buf.definition() end, { silent = true })
 vim.keymap.set({ "n" }, "gD", "<cmd>Telescope lsp_references<cr>", { silent = true })
+vim.keymap.set({ "n" }, "gi", function() vim.lsp.buf.implementation() end, { silent = true })
 
 -- luasnip mappings
 local ls = require("luasnip")
