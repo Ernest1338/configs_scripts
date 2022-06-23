@@ -29,6 +29,13 @@ vim.o.scrolloff = 4
 -- enable mouse support
 vim.o.mouse = "a"
 
+-- diagnostic popup
+vim.diagnostic.config({
+    virtual_text = true,
+    --signs = false,
+    float = { border = "single" },
+})
+
 -- set the long line highlight
 vim.o.colorcolumn = "90"
 
