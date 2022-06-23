@@ -118,9 +118,9 @@ alias ll='ls -lah --color=auto'
 alias ip='ip --color=auto'
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 alias sudo='sudo '                        # this makes the aliases with with sudo
-alias fixscreen='sxiv -fb /home/dvdmanjaro/Desktop/Files/black.jpg'
+#alias fixscreen='sxiv -fb /home/dvdmanjaro/Desktop/Files/black.jpg'
 alias alpvm='docker run --rm -it alpine'
-alias threebe='cd /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe; code /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe'
+#alias threebe='cd /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe; code /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe'
 #alias alpssh='alpsshname=$(docker run --rm -d -t alpine); docker exec -t $alpsshname apk add openssh; docker exec -it $alpsshname sh'
 alias hostVPNadd='nmcli connection delete client-wg0; nmcli connection import type wireguard file /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nmcli con mod client-wg0 connection.autoconnect no'
 alias hostVPNedit='echo "" > /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nano /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf'
@@ -192,4 +192,3 @@ man() {
     command man "$@"
 }
 source "$HOME"/.cargo/env
-. "$HOME/.cargo/env"
