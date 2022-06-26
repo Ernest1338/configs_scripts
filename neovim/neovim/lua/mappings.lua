@@ -128,6 +128,8 @@ wk.register({
             a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP code actions" },
             d = { "<cmd>Telescope diagnostics<cr>", "LSP diagnostics" },
             f = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 500)<cr>", "LSP format buffer" },
+            -- once 0.8 drops
+            --f = { "<cmd>lua vim.lsp.buf.format({timeout_ms=500})<cr>", "LSP format buffer" },
             R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" },
             r = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
             S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "LSP signature" },
