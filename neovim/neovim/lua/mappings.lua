@@ -47,12 +47,13 @@ end, { silent = true })
 
 -- telescope mappings
 local fb_actions = require("telescope").extensions.file_browser.actions
+local ts_actions = require("telescope.actions")
 require("telescope").setup{
     defaults = {
         mappings = {
             i = {
-                ["<C-j>"] = require("telescope.actions").move_selection_next,
-                ["<C-k>"] = require("telescope.actions").move_selection_previous,
+                ["<C-j>"] = ts_actions.move_selection_next,
+                ["<C-k>"] = ts_actions.move_selection_previous,
                 -- Ctrl + Enter to create file/folder if no results found
                 ["<C-CR>"] = fb_actions.create_from_prompt,
             },
