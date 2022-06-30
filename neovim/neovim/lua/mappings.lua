@@ -102,6 +102,9 @@ wk.register({
             name = "File",
             ["/"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find" },
             c = { "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", "Edit neovim configs" },
+            d = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find" },
+            -- TODO
+            --["'"] = { "<cmd>lua print('TODO')<cr>", "Diff with another file" },
             f = { "<cmd>Telescope find_files<cr>", "Find File" },
             n = { "<cmd>enew<cr>", "New File" },
             i = { "<cmd>f!<cr>", "File info (path)" },
