@@ -9,7 +9,13 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- use f2 fo show whichkey window
-vim.keymap.set({ "n", "v", "i", "s" }, "<f2>", "<cmd>WhichKey<cr>", { silent = true })
+vim.keymap.set({ "n", "v", "i", "s" }, "<f2>", "<cmd>WhichKey<cr>", { noremap = true, silent = true })
+-- keep it centered when searching
+vim.keymap.set("n", "n", "nzzzv", { noremap = true, silent = true })
+-- delete word by pressing ctrl+backspace while in insert mode
+vim.keymap.set("i", "<c-backspace>", "<esc>bcw", { noremap = true, silent = true })
+-- switch characters with ctrl+y
+--vim.keymap.set("i", "<c-y>", "<esc>xpi", { noremap = true, silent = true })
 
 -- LSP mappings
 vim.keymap.set({ "n" }, "K", function()
