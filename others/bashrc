@@ -109,6 +109,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
 export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 #export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
+export CARGO_TARGET_DIR="$HOME"/Programming/CargoTarget
 
 alias cp='cp -i'                          # confirm before overwriting something
 alias np='nano -w PKGBUILD'
