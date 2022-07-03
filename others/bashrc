@@ -91,6 +91,7 @@ fi
 unset use_color safe_term match_lhs sh
 
 # EXPORTS
+# NOTE: might need to add some of those to the /etc/environment file to make them work system-wide
 
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CONFIG_HOME="$HOME"/.config
