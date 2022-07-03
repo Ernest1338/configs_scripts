@@ -4,3 +4,6 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 #vblank_mode=0
+
+# check if the username is valid
+CARGO_TARGET_DIR=/home/dvdarch/Programming/CargoTarget
