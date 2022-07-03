@@ -3,6 +3,8 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
+# File location: /etc/environment
+#
 #vblank_mode=0
 
 # check if the username is valid
