@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# file location: ~/.local/bin/
+# make sure: chmod +x
+langs=`echo "rust lua python" | tr ' ' '\n'`
+commands=`echo "qemu qemu-img dd" | tr ' ' '\n'`
+selected=`printf "$langs\n$commands" | fzf`
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+read -p "Enter Query: " query
+
+#if printf $langs | grep -qs $selected ; then
+    #query=`echo $query | tr ' ' '+'`
+    #echo \"curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query & read
+#else
+    #curl -s cht.sh/$selected~$query & read
+#fi
+
+query=`echo $query | tr ' ' '+'`
+curl cht.sh/$selected/$query & read
+
