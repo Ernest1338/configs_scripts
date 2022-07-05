@@ -38,6 +38,8 @@ return require("packer").startup(function()
             "hrsh7th/cmp-path", "saadparwaiz1/cmp_luasnip"
         }
     }
+    -- better rust support
+    --use "simrat39/rust-tools.nvim"
     -- magit but its nvim
     use "TimUntersberger/neogit"
     -- git decorations (potentially not necessary)
