@@ -34,6 +34,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - real time collaborative editing plugin - `https://github.com/jbyuki/instant.nvim`
 - better folding (beta?) - `https://github.com/kevinhwang91/nvim-ufo`
 - better diagnostic ui - `https://git.sr.ht/~whynothugo/lsp_lines.nvim`
+- create custom submodes and menus - `https://github.com/anuvyklack/hydra.nvim`
+- highlight / trim whitespaces (minimal plugin in lua) - `https://github.com/zakharykaplan/nvim-retrail`
+- easily install lsp / dap servers, linters and formatters - `https://github.com/williamboman/mason.nvim`
 - FIXME `https://github.com/nvim-telescope/telescope-file-browser.nvim/pull/117` doesnt work but should
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project

@@ -53,7 +53,7 @@ return require("packer").startup(function()
     -- lsp configs
     use "neovim/nvim-lspconfig"
     -- lsp installer (potentially not necessary)
-    -- deprecated, as using the package manager is a better idea
+    -- deprecated, TODO: using mason.nvim is better now
     --use "williamboman/nvim-lsp-installer"
     -- highlight TODO, ... (potentially not necessary)
     use "folke/todo-comments.nvim"
