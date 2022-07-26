@@ -145,6 +145,9 @@ alias vimg='neovide --multigrid'
 
 xhost +local:root > /dev/null 2>&1
 
+# vim input mode for the shell
+set -o vi
+
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
 # it regains control.  #65623
