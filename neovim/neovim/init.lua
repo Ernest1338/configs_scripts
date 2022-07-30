@@ -72,8 +72,6 @@ require("which-key").setup{
         ["<tab>"] = "TAB",
     }
 }
--- show which key after 500ms
-vim.o.timeoutlen = 500
 
 -- settings up the completition framework
 local cmp = require("cmp")

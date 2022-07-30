@@ -36,6 +36,9 @@ vim.diagnostic.config({
     float = { border = "single" },
 })
 
+-- show which key after 500ms
+vim.o.timeoutlen = 500
+
 -- set the long line highlight
 vim.o.colorcolumn = "90"
 
