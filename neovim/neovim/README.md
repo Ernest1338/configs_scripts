@@ -9,7 +9,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - launch nvim, ignore errors, run: `:so ~/.config/nvim/lua/plugins.lua` then execute `:PackerInstall`
 - install treesitter languages with: `:TSInstall <language(s)>` (rust, lua, markdown, cpp, bash, ...)
 
-(optional - if nvim-lsp-installer installed)
+(optional - if nvim-lsp-installer installed, TODO: update to using mason.nvim)
 - install LSP servers with: `:LspInstall <server_name>` (rust_analyzer, ...)
 - (or use just `:LspInstall` for automatic server installation)
 
@@ -37,6 +37,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - create custom submodes and menus - `https://github.com/anuvyklack/hydra.nvim`
 - highlight / trim whitespaces (minimal plugin in lua) - `https://github.com/zakharykaplan/nvim-retrail`
 - easily install lsp / dap servers, linters and formatters - `https://github.com/williamboman/mason.nvim`
+- distraction-free editing (zen mode) - `https://github.com/Pocco81/true-zen.nvim`
 - FIXME `https://github.com/nvim-telescope/telescope-file-browser.nvim/pull/117` doesnt work but should
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project
