@@ -6,8 +6,8 @@
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim-lua
 ```
-- launch nvim, ignore errors, run: `:so ~/.config/nvim/lua/plugins.lua` then execute `:PackerInstall`
-- install treesitter languages with: `:TSInstall <language(s)>` (rust, lua, markdown, cpp, bash, ...)
+- install plugins by executing: `nvim -u ~/.config/nvim/lua/plugins.lua +PackerSync`
+- restart nvim and install treesitter languages with: `:TSInstall <language(s)>` (rust, lua, markdown, cpp, bash, ...)
 
 (optional - if nvim-lsp-installer installed, TODO: update to using mason.nvim)
 - install LSP servers with: `:LspInstall <server_name>` (rust_analyzer, ...)
