@@ -54,6 +54,11 @@ vim.cmd([[set clipboard+=unnamedplus]])
 -- prevent jumping of the screen
 vim.cmd([[set signcolumn=yes]])
 
+
+-- folding support with treesitter
+--vim.o.foldmethod = "expr"
+--vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- gives one more line to work with
 -- TODO: uncomment once v0.8 dropps
 --vim.cmd([[set cmdheight=0]])
