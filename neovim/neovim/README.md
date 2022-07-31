@@ -38,7 +38,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - highlight / trim whitespaces (minimal plugin in lua) - `https://github.com/zakharykaplan/nvim-retrail`
 - easily install lsp / dap servers, linters and formatters - `https://github.com/williamboman/mason.nvim`
 - distraction-free editing (zen mode) - `https://github.com/Pocco81/true-zen.nvim`
-- FIXME `https://github.com/nvim-telescope/telescope-file-browser.nvim/pull/117` doesnt work but should
+- tips on improving startup / performance of lua in nvim - `https://www.reddit.com/r/neovim/comments/opipij/guide_tips_and_tricks_to_reduce_startup_and/`
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project
 
