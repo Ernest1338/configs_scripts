@@ -111,7 +111,20 @@ return require("packer").startup(function()
     -- better rust support
     --use {
     --    "simrat39/rust-tools.nvim",
-    --    config = function() require("rust-tools").setup{} end
+    --    config = function()
+    --        require("rust-tools").setup{
+    --            server = {
+    --                standalone = true,
+    --            },
+    --            dap = {
+    --                adapter = {
+    --                    type = "executable",
+    --                    command = "lldb-vscode",
+    --                    name = "rt_lldb",
+    --                },
+    --            },
+    --        }
+    --    end
     --}
 
     -- magit but its nvim
@@ -183,9 +196,37 @@ return require("packer").startup(function()
     }
 
     -- support for DAP protocol for debugging
-    --use "mfussenegger/nvim-dap"
+    --use {
+    --    "mfussenegger/nvim-dap",
+    --    config = function()
+    --        local dap = require("dap")
+    --        dap.adapters.lldb = {
+    --            type = "executable",
+    --            command = "/usr/bin/lldb-vscode",
+    --            name = "lldb"
+    --        }
+    --        dap.configurations.rust = {
+    --            {
+    --                name = "Launch Debug",
+    --                type = "lldb",
+    --                request = "launch",
+    --                program = function()
+    --                    return vim.fn.input("Path to executable: ", os.getenv("CARGO_TARGET_DIR") .. "/debug/" .. "")
+    --                end,
+    --                cwd = "${workspaceFolder}",
+    --                stopOnEntry = false,
+    --                args = {},
+    --                initCommand = {},
+    --                runInTerminal = false
+    --            },
+    --        }
+    --    end
+    --}
 
     -- ui for debugging
-    --use "rcarriga/nvim-dap-ui"
+    --use {
+    --    "rcarriga/nvim-dap-ui",
+    --    config = function() require("dapui").setup{} end
+    --}
 end)
 
