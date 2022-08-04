@@ -101,7 +101,8 @@ return require("packer").startup(function()
                     }),
                     ["<CR>"] = cmp.mapping.confirm({
                         --behavior = cmp.ConfirmBehavior.Insert,
-                        select = true
+                        --select = true
+                        select = false
                     }),
                 }),
             }
