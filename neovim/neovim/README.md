@@ -39,6 +39,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - easily install lsp / dap servers, linters and formatters - `https://github.com/williamboman/mason.nvim`
 - distraction-free editing (zen mode) - `https://github.com/Pocco81/true-zen.nvim`
 - tips on improving startup / performance of lua in nvim - `https://www.reddit.com/r/neovim/comments/opipij/guide_tips_and_tricks_to_reduce_startup_and/`
+- (supposedly) very good git plugin - `https://github.com/tpope/vim-fugitive`
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project
 
