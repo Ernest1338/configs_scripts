@@ -95,14 +95,11 @@ return require("packer").startup(function()
                     ["<C-k>"] = cmp.mapping.select_prev_item(),
                     ["<C-j>"] = cmp.mapping.select_next_item(),
                     ["<C-e>"] = cmp.mapping.abort(),
-                    ["<Tab>"] = cmp.mapping.confirm({
-                        --behavior = cmp.ConfirmBehavior.Insert,
-                        select = true
-                    }),
+                    ["<Tab>"] = cmp.mapping.select_next_item(),
                     ["<CR>"] = cmp.mapping.confirm({
                         --behavior = cmp.ConfirmBehavior.Insert,
-                        select = true
-                        --select = false
+                        --select = true
+                        select = false
                     }),
                 }),
             }
@@ -156,10 +153,10 @@ return require("packer").startup(function()
     }
 
     -- file explorer / file tree
-    use {
-        "kyazdani42/nvim-tree.lua",
-        config = function() require("nvim-tree").setup{} end
-    }
+    --use {
+        --"kyazdani42/nvim-tree.lua",
+        --config = function() require("nvim-tree").setup{} end
+    --}
 
     -- lsp configs
     use {

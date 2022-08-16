@@ -74,7 +74,7 @@ wk.register({
         ["/"] = { "<cmd>Telescope live_grep<cr>", "Search" },
         ["?"] = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current file search" },
         ["<leader>"] = { "<cmd>Telescope find_files<cr>", "Find File" },
-        T = { "<cmd>NvimTreeToggle<cr>", "Tree" },
+        --T = { "<cmd>NvimTreeToggle<cr>", "Tree" },
         [","] = {
             name = "Tab",
             [","] = { "<cmd>tabnew<cr>", "New tab" },

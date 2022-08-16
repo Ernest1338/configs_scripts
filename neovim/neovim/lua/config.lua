@@ -3,8 +3,8 @@
 -- CONFIGS
 
 -- show numbers
-vim.o.number = true
-vim.o.relativenumber = true
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- incremental search
 vim.o.incsearch = true
@@ -26,8 +26,24 @@ vim.o.cursorline = true
 -- scroll when the cursor is 4 line from the bottom
 vim.o.scrolloff = 4
 
+-- enable break indent
+vim.o.breakindent = true
+
+-- save undo history
+vim.o.undofile = true
+
+-- case insensitive search
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+-- decrease update time
+vim.o.updatetime = 500
+
 -- enable mouse support
 vim.o.mouse = "a"
+
+-- better completion experience
+vim.o.completeopt = "menuone,noselect"
 
 -- diagnostic popup
 vim.diagnostic.config({
@@ -52,7 +68,7 @@ vim.cmd([[colorscheme monokai_pro]])
 vim.cmd([[set clipboard+=unnamedplus]])
 
 -- prevent jumping of the screen
-vim.cmd([[set signcolumn=yes]])
+vim.wo.signcolumn = "yes"
 
 
 -- folding support with treesitter
