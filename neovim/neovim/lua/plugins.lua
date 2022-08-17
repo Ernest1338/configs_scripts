@@ -8,7 +8,7 @@ return require("packer").startup(function()
     use "lewis6991/impatient.nvim"
 
     -- theme (potentially not necessary)
-    use "tanvirtin/monokai.nvim"
+    --use "tanvirtin/monokai.nvim"
 
     --use "navarasu/onedark.nvim"
 
