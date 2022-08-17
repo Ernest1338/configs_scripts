@@ -140,7 +140,7 @@ alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
 alias pyserv='python3 -m http.server 8080'
 alias vim='nvim'
 alias v='nvim'
-alias vi='nvim --noplugin'
+alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
 alias vimg='neovide --multigrid'
 
 xhost +local:root > /dev/null 2>&1
