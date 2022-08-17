@@ -74,6 +74,8 @@ vim.cmd([[set clipboard+=unnamedplus]])
 -- prevent jumping of the screen
 vim.wo.signcolumn = "yes"
 
+-- disable unused python provider
+vim.g.loaded_python3_provider = 0
 
 -- folding support with treesitter
 --vim.o.foldmethod = "expr"
