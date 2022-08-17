@@ -45,6 +45,9 @@ vim.o.mouse = "a"
 -- better completion experience
 vim.o.completeopt = "menuone,noselect"
 
+-- dont redraw the screen when executing macros / regexes
+vim.o.lazyredraw = true
+
 -- diagnostic popup
 vim.diagnostic.config({
     virtual_text = true,
