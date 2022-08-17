@@ -1,6 +1,6 @@
 -- file location: ~/.config/nvim/lua/plugins.lua
 
-return require("packer").startup(function()
+return require("packer").startup({function()
     -- package manager
     use "wbthomason/packer.nvim"
 
@@ -225,5 +225,17 @@ return require("packer").startup(function()
     --    "rcarriga/nvim-dap-ui",
     --    config = function() require("dapui").setup{} end
     --}
-end)
+end,
+config = {
+    --compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
+    display = {
+        open_fn = function()
+            return require("packer.util").float{ border = "rounded" }
+        end,
+        prompt_border = "rounded",
+   },
+   git = {
+       clone_timeout = 600,
+   },
+}})
 
