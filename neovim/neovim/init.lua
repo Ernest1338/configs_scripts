@@ -7,7 +7,7 @@ require("plugins")
 -- mappings file
 require("mappings")
 -- editor configs
-require("config")
+require("configs")
 -- additional snippets
 require("snippets")
 

@@ -11,7 +11,7 @@ if [ $1 == "install" ] || [ $1 == "update" ]; then
 		mkdir -p $HOME/.config/nvim/lua/ &&
 		echo "Installing fresh configs..." &&
 		cat ./init.lua > $HOME/.config/nvim/init.lua &&
-		cat ./lua/config.lua > $HOME/.config/nvim/lua/config.lua &&
+		cat ./lua/configs.lua > $HOME/.config/nvim/lua/configs.lua &&
 		cat ./lua/mappings.lua > $HOME/.config/nvim/lua/mappings.lua &&
 		cat ./lua/plugins.lua > $HOME/.config/nvim/lua/plugins.lua &&
 		cat ./lua/snippets.lua > $HOME/.config/nvim/lua/snippets.lua &&
@@ -22,7 +22,7 @@ if [ $1 == "install" ] || [ $1 == "update" ]; then
 elif [ $1 == "repo" ]; then
 	echo "Updating repo with the local configs..." &&
 	cat $HOME/.config/nvim/init.lua > ./init.lua &&
-	cat $HOME/.config/nvim/lua/config.lua > ./lua/config.lua &&
+	cat $HOME/.config/nvim/lua/configs.lua > ./lua/configs.lua &&
 	cat $HOME/.config/nvim/lua/mappings.lua > ./lua/mappings.lua &&
 	cat $HOME/.config/nvim/lua/plugins.lua > ./lua/plugins.lua
 	cat $HOME/.config/nvim/lua/snippets.lua > ./lua/snippets.lua
