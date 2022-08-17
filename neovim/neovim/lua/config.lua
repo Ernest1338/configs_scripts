@@ -63,7 +63,7 @@ vim.o.termguicolors = true
 --vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 --vim.cmd[[colorscheme catppuccin]]
 --vim.cmd([[colorscheme monokai_pro]])
-vim.cmd([[colorscheme monokai]])
+vim.cmd([[colorscheme gruvbox]])
 
 -- clipboard shared with the system
 vim.cmd([[set clipboard+=unnamedplus]])

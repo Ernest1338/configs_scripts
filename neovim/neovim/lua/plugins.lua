@@ -8,10 +8,9 @@ return require("packer").startup(function()
     use "lewis6991/impatient.nvim"
 
     -- theme (potentially not necessary)
+    use "ellisonleao/gruvbox.nvim"
     --use "tanvirtin/monokai.nvim"
-
     --use "navarasu/onedark.nvim"
-
     --use {
     --    "catppuccin/nvim",
     --    config = function() require("catppuccin").setup{} end
