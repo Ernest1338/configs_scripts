@@ -83,9 +83,9 @@ return require("packer").startup({function()
                     end,
                 },
                 sources = {
-                    {name = "buffer", option = {keyword_length = 2}},
-                    {name = "nvim_lsp"},
-                    {name = "luasnip"},
+                    {name = "buffer", keyword_length = 2},
+                    {name = "nvim_lsp", keyword_length = 2},
+                    {name = "luasnip", keyword_length = 2},
                     {name = "path"},
                 },
                 mapping = cmp.mapping.preset.insert({
