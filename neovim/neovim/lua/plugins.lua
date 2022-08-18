@@ -106,6 +106,40 @@ return require("packer").startup({function()
                 }),
                 -- dont ever autoselect options
                 preselect = cmp.PreselectMode.None,
+                formatting = {
+                    format = function(entry, vim_item)
+                        local kind_icons = {
+                            Text = "",
+                            Method = "",
+                            Function = "",
+                            Constructor = "",
+                            Field = "",
+                            Variable = "",
+                            Class = "ﴯ",
+                            Interface = "",
+                            Module = "",
+                            Property = "ﰠ",
+                            Unit = "",
+                            Value = "",
+                            Enum = "",
+                            Keyword = "",
+                            Snippet = "",
+                            Color = "",
+                            File = "",
+                            Reference = "",
+                            Folder = "",
+                            EnumMember = "",
+                            Constant = "",
+                            Struct = "",
+                            Event = "",
+                            Operator = "",
+                            TypeParameter = ""
+                        }
+                        -- Kind icons
+                        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+                        return vim_item
+                    end
+                  },
                 --sorting = {
                     --comparators = {
                         --cmp.config.compare.offset,
