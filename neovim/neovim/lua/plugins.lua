@@ -79,7 +79,6 @@ return require("packer").startup({function()
             -- if one result, tab -> select and quit so tab+enter goes to new line
             -- multi results, tab -> selects next result enter confirms
             -- dont ever autoselect options
-            -- rank lsp results higher than buffer
             local cmp = require("cmp")
             cmp.setup{
                 snippet = {
