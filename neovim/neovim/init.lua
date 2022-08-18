@@ -2,12 +2,12 @@
 
 -- load impatient for faster startup
 require("impatient")
+-- editor configs
+require("configs")
 -- load plugins using packer
 require("plugins")
 -- mappings file
 require("mappings")
--- editor configs
-require("configs")
 -- additional snippets
 require("snippets")
 
