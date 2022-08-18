@@ -71,10 +71,15 @@ return require("packer").startup({function()
     use {
         "hrsh7th/nvim-cmp",
         requires = { -- (some potentially not necessary)
-            "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path", "saadparwaiz1/cmp_luasnip"
         },
         config = function()
+            -- TODO:
+            -- if one result, tab -> select and quit so tab+enter goes to new line
+            -- multi results, tab -> selects next result enter confirms
+            -- dont ever autoselect options
+            -- rank lsp results higher than buffer
             local cmp = require("cmp")
             cmp.setup{
                 snippet = {
@@ -83,8 +88,8 @@ return require("packer").startup({function()
                     end,
                 },
                 sources = {
-                    {name = "buffer", keyword_length = 2},
                     {name = "nvim_lsp", keyword_length = 2},
+                    {name = "buffer", keyword_length = 2},
                     {name = "luasnip", keyword_length = 2},
                     {name = "path"},
                 },
