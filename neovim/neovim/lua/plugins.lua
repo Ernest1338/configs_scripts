@@ -104,7 +104,7 @@ return require("packer").startup({function()
                         select = false
                     }),
                 }),
-                -- dont ever autoselect options
+                -- dont ever autoselect options (maybe reconsider autoselecting)
                 preselect = cmp.PreselectMode.None,
                 formatting = {
                     format = function(entry, vim_item)
