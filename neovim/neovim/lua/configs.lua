@@ -43,7 +43,10 @@ vim.o.updatetime = 500
 vim.o.mouse = "a"
 
 -- better completion experience
-vim.o.completeopt = "menuone,noselect"
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- dont show matching x of x
+vim.opt.shortmess:append "c"
 
 -- dont redraw the screen when executing macros / regexes
 vim.o.lazyredraw = true
