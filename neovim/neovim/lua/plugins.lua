@@ -67,7 +67,7 @@ return require("packer").startup({function()
     -- snippets collection
     use "rafamadriz/friendly-snippets"
 
-    -- completition framework
+    -- completion framework
     use {
         "hrsh7th/nvim-cmp",
         requires = { -- (some potentially not necessary)
@@ -78,7 +78,6 @@ return require("packer").startup({function()
             -- TODO:
             -- if one result, tab -> select and quit so tab+enter goes to new line
             -- multi results, tab -> selects next result enter confirms
-            -- dont ever autoselect options
             local cmp = require("cmp")
             cmp.setup{
                 snippet = {
@@ -105,6 +104,8 @@ return require("packer").startup({function()
                         select = false
                     }),
                 }),
+                -- dont ever autoselect options
+                preselect = cmp.PreselectMode.None,
                 --sorting = {
                     --comparators = {
                         --cmp.config.compare.offset,
