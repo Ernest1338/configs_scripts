@@ -41,6 +41,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - tips on improving startup / performance of lua in nvim - `https://www.reddit.com/r/neovim/comments/opipij/guide_tips_and_tricks_to_reduce_startup_and/`
 - (supposedly) very good git plugin - `https://github.com/tpope/vim-fugitive`
 - fzf in telescope - `https://github.com/nvim-telescope/telescope-fzf-native.nvim`
+- setup nvim for rust dev - `https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/`
 - TODO: configure nvim-cmp - `https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e`
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project

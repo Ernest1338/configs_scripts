@@ -87,6 +87,7 @@ vim.g.loaded_python3_provider = 0
 -- gives one more line to work with
 -- TODO: uncomment once v0.8 dropps
 --vim.cmd([[set cmdheight=0]])
+--vim.o.cmdheight = 0 -- lua version, not tested
 
 -- neovide configs
 vim.g.neovide_remember_window_size = true
