@@ -96,7 +96,7 @@ vim.g.neovide_refresh_rate = 75
 vim.g.neovide_fullscreen = true
 
 -- highlight yanked text
---vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
+vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 
 -- auto format on write
 --vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)]])
