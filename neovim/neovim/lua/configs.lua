@@ -96,6 +96,9 @@ vim.g.neovide_cursor_antialiasing = true
 vim.g.neovide_refresh_rate = 75
 vim.g.neovide_fullscreen = true
 
+-- gui font
+--vim.o.guifont="Hack:h12"
+
 -- highlight yanked text
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 

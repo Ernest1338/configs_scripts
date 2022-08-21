@@ -165,6 +165,11 @@ return require("packer").startup({function()
                     --},
                 --},
             }
+            -- auto pairs on methods, ... when confirming completion (doesnt work great)
+            cmp.event:on(
+                "confirm_done",
+                require("nvim-autopairs.completion.cmp").on_confirm_done()
+            )
         end
     }
 
