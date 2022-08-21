@@ -143,7 +143,7 @@ wk.register({
             R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" },
             r = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
             S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "LSP signature" },
-            s = { "<cmd>Telescope lsp_document_symbols<cr>", "LSP symbols" },
+            s = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "LSP symbols" },
             i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "LSP implementation" },
             t = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "LSP type definition" },
             -- TODO: Even more mappings?
