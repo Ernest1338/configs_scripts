@@ -47,6 +47,10 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - highlight arguments, ... - `https://github.com/m-demare/hlargs.nvim`
 - new project management plugin - `https://github.com/charludo/projectmgr.nvim`
 - highlight word under cursor - `https://github.com/RRethy/vim-illuminate`
+- cheat.sh for telescope - `https://github.com/nvim-telescope/telescope-cheat.nvim`
+- dap integration for telescope - `https://github.com/nvim-telescope/telescope-dap.nvim`
+- alternative debugging for vim - `https://github.com/puremourning/vimspector`
+- telescope integration for vimspector - `https://github.com/nvim-telescope/telescope-vimspector.nvim`
 - TODO: configure nvim-cmp - `https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e`
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project
