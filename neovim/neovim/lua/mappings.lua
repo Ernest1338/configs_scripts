@@ -178,6 +178,7 @@ wk.register({
             name = "Telescope",
             c = { "<cmd>Telescope commands<cr>", "Commands" },
             d = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+            e = { "<cmd>terminal<cr>", "Terminal" },
             f = { "<cmd>Telescope file_browser<cr>", "File browser" },
             g = { "<cmd>Telescope git_files<cr>", "Find git files" },
             s = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
