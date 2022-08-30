@@ -53,6 +53,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - telescope integration for vimspector - `https://github.com/nvim-telescope/telescope-vimspector.nvim`
 - markdown preview plugins - `https://github.com/iamcco/markdown-preview.nvim` `https://github.com/ellisonleao/glow.nvim`
 - better marks - `https://github.com/ThePrimeagen/harpoon`
+- plugins with media in the repo - `nvim-treesitter/nvim-treesitter`, `nvim-telescope/telescope-project.nvim`
 - TODO: configure nvim-cmp - `https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e`
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project

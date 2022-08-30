@@ -104,7 +104,7 @@ return require("packer").startup({function()
                         select = false
                     }),
                 }),
-                -- dont ever autoselect options (maybe reconsider autoselecting)
+                -- Dont ever autoselect options (maybe reconsider autoselecting)
                 preselect = cmp.PreselectMode.None,
                 formatting = {
                     format = function(entry, vim_item)
@@ -136,7 +136,8 @@ return require("packer").startup({function()
                             TypeParameter = ""
                         }
                         -- Kind icons
-                        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+                        -- This concatonates the icons with the name of the item kind
+                        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
                         return vim_item
                     end
                   },
