@@ -30,6 +30,10 @@ vim.keymap.set({ "n" }, "gd", function() vim.lsp.buf.definition() end, { silent 
 vim.keymap.set({ "n" }, "gD", "<cmd>Telescope lsp_references<cr>", { silent = true })
 vim.keymap.set({ "n" }, "gi", function() vim.lsp.buf.implementation() end, { silent = true })
 
+-- jumplist mappings, ctrl+o,i are better
+--vim.keymap.set({ "n" }, "gp", "<c-o>", { silent = true })
+--vim.keymap.set({ "n" }, "gP", "<c-i>", { silent = true })
+
 -- luasnip mappings
 local ls = require("luasnip")
 -- ctrl+; for snippet completition
