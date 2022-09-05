@@ -9,6 +9,7 @@ return require("packer").startup({function()
 
     -- theme (potentially not necessary)
     use "ellisonleao/gruvbox.nvim"
+    --use "luisiacc/gruvbox-baby"
     --use "tanvirtin/monokai.nvim"
     --use "navarasu/onedark.nvim"
     --use {
@@ -294,6 +295,15 @@ return require("packer").startup({function()
     --    "rcarriga/nvim-dap-ui",
     --    config = function() require("dapui").setup{} end
     --}
+    --
+    -- better vim.ui looks (only used in rename so far)
+    --use {
+    --  "stevearc/dressing.nvim",
+    --  config = function()
+    --      require("dressing").setup{}
+    --  end
+    --}
+
 end,
 config = {
     --compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
