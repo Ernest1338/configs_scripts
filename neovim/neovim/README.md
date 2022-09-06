@@ -54,6 +54,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 - markdown preview plugins - `https://github.com/iamcco/markdown-preview.nvim` `https://github.com/ellisonleao/glow.nvim`
 - better marks - `https://github.com/ThePrimeagen/harpoon`
 - plugins with media in the repo - `nvim-treesitter/nvim-treesitter`, `nvim-telescope/telescope-project.nvim`
+- plugin for better diff view - `https://github.com/sindrets/diffview.nvim`
 - maybe refactor mappings to use nvims default way instead of which-key?
 - idea (TODO?) - mapping (maybe ctrl+;) to insert semicolon to the end of the line (works in normal, insert, .. modes)
 - TODO: configure nvim-cmp - `https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e`
