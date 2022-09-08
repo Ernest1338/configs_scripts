@@ -312,6 +312,7 @@ config = {
             return require("packer.util").float{ border = "rounded" }
         end,
         prompt_border = "rounded",
+        compact = true,
    },
    git = {
        clone_timeout = 600,
