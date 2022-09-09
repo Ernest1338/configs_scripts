@@ -141,15 +141,15 @@ wk.register({
             name = "LSP",
             a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "LSP code actions" },
             d = { "<cmd>Telescope diagnostics<cr>", "LSP diagnostics" },
-            f = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 500)<cr>", "LSP format buffer" },
+            f = { "<cmd>lua vim.lsp.buf.formatting_sync(nil, 2000)<cr>", "LSP format buffer" },
             -- once 0.8 drops
-            --f = { "<cmd>lua vim.lsp.buf.format({timeout_ms=500})<cr>", "LSP format buffer" },
-            --r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" },
+            --f = { "<cmd>lua vim.lsp.buf.format({timeout_ms=2000})<cr>", "LSP format buffer" },
             r = { function()
                 vim.ui.input({ prompt = "Enter new name: " }, function(input)
                     vim.lsp.buf.rename(input)
                 end)
             end, "LSP rename" },
+            --r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "LSP rename" }, -- old
             R = { "<cmd>Telescope lsp_references<cr>", "LSP references" },
             S = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "LSP signature" },
             s = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "LSP symbols" },
