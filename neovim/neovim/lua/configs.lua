@@ -102,7 +102,7 @@ vim.g.neovide_fullscreen = true
 -- highlight yanked text
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 
--- auto format on write
+-- auto format on write (lsp-format is better beacuse its async)
 --vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 2000)]])
 
 -- auto remove trailing spaces on write

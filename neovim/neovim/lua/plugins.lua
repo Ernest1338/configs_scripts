@@ -194,6 +194,14 @@ return require("packer").startup({function()
     --    end
     --}
 
+    -- format on buffer save (async)
+    --use {
+    --  "lukas-reineke/lsp-format.nvim",
+    --  config = function()
+    --      require("lsp-format").setup{}
+    --  end
+    --}
+
     -- magit but its nvim
     use {
         "TimUntersberger/neogit",
@@ -232,6 +240,8 @@ return require("packer").startup({function()
         "neovim/nvim-lspconfig",
         config = function()
             require("lspconfig").rust_analyzer.setup{}
+            -- lsp-format related config
+            --require("lspconfig").rust_analyzer.setup{on_attach=require("lsp-format").on_attach}
         end
     }
 
