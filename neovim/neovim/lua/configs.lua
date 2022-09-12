@@ -103,7 +103,7 @@ vim.g.neovide_fullscreen = true
 vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 
 -- auto format on write
---vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)]])
+--vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 2000)]])
 
 -- auto remove trailing spaces on write
 --vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
