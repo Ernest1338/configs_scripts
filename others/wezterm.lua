@@ -13,6 +13,11 @@ return {
     },
     default_cursor_style = 'BlinkingBar',
     color_scheme = 'Gruber (base16)',
+    --color_scheme = 'Helios (base16)',
+    --window_background_image = '/home/dvdmanjaro/Downloads/term_bg.jpg',
+    --window_background_image_hsb = {
+    --    brightness = 0.02,
+    --},
     window_background_opacity = 0.95,
     tab_bar_at_bottom = true,
     scrollback_lines = 2000,
