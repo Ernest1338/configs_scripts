@@ -15,8 +15,14 @@ return {
     color_scheme = 'Gruber (base16)',
     window_background_opacity = 0.95,
     tab_bar_at_bottom = true,
+    scrollback_lines = 2000,
     keys = {
         { key = 'LeftArrow', mods = 'SHIFT', action = require('wezterm').action.ActivateTabRelative(-1) },
         { key = 'RightArrow', mods = 'SHIFT', action = require('wezterm').action.ActivateTabRelative(1) },
     },
+    -- improves performance?
+    cursor_blink_ease_in = "Constant",
+    cursor_blink_ease_out = "Constant",
+    animation_fps = 1,
+    cursor_blink_rate = 500,
 }
