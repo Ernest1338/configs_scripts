@@ -90,6 +90,7 @@ wk.register({
         },
         [";"] = {
             name = "Prefix",
+            f = { "<cmd>lua vim.o.guifont='Hack:h24'<cr>", "Big font mode" }, -- TODO: a way to switch back
         },
         [":"] = { "<cmd>Telescope commands<cr>", "Commands" },
         b = {
