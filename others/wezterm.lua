@@ -24,6 +24,8 @@ return {
     keys = {
         { key = 'LeftArrow', mods = 'SHIFT', action = require('wezterm').action.ActivateTabRelative(-1) },
         { key = 'RightArrow', mods = 'SHIFT', action = require('wezterm').action.ActivateTabRelative(1) },
+        { key = 'LeftArrow', mods = 'SHIFT|CTRL', action = require('wezterm').action.MoveTabRelative(-1) },
+        { key = 'RightArrow', mods = 'SHIFT|CTRL', action = require('wezterm').action.MoveTabRelative(1) },
     },
     -- improves performance?
     cursor_blink_ease_in = "Constant",
