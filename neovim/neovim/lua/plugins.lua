@@ -239,7 +239,17 @@ return require("packer").startup({function()
     use {
         "neovim/nvim-lspconfig",
         config = function()
-            require("lspconfig").rust_analyzer.setup{}
+            require("lspconfig").rust_analyzer.setup{
+                settings = {
+                    ["rust-analyzer"] = {
+                        diagnostics = {
+                            enable = true,
+                            disabled = {"unresolved-proc-macro"},
+                            --enableExperimental = true,
+                        },
+                    },
+                },
+            }
             -- lsp-format related config
             --require("lspconfig").rust_analyzer.setup{on_attach=require("lsp-format").on_attach}
         end
