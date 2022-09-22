@@ -34,6 +34,7 @@ elif [ $1 == "update" ]; then
     fi
 elif [ $1 == "repo" ]; then
     echo "Updating repo with the local configs..." &&
+    # TODO
     echo "Done"
 else
     echo "Usage: ./config.sh install/update/repo"
