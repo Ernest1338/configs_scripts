@@ -333,9 +333,11 @@ config = {
         end,
         prompt_border = "rounded",
         compact = true,
-   },
-   git = {
-       clone_timeout = 600,
-   },
+    },
+    git = {
+        clone_timeout = 600,
+    },
+    compile_on_sync = true,
+    max_jobs = 10,
 }})
 
