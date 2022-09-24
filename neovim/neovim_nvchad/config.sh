@@ -34,7 +34,8 @@ elif [ $1 == "update" ]; then
     fi
 elif [ $1 == "repo" ]; then
     echo "Updating repo with the local configs..." &&
-    # TODO
+    rm -rf custom &&
+    cp -r ~/.config/nvim/lua/custom . &&
     echo "Done"
 else
     echo "Usage: ./config.sh install/update/repo"

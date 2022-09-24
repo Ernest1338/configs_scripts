@@ -1,7 +1,3 @@
--- file location: ~/.config/nvim/config.lua
-
--- CONFIGS
-
 -- show numbers
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -21,7 +17,7 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 
 -- hightlight current line
-vim.o.cursorline = true
+
 
 -- scroll when the cursor is 4 line from the bottom
 vim.o.scrolloff = 4

@@ -1,8 +1,13 @@
 local M = {}
 
 M.ui = {
-  theme_toggle = { "gruvbox", "one_light" },
-  theme = "gruvbox",
+    hl_override = {
+        CursorLine = {
+            bg = "black2",
+        },
+    },
+    theme_toggle = { "gruvbox", "one_light" },
+    theme = "gruvbox",
 }
 
 M.plugins = require "custom.plugins"
