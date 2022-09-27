@@ -1,14 +1,6 @@
 local overrides = require "custom.plugins.overrides"
 
 return {
-    -- overrde plugin configs
-    -- ["williamboman/mason.nvim"] = {
-    --   override_options = overrides.mason,
-    -- },
-
-    -- remove plugin
-    -- ["hrsh7th/cmp-path"] = false,
-
     ["nvim-telescope/telescope.nvim"] = {
         requires = {
             {
@@ -30,11 +22,14 @@ return {
     },
 
     ["TimUntersberger/neogit"] = {
-        -- TODO: lazy load using keys (keybindings in the docs)
+        -- this lazy loading works, but i'm not sure why (lol)
+        module = "neogit",
+        keys = {"gc", "gb"},
         config = function () require("neogit").setup{} end,
     },
 
     ["goolord/alpha-nvim"] = false,
     ["folde/which-key.nvim"] = false,
     ["NvChad/nvim-colorizer.lua"] = false,
+    --["kyazdani42/nvim-tree.lua"] = false,
 }

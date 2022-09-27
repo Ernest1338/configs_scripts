@@ -34,15 +34,17 @@ M.nvimtree = {
 }
 
 M.telescope = {
-    defaults = {
+    --[[defaults = {
         mappings = {
             i = {
                 --["<C-j>"] = require("telescope.actions").move_selection_next,
                 --["<C-k>"] = require("telescope.actions").move_selection_previous,
             },
         },
-    },
+    },]]--
     extensions_list = {
+        "themes",
+        "terms",
         "file_browser",
         "project",
     },
