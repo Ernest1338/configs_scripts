@@ -26,9 +26,12 @@ return {
     },
 
     ["neovim/nvim-lspconfig"] = {
-        config = function ()
-            require("custom.plugins.lspconfig")
-        end,
+        config = function () require("custom.plugins.lspconfig") end,
+    },
+
+    ["TimUntersberger/neogit"] = {
+        -- TODO: lazy load using keys (keybindings in the docs)
+        config = function () require("neogit").setup{} end,
     },
 
     ["goolord/alpha-nvim"] = false,
