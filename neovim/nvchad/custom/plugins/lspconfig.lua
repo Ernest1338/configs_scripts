@@ -1,7 +1,8 @@
 local lspconfig = require("lspconfig")
+local nvchad_lspconfig = require("plugins.configs.lspconfig")
 
-local on_attach = require("plugins.configs.lspconfig").on_attach
-local capabilities = require("plugins.configs.lspconfig").capabilities
+local on_attach = nvchad_lspconfig.on_attach
+local capabilities = nvchad_lspconfig.capabilities
 
 local servers = { "rust_analyzer" }
 
