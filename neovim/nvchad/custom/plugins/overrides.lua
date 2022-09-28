@@ -39,6 +39,7 @@ M.telescope = {
         "file_browser",
         "project",
     },
+    -- TODO: telescope mappings (from the old config)
 }
 
 return M
