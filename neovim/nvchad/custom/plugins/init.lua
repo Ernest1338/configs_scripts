@@ -28,8 +28,6 @@ return {
         config = function () require("neogit").setup{} end,
     },
 
-    ["goolord/alpha-nvim"] = false,
-    ["folde/which-key.nvim"] = false,
     ["NvChad/nvim-colorizer.lua"] = false,
     --["kyazdani42/nvim-tree.lua"] = false,
 }
