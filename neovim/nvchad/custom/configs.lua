@@ -39,9 +39,8 @@ vim.o.colorcolumn = "90"
 --vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- gives one more line to work with
--- TODO: uncomment once v0.8 dropps
---vim.o.cmdheight = 0 -- lua version, not tested
---vim.opt.shortmess:append "c" -- might be needed for proper cmdheight
+vim.o.cmdheight = 0
+vim.opt.shortmess:append "c" -- might be needed for proper cmdheight
 
 -- neovide configs
 vim.g.neovide_remember_window_size = true

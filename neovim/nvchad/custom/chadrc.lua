@@ -6,6 +6,13 @@ M.ui = {
             bg = "black2",
         },
     },
+    --[[changed_themes = {
+        gruvbox = {
+            base_16 = {
+                base00 = "#141414",
+            },
+        },
+    },]]--
     theme_toggle = { "gruvbox", "one_light" },
     theme = "gruvbox",
 }

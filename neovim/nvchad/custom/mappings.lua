@@ -20,9 +20,7 @@ M.general = {
         ["<leader>pp"] = { "<cmd> Telescope project <CR>", "project menu" },
         ["<leader>pe"] = { "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>", "edit the projects list file" },
         ["<leader>gg"] = { function() require('neogit').open() end, "neogit menu" },
-        ["<leader>lf"] = { function() vim.lsp.buf.formatting_sync(nil, 2000) end, "LSP format buffer" },
-        -- once 0.8 drops
-        --["<leader>lf"] = { function() vim.lsp.buf.format({timeout_ms=2000}) end, "LSP format buffer" },
+        ["<leader>lf"] = { function() vim.lsp.buf.format({timeout_ms=2000}) end, "LSP format buffer" },
         ["<leader>la"] = { function() vim.lsp.buf.code_action() end, "LSP code actions" },
         ["<leader>ld"] = { "<cmd> Telescope diagnostics <CR>", "LSP diagnostics" },
         ["<leader>ls"] = { "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>", "LSP symbols" },
