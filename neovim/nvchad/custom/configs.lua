@@ -64,4 +64,3 @@ vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
 -- highlight trailing spaces
 --vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
 --vim.cmd([[match EoLSpace /\s\+$/]])
-

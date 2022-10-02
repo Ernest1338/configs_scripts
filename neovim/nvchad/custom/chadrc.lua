@@ -12,7 +12,7 @@ M.ui = {
                 base00 = "#141414",
             },
         },
-    },]]--
+    },]] --
     theme_toggle = { "gruvbox", "one_light" },
     theme = "gruvbox",
 }
