@@ -17,21 +17,6 @@ M.mason = {
     },
 }
 
--- git support in nvimtree
-M.nvimtree = {
-    git = {
-        enable = true,
-    },
-    renderer = {
-        highlight_git = true,
-        icons = {
-            show = {
-                git = true,
-            },
-        },
-    },
-}
-
 M.telescope = {
     extensions_list = {
         "themes",
