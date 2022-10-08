@@ -52,11 +52,17 @@ vim.g.neovide_fullscreen = true
 -- gui font
 --vim.o.guifont="Hack:h12"
 
--- highlight yanked text
-vim.cmd([[au TextYankPost * silent! lua vim.highlight.on_yank()]])
+-- Highlight on yank
+local yankGrp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+    command = "silent! lua vim.highlight.on_yank()",
+    group = yankGrp,
+})
 
--- auto format on write (lsp-format is better beacuse its async)
---vim.cmd([[autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 2000)]])
+-- auto format on write
+--vim.api.nvim_create_autocmd("BufWritePre", {
+--    command = "lua vim.lsp.buf.format({ async = true, timeout = 2000 })"
+--})
 
 -- auto remove trailing spaces on write
 --vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
