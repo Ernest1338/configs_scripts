@@ -22,9 +22,7 @@ elif [ $1 == "update" ]; then
     if [[ "$confirm" == [yY] ]]; then
         echo "Git pull(s):" &&
         git pull &&
-        cd ~/.config/nvim/ &&
-        git pull &&
-        cd $OLDPWD &&
+        # pulling nvchad removed, use "<leader> u u" to update
         echo "Updating configs..." &&
         rm -rf ~/.config/nvim/custom &&
         cp -r ./custom ~/.config/nvim/lua/ &&
