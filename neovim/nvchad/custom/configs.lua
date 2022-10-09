@@ -62,7 +62,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- auto format on write
 -- local format_grp = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
 -- vim.api.nvim_create_autocmd("BufWritePre", {
---     command = "lua vim.lsp.buf.format({ async = true, timeout = 2000 })",
+--     callback = function()
+--         vim.schedule(function()
+--             vim.lsp.buf.format({ async = true, timeout = 2000 })
+--         end)
+--     end,
 --     group = format_grp,
 -- })
 
