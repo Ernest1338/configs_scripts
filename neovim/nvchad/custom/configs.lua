@@ -35,8 +35,8 @@ vim.diagnostic.config({
 vim.o.colorcolumn = "90"
 
 -- folding support with treesitter
---vim.o.foldmethod = "expr"
---vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.o.foldmethod = "expr"
+-- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- gives one more line to work with
 vim.o.cmdheight = 0
@@ -53,20 +53,22 @@ vim.g.neovide_fullscreen = true
 --vim.o.guifont="Hack:h12"
 
 -- Highlight on yank
-local yankGrp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
     command = "silent! lua vim.highlight.on_yank()",
-    group = yankGrp,
+    group = yank_grp,
 })
 
 -- auto format on write
---vim.api.nvim_create_autocmd("BufWritePre", {
---    command = "lua vim.lsp.buf.format({ async = true, timeout = 2000 })"
---})
+-- local format_grp = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--     command = "lua vim.lsp.buf.format({ async = true, timeout = 2000 })",
+--     group = format_grp,
+-- })
 
 -- auto remove trailing spaces on write
---vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
+-- vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
 
 -- highlight trailing spaces
---vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
---vim.cmd([[match EoLSpace /\s\+$/]])
+-- vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
+-- vim.cmd([[match EoLSpace /\s\+$/]])
