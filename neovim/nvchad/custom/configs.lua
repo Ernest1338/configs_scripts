@@ -59,6 +59,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = yank_grp,
 })
 
+-- TODO: I DONT KNOW IF THE vim.schedule IS BETTER OR WORSE HERE
+
 -- auto format on write
 -- local format_grp = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
 -- vim.api.nvim_create_autocmd("BufWritePre", {
@@ -71,7 +73,23 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- })
 
 -- auto remove trailing spaces on write
--- vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
+local trailing_grp = vim.api.nvim_create_augroup("TrailingSpaces", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        vim.schedule(function()
+            local original_cursor = vim.fn.getcurpos()
+            local first_changed = vim.fn.getpos("'[")
+            local last_changed = vim.fn.getpos("']")
+
+            vim.cmd[[:%s/\s\+$//e]]
+
+            vim.fn.setpos("']", last_changed)
+            vim.fn.setpos("'[", first_changed)
+            vim.fn.setpos('.', original_cursor)
+        end)
+    end,
+    group = trailing_grp,
+})
 
 -- highlight trailing spaces
 -- vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
