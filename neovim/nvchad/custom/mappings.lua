@@ -44,6 +44,7 @@ M.general = {
             end,
             "LSP general mapping"
         },
+        ["gd"] = { function() vim.lsp.buf.definition() end, "go to definition" },
         ["gD"] = { "<cmd> Telescope lsp_references <CR>", "go to references" },
         ["<leader>;f"] = { function() vim.o.guifont = 'Hack:h24' end, "big font mode" }, -- TODO: a way to switch back
     },
