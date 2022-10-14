@@ -33,19 +33,23 @@ M.general = {
         ["<leader>bd"] = { "<cmd> bdelete <CR>", "delete buffer" },
         ["<leader>bc"] = { "<cmd> enew <CR>", "create buffer" },
         ["<leader>t<leader>"] = { "<cmd> Telescope <CR>", "telescope" },
+        ["<leader>tb"] = { function()
+            if vim.o.showtabline ~= 0 then
+                vim.o.showtabline = 0
+            else
+                vim.o.showtabline = 2
+            end
+        end, "toggle tab bar" },
         ["n"] = { "nzzzv", "center search" },
         ["<f2>"] = { "<cmd> Telescope keymaps <CR>", "show keymaps" },
-        ["K"] = {
-            function()
-                local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
-                if vim.tbl_isempty(line_diagnostics) then
-                    vim.lsp.buf.hover()
-                else
-                    vim.diagnostic.open_float()
-                end
-            end,
-            "LSP general mapping"
-        },
+        ["K"] = { function()
+            local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
+            if vim.tbl_isempty(line_diagnostics) then
+                vim.lsp.buf.hover()
+            else
+                vim.diagnostic.open_float()
+            end
+        end, "LSP general mapping" },
         ["gd"] = { function() vim.lsp.buf.definition() end, "go to definition" },
         ["gD"] = { "<cmd> Telescope lsp_references <CR>", "go to references" },
         ["<leader>;f"] = { function() vim.o.guifont = 'Hack:h24' end, "big font mode" }, -- TODO: a way to switch back
