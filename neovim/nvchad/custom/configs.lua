@@ -65,9 +65,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- local format_grp = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --     callback = function()
---         vim.schedule(function()
---             vim.lsp.buf.format({ async = true, timeout = 2000 })
---         end)
+--         --vim.schedule(function()
+--         vim.lsp.buf.format({ async = true, timeout = 2000 })
+--         --end)
 --     end,
 --     group = format_grp,
 -- })
@@ -76,17 +76,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 local trailing_grp = vim.api.nvim_create_augroup("TrailingSpaces", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function()
-        vim.schedule(function()
-            local original_cursor = vim.fn.getcurpos()
-            local first_changed = vim.fn.getpos("'[")
-            local last_changed = vim.fn.getpos("']")
+        --vim.schedule(function()
+        local original_cursor = vim.fn.getcurpos()
+        local first_changed = vim.fn.getpos("'[")
+        local last_changed = vim.fn.getpos("']")
 
-            vim.cmd[[:%s/\s\+$//e]]
+        vim.cmd[[:%s/\s\+$//e]]
 
-            vim.fn.setpos("']", last_changed)
-            vim.fn.setpos("'[", first_changed)
-            vim.fn.setpos('.', original_cursor)
-        end)
+        vim.fn.setpos("']", last_changed)
+        vim.fn.setpos("'[", first_changed)
+        vim.fn.setpos('.', original_cursor)
+        --end)
     end,
     group = trailing_grp,
 })
