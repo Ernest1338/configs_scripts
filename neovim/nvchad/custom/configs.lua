@@ -34,6 +34,10 @@ vim.diagnostic.config({
 -- set the long line highlight
 vim.o.colorcolumn = "90"
 
+-- keep the top line when creating a split
+-- TODO: once 0.9 drops?
+--vim.o.splitkeep = "topline"
+
 -- folding support with treesitter
 -- vim.o.foldmethod = "expr"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
