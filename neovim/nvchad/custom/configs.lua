@@ -59,7 +59,9 @@ vim.g.neovide_fullscreen = true
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-    command = "silent! lua vim.highlight.on_yank()",
+    callback = function()
+        vim.highlight.on_yank({ timeout = 200 })
+    end,
     group = yank_grp,
 })
 
@@ -85,7 +87,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         local first_changed = vim.fn.getpos("'[")
         local last_changed = vim.fn.getpos("']")
 
-        vim.cmd[[:%s/\s\+$//e]]
+        vim.cmd [[:%s/\s\+$//e]]
 
         vim.fn.setpos("']", last_changed)
         vim.fn.setpos("'[", first_changed)
