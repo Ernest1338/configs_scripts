@@ -29,6 +29,7 @@ return {
         config = function()
             -- setup each lsp server
             require("lspconfig").rust_analyzer.setup {}
+            require("lspconfig").pyright.setup {}
             require("lspconfig").sumneko_lua.setup {
                 settings = {
                     Lua = {
