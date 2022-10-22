@@ -52,7 +52,15 @@ M.general = {
         end, "LSP general mapping" },
         ["gd"] = { function() vim.lsp.buf.definition() end, "go to definition" },
         ["gD"] = { "<cmd> Telescope lsp_references <CR>", "go to references" },
-        ["<leader>;f"] = { function() vim.o.guifont = 'Hack:h24' end, "big font mode" }, -- TODO: a way to switch back
+        ["<leader>;f"] = { function()
+            if vim.o.guifont == 'Hack:h20' then
+                vim.o.guifont = 'Hack:h32'
+            elseif vim.o.guifont == 'Hack:h32' then
+                vim.o.guifont = ''
+            else
+                vim.o.guifont = 'Hack:h20'
+            end
+        end, "big font mode" },
     },
     i = {
         ["<C-backspace>"] = { "<esc>bcw", opts = { nowait = true } },
