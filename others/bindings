@@ -19,6 +19,12 @@ def_key "right"
 def_key "k"
     scroll_up
 
+def_key "ctrl-k"
+    move_selected_items_up
+
 def_key "j"
     scroll_down
+
+def_key "ctrl-j"
+    move_selected_items_down
 
