@@ -1,0 +1,24 @@
+# file location: ~/.config/ncmpcpp/bindings
+# for list of events look at: /usr/share/doc/ncmpcpp/bindings
+
+def_key "up"
+    volume_up
+
+def_key "down"
+    volume_down
+
+def_key "space"
+    pause
+
+def_key "left"
+    previous
+
+def_key "right"
+    next
+
+def_key "k"
+    scroll_up
+
+def_key "j"
+    scroll_down
+
