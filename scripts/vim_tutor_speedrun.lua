@@ -16,6 +16,7 @@ handle:close()
 print("Speedrun time: " .. string.format("%.3fs", (finish - start) / 1000))
 ]]--
 
+-- TODO: get rid of this socket dependency (os.execute?)
 local socket = require("socket")
 
 PB = 0
@@ -23,7 +24,8 @@ PB = 0
 function Main()
     local start = socket.gettime() * 1000
 
-    os.execute("nvim +Tutor")
+    --os.execute("nvim +Tutor")
+    os.execute("TERM=xterm-256color WINIT_UNIX_BACKEND=x11 neovide --multigrid --nofork +Tutor")
 
     local end_time = (socket.gettime() * 1000) - start
 
