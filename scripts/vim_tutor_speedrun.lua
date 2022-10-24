@@ -1,33 +1,21 @@
 #!/usr/bin/lua
 
---[[
-local handle = io.popen("date +%s%N | cut -b1-13")
-if handle == nil then return end
-local start = handle:read("*a")
-
-os.execute("nvim +Tutor")
-
-handle = io.popen("date +%s%N | cut -b1-13")
-if handle == nil then return end
-local finish = handle:read("*a")
-
-handle:close()
-
-print("Speedrun time: " .. string.format("%.3fs", (finish - start) / 1000))
-]]--
-
--- TODO: get rid of this socket dependency (os.execute?)
-local socket = require("socket")
-
 PB = 0
 
+local function cmd_output(cmd)
+    local f = assert(io.popen(cmd, "r"))
+    local s = assert(f:read("*a"))
+    f:close()
+    return s
+end
+
 function Main()
-    local start = socket.gettime() * 1000
+    local start = cmd_output("date +%s%3N")
 
     --os.execute("nvim +Tutor")
     os.execute("TERM=xterm-256color WINIT_UNIX_BACKEND=x11 neovide --multigrid --nofork +Tutor")
 
-    local end_time = (socket.gettime() * 1000) - start
+    local end_time = cmd_output("date +%s%3N") - start
 
     print("[" .. os.date() .. "]\n")
     if (end_time / 1000) < PB then
