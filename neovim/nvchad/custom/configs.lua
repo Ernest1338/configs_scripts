@@ -87,7 +87,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         local first_changed = vim.fn.getpos("'[")
         local last_changed = vim.fn.getpos("']")
 
-        vim.cmd [[:%s/\s\+$//e]]
+        vim.cmd([[:%s/\s\+$//e]])
 
         vim.fn.setpos("']", last_changed)
         vim.fn.setpos("'[", first_changed)
