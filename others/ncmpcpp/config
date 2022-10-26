@@ -1,0 +1,5 @@
+# file location: ~/.config/ncmpcpp/config
+
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+mpd_music_dir = ~/Music
