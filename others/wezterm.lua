@@ -29,7 +29,7 @@ return {
     window_background_opacity = 0.95,
     tab_bar_at_bottom = true,
     tab_max_width = 50,
-    custom_block_glyphs = false,
+    --custom_block_glyphs = false, -- improves memory usage?
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     scrollback_lines = 2000,
     keys = {
