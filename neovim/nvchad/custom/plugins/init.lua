@@ -25,6 +25,10 @@ return {
         override_options = overrides.mason,
     },
 
+    ["lukas-reineke/indent-blankline.nvim"] = {
+        override_options = overrides.blankline,
+    },
+
     ["neovim/nvim-lspconfig"] = {
         config = function()
             -- setup each lsp server

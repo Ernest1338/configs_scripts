@@ -27,4 +27,8 @@ M.telescope = {
     -- TODO: telescope mappings (from the old config)
 }
 
+M.blankline = {
+    show_current_context = false,
+}
+
 return M
