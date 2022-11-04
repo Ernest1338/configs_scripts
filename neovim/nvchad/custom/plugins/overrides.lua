@@ -21,8 +21,6 @@ M.telescope = {
     extensions_list = {
         "themes",
         "terms",
-        "file_browser",
-        "project",
     },
     -- TODO: telescope mappings (from the old config)
 }

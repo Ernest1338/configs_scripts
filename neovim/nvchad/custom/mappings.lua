@@ -18,7 +18,7 @@ M.general = {
         ["<leader>of"] = { "<cmd> Telescope file_browser cwd=~ <CR>", "open file" },
         ["<leader>oF"] = { "<cmd> Telescope file_browser cwd=/ <CR>", "open file from root dir" },
         ["<leader>:"] = { "<cmd> Telescope commands <CR>", "commands" },
-        ["<leader>pp"] = { "<cmd> Telescope project <CR>", "project menu" },
+        ["<leader>pp"] = { "<cmd> Telescope project display_type=full <CR>", "project menu" },
         ["<leader>pe"] = { "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>", "edit the projects list file" },
         ["<leader>gg"] = { function() require('neogit').open() end, "neogit menu" },
         ["<leader>lf"] = { function() vim.lsp.buf.format({ async = true, timeout = 2000 }) end, "LSP format buffer" },

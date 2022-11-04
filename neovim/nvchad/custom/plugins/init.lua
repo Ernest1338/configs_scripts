@@ -7,11 +7,17 @@ return {
                 "nvim-telescope/telescope-file-browser.nvim",
                 after = "telescope.nvim",
                 module = "telescope",
+                config = function()
+                    require("telescope").load_extension("file_browser")
+                end
             },
             {
                 "nvim-telescope/telescope-project.nvim",
                 after = "telescope.nvim",
                 module = "telescope",
+                config = function()
+                    require("telescope").load_extension("project")
+                end
             },
         },
         override_options = overrides.telescope,
