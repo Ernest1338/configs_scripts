@@ -54,6 +54,7 @@
 - markdown preview plugins - `https://github.com/iamcco/markdown-preview.nvim` `https://github.com/ellisonleao/glow.nvim`
 - better marks - `https://github.com/ThePrimeagen/harpoon`
 - easily create Telescope pickers from console commands - `https://github.com/axkirillov/easypick.nvim`
+- UI for nvim lsp progress - `https://github.com/j-hui/fidget.nvim`
 - plugins with media in the repo - `nvim-treesitter/nvim-treesitter`, `nvim-telescope/telescope-project.nvim`
 - plugin for better diff view - `https://github.com/sindrets/diffview.nvim`
 - maybe refactor mappings to use nvims default way instead of which-key?

@@ -22,10 +22,10 @@ M.general = {
         ["<leader>pe"] = { "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>", "edit the projects list file" },
         ["<leader>gg"] = { function() require('neogit').open() end, "neogit menu" },
         ["<leader>lf"] = { function() vim.lsp.buf.format({ async = true, timeout = 2000 }) end, "LSP format buffer" },
-        ["<leader>la"] = { function() vim.lsp.buf.code_action() end, "LSP code actions" },
+        ["<leader>la"] = { vim.lsp.buf.code_action, "LSP code actions" },
         ["<leader>ld"] = { "<cmd> Telescope diagnostics <CR>", "LSP diagnostics" },
         ["<leader>ls"] = { "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>", "LSP symbols" },
-        ["<leader>lr"] = { function() vim.lsp.buf.rename() end, "LSP rename" },
+        ["<leader>lr"] = { vim.lsp.buf.rename, "LSP rename" },
         ["<leader>sh"] = { "<cmd> split <CR>", "split horizontal" },
         ["<leader>sv"] = { "<cmd> vsplit <CR>", "split vertical" },
         ["<leader>wd"] = { "<cmd> q <CR>", "delete window" },
@@ -50,8 +50,10 @@ M.general = {
                 vim.diagnostic.open_float()
             end
         end, "LSP general mapping" },
-        ["gd"] = { function() vim.lsp.buf.definition() end, "go to definition" },
+        ["gd"] = { vim.lsp.buf.definition, "go to definition" },
         ["gD"] = { "<cmd> Telescope lsp_references <CR>", "go to references" },
+        ["g["] = { vim.diagnostic.goto_prev, "go to previous LSP diagnostic" },
+        ["g]"] = { vim.diagnostic.goto_next, "go to next LSP diagnostic" },
         ["<leader>;f"] = { function()
             if vim.o.guifont == 'Hack:h20' then
                 vim.o.guifont = 'Hack:h32'
@@ -63,7 +65,7 @@ M.general = {
         end, "big font mode" },
     },
     i = {
-        ["<C-backspace>"] = { "<esc>bcw", opts = { nowait = true } },
+        ["<C-backspace>"] = { "<C-w>", opts = { nowait = true } },
     },
 }
 
