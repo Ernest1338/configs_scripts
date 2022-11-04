@@ -20,12 +20,12 @@ M.general = {
         ["<leader>:"] = { "<cmd> Telescope commands <CR>", "commands" },
         ["<leader>pp"] = { "<cmd> Telescope project display_type=full <CR>", "project menu" },
         ["<leader>pe"] = { "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>", "edit the projects list file" },
-        ["<leader>gg"] = { function() require('neogit').open() end, "neogit menu" },
-        ["<leader>lf"] = { function() vim.lsp.buf.format({ async = true, timeout = 2000 }) end, "LSP format buffer" },
-        ["<leader>la"] = { vim.lsp.buf.code_action, "LSP code actions" },
+        ["<leader>gg"] = { "<cmd> lua require('neogit').open() <CR>", "neogit menu" },
+        ["<leader>lf"] = { "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>", "LSP format buffer" },
+        ["<leader>la"] = { "<cmd> lua vim.lsp.buf.code_action() <CR>", "LSP code actions" },
         ["<leader>ld"] = { "<cmd> Telescope diagnostics <CR>", "LSP diagnostics" },
         ["<leader>ls"] = { "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>", "LSP symbols" },
-        ["<leader>lr"] = { vim.lsp.buf.rename, "LSP rename" },
+        ["<leader>lr"] = { "<cmd> lua vim.lsp.buf.rename() <CR>", "LSP rename" },
         ["<leader>sh"] = { "<cmd> split <CR>", "split horizontal" },
         ["<leader>sv"] = { "<cmd> vsplit <CR>", "split vertical" },
         ["<leader>wd"] = { "<cmd> q <CR>", "delete window" },
@@ -50,10 +50,10 @@ M.general = {
                 vim.diagnostic.open_float()
             end
         end, "LSP general mapping" },
-        ["gd"] = { vim.lsp.buf.definition, "go to definition" },
+        ["gd"] = { "<cmd> lua vim.lsp.buf.definition() <CR>", "go to definition" },
         ["gD"] = { "<cmd> Telescope lsp_references <CR>", "go to references" },
-        ["g["] = { vim.diagnostic.goto_prev, "go to previous LSP diagnostic" },
-        ["g]"] = { vim.diagnostic.goto_next, "go to next LSP diagnostic" },
+        ["g["] = { "<cmd> lua vim.diagnostic.goto_prev() <CR>", "go to previous LSP diagnostic" },
+        ["g]"] = { "<cmd> lua vim.diagnostic.goto_next() <CR>", "go to next LSP diagnostic" },
         ["<leader>;f"] = { function()
             if vim.o.guifont == 'Hack:h20' then
                 vim.o.guifont = 'Hack:h32'
