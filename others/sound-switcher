@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[en_US]=
 Comment=
-Exec=bash /home/dvdmanjaro/Files/sound-switcher-bash-rewrite.sh
+Exec=bash /home/dvdmanjaro/Repos/configs_scripts/scripts/sound-switcher-bash-rewrite.sh
 GenericName[en_US]=
 GenericName=
 Icon=headphones
