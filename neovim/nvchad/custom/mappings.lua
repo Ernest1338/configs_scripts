@@ -33,6 +33,7 @@ M.general = {
         ["<leader>bd"] = { "<cmd> bdelete <CR>", "delete buffer" },
         ["<leader>bc"] = { "<cmd> enew <CR>", "create buffer" },
         ["<leader>t<leader>"] = { "<cmd> Telescope <CR>", "telescope" },
+        ["<leader>tj"] = { "<cmd> Telescope jumplist <CR>", "telescope jumplist" },
         ["<leader>tb"] = { function()
             if vim.o.showtabline ~= 0 then
                 vim.o.showtabline = 0
@@ -63,6 +64,7 @@ M.general = {
                 vim.o.guifont = 'Hack:h20'
             end
         end, "big font mode" },
+        ["<C-I>"] = { "<C-I>" }, -- make the ctrl + i (jump list) binding work in neovide (think of remapping those bindings)
     },
     i = {
         ["<C-backspace>"] = { "<C-w>", opts = { nowait = true } },
