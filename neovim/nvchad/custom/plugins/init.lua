@@ -35,6 +35,10 @@ return {
         override_options = overrides.blankline,
     },
 
+    ["NvChad/nvterm"] = {
+        override_options = overrides.nvterm,
+    },
+
     ["neovim/nvim-lspconfig"] = {
         config = function()
             -- setup each lsp server
