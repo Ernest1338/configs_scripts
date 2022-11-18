@@ -52,6 +52,7 @@ alias vim='nvim'
 alias v='nvim'
 alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
 alias vimg='neovide --multigrid'
+alias docker='podman'
 
 xhost +local:root > /dev/null 2>&1
 
