@@ -64,6 +64,8 @@ M.general = {
                 vim.o.guifont = 'Hack:h20'
             end
         end, "big font mode" },
+        ["<C-d>"] = { "<C-d>zz" },
+        ["<C-u>"] = { "<C-u>zz" },
         ["<C-I>"] = { "<C-I>" }, -- make the ctrl + i (jump list) binding work in neovide (think of remapping those bindings)
     },
     i = {
