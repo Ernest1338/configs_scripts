@@ -41,7 +41,6 @@ M.general = {
                 vim.o.showtabline = 2
             end
         end, "toggle tab bar" },
-        ["n"] = { "nzzzv", "center search" },
         ["<f2>"] = { "<cmd> Telescope keymaps <CR>", "show keymaps" },
         ["K"] = { function()
             local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
@@ -64,7 +63,9 @@ M.general = {
                 vim.o.guifont = 'Hack:h20'
             end
         end, "big font mode" },
-        ["<C-d>"] = { "<C-d>zz" },
+        ["n"] = { "nzzzv" }, -- center search
+        ["N"] = { "Nzzzv" },
+        ["<C-d>"] = { "<C-d>zz" }, -- center cursor
         ["<C-u>"] = { "<C-u>zz" },
         ["<C-I>"] = { "<C-I>" }, -- make the ctrl + i (jump list) binding work in neovide (think of remapping those bindings)
     },
