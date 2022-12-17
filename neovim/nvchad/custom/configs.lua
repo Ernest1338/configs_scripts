@@ -24,6 +24,9 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 -- dont redraw the screen when executing macros / regexes
 vim.o.lazyredraw = true
 
+-- save undo history to a file
+vim.o.undofile = true
+
 -- diagnostic popup
 vim.diagnostic.config({
     virtual_text = true,

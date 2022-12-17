@@ -64,5 +64,5 @@ return {
     },
 
     ["NvChad/nvim-colorizer.lua"] = false,
-    --["kyazdani42/nvim-tree.lua"] = false,
+    ["kyazdani42/nvim-tree.lua"] = false,
 }
