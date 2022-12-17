@@ -11,7 +11,6 @@ M.general = {
         ["<leader>?"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "current file search" },
         ["<leader>fc"] = { "<cmd> Telescope find_files cwd=~/.config/nvim/lua/custom/ <CR>", "edit configs" },
         ["<leader>fd"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "current file search" },
-        ["<leader>fe"] = { vim.cmd.Ex, "file browser (Ex)" },
         ["<leader>ft"] = { "<cmd> Telescope filetypes <CR>", "change file type" },
         ["<leader>fi"] = { "1<C-g>", "file info (path)" },
         ["<leader>fr"] = { "<cmd> Telescope oldfiles <CR>", "recent files" },
