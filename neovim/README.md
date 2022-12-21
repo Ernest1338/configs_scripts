@@ -59,6 +59,7 @@
 - plugin for better diff view - `https://github.com/sindrets/diffview.nvim`
 - maybe refactor mappings to use nvims default way instead of which-key?
 - another cool UI plugin - `https://github.com/MunifTanjim/nui.nvim`
+- modern packer replacement - `https://github.com/folke/lazy.nvim`
 - task runner and job management (cargo build, check, clippy, ...) plugin - `https://github.com/stevearc/overseer.nvim`
 - auto format on buffer save (async) - `https://github.com/lukas-reineke/lsp-format.nvim`
 - file changes decorations on scrollbar (experimental) - `https://github.com/lewis6991/satellite.nvim`
