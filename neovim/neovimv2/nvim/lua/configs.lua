@@ -64,7 +64,10 @@ vim.o.colorcolumn = "90"
 
 -- gives one more line to work with
 vim.o.cmdheight = 0
-vim.opt.shortmess:append "c" -- might be needed for proper cmdheight
+vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
+
+-- clipboard shared with the system
+vim.cmd([[set clipboard+=unnamedplus]])
 
 -- neovide configs
 vim.g.neovide_remember_window_size = true
