@@ -12,20 +12,19 @@ return {
     { "nvim-treesitter/nvim-treesitter", event = "BufReadPost" },
     -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
     -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
-    -- { "neovim/nvim-lspconfig", event = "BufReadPre", config = function()
-    --     require("mason")
-    --     require("lspconfig").rust_analyzer.setup {}
-    --     require("lspconfig").pyright.setup {}
-    --     require("lspconfig").sumneko_lua.setup {
-    --         settings = {
-    --             Lua = {
-    --                 diagnostics = {
-    --                     globals = { "vim" },
-    --                 },
-    --             },
-    --         },
-    --     }
-    -- end },
+    { "neovim/nvim-lspconfig", event = "BufReadPre", config = function()
+        require("lspconfig").rust_analyzer.setup {}
+        require("lspconfig").pyright.setup {}
+        require("lspconfig").sumneko_lua.setup {
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" },
+                    },
+                },
+            },
+        }
+    end },
     { "hrsh7th/nvim-cmp", event = "InsertEnter", dependencies = {
         "hrsh7th/cmp-buffer",
         "saadparwaiz1/cmp_luasnip",

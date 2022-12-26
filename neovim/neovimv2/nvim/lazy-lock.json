@@ -12,6 +12,7 @@
   "lazy.nvim": { "branch": "main", "commit": "b5b2ab6b6c3e721a528e46045db3e40a4e12b3c5" },
   "neogit": { "branch": "master", "commit": "0d6002c6af432343937283fb70791fc76fa7227c" },
   "nvim-cmp": { "branch": "main", "commit": "d09b0c396aaa078cdfe78316ec06940971136e85" },
+  "nvim-lspconfig": { "branch": "master", "commit": "a63d2c75c6880d45209baff596939343e8a431fd" },
   "nvim-treesitter": { "branch": "master", "commit": "7c9ddb72d198d45895d73bc7495e1b7e9627f6ca" },
   "plenary.nvim": { "branch": "master", "commit": "4b7e52044bbb84242158d977a50c4cbcd85070c7" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "b8581d00afa02c6bb4c947348e3cee62db65b119" },
