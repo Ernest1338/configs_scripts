@@ -23,7 +23,7 @@ vim.o.scrolloff = 4
 vim.o.cursorline = true
 
 -- prevent jumping of the screen
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = "yes:1"
 
 -- enable break indent
 vim.o.breakindent = true
@@ -51,6 +51,12 @@ vim.diagnostic.config({
     float = { border = "single" },
 })
 
+-- avoid disapearing status line
+vim.cmd("set noshowmode")
+
+-- better statusline
+vim.cmd([[set statusline+=\ %F\ %M\ %=\ %Y]])
+
 -- set the long line highlight
 vim.o.colorcolumn = "90"
 
@@ -63,8 +69,8 @@ vim.o.colorcolumn = "90"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- gives one more line to work with
-vim.o.cmdheight = 0
-vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
+-- vim.o.cmdheight = 0 -- paired with nvim-cmp, breaks status line for some reason, disabled for now
+-- vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- clipboard shared with the system
 vim.cmd([[set clipboard+=unnamedplus]])
