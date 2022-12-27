@@ -1,8 +1,11 @@
 # neovim
 	this directory contains the fully custom config
 
+# neovimv2
+    this directory contains the new and rewriteen neovim config, now main
+
 # nvchad
-	this directory contains the alternative (now main) NvChad config
+	this directory contains the alternative NvChad config
 
 # astronvim (TODO)
 	this directory contains the alternative AstroNvim config
@@ -65,6 +68,7 @@
 - file changes decorations on scrollbar (experimental) - `https://github.com/lewis6991/satellite.nvim`
 - (TODO: check this out) customizable tab bar (+ workspace multiplexer?) plugin - `https://github.com/nanozuki/tabby.nvim`
 - idea (TODO?) - mapping (maybe ctrl+;) to insert semicolon to the end of the line (works in normal, insert, .. modes)
+- optimizing (or rewriting) colorscheme is a idea to improve neovimv2 startup even further
 - TODO: configure nvim-cmp - `https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e`
 - features missing:
 	- workspaces, (tab) switching - will be implemented in telescope-project
