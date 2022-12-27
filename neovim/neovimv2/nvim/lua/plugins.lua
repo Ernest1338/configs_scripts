@@ -1,5 +1,5 @@
 return {
-    "ellisonleao/gruvbox.nvim",
+    { "ellisonleao/gruvbox.nvim", priority = 1000 },
     { "nvim-telescope/telescope.nvim", dependencies = {
         { "nvim-lua/plenary.nvim" },
         { "nvim-telescope/telescope-file-browser.nvim" },

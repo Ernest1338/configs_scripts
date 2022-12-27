@@ -23,7 +23,7 @@ vim.o.scrolloff = 4
 vim.o.cursorline = true
 
 -- prevent jumping of the screen
-vim.wo.signcolumn = "yes:1"
+vim.wo.signcolumn = "yes"
 
 -- enable break indent
 vim.o.breakindent = true
@@ -52,7 +52,7 @@ vim.diagnostic.config({
 })
 
 -- avoid disapearing status line
-vim.cmd("set noshowmode")
+vim.cmd([[set noshowmode]])
 
 -- better statusline
 vim.cmd([[set statusline+=\ %F\ %M\ %=\ %Y]])
