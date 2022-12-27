@@ -69,8 +69,8 @@ vim.o.colorcolumn = "90"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- gives one more line to work with
--- vim.o.cmdheight = 0 -- paired with nvim-cmp, breaks status line for some reason, disabled for now
--- vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
+vim.o.cmdheight = 0 -- switching to lualine fixed the statusline disapearing problem
+vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- clipboard shared with the system
 vim.cmd([[set clipboard+=unnamedplus]])

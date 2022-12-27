@@ -141,9 +141,10 @@ return {
                 comment = "<leader>/",
             },
         }
-        require("mini.statusline").setup {}
         require("mini.tabline").setup {}
+        -- require("mini.statusline").setup {}
         -- require("mini.indentscope").setup {}
     end },
+    { "nvim-lualine/lualine.nvim", event = "BufReadPost", config = true },
     { "m4xshen/autoclose.nvim", event = "BufReadPost", config = true },
 }
