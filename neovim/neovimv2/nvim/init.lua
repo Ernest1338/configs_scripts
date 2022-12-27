@@ -17,26 +17,26 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 require("lazy").setup("plugins", {
-	defaults = { lazy = true },
-	install  = { colorscheme = { "gruvbox" } },
-	performance = {
-		cache = {
-			enabled = true,
-		},
-		rtp = {
-			disabled_plugins = {
-				"gzip",
-				"matchit",
-				"matchparen",
-				"netrwPlugin",
-				"tarPlugin",
-				"tohtml",
-				"tutor",
-				"zipPlugin",
-				"nvim-treesitter-textobjects",
-			},
-		},
-	},
+    defaults    = { lazy = true },
+    install     = { colorscheme = { "gruvbox" } },
+    performance = {
+        cache = {
+            enabled = true,
+        },
+        rtp = {
+            disabled_plugins = {
+                "gzip",
+                "matchit",
+                "matchparen",
+                "netrwPlugin",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+                "nvim-treesitter-textobjects",
+            },
+        },
+    },
 })
 
 require("configs")

@@ -32,11 +32,11 @@ map("n", "<leader>bn", "<cmd> bnext <CR>") -- Next buffer
 map("n", "<leader>t<leader>", "<cmd> Telescope <CR>") -- Telescope
 map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
 map("n", "<leader>tb", function()
-	if vim.o.showtabline ~= 0 then
-		vim.o.showtabline = 0
-	else
-		vim.o.showtabline = 2
-	end
+    if vim.o.showtabline ~= 0 then
+        vim.o.showtabline = 0
+    else
+        vim.o.showtabline = 2
+    end
 end) -- Show / hide tab bar
 map("n", "<f2>", "<cmd> Telescope keymaps <CR>") -- Show keymaps
 map("n", "K", function()
@@ -52,13 +52,13 @@ map("n", "gD", "<cmd> Telescope lsp_references <CR>") -- Go to references
 map("n", "g[", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to next diagnostic
 map("n", "g]", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to previous diagnostic
 map("n", "<leader>;f", function()
-	if vim.o.guifont == 'Hack:h20' then
-		vim.o.guifont = 'Hack:h32'
-	elseif vim.o.guifont == 'Hack:h32' then
-		vim.o.guifont = ''
-	else
-		vim.o.guifont = 'Hack:h20'
-	end
+    if vim.o.guifont == 'Hack:h20' then
+        vim.o.guifont = 'Hack:h32'
+    elseif vim.o.guifont == 'Hack:h32' then
+        vim.o.guifont = ''
+    else
+        vim.o.guifont = 'Hack:h20'
+    end
 end) -- Big font mode
 map("n", "n", "nzzzv") -- Center search
 map("n", "N", "Nzzzv") -- center backwards search

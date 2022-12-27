@@ -132,4 +132,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- highlight trailing spaces
 -- vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
 -- vim.cmd([[match EoLSpace /\s\+$/]])
-
