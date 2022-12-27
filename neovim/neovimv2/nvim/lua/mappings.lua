@@ -16,7 +16,7 @@ map("n", "<leader>of", "<cmd> Telescope file_browser cwd=~ <CR>") -- Open file
 map("n", "<leader>:", "<cmd> Telescope commands <CR>") -- Telescope commands
 map("n", "<leader>pp", "<cmd> Telescope project display_type=full <CR>") -- Projects
 map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>") -- Edit projects file
-map("n", "<leader>gg", "<cmd> Neogit <CR>") -- Neogit
+map("n", "<leader>gg", "<cmd> Neogit kind=split <CR>") -- Neogit
 map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>") -- Format file
 map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>") -- LSP Code actions
 map("n", "<leader>ld", "<cmd> Telescope diagnostics <CR>") -- LSP Diagnostics
@@ -69,3 +69,4 @@ map("i", "<C-backspace>", "<C-w>", { nowait = true }) -- TODO: doesnt work in we
 map("n", "<A-i>", "<cmd>split term://bash<CR><cmd>startinsert<CR>") -- Terminal mapping
 map("t", "<A-i>", "<cmd>q<CR>") -- Terminal toggle in terminal mode
 map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
+map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
