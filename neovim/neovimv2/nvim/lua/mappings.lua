@@ -62,11 +62,13 @@ map("n", "<leader>;f", function()
 end) -- Big font mode
 map("n", "n", "nzzzv") -- Center search
 map("n", "N", "Nzzzv") -- center backwards search
-map("n", "<C-d>", "<C-d>zz") -- Center C-d
-map("n", "<C-u>", "<C-u>zz") -- Center C-u
 map("n", "<C-I>", "<C-I>") -- makes jumplist work in neovide?
 map("i", "<C-backspace>", "<C-w>", { nowait = true }) -- TODO: doesnt work in wezterm
 map("n", "<A-i>", "<cmd>split term://bash<CR><cmd>startinsert<CR>") -- Terminal mapping
 map("t", "<A-i>", "<cmd>q<CR>") -- Terminal toggle in terminal mode
 map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
 map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
+
+-- this is a workaround for neovide, the map func made it behave weirdly
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {}) -- Center C-d
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {}) -- Center C-u
