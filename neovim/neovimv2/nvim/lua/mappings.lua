@@ -4,7 +4,6 @@ map("n", "<leader>fs", "<cmd>w<CR>") -- Save file
 map("n", "<leader><leader>", "<cmd> Telescope find_files <CR>") -- Find files
 map("n", "<leader>qq", "<cmd> q <CR>") -- Quit
 map("n", "<leader>qQ", "<cmd> q! <CR>") -- Force quit
-map("n", "<leader>/", "<cmd> Telescope live_grep <CR>") -- Search project
 map("n", "<leader>?", "<cmd> Telescope current_buffer_fuzzy_find <CR>") -- Search current file
 map("n", "<leader>fc", "<cmd> Telescope find_files cwd=~/.config/nvim/ <CR>") -- Modify config
 map("n", "<leader>fd", "<cmd> Telescope current_buffer_fuzzy_find <CR>") -- Search current file
@@ -70,5 +69,8 @@ map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
 map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
 
 -- this is a workaround for neovide, the map func made it behave weirdly
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {}) -- Center C-d
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {}) -- Center C-u
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {}) -- Center C-d in normal mode
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {}) -- Center C-u in normal mode
+vim.api.nvim_set_keymap("v", "<C-d>", "<C-d>zz", {}) -- Center C-d in visual mode
+vim.api.nvim_set_keymap("v", "<C-u>", "<C-u>zz", {}) -- Center C-u in visual mode
+vim.api.nvim_set_keymap("n", "<leader>/", "<cmd> Telescope live_grep <CR>", {noremap = true}) -- Search project

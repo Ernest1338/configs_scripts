@@ -72,9 +72,6 @@ vim.o.colorcolumn = "90"
 vim.o.cmdheight = 0 -- switching to lualine fixed the statusline disapearing problem
 vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
--- clipboard shared with the system
-vim.cmd([[set clipboard+=unnamedplus]])
-
 -- neovide configs
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_remember_window_position = true

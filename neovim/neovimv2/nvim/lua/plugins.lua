@@ -146,5 +146,11 @@ return {
         -- require("mini.indentscope").setup {}
     end },
     { "nvim-lualine/lualine.nvim", event = "BufReadPost", config = true },
-    { "m4xshen/autoclose.nvim", event = "BufReadPost", config = true },
+    { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
+    { "EtiamNullam/deferred-clipboard.nvim", config = function()
+        vim.o.clipboard = "unnamedplus"
+        require('deferred-clipboard').setup {}
+    end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
+    { "lewis6991/gitsigns.nvim", event = "BufReadPre", config = true },
+    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain" },
 }
