@@ -138,7 +138,7 @@ return {
     { "echasnovski/mini.nvim", event = "BufReadPost", config = function()
         require("mini.comment").setup {
             mappings = {
-                comment = "<leader>/",
+                comment = "<leader>c",
             },
         }
         require("mini.tabline").setup {}
@@ -152,5 +152,5 @@ return {
         require('deferred-clipboard').setup {}
     end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
     { "lewis6991/gitsigns.nvim", event = "BufReadPre", config = true },
-    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain" },
+    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", config = { width = 120 } },
 }

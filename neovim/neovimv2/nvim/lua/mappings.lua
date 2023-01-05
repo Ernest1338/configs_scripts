@@ -1,5 +1,9 @@
 local map = vim.keymap.set
 
+-- NOTES:
+-- <leader>k - special group of bindings
+
+map("n", "<leader>;", "<cmd> Telescope live_grep <CR>") -- Search project
 map("n", "<leader>fs", "<cmd>w<CR>") -- Save file
 map("n", "<leader><leader>", "<cmd> Telescope find_files <CR>") -- Find files
 map("n", "<leader>qq", "<cmd> q <CR>") -- Quit
@@ -50,7 +54,7 @@ map("n", "gd", "<cmd> lua vim.lsp.buf.definition() <CR>") -- Go to deifinition
 map("n", "gD", "<cmd> Telescope lsp_references <CR>") -- Go to references
 map("n", "g[", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to next diagnostic
 map("n", "g]", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to previous diagnostic
-map("n", "<leader>;f", function()
+map("n", "<leader>kF", function()
     if vim.o.guifont == 'Hack:h20' then
         vim.o.guifont = 'Hack:h32'
     elseif vim.o.guifont == 'Hack:h32' then
@@ -73,4 +77,3 @@ vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {}) -- Center C-d in normal mod
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {}) -- Center C-u in normal mode
 vim.api.nvim_set_keymap("v", "<C-d>", "<C-d>zz", {}) -- Center C-d in visual mode
 vim.api.nvim_set_keymap("v", "<C-u>", "<C-u>zz", {}) -- Center C-u in visual mode
-vim.api.nvim_set_keymap("n", "<leader>/", "<cmd> Telescope live_grep <CR>", {noremap = true}) -- Search project
