@@ -152,7 +152,7 @@ return {
         require('deferred-clipboard').setup {}
     end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
     { "lewis6991/gitsigns.nvim", event = "BufReadPre", config = true },
-    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", config = { width = 120 } },
+    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
 
     -- LOCAL PLUGIN DEVELOPMENT
     { "local/nvimplug1", dev = true, lazy = false },
