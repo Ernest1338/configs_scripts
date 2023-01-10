@@ -138,7 +138,7 @@ return {
     { "echasnovski/mini.nvim", event = "BufReadPost", config = function()
         require("mini.comment").setup {
             mappings = {
-                comment = "<leader>c",
+                comment = "<leader>/",
             },
         }
         require("mini.tabline").setup {}
