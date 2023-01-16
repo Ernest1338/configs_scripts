@@ -53,9 +53,6 @@ vim.diagnostic.config({
 -- avoid disapearing status line
 vim.cmd([[set noshowmode]])
 
--- better statusline
-vim.cmd([[set statusline+=\ %F\ %M\ %=\ %Y]])
-
 -- set the long line highlight
 vim.o.colorcolumn = "90"
 

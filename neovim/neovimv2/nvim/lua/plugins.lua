@@ -149,11 +149,11 @@ return {
     { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
     { "EtiamNullam/deferred-clipboard.nvim", config = function()
         vim.o.clipboard = "unnamedplus"
-        require('deferred-clipboard').setup {}
+        require('deferred-clipboard').setup { lazy = true }
     end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
     { "lewis6991/gitsigns.nvim", event = "BufReadPre", config = true },
     { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/nvimplug1", dev = true, lazy = false },
+    { "local/termplug", dev = true, lazy = false, config = true },
 }
