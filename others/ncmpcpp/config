@@ -3,3 +3,6 @@
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/lyrics
 mpd_music_dir = ~/Music
+user_interface = alternative
+autocenter_mode = yes
+progressbar_look = ~>
