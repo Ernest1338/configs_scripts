@@ -4,6 +4,9 @@
 # neovimv2
     this directory contains the new and rewriteen neovim config, now main
 
+# neovim_lightweight
+    this directory contains a lightweight config for my old laptop
+
 # nvchad
 	this directory contains the alternative NvChad config
 
