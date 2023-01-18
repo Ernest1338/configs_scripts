@@ -48,10 +48,6 @@ return {
         require("mini.pairs").setup {}
         require("mini.completion").setup {}
     end },
-    { "EtiamNullam/deferred-clipboard.nvim", config = function()
-        vim.o.clipboard = "unnamedplus"
-        require('deferred-clipboard').setup { lazy = true }
-    end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
 
     -- LOCAL PLUGIN DEVELOPMENT
     --{ "local/termplug", dev = true, lazy = false, config = true },

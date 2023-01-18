@@ -1,5 +1,4 @@
 {
-  "deferred-clipboard.nvim": { "branch": "master", "commit": "294a166270207e76be7d17cb39ef9e2112d584c6" },
   "lazy.nvim": { "branch": "main", "commit": "c389ad552bd5c2050783ac6cd6e54f5fbba3c7bc" },
   "mini.nvim": { "branch": "main", "commit": "305debd01d486f94a9f6ecfec90321ea98dc5dd9" },
   "neogit": { "branch": "master", "commit": "981207efd10425fef82ca09fa8bd22c3ac3e622d" },
