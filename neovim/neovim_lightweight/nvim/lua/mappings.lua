@@ -7,16 +7,15 @@ map("i", "<C-h>", "<left>") -- <C-h> to move left
 map("i", "<C-j>", "<down>") -- <C-j> to move down
 map("i", "<C-k>", "<up>") -- <C-k> to move up
 map("i", "<C-l>", "<right>") -- <C-l> to move right
-map("n", "<leader>;", "<cmd> lua print('TODO') <CR>") -- Search project
+map("n", "<leader>;", "<cmd> !rg TODO <CR>") -- Search project
 map("n", "<leader>fs", "<cmd>w<CR>") -- Save file
-map("n", "<leader><leader>", "<cmd> lua print('TODO') <CR>") -- Find files
+map("n", "<leader><leader>", ":e ") -- Find files
 map("n", "<leader>qq", "<cmd> q <CR>") -- Quit
 map("n", "<leader>qQ", "<cmd> q! <CR>") -- Force quit
 map("n", "<leader>fd", "<cmd> lua print('TODO') <CR>") -- Search current file
 map("n", "<leader>fi", "1<C-g>") -- File info
 map("n", "<leader>fR", "<cmd> edit! <CR>") -- Reload file
 map("n", "<leader>pp", "<cmd> lua print('TODO') <CR>") -- Projects
-map("n", "<leader>gg", "<cmd> Neogit kind=split <CR>") -- Neogit
 map("n", "<leader>sh", "<cmd> split <CR>") -- Horizontal split
 map("n", "<leader>sv", "<cmd> vsplit <CR>") -- Vertical split
 map("n", "<leader>wd", "<cmd> q <CR>") -- Window delete
@@ -31,8 +30,6 @@ map("n", "<leader>tb", function()
         vim.o.showtabline = 2
     end
 end) -- Show / hide tab bar
-map("n", "g[", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to next diagnostic
-map("n", "g]", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to previous diagnostic
 map("n", "n", "nzzzv") -- Center search
 map("n", "N", "Nzzzv") -- center backwards search
 map("n", "<A-i>", "<cmd>split term://bash<CR><cmd>startinsert<CR>") -- Terminal mapping
