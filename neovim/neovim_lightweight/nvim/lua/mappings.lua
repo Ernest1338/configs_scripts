@@ -12,6 +12,7 @@ map("n", "<leader>fs", "<cmd>w<CR>") -- Save file
 map("n", "<leader><leader>", ":e ") -- Find files
 map("n", "<leader>qq", "<cmd> q <CR>") -- Quit
 map("n", "<leader>qQ", "<cmd> q! <CR>") -- Force quit
+map("n", "<leader>fc", ":e ~/.config/nvim/") -- Edit config files
 map("n", "<leader>fd", "<cmd> lua print('TODO') <CR>") -- Search current file
 map("n", "<leader>fi", "1<C-g>") -- File info
 map("n", "<leader>fR", "<cmd> edit! <CR>") -- Reload file
