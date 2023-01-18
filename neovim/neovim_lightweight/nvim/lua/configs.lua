@@ -79,7 +79,7 @@ vim.g.neovide_fullscreen = true
 --vim.o.guifont="Hack:h12"
 
 -- Set the color scheme
-vim.cmd([[colorscheme habamax]])
+vim.cmd([[colorscheme slate]])
 
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
