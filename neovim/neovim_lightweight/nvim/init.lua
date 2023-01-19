@@ -25,11 +25,6 @@ require("mappings")
 local plugins_grp = vim.api.nvim_create_augroup("PluginsGrp", { clear = true })
 vim.api.nvim_create_autocmd("BufReadPost", {
     callback = function()
-        require("mini.comment").setup {
-            mappings = {
-                comment = "<leader>/",
-            },
-        }
         require("mini.completion").setup {
             lsp_completion = {
                 auto_setup = false,

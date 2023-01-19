@@ -38,6 +38,39 @@ map("t", "<A-i>", "<cmd>q<CR>") -- Terminal toggle in terminal mode
 map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
 map({"n", "v"}, "<C-d>", "<C-d>zz") -- Center C-d
 map({"n", "v"}, "<C-u>", "<C-u>zz") -- Center C-u
+map("v", "<leader>/", function()
+    local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+    local _, line_left, col_left, _ = unpack(vim.fn.getpos("v"))
+    local _, line_right, col_right, _ = unpack(vim.fn.getcurpos())
+    if line_left > line_right then
+        local tmp = line_left
+        line_left = line_right
+        line_right = tmp
+    end
+    local comment = "//"
+    if filetype == "lua" then
+        comment = "--"
+    end
+    for i=line_left, line_right do
+        local line = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
+        local whitespace = string.match(line, "^%s+")
+        if whitespace == nil then
+            whitespace = ""
+        end
+        local last = line:sub(#whitespace + 1, #line)
+        local maybe_comment = last:sub(1, 2)
+        if maybe_comment == comment then
+            local after_comment_index = 3
+            if line:sub(3, 3) == " " then
+                after_comment_index = 4
+            end
+            vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. last:sub(after_comment_index, #last)})
+        else
+            vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. comment .. " " .. last})
+        end
+        vim.api.nvim_input("<Esc>")
+    end
+end)
 
 -- completion mappings
 vim.api.nvim_set_keymap('i', '<Tab>',   [[pumvisible() ? "\<C-n>" : "\<Tab>"]],   { noremap = true, expr = true })
