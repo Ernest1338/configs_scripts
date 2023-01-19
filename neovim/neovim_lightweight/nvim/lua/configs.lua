@@ -18,6 +18,8 @@ vim.o.expandtab = true
 -- enable default tabline
 vim.o.showtabline = 2
 
+vim.cmd([[set noshowmode]])
+
 -- better statusline
 vim.cmd([[set statusline=%#CursorLine#%m%#StatusLine#%r[H4CK3D]%#CursorLine#\ %F%=\ %y\ %l/%L%=]])
 
@@ -61,15 +63,6 @@ vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- Set the color scheme
 vim.cmd([[colorscheme mycolors]])
-
--- Highlight on yank
-local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-vim.api.nvim_create_autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank({ timeout = 200 })
-    end,
-    group = yank_grp,
-})
 
 -- auto remove trailing spaces on write
 local trailing_grp = vim.api.nvim_create_augroup("TrailingSpaces", { clear = true })
