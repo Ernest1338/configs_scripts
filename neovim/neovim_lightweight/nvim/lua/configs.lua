@@ -60,7 +60,7 @@ vim.o.cmdheight = 0 -- switching to lualine fixed the statusline disapearing pro
 vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- Set the color scheme
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme mycolors]])
 
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })

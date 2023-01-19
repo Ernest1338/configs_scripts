@@ -50,6 +50,8 @@ map("v", "<leader>/", function()
     local comment = "//"
     if filetype == "lua" then
         comment = "--"
+    elseif filetype == "vim" then
+        comment = "\""
     end
     for i=line_left, line_right do
         local line = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
@@ -58,11 +60,11 @@ map("v", "<leader>/", function()
             whitespace = ""
         end
         local last = line:sub(#whitespace + 1, #line)
-        local maybe_comment = last:sub(1, 2)
+        local maybe_comment = last:sub(1, #comment)
         if maybe_comment == comment then
-            local after_comment_index = 3
-            if line:sub(3, 3) == " " then
-                after_comment_index = 4
+            local after_comment_index = #comment+1
+            if line:sub(#comment+1, #comment+1) == " " then
+                after_comment_index = #comment+2
             end
             vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. last:sub(after_comment_index, #last)})
         else
