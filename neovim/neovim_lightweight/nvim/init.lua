@@ -30,8 +30,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
                 comment = "<leader>/",
             },
         }
-        require("mini.tabline").setup {}
-        require("mini.statusline").setup {}
         require("mini.completion").setup {
             lsp_completion = {
                 auto_setup = false,
