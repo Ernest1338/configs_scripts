@@ -53,6 +53,7 @@ map("v", "<leader>/", function()
     elseif filetype == "vim" then
         comment = "\""
     end
+    local new_lines = {}
     for i=line_left, line_right do
         local line = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
         if line ~= "" then
@@ -67,13 +68,16 @@ map("v", "<leader>/", function()
                 if line:sub(#comment+1, #comment+1) == " " then
                     after_comment_index = #comment+2
                 end
-                vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. last:sub(after_comment_index, #last)})
+                table.insert(new_lines, whitespace .. last:sub(after_comment_index, #last))
             else
-                vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. comment .. " " .. last})
+                table.insert(new_lines, whitespace .. comment .. " " .. last)
             end
-            vim.api.nvim_input("<Esc>")
+        else
+            table.insert(new_lines, "")
         end
     end
+    vim.api.nvim_input("<Esc>")
+    vim.api.nvim_buf_set_lines(0, line_left - 1, line_right, false, new_lines)
 end)
 
 -- completion mappings
