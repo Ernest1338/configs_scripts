@@ -62,7 +62,8 @@ vim.o.cmdheight = 0 -- switching to lualine fixed the statusline disapearing pro
 vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- Set the color scheme
-vim.cmd([[colorscheme mycolors]])
+vim.cmd([[colorscheme myluacolors]])
+-- vim.cmd([[colorscheme mycolors]])
 
 -- auto remove trailing spaces on write
 local trailing_grp = vim.api.nvim_create_augroup("TrailingSpaces", { clear = true })

@@ -1,6 +1,6 @@
-set background=dark
+" set background=dark
 
-hi clear
+" hi clear
 let g:colors_name = 'mycolors'
 
 hi! link Terminal Normal

@@ -55,22 +55,24 @@ map("v", "<leader>/", function()
     end
     for i=line_left, line_right do
         local line = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
-        local whitespace = string.match(line, "^%s+")
-        if whitespace == nil then
-            whitespace = ""
-        end
-        local last = line:sub(#whitespace + 1, #line)
-        local maybe_comment = last:sub(1, #comment)
-        if maybe_comment == comment then
-            local after_comment_index = #comment+1
-            if line:sub(#comment+1, #comment+1) == " " then
-                after_comment_index = #comment+2
+        if line ~= "" then
+            local whitespace = string.match(line, "^%s+")
+            if whitespace == nil then
+                whitespace = ""
             end
-            vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. last:sub(after_comment_index, #last)})
-        else
-            vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. comment .. " " .. last})
+            local last = line:sub(#whitespace + 1, #line)
+            local maybe_comment = last:sub(1, #comment)
+            if maybe_comment == comment then
+                local after_comment_index = #comment+1
+                if line:sub(#comment+1, #comment+1) == " " then
+                    after_comment_index = #comment+2
+                end
+                vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. last:sub(after_comment_index, #last)})
+            else
+                vim.api.nvim_buf_set_lines(0, i - 1, i, false, {whitespace .. comment .. " " .. last})
+            end
+            vim.api.nvim_input("<Esc>")
         end
-        vim.api.nvim_input("<Esc>")
     end
 end)
 
