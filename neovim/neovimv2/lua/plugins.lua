@@ -142,11 +142,12 @@ return {
             },
         }
         require("mini.tabline").setup {}
+        require("mini.pairs").setup {}
         -- require("mini.statusline").setup {}
         -- require("mini.indentscope").setup {}
     end },
     { "nvim-lualine/lualine.nvim", event = "BufReadPost", config = true },
-    { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
+    -- { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
     { "EtiamNullam/deferred-clipboard.nvim", config = function()
         vim.o.clipboard = "unnamedplus"
         require('deferred-clipboard').setup { lazy = true }
