@@ -156,5 +156,5 @@ return {
     { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/termplug", dev = true, lazy = false, config = true },
+    { "local/termplug", dev = true },
 }
