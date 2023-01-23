@@ -57,7 +57,7 @@ alias vimg='neovide --multigrid'
 xhost +local:root > /dev/null 2>&1
 
 # vim input mode for the shell
-set -o vi
+# set -o vi
 
 shopt -s checkwinsize
 shopt -s expand_aliases
