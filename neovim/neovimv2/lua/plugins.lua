@@ -33,7 +33,17 @@ return {
     -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
     -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
     { "neovim/nvim-lspconfig", event = "BufReadPost", config = function()
-        require("lspconfig").rust_analyzer.setup {}
+        require("lspconfig").rust_analyzer.setup {
+            settings = {
+                ["rust-analyzer"] = {
+                    diagnostics = {
+                        enable = true,
+                        disabled = { "unresolved-proc-macro" },
+                        --enableExperimental = true,
+                    },
+                },
+            },
+        }
         require("lspconfig").pyright.setup {}
         require("lspconfig").sumneko_lua.setup {
             settings = {
@@ -76,11 +86,9 @@ return {
                 ["<C-k>"] = cmp.mapping.select_prev_item(),
                 ["<C-j>"] = cmp.mapping.select_next_item(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ['<Tab>'] = cmp.mapping(function(fallback)
+                ["<Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
-                    elseif luasnip.expand_or_jumpable() then
-                        luasnip.expand_or_jump()
                     else
                         fallback()
                     end
@@ -94,6 +102,13 @@ return {
                         fallback()
                     end
                 end, { 'i', 's' }),
+                ["<A-;>"] = cmp.mapping(function(fallback)
+                    if luasnip.expand_or_jumpable() then
+                        luasnip.expand_or_jump()
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
                 ["<CR>"] = cmp.mapping.confirm({
                     select = false
                 }),
@@ -147,6 +162,7 @@ return {
         -- require("mini.indentscope").setup {}
     end },
     { "nvim-lualine/lualine.nvim", event = "BufReadPost", config = true },
+    -- { "bluz71/nvim-linefly", lazy = false },
     -- { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
     { "EtiamNullam/deferred-clipboard.nvim", config = function()
         vim.o.clipboard = "unnamedplus"
