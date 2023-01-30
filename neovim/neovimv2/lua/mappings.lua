@@ -75,7 +75,7 @@ map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
 map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
 
 -- terminal mappings
-map({"n", "t"}, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>") -- Terminal mapping
+map({ "n", "t" }, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>") -- Terminal mapping
 map("t", "<Esc><Esc>", "<C-\\><C-n>") -- Terminal esc enter normal mode
 
 -- this is a workaround for neovide, the map func made it behave weirdly
