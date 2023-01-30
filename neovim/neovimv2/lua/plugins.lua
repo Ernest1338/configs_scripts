@@ -30,8 +30,6 @@ return {
             indent = { enable = true },
         }
     end },
-    -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
-    -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
     { "neovim/nvim-lspconfig", event = "BufReadPost", config = function()
         require("lspconfig").rust_analyzer.setup {
             settings = {
@@ -148,6 +146,10 @@ return {
                     return vim_item
                 end
             },
+            cmp.event:on(
+                'confirm_done',
+                require("nvim-autopairs.completion.cmp").on_confirm_done()
+            )
         }
     end },
     { "echasnovski/mini.nvim", event = "BufReadPost", config = function()
@@ -157,19 +159,23 @@ return {
             },
         }
         require("mini.tabline").setup {}
-        require("mini.pairs").setup {}
+        -- require("mini.pairs").setup {}
         -- require("mini.statusline").setup {}
         -- require("mini.indentscope").setup {}
     end },
     { "nvim-lualine/lualine.nvim", event = "BufReadPost", config = true },
-    -- { "bluz71/nvim-linefly", lazy = false },
-    -- { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
     { "EtiamNullam/deferred-clipboard.nvim", config = function()
         vim.o.clipboard = "unnamedplus"
         require('deferred-clipboard').setup { lazy = true }
     end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
     { "lewis6991/gitsigns.nvim", event = "BufReadPre", config = true },
     { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
+    { "windwp/nvim-autopairs", event = "BufReadPost", config = true },
+    -- { "bluz71/nvim-linefly", lazy = false },
+    -- { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
+    -- { "simrat39/rust-tools.nvim", config = true, lazy = false },
+    -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
+    -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
 
     -- LOCAL PLUGIN DEVELOPMENT
     { "local/termplug", dev = true },
