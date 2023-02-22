@@ -54,7 +54,7 @@ map("n", "K", function()
         vim.diagnostic.open_float()
     end
 end) -- LSP button
-map("n", "gd", "<cmd> lua vim.lsp.buf.definition() <CR>") -- Go to deifinition
+map("n", "gd", "<cmd> Telescope lsp_definitions <CR>") -- Go to deifinition
 map("n", "gD", "<cmd> Telescope lsp_references <CR>") -- Go to references
 map("n", "g[", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to next diagnostic
 map("n", "g]", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to previous diagnostic
