@@ -23,7 +23,7 @@ return {
             },
         }
     end, cmd = "Telescope" },
-    { "TimUntersberger/neogit", cmd = "Neogit" },
+    -- { "TimUntersberger/neogit", cmd = "Neogit" },
     { "nvim-treesitter/nvim-treesitter", event = "BufReadPost", config = function()
         require("nvim-treesitter.configs").setup {
             highlight = { enable = true, },
