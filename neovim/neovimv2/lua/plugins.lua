@@ -177,7 +177,8 @@ return {
     -- { "simrat39/rust-tools.nvim", config = true, lazy = false },
     -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
     -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
+    { "Ernest1338/termplug.nvim" },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/termplug", dev = true },
+    -- { "local/termplug", dev = true },
 }
