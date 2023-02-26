@@ -159,6 +159,7 @@ return {
             },
         }
         require("mini.tabline").setup {}
+        -- TODO: switch to mini.completion when mini.snippets is available
         -- require("mini.pairs").setup {}
         -- require("mini.statusline").setup {}
         -- require("mini.indentscope").setup {}
