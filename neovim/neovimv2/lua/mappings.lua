@@ -72,6 +72,7 @@ map("n", "<C-I>", "<C-I>") -- makes jumplist work in neovide?
 map("i", "<C-backspace>", "<C-w>", { nowait = true }) -- TODO: doesnt work in wezterm
 map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
 map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
+map("v", "Y", "\"+y<Esc>") -- Y To copy to system clipboard
 
 -- terminal mappings
 map({ "n", "t" }, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>")
