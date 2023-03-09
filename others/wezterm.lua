@@ -4,6 +4,7 @@ local wt = require('wezterm')
 
 return {
     enable_scroll_bar = true,
+    scroll_bar_position = 'left',
     use_fancy_tab_bar = false,
     --window_decorations = 'TITLE',
     window_decorations = 'NONE',
@@ -18,6 +19,9 @@ return {
     },
     default_cursor_style = 'BlinkingBar',
     color_scheme = 'Phrak1 (terminal.sexy)',
+    colors = {
+        cursor_bg = '#dddddd',
+    },
     --color_scheme = 'Gruber (base16)',
     --color_scheme = 'Pro',
     --color_scheme = 'PaulMillr',
@@ -33,9 +37,9 @@ return {
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     scrollback_lines = 2000,
     keys = {
-        { key = 'LeftArrow', mods = 'SHIFT', action = wt.action.ActivateTabRelative(-1) },
-        { key = 'RightArrow', mods = 'SHIFT', action = wt.action.ActivateTabRelative(1) },
-        { key = 'LeftArrow', mods = 'SHIFT|CTRL', action = wt.action.MoveTabRelative(-1) },
+        { key = 'LeftArrow',  mods = 'SHIFT',      action = wt.action.ActivateTabRelative( -1) },
+        { key = 'RightArrow', mods = 'SHIFT',      action = wt.action.ActivateTabRelative(1) },
+        { key = 'LeftArrow',  mods = 'SHIFT|CTRL', action = wt.action.MoveTabRelative( -1) },
         { key = 'RightArrow', mods = 'SHIFT|CTRL', action = wt.action.MoveTabRelative(1) },
     },
     -- improves performance?
@@ -43,11 +47,10 @@ return {
     cursor_blink_ease_out = "Constant",
     animation_fps = 1,
     cursor_blink_rate = 500,
-
     --unix_domains = {
-        --{
-            --name = 'unix',
-        --},
+    --{
+    --name = 'unix',
+    --},
     --},
     --default_gui_startup_args = { 'connect', 'unix' },
 }
