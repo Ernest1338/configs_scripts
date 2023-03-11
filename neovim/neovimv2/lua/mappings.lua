@@ -55,8 +55,10 @@ map("n", "K", function()
 end) -- LSP button
 map("n", "gd", "<cmd> Telescope lsp_definitions <CR>") -- Go to deifinition
 map("n", "gD", "<cmd> Telescope lsp_references <CR>") -- Go to references
-map("n", "g[", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to next diagnostic
-map("n", "g]", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to previous diagnostic
+map("n", "g]", "<cmd> Gitsigns next_hunk <CR>") -- Go to next git hunk
+map("n", "g[", "<cmd> Gitsigns prev_hunk <CR>") -- Go to previous git hunk
+map("n", "g}", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to next diagnostic
+map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous diagnostic
 map("n", "<leader>kF", function()
     if vim.o.guifont == 'Hack:h20' then
         vim.o.guifont = 'Hack:h32'
