@@ -55,6 +55,7 @@ alias v='nvim'
 alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
 alias vimg='neovide --multigrid'
 alias up='paru; flatpak update; rustup update'
+alias venv='virtualenv'
 
 xhost +local:root > /dev/null 2>&1
 
