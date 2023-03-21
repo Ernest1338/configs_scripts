@@ -52,6 +52,8 @@ map("v", "<leader>/", function()
         comment = "--"
     elseif filetype == "vim" then
         comment = "\""
+    elseif filetype == "python" then
+        comment = "#"
     end
     local new_lines = {}
     for i=line_left, line_right do
