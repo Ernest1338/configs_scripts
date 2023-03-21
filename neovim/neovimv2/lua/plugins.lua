@@ -181,4 +181,5 @@ return {
 
     -- LOCAL PLUGIN DEVELOPMENT
     -- { "local/termplug", dev = true },
+    { "local/doctor", dev = true },
 }
