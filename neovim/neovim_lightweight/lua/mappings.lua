@@ -59,15 +59,12 @@ map("v", "<leader>/", function()
     for i=line_left, line_right do
         local line = vim.api.nvim_buf_get_lines(0, i - 1, i, false)[1]
         if line ~= "" then
-            local whitespace = string.match(line, "^%s+")
-            if whitespace == nil then
-                whitespace = ""
-            end
+            local whitespace = string.match(line, "^%s+") or ""
             local last = line:sub(#whitespace + 1, #line)
             local maybe_comment = last:sub(1, #comment)
             if maybe_comment == comment then
                 local after_comment_index = #comment+1
-                if line:sub(#comment+1, #comment+1) == " " then
+                if last:sub(#comment+1, #comment+1) == " " then
                     after_comment_index = #comment+2
                 end
                 table.insert(new_lines, whitespace .. last:sub(after_comment_index, #last))
