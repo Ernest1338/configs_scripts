@@ -84,16 +84,6 @@ map("t", "<A-Esc>", "<C-\\><C-n>") -- Terminal enter normal mode
 map("n", "<leader>gg", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
 map({ "n", "t" }, "<C-g>", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
 
--- overwrite format mapping for python files
-local python_format_grp = vim.api.nvim_create_augroup("PythonFormatGrp", { clear = true })
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "*.py",
-    callback = function()
-        map("n", "<leader>lf", "<cmd>!black %<CR>") -- Format python file
-    end,
-    group = python_format_grp,
-})
-
 -- this is a workaround for neovide, the map func made it behave weirdly
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {}) -- Center C-d in normal mode
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {}) -- Center C-u in normal mode

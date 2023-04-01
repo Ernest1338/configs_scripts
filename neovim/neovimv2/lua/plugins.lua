@@ -42,7 +42,21 @@ return {
                 },
             },
         }
-        require("lspconfig").pyright.setup {}
+        require("lspconfig").pylsp.setup {
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pycodestyle = {
+                            maxLineLength = 120,
+                            ignore = { "E265", "E722" }
+                        },
+                        mccabe = {
+                            enabled = false
+                        }
+                    }
+                }
+            }
+        }
         require("lspconfig").lua_ls.setup {
             settings = {
                 Lua = {
