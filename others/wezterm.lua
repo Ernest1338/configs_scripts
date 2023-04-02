@@ -4,7 +4,7 @@ local wt = require('wezterm')
 
 return {
     enable_scroll_bar = true,
-    scroll_bar_position = 'left',
+    -- scroll_bar_position = 'left',
     use_fancy_tab_bar = false,
     --window_decorations = 'TITLE',
     window_decorations = 'NONE',
