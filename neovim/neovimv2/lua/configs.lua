@@ -69,11 +69,11 @@ vim.o.cmdheight = 0 -- switching to lualine fixed the statusline disapearing pro
 vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- neovide configs
-vim.g.neovide_remember_window_size = true
-vim.g.neovide_remember_window_position = true
-vim.g.neovide_cursor_antialiasing = true
-vim.g.neovide_refresh_rate = 75
-vim.g.neovide_fullscreen = true
+-- vim.g.neovide_remember_window_size = true
+-- vim.g.neovide_remember_window_position = true
+-- vim.g.neovide_cursor_antialiasing = true
+-- vim.g.neovide_refresh_rate = 75
+-- vim.g.neovide_fullscreen = true
 
 -- gui font
 --vim.o.guifont="Hack:h12"

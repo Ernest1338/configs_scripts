@@ -173,6 +173,11 @@ return {
             },
         }
         require("mini.tabline").setup {}
+        require("mini.jump2d").setup {
+            mappings = {
+                start_jumping = "<leader>j",
+            },
+        }
         -- TODO: switch to mini.completion when mini.snippets is available
         -- require("mini.pairs").setup {}
         -- require("mini.statusline").setup {}
