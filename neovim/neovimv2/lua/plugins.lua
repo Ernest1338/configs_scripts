@@ -136,7 +136,7 @@ return {
                         Constructor = "",
                         Field = "",
                         Variable = "",
-                        Class = "ﴯ",
+                        Class = "©",
                         Interface = "",
                         Module = "",
                         Property = "ﰠ",
