@@ -32,6 +32,7 @@ M.general = {
         ["<leader>bb"] = { "<cmd> Telescope buffers <CR>", "switch buffer" },
         ["<leader>bd"] = { "<cmd> bdelete <CR>", "delete buffer" },
         ["<leader>bc"] = { "<cmd> enew <CR>", "create buffer" },
+        ["<leader>bn"] = { "<cmd> bnext <CR>", "next buffer" },
         ["<leader>t<leader>"] = { "<cmd> Telescope <CR>", "telescope" },
         ["<leader>tj"] = { "<cmd> Telescope jumplist <CR>", "telescope jumplist" },
         ["<leader>tb"] = { function()
@@ -52,8 +53,10 @@ M.general = {
         end, "LSP general mapping" },
         ["gd"] = { "<cmd> lua vim.lsp.buf.definition() <CR>", "go to definition" },
         ["gD"] = { "<cmd> Telescope lsp_references <CR>", "go to references" },
-        ["g["] = { "<cmd> lua vim.diagnostic.goto_prev() <CR>", "go to previous LSP diagnostic" },
-        ["g]"] = { "<cmd> lua vim.diagnostic.goto_next() <CR>", "go to next LSP diagnostic" },
+        ["g]"] = { "<cmd> lua Gitsigns next_hunk <CR>", "go to next git hunk" },
+        ["g["] = { "<cmd> lua Gitsigns prev_hunk <CR>", "go to previous git hunk" },
+        ["g}"] = { "<cmd> lua vim.diagnostic.goto_next() <CR>", "go to next LSP diagnostic" },
+        ["g{"] = { "<cmd> lua vim.diagnostic.goto_prev() <CR>", "go to previous LSP diagnostic" },
         ["<leader>;f"] = { function()
             if vim.o.guifont == 'Hack:h20' then
                 vim.o.guifont = 'Hack:h32'
@@ -67,10 +70,9 @@ M.general = {
         ["N"] = { "Nzzzv" },
         ["<C-d>"] = { "<C-d>zz" }, -- center cursor
         ["<C-u>"] = { "<C-u>zz" },
-        ["<C-I>"] = { "<C-I>" }, -- make the ctrl + i (jump list) binding work in neovide (think of remapping those bindings)
     },
     i = {
-        ["<C-backspace>"] = { "<C-w>", opts = { nowait = true } },
+        -- ["<C-BS>"] = { "<C-w>", opts = { nowait = true } },
     },
 }
 
