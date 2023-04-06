@@ -43,6 +43,9 @@ vim.o.lazyredraw = true
 -- save undo history to a file
 vim.o.undofile = true
 
+-- automatically change CWD (should not cause issues but does (telescope project wide search breakes))
+-- vim.o.autochdir = true
+
 -- diagnostic popup
 vim.diagnostic.config({
     virtual_text = true,
@@ -65,7 +68,7 @@ vim.o.colorcolumn = "90"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- gives one more line to work with
-vim.o.cmdheight = 0 -- switching to lualine fixed the statusline disapearing problem
+vim.o.cmdheight = 0           -- switching to lualine fixed the statusline disapearing problem
 vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- neovide configs
