@@ -57,8 +57,7 @@ vim.cmd([[set noshowmode]])
 vim.o.colorcolumn = "90"
 
 -- keep the top line when creating a split
--- TODO: once 0.9 drops?
---vim.o.splitkeep = "topline"
+vim.o.splitkeep = "topline"
 
 -- folding support with treesitter
 -- vim.o.foldmethod = "expr"
