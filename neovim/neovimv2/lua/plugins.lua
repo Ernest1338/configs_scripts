@@ -43,7 +43,13 @@ return {
         "neovim/nvim-lspconfig",
         event = "BufReadPost",
         config = function()
-            require("lspconfig").rust_analyzer.setup {
+            local nvim_lsp = require("lspconfig")
+            local on_attach = function(client, _) -- _ = bufnr
+                -- disabled, because it breaks highlighting and makes it slugish
+                client.server_capabilities.semanticTokensProvider = nil
+            end
+            nvim_lsp["rust_analyzer"].setup {
+                on_attach = on_attach,
                 settings = {
                     ["rust-analyzer"] = {
                         diagnostics = {
@@ -54,7 +60,8 @@ return {
                     },
                 },
             }
-            require("lspconfig").pylsp.setup {
+            nvim_lsp["pylsp"].setup {
+                on_attach = on_attach,
                 settings = {
                     pylsp = {
                         plugins = {
@@ -68,8 +75,10 @@ return {
                         }
                     }
                 }
+
             }
-            require("lspconfig").lua_ls.setup {
+            nvim_lsp["lua_ls"].setup {
+                on_attach = on_attach,
                 settings = {
                     Lua = {
                         diagnostics = {
