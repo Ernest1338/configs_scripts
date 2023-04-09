@@ -205,12 +205,13 @@ return {
                 },
             }
             -- TODO: switch to mini.completion when mini.snippets is available
+            -- TODO: use mini.filetree when available
             -- require("mini.pairs").setup {}
-            -- require("mini.statusline").setup {}
+            require("mini.statusline").setup {}
             -- require("mini.indentscope").setup {}
         end
     },
-    { "nvim-lualine/lualine.nvim",   event = "BufReadPost", config = true },
+    -- { "nvim-lualine/lualine.nvim",   event = "BufReadPost", config = true },
     -- { "EtiamNullam/deferred-clipboard.nvim", config = function()
     --     vim.o.clipboard = "unnamedplus"
     --     require('deferred-clipboard').setup { lazy = true }

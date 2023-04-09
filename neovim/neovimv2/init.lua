@@ -11,6 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
+-- enable the experimental lua-loader
+vim.loader.enable()
+
 -- map leader key as space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

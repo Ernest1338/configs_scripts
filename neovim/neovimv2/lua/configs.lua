@@ -48,13 +48,14 @@ vim.o.undofile = true
 
 -- diagnostic popup
 vim.diagnostic.config({
-    virtual_text = true,
+    -- virtual_text = true,
     --signs = false,
     float = { border = "single" },
 })
 
 -- avoid disapearing status line
-vim.cmd([[set noshowmode]])
+vim.o.showmode = false
+vim.o.showcmd = false
 
 -- set the long line highlight
 vim.o.colorcolumn = "90"
@@ -67,7 +68,7 @@ vim.o.splitkeep = "topline"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- gives one more line to work with
-vim.o.cmdheight = 0           -- switching to lualine fixed the statusline disapearing problem
+-- vim.o.cmdheight = 0           -- switching to lualine fixed the statusline disapearing problem
 vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
 
 -- neovide configs
