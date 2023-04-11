@@ -225,9 +225,10 @@ return {
     --     vim.o.clipboard = "unnamedplus"
     --     require('deferred-clipboard').setup { lazy = true }
     -- end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
-    { "lewis6991/gitsigns.nvim",     event = "BufReadPre",  config = true },
-    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain",    opts = { width = 120 } },
-    { "windwp/nvim-autopairs",       event = "BufReadPost", config = true },
+    { "lewis6991/gitsigns.nvim",     event = "BufReadPre",   config = true },
+    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain",     opts = { width = 120 } },
+    { "windwp/nvim-autopairs",       event = "BufReadPost",  config = true },
+    { "nvim-tree/nvim-tree.lua",     cmd = "NvimTreeToggle", config = true },
     -- { "bluz71/nvim-linefly", lazy = false },
     -- { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
     -- { "simrat39/rust-tools.nvim", config = true, lazy = false },

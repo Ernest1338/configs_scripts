@@ -88,8 +88,9 @@ map("t", "<A-Esc>", "<C-\\><C-n>") -- Terminal enter normal mode
 map("n", "<leader>gg", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
 map({ "n", "t" }, "<C-g>", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
 
--- this is a workaround for neovide, the map func made it behave weirdly
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", {}) -- Center C-d in normal mode
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", {}) -- Center C-u in normal mode
-vim.api.nvim_set_keymap("v", "<C-d>", "<C-d>zz", {}) -- Center C-d in visual mode
-vim.api.nvim_set_keymap("v", "<C-u>", "<C-u>zz", {}) -- Center C-u in visual mode
+-- mini.completion mappings
+-- vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })
+-- vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
+
+map({ "n", "v" }, "<C-d>", "<C-d>zz") -- Center C-d
+map({ "n", "v" }, "<C-u>", "<C-u>zz") -- Center C-u
