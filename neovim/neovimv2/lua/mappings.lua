@@ -35,12 +35,14 @@ map("n", "<leader>bb", "<cmd> Telescope buffers <CR>")                          
 map("n", "<leader>bd", "<cmd> bdelete <CR>")                                                             -- Delete buffer
 map("n", "<leader>bc", "<cmd> enew <CR>")                                                                -- Create buffer
 map("n", "<leader>bn", "<cmd> bnext <CR>")                                                               -- Next buffer
+map("n", "<leader>bp", "<cmd> bprev <CR>")                                                               -- Previous buffer
 map("n", "<leader>nn", "<cmd> Telescope find_files cwd=~/Repos/notes/ <CR><cmd> cd ~/Repos/notes/ <CR>") -- Browse notes
-map("n", "<leader>nc", function()
-    -- TODO
-end)                                                    -- Create new note and open it
+-- map("n", "<leader>nc", function()
+--     -- TODO
+-- end)                                                    -- Create new note and open it
 map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")   -- Telescope
 map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
+map("n", "<leader>tr", "<cmd> NvimTreeToggle <CR>")     -- Toggle nvim tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then
         vim.o.showtabline = 0
@@ -63,22 +65,25 @@ map("n", "g]", "<cmd> Gitsigns next_hunk <CR>")             -- Go to next git hu
 map("n", "g[", "<cmd> Gitsigns prev_hunk <CR>")             -- Go to previous git hunk
 map("n", "g}", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to next diagnostic
 map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous diagnostic
-map("n", "<leader>kF", function()
-    if vim.o.guifont == 'Hack:h20' then
-        vim.o.guifont = 'Hack:h32'
-    elseif vim.o.guifont == 'Hack:h32' then
-        vim.o.guifont = ''
-    else
-        vim.o.guifont = 'Hack:h20'
-    end
-end)                                      -- Big font mode
-map("n", "n", "nzzzv")                    -- Center search
-map("n", "N", "Nzzzv")                    -- center backwards search
-map("n", "<C-I>", "<C-I>")                -- makes jumplist work in neovide?
+-- map("n", "<leader>kF", function()
+--     if vim.o.guifont == 'Hack:h20' then
+--         vim.o.guifont = 'Hack:h32'
+--     elseif vim.o.guifont == 'Hack:h32' then
+--         vim.o.guifont = ''
+--     else
+--         vim.o.guifont = 'Hack:h20'
+--     end
+-- end)                                      -- Big font mode (using TUI not GUI now)
+-- map("n", "<C-I>", "<C-I>")                -- makes jumplist work in neovide?
 -- map("i", "<C-backspace>", "<C-w>", { nowait = true }) -- TODO: doesnt work in wezterm or alacritty
 map("n", "<tab>", "<cmd> bnext <CR>")     -- Next buffer
+map("n", "<S-tab>", "<cmd> bprev <CR>")   -- Previous buffer
 map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
 map("v", "Y", "\"+y<Esc>")                -- Y To copy to system clipboard
+map({ "n", "v" }, "<C-d>", "<C-d>zz")     -- Center C-d
+map({ "n", "v" }, "<C-u>", "<C-u>zz")     -- Center C-u
+map("n", "n", "nzzzv")                    -- Center search
+map("n", "N", "Nzzzv")                    -- center backwards search
 
 -- terminal mappings
 map({ "n", "t" }, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>")
@@ -91,6 +96,3 @@ map({ "n", "t" }, "<C-g>", "<cmd> lua require('termplug').toggle('lazygit') <CR>
 -- mini.completion mappings
 -- vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })
 -- vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
-
-map({ "n", "v" }, "<C-d>", "<C-d>zz") -- Center C-d
-map({ "n", "v" }, "<C-u>", "<C-u>zz") -- Center C-u

@@ -1,5 +1,6 @@
 return {
     { "ellisonleao/gruvbox.nvim",    priority = 1000 },
+    -- { "sainnhe/sonokai",          priority = 1000 },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
@@ -213,14 +214,34 @@ return {
                     start_jumping = "<leader>j",
                 },
             }
+            -- require("mini.base16").setup({
+            --     palette = {
+            --         base00 = "#1d2021",
+            --         base01 = "#3c3836",
+            --         base02 = "#504945",
+            --         base03 = "#665c54",
+            --         base04 = "#bdae93",
+            --         base05 = "#d5c4a1",
+            --         base06 = "#ebdbb2",
+            --         base07 = "#fbf1c7",
+            --         base08 = "#fb4934",
+            --         base09 = "#fe8019",
+            --         base0A = "#fabd2f",
+            --         base0B = "#b8bb26",
+            --         base0C = "#8ec07c",
+            --         base0D = "#83a598",
+            --         base0E = "#d3869b",
+            --         base0F = "#d65d0e",
+            --     }
+            -- })
             -- TODO: switch to mini.completion when mini.snippets is available
-            -- TODO: use mini.filetree when available
+            -- TODO: use mini.filetree insted of nvim-tree (try to lazy load somehow) when available
             -- require("mini.pairs").setup {}
             require("mini.statusline").setup {}
             -- require("mini.indentscope").setup {}
+            -- require("mini.cursorword").setup { delay = 1000 }
         end
     },
-    -- { "nvim-lualine/lualine.nvim",   event = "BufReadPost", config = true },
     -- { "EtiamNullam/deferred-clipboard.nvim", config = function()
     --     vim.o.clipboard = "unnamedplus"
     --     require('deferred-clipboard').setup { lazy = true }
@@ -229,14 +250,10 @@ return {
     { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain",     opts = { width = 120 } },
     { "windwp/nvim-autopairs",       event = "BufReadPost",  config = true },
     { "nvim-tree/nvim-tree.lua",     cmd = "NvimTreeToggle", config = true },
-    -- { "bluz71/nvim-linefly", lazy = false },
-    -- { "m4xshen/autoclose.nvim", event = "BufReadPost", config = function() require("autoclose").setup({}) end },
     -- { "simrat39/rust-tools.nvim", config = true, lazy = false },
-    -- { "lukas-reineke/indent-blankline.nvim", event = "BufReadPre" },
     -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
     { "Ernest1338/termplug.nvim" },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    -- { "local/termplug", dev = true },
     { "local/doctor",                dev = true },
 }
