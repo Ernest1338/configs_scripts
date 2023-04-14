@@ -74,7 +74,7 @@ map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous di
 --         vim.o.guifont = 'Hack:h20'
 --     end
 -- end)                                      -- Big font mode (using TUI not GUI now)
--- map("n", "<C-I>", "<C-I>")                -- makes jumplist work in neovide?
+-- map("n", "<C-I>", "<C-I>")                -- TODO: make jumplist work in alacritty (this doesnt fix it)
 -- map("i", "<C-backspace>", "<C-w>", { nowait = true }) -- TODO: doesnt work in wezterm or alacritty
 map("n", "<tab>", "<cmd> bnext <CR>")     -- Next buffer
 map("n", "<S-tab>", "<cmd> bprev <CR>")   -- Previous buffer
