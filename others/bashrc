@@ -45,7 +45,6 @@ alias startdocker='sudo systemctl start docker'
 alias cachec='sudo bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"'
 alias gamingcont='docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card0 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
 alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /etc/machine-id:/etc/machine-id -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
-alias gaming='docker start "gaming_container" &>/dev/null; docker exec -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null'
 alias music_prod='docker start "music_prod" &>/dev/null; docker exec -it "music_prod" bash && docker stop "music_prod" &>/dev/null'
 alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
 alias pyserv='python3 -m http.server 8080'
@@ -56,6 +55,19 @@ alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
 alias vimg='neovide --multigrid'
 alias up='paru; flatpak update; rustup update'
 alias venv='virtualenv'
+
+gaming_func () {
+    # Mounting win drive if it's not already
+    if [ "$(ls -A ~/Others/WinMount/)" ]; then
+        : # already mounted
+    else
+        echo "Mounting win drive..."
+        sudo mount -t ntfs -o ro /dev/sda2 ~/Others/WinMount/
+    fi
+    docker start "gaming_container" &>/dev/null; docker exec -u user -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null
+}
+
+alias gaming='gaming_func'
 
 xhost +local:root > /dev/null 2>&1
 
