@@ -56,19 +56,18 @@ alias vimg='neovide --multigrid'
 alias up='paru; flatpak update; rustup update'
 alias venv='virtualenv'
 
-gaming_func () {
-    # Mounting win drive if it's not already
+gaming () { # gaming "alias"
+    # Mounting Win drive if it's not already
     if [ "$(ls -A ~/Others/WinMount/)" ]; then
         : # already mounted
     else
-        echo "Mounting win drive..."
+        echo "Mounting Win drive..."
         sudo mount -t ntfs -o ro /dev/sda2 ~/Others/WinMount/
     fi
     docker start "gaming_container" &>/dev/null; docker exec -u user -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null
 }
 
-alias gaming='gaming_func'
-
+# enables X11 in docker containers
 xhost +local:root > /dev/null 2>&1
 
 # vim input mode for the shell
