@@ -30,29 +30,29 @@ alias ll='ls -lah --color=auto'
 alias c='cd'
 alias ip='ip --color=auto'
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
-alias sudo='sudo '                        # this makes the aliases with with sudo
-#alias fixscreen='sxiv -fb /home/dvdmanjaro/Desktop/Files/black.jpg'
+alias sudo='sudo '                        # this makes the aliases work with sudo (for some reason)
+# alias fixscreen='sxiv -fb /home/dvdmanjaro/Desktop/Files/black.jpg'
 alias alpvm='docker run --rm -it alpine'
-#alias threebe='cd /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe; code /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe'
-#alias alpssh='alpsshname=$(docker run --rm -d -t alpine); docker exec -t $alpsshname apk add openssh; docker exec -it $alpsshname sh'
-#alias hostVPNadd='nmcli connection delete client-wg0; nmcli connection import type wireguard file /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nmcli con mod client-wg0 connection.autoconnect no'
-#alias hostVPNedit='echo "" > /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nano /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf'
-#alias VPNon='python3 /home/dvdmanjaro/Desktop/Hacking/others/vps/tkScripts.py & alpssh; hostVPNedit; hostVPNadd; kill -9 $(ps aux | grep tkScripts | grep -v grep | awk "{print \$2}"); clear'
-#alias VPNoff='wg-quick down /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; clear'
-#alias VPSon='python3 /home/dvdmanjaro/Desktop/Hacking/others/vps/tkScripts.py & alpssh; kill -9 $(ps aux | grep tkScripts | grep -v grep | awk "{print \$2}"); clear'
-alias startdocker='sudo systemctl start docker'
-#alias dockergui='docker run --rm -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix archlinux'
+# alias threebe='cd /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe; code /home/dvdmanjaro/Desktop/Programming/Docker/Git/Threebe'
+# alias alpssh='alpsshname=$(docker run --rm -d -t alpine); docker exec -t $alpsshname apk add openssh; docker exec -it $alpsshname sh'
+# alias hostVPNadd='nmcli connection delete client-wg0; nmcli connection import type wireguard file /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nmcli con mod client-wg0 connection.autoconnect no'
+# alias hostVPNedit='echo "" > /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; nano /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf'
+# alias VPNon='python3 /home/dvdmanjaro/Desktop/Hacking/others/vps/tkScripts.py & alpssh; hostVPNedit; hostVPNadd; kill -9 $(ps aux | grep tkScripts | grep -v grep | awk "{print \$2}"); clear'
+# alias VPNoff='wg-quick down /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; clear'
+# alias VPSon='python3 /home/dvdmanjaro/Desktop/Hacking/others/vps/tkScripts.py & alpssh; kill -9 $(ps aux | grep tkScripts | grep -v grep | awk "{print \$2}"); clear'
+# alias dockergui='docker run --rm -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix archlinux'
+# alias startdocker='sudo systemctl start docker'
 alias cachec='sudo bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"'
 alias gamingcont='docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card0 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
-alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /etc/machine-id:/etc/machine-id -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
-alias music_prod='docker start "music_prod" &>/dev/null; docker exec -it "music_prod" bash && docker stop "music_prod" &>/dev/null'
-alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
+# alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /etc/machine-id:/etc/machine-id -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
+# alias music_prod='docker start "music_prod" &>/dev/null; docker exec -it "music_prod" bash && docker stop "music_prod" &>/dev/null'
+# alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
 alias pyserv='python3 -m http.server 8080'
-alias luaserv='luajit -e "require(\"seclib\").http.server(8080, \"0.0.0.0\")"'
+# alias luaserv='luajit -e "require(\"seclib\").http.server(8080, \"0.0.0.0\")"'
 alias vim='nvim'
 alias v='nvim'
 alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
-alias vimg='neovide --multigrid'
+# alias vimg='neovide --multigrid'
 alias up='paru; flatpak update; rustup update'
 alias venv='virtualenv'
 
@@ -65,6 +65,12 @@ gaming () { # gaming "alias"
         sudo mount -t ntfs -o ro /dev/sda2 ~/Others/WinMount/
     fi
     docker start "gaming_container" &>/dev/null; docker exec -u user -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null
+}
+
+tm () { # tmux st (simple terminal) split
+    tmux new-session -c '/home/dvdarch/Files/SomeScripts/' \; \
+         split-window -p 70 -h 'ncmpcpp' \; \
+         set-option -t 0 status off \;
 }
 
 # enables X11 in docker containers
