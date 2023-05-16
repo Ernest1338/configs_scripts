@@ -29,10 +29,9 @@ return {
         end,
         cmd = "Telescope"
     },
-    -- { "TimUntersberger/neogit", cmd = "Neogit" },
     {
         "nvim-treesitter/nvim-treesitter",
-        event = "BufReadPost",
+        -- event = "BufReadPost",
         config = function()
             require("nvim-treesitter.configs").setup {
                 highlight = { enable = true, },
@@ -42,7 +41,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        event = "BufReadPost",
+        -- event = "BufReadPost",
         config = function()
             local nvim_lsp = require("lspconfig")
             local on_attach = function(client, _) -- _ = bufnr
@@ -95,14 +94,14 @@ return {
         dependencies = {
             "rafamadriz/friendly-snippets",
         },
-        event = "BufReadPost",
+        -- event = "BufReadPost",
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
         end
     },
     {
         "hrsh7th/nvim-cmp",
-        event = "BufReadPost",
+        -- event = "BufReadPost",
         dependencies = {
             "hrsh7th/cmp-buffer",
             "saadparwaiz1/cmp_luasnip",
@@ -201,7 +200,7 @@ return {
     },
     {
         "echasnovski/mini.nvim",
-        event = "BufReadPost",
+        -- event = "BufReadPost",
         config = function()
             require("mini.comment").setup {
                 mappings = {
@@ -214,9 +213,12 @@ return {
                     start_jumping = "<leader>j",
                 },
             }
+            require("mini.statusline").setup {}
             -- require("mini.base16").setup({
             --     palette = {
-            --         base00 = "#1d2021",
+            --         -- base00 = "#1d2021",
+            --         -- base00 = "#1f2223",
+            --         base00 = "#282828",
             --         base01 = "#3c3836",
             --         base02 = "#504945",
             --         base03 = "#665c54",
@@ -234,26 +236,34 @@ return {
             --         base0F = "#d65d0e",
             --     }
             -- })
-            -- TODO: switch to mini.completion when mini.snippets is available
+            -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets)
             -- TODO: use mini.filetree insted of nvim-tree (try to lazy load somehow) when available
             -- require("mini.pairs").setup {}
-            require("mini.statusline").setup {}
             -- require("mini.indentscope").setup {}
-            -- require("mini.cursorword").setup { delay = 1000 }
+            -- require("mini.cursorword").setup { delay = 250 }
+            -- require("mini.starter").setup {}
         end
     },
     -- { "EtiamNullam/deferred-clipboard.nvim", config = function()
     --     vim.o.clipboard = "unnamedplus"
     --     require('deferred-clipboard').setup { lazy = true }
     -- end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
-    { "lewis6991/gitsigns.nvim",     event = "BufReadPre",   config = true },
-    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain",     opts = { width = 120 } },
-    { "windwp/nvim-autopairs",       event = "BufReadPost",  config = true },
-    { "nvim-tree/nvim-tree.lua",     cmd = "NvimTreeToggle", config = true },
+    {
+        "lewis6991/gitsigns.nvim",
+        -- event = "BufReadPre",
+        config = true
+    },
+    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
+    {
+        "windwp/nvim-autopairs",
+        -- event = "BufReadPost",
+        config = true
+    },
+    { "nvim-tree/nvim-tree.lua",  cmd = "NvimTreeToggle", config = true },
     -- { "simrat39/rust-tools.nvim", config = true, lazy = false },
     -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
-    { "Ernest1338/termplug.nvim" },
+    { "Ernest1338/termplug.nvim", lazy = true },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",                dev = true },
+    { "local/doctor",             dev = true,             lazy = true },
 }

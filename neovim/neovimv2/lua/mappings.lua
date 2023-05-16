@@ -57,6 +57,7 @@ map("n", "K", function()
         vim.lsp.buf.hover()
     else
         vim.diagnostic.open_float()
+        -- TODO: if is float opened, show hover instead
     end
 end)                                                        -- LSP button
 map("n", "gd", "<cmd> Telescope lsp_definitions <CR>")      -- Go to deifinition
@@ -75,11 +76,12 @@ map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous di
 --     end
 -- end)                                      -- Big font mode (using TUI not GUI now)
 -- map("n", "<C-I>", "<C-I>")                -- TODO: make jumplist work in alacritty (this doesnt fix it)
--- map("i", "<C-backspace>", "<C-w>", { nowait = true }) -- TODO: doesnt work in wezterm or alacritty
+-- map("i", "<C-h>", "<C-w>", { nowait = true }) -- Ctrl+Backspace to remove last word (overwrites movement in the insert mode)
 map("n", "<tab>", "<cmd> bnext <CR>")     -- Next buffer
 map("n", "<S-tab>", "<cmd> bprev <CR>")   -- Previous buffer
 map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
 map("v", "Y", "\"+y<Esc>")                -- Y To copy to system clipboard
+-- map({ "n", "i" }, "<C-p>", "\"+p")        -- Paste from the system clipboard (doesnt work in insert mode atm)
 map({ "n", "v" }, "<C-d>", "<C-d>zz")     -- Center C-d
 map({ "n", "v" }, "<C-u>", "<C-u>zz")     -- Center C-u
 map("n", "n", "nzzzv")                    -- Center search

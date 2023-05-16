@@ -125,6 +125,33 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     group = trailing_grp,
 })
 
+-- NOTE: current word highlight change (for mini.cursorword)
+-- vim.cmd("hi! MiniCursorword guifg=NONE guibg=#3C3836 gui=NONE cterm=NONE")
+
 -- highlight trailing spaces
 -- vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
 -- vim.cmd([[match EoLSpace /\s\+$/]])
+
+-- NOTE: playing around with creating a dashboard
+
+-- local dashboard_grp = vim.api.nvim_create_augroup("Dashboard", { clear = true })
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--     callback = function()
+--         vim.api.nvim_buf_set_lines(0, 0, -1, false, {
+--             "Hello!",
+--             "This is a dashboard!"
+--         })
+--     end,
+--     group = dashboard_grp,
+-- })
+-- local buf = vim.api.nvim_create_buf(false, true)
+-- vim.api.nvim_buf_set_name(buf, "my_buffer_name")
+-- vim.api.nvim_buf_set_lines(buf, 0, -1, true, {"Hello, world!"})
+--
+-- local function delete_buffer()
+--   vim.api.nvim_buf_delete(buf, {force = true})
+-- end
+--
+-- vim.cmd(string.format("autocmd BufLeave <buffer=%d> lua vim.api.nvim_buf_delete(%d, {force = true})", buf, buf))
+--
+-- vim.cmd(string.format("buffer %d", buf))
