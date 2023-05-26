@@ -43,13 +43,26 @@ map("n", "<leader>nn", "<cmd> Telescope find_files cwd=~/Repos/notes/ <CR><cmd> 
 map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")   -- Telescope
 map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
 map("n", "<leader>tr", "<cmd> NvimTreeToggle <CR>")     -- Toggle nvim tree
+map("n", "<C-f>", "<cmd> NvimTreeToggle <CR>")          -- Toggle nvim tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then
         vim.o.showtabline = 0
     else
         vim.o.showtabline = 2
     end
-end)                                             -- Show / hide tab bar
+end) -- Show / hide tab bar
+map("n", "<leader>td", function()
+    vim.api.nvim_buf_delete(0, {})
+    if package.loaded["nvim-tree"] then
+        local api = require("nvim-tree.api")
+        if api.tree.is_visible({ true }) then
+            print("toggling")
+            api.tree.toggle()
+            api.tree.toggle()
+            vim.cmd("wincmd l")
+        end
+    end
+end)                                             -- Delete current tab
 map("n", "<f2>", "<cmd> Telescope keymaps <CR>") -- Show keymaps
 map("n", "K", function()
     local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
