@@ -30,7 +30,7 @@ map("n", "<leader>ls", "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>")    
 map("n", "<leader>lr", "<cmd> lua vim.lsp.buf.rename() <CR>")                                            -- Rename
 map("n", "<leader>sh", "<cmd> split <CR>")                                                               -- Horizontal split
 map("n", "<leader>sv", "<cmd> vsplit <CR>")                                                              -- Vertical split
-map("n", "<leader>wd", "<cmd> q <CR>")                                                                   -- Window delete
+map("n", "<leader>wd", "<cmd> close <CR>")                                                               -- Window close
 map("n", "<leader>bb", "<cmd> Telescope buffers <CR>")                                                   -- Buffers
 map("n", "<leader>bd", "<cmd> bdelete <CR>")                                                             -- Delete buffer
 map("n", "<leader>bc", "<cmd> enew <CR>")                                                                -- Create buffer
@@ -90,15 +90,20 @@ map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous di
 -- end)                                      -- Big font mode (using TUI not GUI now)
 -- map("n", "<C-I>", "<C-I>")                -- TODO: make jumplist work in alacritty (this doesnt fix it)
 -- map("i", "<C-h>", "<C-w>", { nowait = true }) -- Ctrl+Backspace to remove last word (overwrites movement in the insert mode)
-map("n", "<tab>", "<cmd> bnext <CR>")     -- Next buffer
-map("n", "<S-tab>", "<cmd> bprev <CR>")   -- Previous buffer
-map("n", "<leader>ll", "<cmd> Lazy <CR>") -- Lazy package manager
-map("v", "Y", "\"+y<Esc>")                -- Y To copy to system clipboard
+map("n", "<tab>", "<cmd> bnext <CR>")          -- Next buffer
+map("n", "<S-tab>", "<cmd> bprev <CR>")        -- Previous buffer
+map("n", "<leader>ll", "<cmd> Lazy <CR>")      -- Lazy package manager
+map("v", "Y", "\"+y<Esc>")                     -- Y To copy to system clipboard
 -- map({ "n", "i" }, "<C-p>", "\"+p")        -- Paste from the system clipboard (doesnt work in insert mode atm)
-map({ "n", "v" }, "<C-d>", "<C-d>zz")     -- Center C-d
-map({ "n", "v" }, "<C-u>", "<C-u>zz")     -- Center C-u
-map("n", "n", "nzzzv")                    -- Center search
-map("n", "N", "Nzzzv")                    -- center backwards search
+map({ "n", "v" }, "<C-d>", "<C-d>zz")          -- Center C-d
+map({ "n", "v" }, "<C-u>", "<C-u>zz")          -- Center C-u
+map("n", "n", "nzzzv")                         -- Center search
+map("n", "N", "Nzzzv")                         -- center backwards search
+map("v", "y", "ygv<esc>")                      -- Prevent cursor jump when copying
+-- map("n", ";", "<cmd> lua require('telescope.builtin').resume() <CR>") -- Resume telescope
+map("n", ";", ":")                             -- Quick command
+map("v", "K", ":m '<-2<CR>gv==jgvo<esc>=jgvo") -- Move highlighted text up
+map("v", "J", ":m '>+1<CR>gv==kgvo<esc>=kgvo") -- Move highlighted text down
 
 -- terminal mappings
 map({ "n", "t" }, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>")

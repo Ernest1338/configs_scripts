@@ -70,6 +70,7 @@ vim.o.splitkeep = "topline"
 -- gives one more line to work with
 -- vim.o.cmdheight = 0           -- switching to lualine fixed the statusline disapearing problem
 vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
+vim.opt.shortmess:append("I") -- don't show intro message
 
 -- neovide configs
 -- vim.g.neovide_remember_window_size = true

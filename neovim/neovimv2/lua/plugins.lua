@@ -3,6 +3,7 @@ return {
     -- { "sainnhe/sonokai",          priority = 1000 },
     {
         "nvim-telescope/telescope.nvim",
+        event = "VeryLazy",
         dependencies = {
             { "nvim-lua/plenary.nvim" },
             { "nvim-telescope/telescope-file-browser.nvim" },
@@ -31,7 +32,7 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        -- event = "BufReadPost",
+        event = "VeryLazy",
         config = function()
             require("nvim-treesitter.configs").setup {
                 highlight = { enable = true, },
@@ -41,7 +42,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        -- event = "BufReadPost",
+        event = "VeryLazy",
         config = function()
             local nvim_lsp = require("lspconfig")
             local on_attach = function(client, _) -- _ = bufnr
@@ -95,17 +96,17 @@ return {
     },
     {
         "L3MON4D3/LuaSnip",
+        event = "VeryLazy",
         dependencies = {
             "rafamadriz/friendly-snippets",
         },
-        -- event = "BufReadPost",
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
         end
     },
     {
         "hrsh7th/nvim-cmp",
-        -- event = "BufReadPost",
+        event = "VeryLazy",
         dependencies = {
             "hrsh7th/cmp-buffer",
             "saadparwaiz1/cmp_luasnip",
@@ -204,7 +205,8 @@ return {
     },
     {
         "echasnovski/mini.nvim",
-        -- event = "BufReadPost",
+        lazy = false,
+        -- event = "VeryLazy",
         config = function()
             require("mini.comment").setup {
                 mappings = {
@@ -261,13 +263,13 @@ return {
     -- end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
     {
         "lewis6991/gitsigns.nvim",
-        -- event = "BufReadPre",
+        event = "VeryLazy",
         config = true
     },
     { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
     {
         "windwp/nvim-autopairs",
-        -- event = "BufReadPost",
+        event = "VeryLazy",
         config = true
     },
     { "nvim-tree/nvim-tree.lua",  cmd = "NvimTreeToggle", config = true },
