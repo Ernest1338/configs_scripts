@@ -220,6 +220,11 @@ return {
                 },
             }
             require("mini.statusline").setup {}
+            require("mini.files").setup {
+                mappings = {
+                    go_in_plus = "<CR>",
+                },
+            }
             -- require("mini.base16").setup({
             --     palette = {
             --         -- base00 = "#1d2021",
@@ -240,7 +245,8 @@ return {
             --         base0D = "#83a598",
             --         base0E = "#d3869b",
             --         base0F = "#d65d0e",
-            --     }
+            --     },
+            --     use_cterm = true
             -- })
             -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets and mini.pairs)
             -- TODO: use mini.filetree insted of nvim-tree (try to lazy load somehow) when available
@@ -259,7 +265,6 @@ return {
             --         scroll = 500,
             --     }
             -- }
-            require("mini.files").setup {}
         end
     },
     -- { "EtiamNullam/deferred-clipboard.nvim", config = function()
@@ -283,5 +288,5 @@ return {
     { "Ernest1338/termplug.nvim", lazy = true },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",             dev = true,             lazy = true },
+    { "local/doctor",             dev = true, lazy = true },
 }
