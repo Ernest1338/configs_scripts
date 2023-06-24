@@ -42,8 +42,8 @@ map("n", "<leader>nn", "<cmd> Telescope find_files cwd=~/Repos/notes/ <CR><cmd> 
 -- end)                                                    -- Create new note and open it
 map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")   -- Telescope
 map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
-map("n", "<leader>tr", "<cmd> NvimTreeToggle <CR>")     -- Toggle nvim tree
-map("n", "<C-f>", "<cmd> NvimTreeToggle <CR>")          -- Toggle nvim tree
+map("n", "<leader>tr", "<cmd> lua MiniFiles.open() <CR>")     -- Toggle file tree
+map("n", "<C-f>", "<cmd> lua MiniFiles.open() <CR>")          -- Toggle file tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then
         vim.o.showtabline = 0

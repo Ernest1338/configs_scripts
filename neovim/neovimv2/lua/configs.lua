@@ -85,6 +85,9 @@ vim.opt.shortmess:append("I") -- don't show intro message
 -- Set the color scheme
 vim.cmd([[colorscheme gruvbox]])
 
+-- Normal background for NvimFiles
+vim.cmd([[hi MiniFilesNormal guifg=#ebdbb2 guibg=#282828]])
+
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {

@@ -242,7 +242,7 @@ return {
             --         base0F = "#d65d0e",
             --     }
             -- })
-            -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets)
+            -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets and mini.pairs)
             -- TODO: use mini.filetree insted of nvim-tree (try to lazy load somehow) when available
             -- require("mini.pairs").setup {}
             -- require("mini.indentscope").setup {}
@@ -254,7 +254,12 @@ return {
             --         -- Highlight hex color strings (`#rrggbb`) using that color
             --         hex_color = hipatterns.gen_highlighter.hex_color(),
             --     },
+            --     delay = {
+            --         text_change = 500,
+            --         scroll = 500,
+            --     }
             -- }
+            require("mini.files").setup {}
         end
     },
     -- { "EtiamNullam/deferred-clipboard.nvim", config = function()
@@ -272,7 +277,7 @@ return {
         event = "VeryLazy",
         config = true
     },
-    { "nvim-tree/nvim-tree.lua",  cmd = "NvimTreeToggle", config = true },
+    -- { "nvim-tree/nvim-tree.lua",  cmd = "NvimTreeToggle", config = true },
     -- { "simrat39/rust-tools.nvim", config = true, lazy = false },
     -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
     { "Ernest1338/termplug.nvim", lazy = true },
