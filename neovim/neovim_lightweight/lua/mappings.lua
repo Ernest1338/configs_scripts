@@ -33,7 +33,18 @@ map("n", "<leader>tb", function()
 end) -- Show / hide tab bar
 map("n", "n", "nzzzv") -- Center search
 map("n", "N", "Nzzzv") -- center backwards search
-map("n", "<A-i>", "<cmd>split term://bash<CR><cmd>startinsert<CR>") -- Terminal mapping
+map("n", "<A-i>", function()
+    local buffer_number = vim.fn.bufnr("termplug")
+    if buffer_number == -1 then
+        vim.cmd("split term://bash | file termplug | startinsert") -- create if not exist
+    else
+        if vim.fn.bufnr("%") == buffer_number then
+            vim.cmd("hide") -- hide if current
+        else
+            vim.cmd("split termplug | startinsert") -- switch to if not
+        end
+    end
+end) -- Terminal mapping
 map("t", "<A-i>", "<cmd>q<CR>") -- Terminal toggle in terminal mode
 map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
 map({"n", "v"}, "<C-d>", "<C-d>zz") -- Center C-d
