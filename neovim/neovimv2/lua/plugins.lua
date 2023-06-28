@@ -224,7 +224,11 @@ return {
                 mappings = {
                     go_in_plus = "<CR>",
                 },
+                -- windows = {
+                --     preview = true,
+                -- },
             }
+            require("mini.cursorword").setup { delay = 500 }
             -- require("mini.base16").setup({
             --     palette = {
             --         -- base00 = "#1d2021",
@@ -252,7 +256,6 @@ return {
             -- TODO: use mini.filetree insted of nvim-tree (try to lazy load somehow) when available
             -- require("mini.pairs").setup {}
             -- require("mini.indentscope").setup {}
-            -- require("mini.cursorword").setup { delay = 250 }
             -- require("mini.starter").setup {}
             -- local hipatterns = require("mini.hipatterns")
             -- hipatterns.setup {
