@@ -43,7 +43,7 @@ vim.o.lazyredraw = true
 -- save undo history to a file
 vim.o.undofile = true
 
--- automatically change CWD (should not cause issues but does (telescope project wide search breakes))
+-- automatically change CWD (should not cause issues but does - telescope project wide search breakes)
 -- vim.o.autochdir = true
 
 -- diagnostic popup
@@ -69,8 +69,7 @@ vim.o.splitkeep = "topline"
 
 -- gives one more line to work with
 -- vim.o.cmdheight = 0           -- switching to lualine fixed the statusline disapearing problem
-vim.opt.shortmess:append("c") -- might be needed for proper cmdheight
-vim.opt.shortmess:append("I") -- don't show intro message
+vim.opt.shortmess:append("cI") -- might be needed for proper cmdheight + don't show intro message
 
 -- neovide configs
 -- vim.g.neovide_remember_window_size = true
@@ -88,6 +87,9 @@ vim.cmd([[colorscheme gruvbox]])
 -- Normal background for NvimFiles
 vim.cmd([[hi MiniFilesNormal guifg=#ebdbb2 guibg=#282828]])
 
+-- Current word highlight change (for mini.cursorword)
+vim.cmd([[hi MiniCursorword guifg=NONE guibg=#3C3836 gui=NONE cterm=NONE]])
+
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -97,8 +99,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = yank_grp,
 })
 
--- TODO: I DONT KNOW IF THE vim.schedule IS BETTER OR WORSE HERE
+-- auto remove trailing spaces on write
+local trailing_grp = vim.api.nvim_create_augroup("TrailingSpaces", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        local original_cursor = vim.api.nvim_win_get_cursor(0)
+        vim.cmd([[keeppatterns %s/\s\+$//e]])
+        vim.api.nvim_win_set_cursor(0, original_cursor)
+    end,
+    group = trailing_grp,
+})
 
+-- NOTE: I DONT KNOW IF THE vim.schedule IS BETTER OR WORSE HERE
 -- auto format on write
 -- local format_grp = vim.api.nvim_create_augroup("FormatOnSave", { clear = true })
 -- vim.api.nvim_create_autocmd("BufWritePre", {
@@ -110,34 +122,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 --     group = format_grp,
 -- })
 
--- auto remove trailing spaces on write
-local trailing_grp = vim.api.nvim_create_augroup("TrailingSpaces", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-        --vim.schedule(function()
-        local original_cursor = vim.fn.getcurpos()
-        local first_changed = vim.fn.getpos("'[")
-        local last_changed = vim.fn.getpos("']")
-
-        vim.cmd([[:%s/\s\+$//e]])
-
-        vim.fn.setpos("']", last_changed)
-        vim.fn.setpos("'[", first_changed)
-        vim.fn.setpos('.', original_cursor)
-        --end)
-    end,
-    group = trailing_grp,
-})
-
--- NOTE: current word highlight change (for mini.cursorword)
--- vim.cmd("hi! MiniCursorword guifg=NONE guibg=#3C3836 gui=NONE cterm=NONE")
-
 -- highlight trailing spaces
 -- vim.cmd([[hi EoLSpace ctermbg=238 guibg=#802020]])
 -- vim.cmd([[match EoLSpace /\s\+$/]])
 
 -- NOTE: playing around with creating a dashboard
-
 -- local dashboard_grp = vim.api.nvim_create_augroup("Dashboard", { clear = true })
 -- vim.api.nvim_create_autocmd("VimEnter", {
 --     callback = function()
