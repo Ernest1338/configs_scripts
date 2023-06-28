@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
--- NOTES:
+-- NOTE:
 -- <leader>k - special group of bindings
 
 map("i", "<C-h>", "<left>")                                                                              -- <C-h> to move left
@@ -40,10 +40,10 @@ map("n", "<leader>nn", "<cmd> Telescope find_files cwd=~/Repos/notes/ <CR><cmd> 
 -- map("n", "<leader>nc", function()
 --     -- TODO
 -- end)                                                    -- Create new note and open it
-map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")   -- Telescope
-map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
-map("n", "<leader>tr", "<cmd> lua MiniFiles.open() <CR>")     -- Toggle file tree
-map("n", "<C-f>", "<cmd> lua MiniFiles.open() <CR>")          -- Toggle file tree
+map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")     -- Telescope
+map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>")   -- Jumplist
+map("n", "<leader>tr", "<cmd> lua MiniFiles.open() <CR>") -- Toggle file tree
+map("n", "<C-f>", "<cmd> lua MiniFiles.open() <CR>")      -- Toggle file tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then
         vim.o.showtabline = 0
@@ -56,13 +56,13 @@ map("n", "<leader>td", function()
     if package.loaded["nvim-tree"] then
         local api = require("nvim-tree.api")
         if api.tree.is_visible({ true }) then
-            print("toggling")
+            -- print("toggling")
             api.tree.toggle()
             api.tree.toggle()
             vim.cmd("wincmd l")
         end
     end
-end)                                             -- Delete current tab
+end)                                             -- Delete current tab TODO: i'm not using nvim-tree anymore
 map("n", "<f2>", "<cmd> Telescope keymaps <CR>") -- Show keymaps
 map("n", "K", function()
     local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
@@ -89,7 +89,7 @@ map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous di
 --     end
 -- end)                                      -- Big font mode (using TUI not GUI now)
 -- map("n", "<C-I>", "<C-I>")                -- TODO: make jumplist work in alacritty (this doesnt fix it)
--- map("i", "<C-h>", "<C-w>", { nowait = true }) -- Ctrl+Backspace to remove last word (overwrites movement in the insert mode)
+-- map("i", "<C-h>", "<C-w>", { nowait = true }) -- Ctrl+Backspace to remove last word (problem: overwrites movement in the insert mode)
 map("n", "<tab>", "<cmd> bnext <CR>")          -- Next buffer
 map("n", "<S-tab>", "<cmd> bprev <CR>")        -- Previous buffer
 map("n", "<leader>ll", "<cmd> Lazy <CR>")      -- Lazy package manager
