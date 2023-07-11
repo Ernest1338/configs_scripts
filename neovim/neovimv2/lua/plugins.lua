@@ -3,7 +3,7 @@ return {
     -- { "sainnhe/sonokai",          priority = 1000 },
     {
         "nvim-telescope/telescope.nvim",
-        event = "VeryLazy",
+        event = "VeryLazy", -- might want to lazy load, comment that out
         dependencies = {
             { "nvim-lua/plenary.nvim" },
             { "nvim-telescope/telescope-file-browser.nvim" },
@@ -96,7 +96,7 @@ return {
     },
     {
         "L3MON4D3/LuaSnip",
-        event = "VeryLazy",
+        event = "VeryLazy", -- change to InsertEnter to lazy load
         dependencies = {
             "rafamadriz/friendly-snippets",
         },
@@ -106,7 +106,7 @@ return {
     },
     {
         "hrsh7th/nvim-cmp",
-        event = "VeryLazy",
+        event = "VeryLazy", -- change to InsertEnter to lazy load
         dependencies = {
             "hrsh7th/cmp-buffer",
             "saadparwaiz1/cmp_luasnip",

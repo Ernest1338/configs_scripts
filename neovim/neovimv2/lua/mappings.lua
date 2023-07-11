@@ -37,9 +37,14 @@ map("n", "<leader>bc", "<cmd> enew <CR>")                                       
 map("n", "<leader>bn", "<cmd> bnext <CR>")                                                               -- Next buffer
 map("n", "<leader>bp", "<cmd> bprev <CR>")                                                               -- Previous buffer
 map("n", "<leader>nn", "<cmd> Telescope find_files cwd=~/Repos/notes/ <CR><cmd> cd ~/Repos/notes/ <CR>") -- Browse notes
--- map("n", "<leader>nc", function()
---     -- TODO
--- end)                                                    -- Create new note and open it
+map("n", "<leader>nc", function()
+    local notes_dir = "~/Repos/notes/oneTimeNotes/Others/"
+    local note = vim.fn.input("Note file name (.md added automatically): ") .. ".md"
+    if note ~= ".md" then
+        vim.cmd("edit " .. notes_dir .. note)             -- open file in a new buf
+        vim.api.nvim_set_current_dir(notes_dir)           -- change CWD to notes
+    end
+end)                                                      -- Create new note (one time notes directory) and open it
 map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")     -- Telescope
 map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>")   -- Jumplist
 map("n", "<leader>tr", "<cmd> lua MiniFiles.open() <CR>") -- Toggle file tree
