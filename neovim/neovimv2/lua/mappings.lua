@@ -113,6 +113,7 @@ map("v", "J", ":m '>+1<CR>gv==kgvo<esc>=kgvo") -- Move highlighted text down
 -- terminal mappings
 map({ "n", "t" }, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>")
 map("t", "<A-Esc>", "<C-\\><C-n>") -- Terminal enter normal mode
+map("t", "<A-k>", "<Up><Cr>")      -- Alt+k to repeat previous command
 
 -- lazygit mappings
 map("n", "<leader>gg", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
