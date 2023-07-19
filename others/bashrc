@@ -54,7 +54,7 @@ alias v='nvim'
 alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
 # alias vimg='neovide --multigrid'
 alias up='paru; flatpak update; rustup update'
-alias venv='virtualenv'
+# alias venv='virtualenv'
 
 gaming () { # gaming "alias"
     # Mounting Win drive if it's not already
