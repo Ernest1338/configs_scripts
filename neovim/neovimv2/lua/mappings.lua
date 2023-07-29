@@ -3,10 +3,10 @@ local map = vim.keymap.set
 -- NOTE:
 -- <leader>k - special group of bindings
 
-map("i", "<C-h>", "<left>")                                                                              -- <C-h> to move left
-map("i", "<C-j>", "<down>")                                                                              -- <C-j> to move down
-map("i", "<C-k>", "<up>")                                                                                -- <C-k> to move up
-map("i", "<C-l>", "<right>")                                                                             -- <C-l> to move right
+map({ "i", "t" }, "<C-k>", "<up>")                                                                       -- <C-k> to move up
+map({ "i", "t" }, "<C-j>", "<down>")                                                                     -- <C-j> to move down
+map({ "i", "t" }, "<C-h>", "<left>")                                                                     -- <C-h> to move left
+map({ "i", "t" }, "<C-l>", "<right>")                                                                    -- <C-l> to move right
 map("n", "<leader>;", "<cmd> Telescope live_grep <CR>")                                                  -- Search project
 map("n", "<leader>fs", "<cmd>w<CR>")                                                                     -- Save file
 map("n", "<leader><leader>", "<cmd> Telescope find_files <CR>")                                          -- Find files
