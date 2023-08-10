@@ -219,7 +219,11 @@ return {
                     start_jumping = "<leader>j",
                 },
             }
-            require("mini.statusline").setup {}
+            require("mini.statusline").setup {
+                content = {
+                    inactive = require("mini.statusline").active, -- HACK for termcol process exit
+                },
+            }
             require("mini.files").setup {
                 mappings = {
                     go_in_plus = "<CR>",

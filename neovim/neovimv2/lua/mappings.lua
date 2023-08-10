@@ -41,14 +41,16 @@ map("n", "<leader>nc", function()
     local notes_dir = "~/Repos/notes/oneTimeNotes/Others/"
     local note = vim.fn.input("Note file name (.md added automatically): ") .. ".md"
     if note ~= ".md" then
-        vim.cmd("edit " .. notes_dir .. note)             -- open file in a new buf
-        vim.api.nvim_set_current_dir(notes_dir)           -- change CWD to notes
+        vim.cmd("edit " .. notes_dir .. note)           -- open file in a new buf
+        vim.api.nvim_set_current_dir(notes_dir)         -- change CWD to notes
     end
-end)                                                      -- Create new note (one time notes directory) and open it
-map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")     -- Telescope
-map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>")   -- Jumplist
-map("n", "<leader>tr", "<cmd> lua MiniFiles.open() <CR>") -- Toggle file tree
-map("n", "<C-f>", "<cmd> lua MiniFiles.open() <CR>")      -- Toggle file tree
+end)                                                    -- Create new note (one time notes directory) and open it
+map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")   -- Telescope
+map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
+-- map("n", "<leader>tr", "<cmd> lua MiniFiles.open() <CR>") -- Toggle file tree
+map("n", "<C-f>", function()
+    if not MiniFiles.close() then MiniFiles.open() end
+end) -- Toggle file tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then
         vim.o.showtabline = 0
