@@ -6,14 +6,14 @@ return {
         event = "VeryLazy", -- might want to lazy load, comment that out
         dependencies = {
             { "nvim-lua/plenary.nvim" },
-            { "nvim-telescope/telescope-file-browser.nvim" },
+            -- { "nvim-telescope/telescope-file-browser.nvim" },
             { "nvim-telescope/telescope-project.nvim" },
         },
         config = function()
             local ts = require("telescope")
-            local fb_actions = ts.extensions.file_browser.actions
             local ts_actions = require("telescope.actions")
-            ts.load_extension("file_browser")
+            -- local fb_actions = ts.extensions.file_browser.actions
+            -- ts.load_extension("file_browser")
             ts.load_extension("project")
             ts.setup {
                 defaults = {
@@ -22,7 +22,7 @@ return {
                             ["<C-j>"] = ts_actions.move_selection_next,
                             ["<C-k>"] = ts_actions.move_selection_previous,
                             -- Ctrl + Enter to create file/folder if no results found
-                            ["<C-CR>"] = fb_actions.create_from_prompt,
+                            -- ["<C-CR>"] = fb_actions.create_from_prompt,
                         },
                     },
                 },
@@ -257,7 +257,6 @@ return {
             --     use_cterm = true
             -- })
             -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets and mini.pairs)
-            -- TODO: use mini.filetree insted of nvim-tree (try to lazy load somehow) when available
             -- require("mini.pairs").setup {}
             -- require("mini.indentscope").setup {}
             -- require("mini.starter").setup {}
@@ -289,11 +288,12 @@ return {
         event = "VeryLazy",
         config = true
     },
+    { "nvim-tree/nvim-web-devicons", lazy = true },
     -- { "nvim-tree/nvim-tree.lua",  cmd = "NvimTreeToggle", config = true },
     -- { "simrat39/rust-tools.nvim", config = true, lazy = false },
     -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
-    { "Ernest1338/termplug.nvim", lazy = true },
+    { "Ernest1338/termplug.nvim",    lazy = true },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",             dev = true, lazy = true },
+    { "local/doctor",                dev = true, lazy = true },
 }

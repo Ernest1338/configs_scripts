@@ -3,39 +3,39 @@ local map = vim.keymap.set
 -- NOTE:
 -- <leader>k - special group of bindings
 
-map({ "i", "t" }, "<C-k>", "<up>")                                                                       -- <C-k> to move up
-map({ "i", "t" }, "<C-j>", "<down>")                                                                     -- <C-j> to move down
-map({ "i", "t" }, "<C-h>", "<left>")                                                                     -- <C-h> to move left
-map({ "i", "t" }, "<C-l>", "<right>")                                                                    -- <C-l> to move right
-map("n", "<leader>;", "<cmd> Telescope live_grep <CR>")                                                  -- Search project
-map("n", "<leader>fs", "<cmd>w<CR>")                                                                     -- Save file
-map("n", "<leader><leader>", "<cmd> Telescope find_files <CR>")                                          -- Find files
-map("n", "<leader>qq", "<cmd> q <CR>")                                                                   -- Quit
-map("n", "<leader>qQ", "<cmd> q! <CR>")                                                                  -- Force quit
-map("n", "<leader>?", "<cmd> Telescope current_buffer_fuzzy_find <CR>")                                  -- Search current file
-map("n", "<leader>fc", "<cmd> Telescope find_files cwd=~/.config/nvim/ <CR>")                            -- Modify config
-map("n", "<leader>fd", "<cmd> Telescope current_buffer_fuzzy_find <CR>")                                 -- Search current file
-map("n", "<leader>ft", "<cmd> Telescope filetypes <CR>")                                                 -- Change file type
-map("n", "<leader>fi", "1<C-g>")                                                                         -- File info
-map("n", "<leader>fr", "<cmd> Telescope oldfiles <CR>")                                                  -- Recent files
-map("n", "<leader>fR", "<cmd> edit! <CR>")                                                               -- Reload file
-map("n", "<leader>of", "<cmd> Telescope file_browser cwd=~ <CR>")                                        -- Open file
-map("n", "<leader>:", "<cmd> Telescope commands <CR>")                                                   -- Telescope commands
-map("n", "<leader>pp", "<cmd> Telescope project display_type=full <CR>")                                 -- Projects
-map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>")                     -- Edit projects file
-map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>")            -- Format file
-map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>")                                       -- LSP Code actions
-map("n", "<leader>ld", "<cmd> Telescope diagnostics <CR>")                                               -- LSP Diagnostics
-map("n", "<leader>ls", "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>")                             -- LSP Symbols
-map("n", "<leader>lr", "<cmd> lua vim.lsp.buf.rename() <CR>")                                            -- Rename
-map("n", "<leader>sh", "<cmd> split <CR>")                                                               -- Horizontal split
-map("n", "<leader>sv", "<cmd> vsplit <CR>")                                                              -- Vertical split
-map("n", "<leader>wd", "<cmd> close <CR>")                                                               -- Window close
-map("n", "<leader>bb", "<cmd> Telescope buffers <CR>")                                                   -- Buffers
-map("n", "<leader>bd", "<cmd> bdelete <CR>")                                                             -- Delete buffer
-map("n", "<leader>bc", "<cmd> enew <CR>")                                                                -- Create buffer
-map("n", "<leader>bn", "<cmd> bnext <CR>")                                                               -- Next buffer
-map("n", "<leader>bp", "<cmd> bprev <CR>")                                                               -- Previous buffer
+map({ "i", "t" }, "<C-k>", "<up>")                                                            -- <C-k> to move up
+map({ "i", "t" }, "<C-j>", "<down>")                                                          -- <C-j> to move down
+map({ "i", "t" }, "<C-h>", "<left>")                                                          -- <C-h> to move left
+map({ "i", "t" }, "<C-l>", "<right>")                                                         -- <C-l> to move right
+map("n", "<leader>;", "<cmd> Telescope live_grep <CR>")                                       -- Search project
+map("n", "<leader>fs", "<cmd>w<CR>")                                                          -- Save file
+map("n", "<leader><leader>", "<cmd> Telescope find_files <CR>")                               -- Find files
+map("n", "<leader>qq", "<cmd> q <CR>")                                                        -- Quit
+map("n", "<leader>qQ", "<cmd> q! <CR>")                                                       -- Force quit
+map("n", "<leader>?", "<cmd> Telescope current_buffer_fuzzy_find <CR>")                       -- Search current file
+map("n", "<leader>fc", "<cmd> Telescope find_files cwd=~/.config/nvim/ <CR>")                 -- Modify config
+map("n", "<leader>fd", "<cmd> Telescope current_buffer_fuzzy_find <CR>")                      -- Search current file
+map("n", "<leader>ft", "<cmd> Telescope filetypes <CR>")                                      -- Change file type
+map("n", "<leader>fi", "1<C-g>")                                                              -- File info
+map("n", "<leader>fr", "<cmd> Telescope oldfiles <CR>")                                       -- Recent files
+map("n", "<leader>fR", "<cmd> edit! <CR>")                                                    -- Reload file
+map("n", "<leader>of", "<cmd> lua MiniFiles.open('~') <CR>")                                  -- Open file
+map("n", "<leader>:", "<cmd> Telescope commands <CR>")                                        -- Telescope commands
+map("n", "<leader>pp", "<cmd> Telescope project display_type=full <CR>")                      -- Projects
+map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>")          -- Edit projects file
+map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>") -- Format file
+map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>")                            -- LSP Code actions
+map("n", "<leader>ld", "<cmd> Telescope diagnostics <CR>")                                    -- LSP Diagnostics
+map("n", "<leader>ls", "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>")                  -- LSP Symbols
+map("n", "<leader>lr", "<cmd> lua vim.lsp.buf.rename() <CR>")                                 -- Rename
+map("n", "<leader>sh", "<cmd> split <CR>")                                                    -- Horizontal split
+map("n", "<leader>sv", "<cmd> vsplit <CR>")                                                   -- Vertical split
+map("n", "<leader>wd", "<cmd> close <CR>")                                                    -- Window close
+-- map("n", "<leader>bb", "<cmd> Telescope buffers <CR>")                                                   -- Buffers
+map("n", "<leader>bd", "<cmd> bdelete <CR>")                                                  -- Delete buffer
+-- map("n", "<leader>bc", "<cmd> enew <CR>")                                                                -- Create buffer
+-- map("n", "<leader>bn", "<cmd> bnext <CR>")                                                               -- Next buffer
+-- map("n", "<leader>bp", "<cmd> bprev <CR>")                                                               -- Previous buffer
 map("n", "<leader>nn", "<cmd> Telescope find_files cwd=~/Repos/notes/ <CR><cmd> cd ~/Repos/notes/ <CR>") -- Browse notes
 map("n", "<leader>nc", function()
     local notes_dir = "~/Repos/notes/oneTimeNotes/Others/"
