@@ -31,12 +31,13 @@ map("n", "<leader>lr", "<cmd> lua vim.lsp.buf.rename() <CR>")                   
 map("n", "<leader>sh", "<cmd> split <CR>")                                                    -- Horizontal split
 map("n", "<leader>sv", "<cmd> vsplit <CR>")                                                   -- Vertical split
 map("n", "<leader>wd", "<cmd> close <CR>")                                                    -- Window close
--- map("n", "<leader>bb", "<cmd> Telescope buffers <CR>")                                                   -- Buffers
+map("n", "<leader>bb", "<cmd> Telescope buffers <CR>")                                        -- Buffers
 map("n", "<leader>bd", "<cmd> bdelete <CR>")                                                  -- Delete buffer
 -- map("n", "<leader>bc", "<cmd> enew <CR>")                                                                -- Create buffer
 -- map("n", "<leader>bn", "<cmd> bnext <CR>")                                                               -- Next buffer
 -- map("n", "<leader>bp", "<cmd> bprev <CR>")                                                               -- Previous buffer
 map("n", "<leader>nn", "<cmd> Telescope find_files cwd=~/Repos/notes/ <CR><cmd> cd ~/Repos/notes/ <CR>") -- Browse notes
+-- map("n", "<leader>nn", "<cmd> lua MiniFiles.open('~/Repos/notes/') <CR><cmd> cd ~/Repos/notes/ <CR>") -- Browse notes
 map("n", "<leader>nc", function()
     local notes_dir = "~/Repos/notes/oneTimeNotes/Others/"
     local note = vim.fn.input("Note file name (.md added automatically): ") .. ".md"
