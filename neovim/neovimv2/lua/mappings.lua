@@ -58,29 +58,18 @@ map("n", "<leader>tb", function()
     else
         vim.o.showtabline = 2
     end
-end) -- Show / hide tab bar
-map("n", "<leader>td", function()
-    vim.api.nvim_buf_delete(0, {})
-    if package.loaded["nvim-tree"] then
-        local api = require("nvim-tree.api")
-        if api.tree.is_visible({ true }) then
-            -- print("toggling")
-            api.tree.toggle()
-            api.tree.toggle()
-            vim.cmd("wincmd l")
-        end
-    end
-end)                                             -- Delete current tab TODO: i'm not using nvim-tree anymore
-map("n", "<f2>", "<cmd> Telescope keymaps <CR>") -- Show keymaps
+end)                                                                    -- Show / hide tab bar
+map("n", "<leader>td", "<cmd> lua vim.api.nvim_buf_delete(0, {}) <CR>") -- Delete current tab
+map("n", "<f2>", "<cmd> Telescope keymaps <CR>")                        -- Show keymaps
 map("n", "K", function()
     local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
     if vim.tbl_isempty(line_diagnostics) then
         vim.lsp.buf.hover()
     else
         vim.diagnostic.open_float()
-        -- TODO: if is float opened, show hover instead
     end
 end)                                                        -- LSP button
+map("n", "<C-k>", "<cmd> lua vim.lsp.buf.hover() <CR>")     -- LSP show hover information
 map("n", "gd", "<cmd> Telescope lsp_definitions <CR>")      -- Go to deifinition
 map("n", "gD", "<cmd> Telescope lsp_references <CR>")       -- Go to references
 map("n", "g]", "<cmd> Gitsigns next_hunk <CR>")             -- Go to next git hunk
