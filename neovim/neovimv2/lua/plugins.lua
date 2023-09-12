@@ -1,19 +1,15 @@
 return {
     { "ellisonleao/gruvbox.nvim",    priority = 1000 },
-    -- { "sainnhe/sonokai",          priority = 1000 },
     {
         "nvim-telescope/telescope.nvim",
         event = "VeryLazy", -- might want to lazy load, comment that out
         dependencies = {
             { "nvim-lua/plenary.nvim" },
-            -- { "nvim-telescope/telescope-file-browser.nvim" },
             { "nvim-telescope/telescope-project.nvim" },
         },
         config = function()
             local ts = require("telescope")
             local ts_actions = require("telescope.actions")
-            -- local fb_actions = ts.extensions.file_browser.actions
-            -- ts.load_extension("file_browser")
             ts.load_extension("project")
             ts.setup {
                 defaults = {
@@ -21,8 +17,6 @@ return {
                         i = {
                             ["<C-j>"] = ts_actions.move_selection_next,
                             ["<C-k>"] = ts_actions.move_selection_previous,
-                            -- Ctrl + Enter to create file/folder if no results found
-                            -- ["<C-CR>"] = fb_actions.create_from_prompt,
                         },
                     },
                 },
@@ -274,56 +268,52 @@ return {
             --         scroll = 500,
             --     }
             -- }
-        --     local miniclue = require('mini.clue')
-        --     miniclue.setup({
-        --         triggers = {
-        --             -- Leader triggers
-        --             { mode = 'n', keys = '<Leader>' },
-        --             { mode = 'x', keys = '<Leader>' },
-        --
-        --             -- Built-in completion
-        --             { mode = 'i', keys = '<C-x>' },
-        --
-        --             -- `g` key
-        --             { mode = 'n', keys = 'g' },
-        --             { mode = 'x', keys = 'g' },
-        --
-        --             -- Marks
-        --             { mode = 'n', keys = "'" },
-        --             { mode = 'n', keys = '`' },
-        --             { mode = 'x', keys = "'" },
-        --             { mode = 'x', keys = '`' },
-        --
-        --             -- Registers
-        --             { mode = 'n', keys = '"' },
-        --             { mode = 'x', keys = '"' },
-        --             { mode = 'i', keys = '<C-r>' },
-        --             { mode = 'c', keys = '<C-r>' },
-        --
-        --             -- Window commands
-        --             { mode = 'n', keys = '<C-w>' },
-        --
-        --             -- `z` key
-        --             { mode = 'n', keys = 'z' },
-        --             { mode = 'x', keys = 'z' },
-        --         },
-        --
-        --         clues = {
-        --             -- Enhance this by adding descriptions for <Leader> mapping groups
-        --             miniclue.gen_clues.builtin_completion(),
-        --             miniclue.gen_clues.g(),
-        --             miniclue.gen_clues.marks(),
-        --             miniclue.gen_clues.registers(),
-        --             miniclue.gen_clues.windows(),
-        --             miniclue.gen_clues.z(),
-        --         },
-        --     })
+            --     local miniclue = require('mini.clue')
+            --     miniclue.setup({
+            --         triggers = {
+            --             -- Leader triggers
+            --             { mode = 'n', keys = '<Leader>' },
+            --             { mode = 'x', keys = '<Leader>' },
+            --
+            --             -- Built-in completion
+            --             { mode = 'i', keys = '<C-x>' },
+            --
+            --             -- `g` key
+            --             { mode = 'n', keys = 'g' },
+            --             { mode = 'x', keys = 'g' },
+            --
+            --             -- Marks
+            --             { mode = 'n', keys = "'" },
+            --             { mode = 'n', keys = '`' },
+            --             { mode = 'x', keys = "'" },
+            --             { mode = 'x', keys = '`' },
+            --
+            --             -- Registers
+            --             { mode = 'n', keys = '"' },
+            --             { mode = 'x', keys = '"' },
+            --             { mode = 'i', keys = '<C-r>' },
+            --             { mode = 'c', keys = '<C-r>' },
+            --
+            --             -- Window commands
+            --             { mode = 'n', keys = '<C-w>' },
+            --
+            --             -- `z` key
+            --             { mode = 'n', keys = 'z' },
+            --             { mode = 'x', keys = 'z' },
+            --         },
+            --
+            --         clues = {
+            --             -- Enhance this by adding descriptions for <Leader> mapping groups
+            --             miniclue.gen_clues.builtin_completion(),
+            --             miniclue.gen_clues.g(),
+            --             miniclue.gen_clues.marks(),
+            --             miniclue.gen_clues.registers(),
+            --             miniclue.gen_clues.windows(),
+            --             miniclue.gen_clues.z(),
+            --         },
+            --     })
         end
     },
-    -- { "EtiamNullam/deferred-clipboard.nvim", config = function()
-    --     vim.o.clipboard = "unnamedplus"
-    --     require('deferred-clipboard').setup { lazy = true }
-    -- end, lazy = false }, -- until https://github.com/neovim/neovim/issues/11804 is fixed
     {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
@@ -335,13 +325,11 @@ return {
         event = "VeryLazy",
         config = true
     },
-    { "nvim-tree/nvim-web-devicons", lazy = true },
-    -- { "nvim-tree/nvim-tree.lua",  cmd = "NvimTreeToggle", config = true },
-    -- { "simrat39/rust-tools.nvim", config = true, lazy = false },
-    -- { "williamboman/mason.nvim", config = true, cmd = "Mason" },
-    { "Ernest1338/termplug.nvim",    lazy = true },
+    "nvim-tree/nvim-web-devicons",
+    "Ernest1338/termplug.nvim",
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",                dev = true, lazy = true },
-    { "local/wordcount",             dev = true, lazy = true },
+    { "local/doctor",    dev = true },
+    { "local/wordcount", dev = true },
+    { "local/training",  dev = true },
 }
