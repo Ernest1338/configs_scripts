@@ -46,6 +46,7 @@ map("n", "<A-i>", function()
     end
 end) -- Terminal mapping
 map("t", "<A-i>", "<cmd>q<CR>") -- Terminal toggle in terminal mode
+map("t", "<A-k>", "<Up><Cr>") -- Alt+k to repeat previous command
 map("n", "<tab>", "<cmd> bnext <CR>") -- Next buffer
 map({"n", "v"}, "<C-d>", "<C-d>zz") -- Center C-d
 map({"n", "v"}, "<C-u>", "<C-u>zz") -- Center C-u

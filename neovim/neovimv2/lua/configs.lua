@@ -46,9 +46,10 @@ vim.o.undofile = true
 -- automatically change CWD (should not cause issues but does - telescope project wide search breakes)
 -- vim.o.autochdir = true
 
--- diagnostic popup
+-- diagnostic popup -- TODO: reconsider (I'm not sure if float/border exists)
 vim.diagnostic.config({
     -- virtual_text = true,
+    -- virtual_lines = true,
     --signs = false,
     float = { border = "single" },
 })
