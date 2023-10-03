@@ -22,7 +22,6 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 #export CARGO_HOME="$XDG_DATA_HOME"/cargo
 #export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 #export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
-#export CARGO_TARGET_DIR="$HOME"/Programming/CargoTarget # might want to add this to /etc/environment but with an absolute path
 
 alias cp='cp -i'                          # confirm before overwriting something
 alias more=less
@@ -43,9 +42,9 @@ alias alpvm='docker run --rm -it alpine'
 # alias VPNoff='wg-quick down /home/dvdmanjaro/Desktop/Hacking/others/vps/client-wg0.conf; clear'
 # alias VPSon='python3 /home/dvdmanjaro/Desktop/Hacking/others/vps/tkScripts.py & alpssh; kill -9 $(ps aux | grep tkScripts | grep -v grep | awk "{print \$2}"); clear'
 # alias dockergui='docker run --rm -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix archlinux'
-# alias startdocker='sudo systemctl start docker'
+alias startdocker='sudo systemctl start docker'
 alias cachec='sudo bash -c "sync; echo 3 > /proc/sys/vm/drop_caches"'
-alias gamingcont='docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card0 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
+alias gamingcont='docker run --rm -it -e DISPLAY --ipc=host --device /dev/dri/card1 -v /dev/input:/dev/input -v /etc/machine-id:/etc/machine-id -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie --privileged archlinux'
 # alias gamingcontsock='docker run --rm -it -e DISPLAY --ipc=host -e XDG_RUNTIME_DIR --device /dev/dri/card0 -v /etc/machine-id:/etc/machine-id -v /dev/input:/dev/input -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/snd -e PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native -v ${XDG_RUNTIME_DIR}/pulse/native:${XDG_RUNTIME_DIR}/pulse/native --group-add audio -v ~/.config/pulse/cookie:/root/.config/pulse/cookie -v ${XDG_RUNTIME_DIR}:${XDG_RUNTIME_DIR} --privileged archlinux'
 # alias music_prod='docker start "music_prod" &>/dev/null; docker exec -it "music_prod" bash && docker stop "music_prod" &>/dev/null'
 # alias contcp='bash ~/Desktop/Files/SomeScripts/contcp.sh'
@@ -58,16 +57,16 @@ alias vi='nvim --noplugin -u /etc/xdg/nvim/sysinit.vim'
 alias up='paru; flatpak update; rustup update'
 # alias venv='virtualenv'
 
-gaming () { # gaming "alias"
-    # Mounting Win drive if it's not already
-    if [ "$(ls -A ~/Others/WinMount/)" ]; then
-        : # already mounted
-    else
-        echo "Mounting Win drive..."
-        sudo mount -t ntfs -o ro /dev/sda2 ~/Others/WinMount/
-    fi
-    docker start "gaming_container" &>/dev/null; docker exec -u user -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null
-}
+# gaming () { # gaming "alias"
+#     # Mounting Win drive if it's not already
+#     if [ "$(ls -A ~/Others/WinMount/)" ]; then
+#         : # already mounted
+#     else
+#         echo "Mounting Win drive..."
+#         sudo mount -t ntfs -o ro /dev/sda2 ~/Others/WinMount/
+#     fi
+#     docker start "gaming_container" &>/dev/null; docker exec -u user -it "gaming_container" bash; docker stop "gaming_container" &>/dev/null
+# }
 
 tm () { # tmux st (simple terminal) split
     tmux new-session -c '/home/dvdarch/Files/SomeScripts/' \; \
