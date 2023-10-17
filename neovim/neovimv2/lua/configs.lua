@@ -82,14 +82,14 @@ vim.opt.shortmess:append("cI") -- might be needed for proper cmdheight + don't s
 -- gui font
 --vim.o.guifont="Hack:h12"
 
--- Set the color scheme
-vim.cmd([[colorscheme gruvbox]])
+vim.o.termguicolors = true
 
--- Normal background for NvimFiles
-vim.cmd([[hi MiniFilesNormal guifg=#ebdbb2 guibg=#282828]])
+-- Set the color scheme
+vim.cmd([[colorscheme monokai_pro]])
+vim.cmd([[hi DiffChange guifg=#4873bc guibg=#26292c]])
 
 -- Current word highlight change (for mini.cursorword)
-vim.cmd([[hi MiniCursorword guifg=NONE guibg=#3C3836 gui=NONE cterm=NONE]])
+vim.cmd([[hi MiniCursorword guifg=NONE guibg=#2e323c gui=NONE cterm=NONE]])
 
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
