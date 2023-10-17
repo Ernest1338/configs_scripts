@@ -4,24 +4,24 @@ local map = vim.keymap.set
 
 -- TODO: restore some telescope mappings when mini.extra gets released
 
-map({ "i", "t" }, "<C-k>", "<up>")                                    -- <C-k> to move up
-map({ "i", "t" }, "<C-j>", "<down>")                                  -- <C-j> to move down
-map({ "i", "t" }, "<C-h>", "<left>")                                  -- <C-h> to move left
-map({ "i", "t" }, "<C-l>", "<right>")                                 -- <C-l> to move right
-map("n", "<leader>;", "<cmd> Pick grep_live <CR>")                    -- Search project
-map("n", "<leader>fs", "<cmd>w<CR>")                                  -- Save file
-map("n", "<leader><leader>", "<cmd> Pick files <CR>")                 -- Find files
-map("n", "<leader>qq", "<cmd> q <CR>")                                -- Quit
-map("n", "<leader>qQ", "<cmd> q! <CR>")                               -- Force quit
+map({ "i", "t" }, "<C-k>", "<up>")                                                            -- <C-k> to move up
+map({ "i", "t" }, "<C-j>", "<down>")                                                          -- <C-j> to move down
+map({ "i", "t" }, "<C-h>", "<left>")                                                          -- <C-h> to move left
+map({ "i", "t" }, "<C-l>", "<right>")                                                         -- <C-l> to move right
+map("n", "<leader>;", "<cmd> Pick grep_live <CR>")                                            -- Search project
+map("n", "<leader>fs", "<cmd>w<CR>")                                                          -- Save file
+map("n", "<leader><leader>", "<cmd> Pick files <CR>")                                         -- Find files
+map("n", "<leader>qq", "<cmd> q <CR>")                                                        -- Quit
+map("n", "<leader>qQ", "<cmd> q! <CR>")                                                       -- Force quit
 -- map("n", "<leader>?", "<cmd> Telescope current_buffer_fuzzy_find <CR>")  -- Search current file
-map("n", "<leader>fc", "<cmd> Pick files cwd='~/.config/nvim/' <CR>") -- Modify config
-map("n", "<leader>fd", "<cmd> Pick buffer_lines <CR>")                -- Search current file
+map("n", "<leader>fc", "<cmd> Pick files cwd='~/.config/nvim/' <CR>")                         -- Modify config
+map("n", "<leader>fd", "<cmd> Pick buffer_lines <CR>")                                        -- Search current file
 -- map("n", "<leader>ft", "<cmd> Telescope filetypes <CR>")                                                 -- Change file type
-map("n", "<leader>fR", "<cmd> edit! <CR>")                            -- Reload file
-map("n", "<leader>of", "<cmd> lua MiniFiles.open('~') <CR>")          -- Open file
+map("n", "<leader>fR", "<cmd> edit! <CR>")                                                    -- Reload file
+map("n", "<leader>of", "<cmd> lua MiniFiles.open('~') <CR>")                                  -- Open file
 -- map("n", "<leader>:", "<cmd> Telescope commands <CR>")                                                   -- Telescope commands
--- map("n", "<leader>pp", "<cmd> Telescope project display_type=full <CR>")                                 -- Projects
--- map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/telescope-projects.txt <CR>")                     -- Edit projects file
+map("n", "<leader>pp", "<cmd> lua require('pickaproject').start() <CR>")                      -- Projects
+map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/projects.txt <CR>")                    -- Edit projects file
 map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>") -- Format file
 map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>")                            -- LSP Code actions
 -- map("n", "<leader>ld", "<cmd> Telescope diagnostics <CR>")                                               -- LSP Diagnostics
@@ -43,7 +43,8 @@ end)                                            -- Create new note (one time not
 -- map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")   -- Telescope
 -- map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
 map("n", "<C-f>", function()
-    if not MiniFiles.close() then MiniFiles.open() end
+    local files = require("mini.files")
+    if not files.close() then files.open() end
 end) -- Toggle file tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then

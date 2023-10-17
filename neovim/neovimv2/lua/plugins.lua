@@ -477,8 +477,9 @@ return {
     "Ernest1338/termplug.nvim",
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",    dev = true },
-    { "local/wordcount", dev = true },
-    { "local/training",  dev = true },
+    { "local/doctor",      dev = true },
+    { "local/wordcount",   dev = true },
+    { "local/training",    dev = true },
+    { "local/pickaproject", dev = true },
     -- { "local/nightfox.nvim",              dev = true },
 }
