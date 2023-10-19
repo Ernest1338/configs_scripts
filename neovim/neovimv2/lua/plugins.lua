@@ -329,6 +329,7 @@ return {
             end
         end
     },
+    { "Ernest1338/mini.pickaproject" },
     -- {
     --     "echasnovski/mini.nvim",
     --     lazy = false,
@@ -480,6 +481,5 @@ return {
     { "local/doctor",      dev = true },
     { "local/wordcount",   dev = true },
     { "local/training",    dev = true },
-    { "local/pickaproject", dev = true },
     -- { "local/nightfox.nvim",              dev = true },
 }
