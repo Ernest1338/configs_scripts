@@ -210,7 +210,7 @@ return {
         event = "VeryLazy",
         config = {
             mappings = {
-                comment = "<leader>/",
+                comment_visual = "<leader>/",
             }
         }
     },
@@ -261,19 +261,18 @@ return {
     {
         "echasnovski/mini.statusline",
         lazy = false,
-        config = true
-        -- config = function()
-        --     require("mini.statusline").setup {
-        --         content = {
-        --             inactive = require("mini.statusline").active, -- HACK for termcol process exit
-        --         },
-        --     }
-        -- end
+        config = function()
+            require("mini.statusline").setup {
+                content = {
+                    inactive = require("mini.statusline").active, -- HACK for termcol process exit
+                },
+            }
+        end
     },
     {
         "echasnovski/mini.cursorword",
         event = "VeryLazy",
-        config = { delay = 500 }
+        config = { delay = 1000 }
     },
     {
         "echasnovski/mini.files",
