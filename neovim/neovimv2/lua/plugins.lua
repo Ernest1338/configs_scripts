@@ -269,11 +269,11 @@ return {
             }
         end
     },
-    {
-        "echasnovski/mini.cursorword",
-        event = "VeryLazy",
-        config = { delay = 1000 }
-    },
+    -- {
+    --     "echasnovski/mini.cursorword",
+    --     event = "VeryLazy",
+    --     config = { delay = 1000 }
+    -- },
     {
         "echasnovski/mini.files",
         event = "VeryLazy",
@@ -477,8 +477,9 @@ return {
     "Ernest1338/termplug.nvim",
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",      dev = true },
-    { "local/wordcount",   dev = true },
-    { "local/training",    dev = true },
+    { "local/doctor",    dev = true },
+    { "local/wordcount", dev = true },
+    { "local/training",  dev = true },
+    -- { "local/mini.pickaproject",    dev = true },
     -- { "local/nightfox.nvim",              dev = true },
 }
