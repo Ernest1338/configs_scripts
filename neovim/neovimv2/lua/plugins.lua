@@ -208,7 +208,7 @@ return {
     {
         "echasnovski/mini.comment",
         event = "VeryLazy",
-        config = {
+        opts = {
             mappings = {
                 comment_visual = "<leader>/",
             }
@@ -246,7 +246,7 @@ return {
     {
         "echasnovski/mini.jump2d",
         event = "VeryLazy",
-        config = {
+        opts = {
             mappings = {
                 start_jumping = "<leader>j",
             }
@@ -277,7 +277,7 @@ return {
     {
         "echasnovski/mini.files",
         event = "VeryLazy",
-        config = {
+        opts = {
             mappings = {
                 go_in_plus = "<CR>",
             },
