@@ -9,3 +9,4 @@
 
 # check if the username is valid
 CARGO_TARGET_DIR=/home/dvdarch/Programming/CargoTarget
+GOPATH=/home/dvdarch/Programming/GoTarget
