@@ -89,7 +89,7 @@ vim.cmd([[colorscheme monokai_pro]])
 vim.cmd([[hi DiffChange guifg=#4873bc guibg=#26292c]])
 
 -- Current word highlight change (for mini.cursorword)
-vim.cmd([[hi MiniCursorword guifg=NONE guibg=#2e323c gui=NONE cterm=NONE]])
+-- vim.cmd([[hi MiniCursorword guifg=NONE guibg=#2e323c gui=NONE cterm=NONE]])
 
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })

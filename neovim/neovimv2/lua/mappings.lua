@@ -2,30 +2,28 @@ local map = vim.keymap.set
 
 -- NOTE: <leader>k - special group of bindings (will be eventually) (not needed now)
 
--- TODO: restore some telescope mappings when mini.extra gets released
-
-map({ "i", "t" }, "<C-k>", "<up>")                                                            -- <C-k> to move up
-map({ "i", "t" }, "<C-j>", "<down>")                                                          -- <C-j> to move down
-map({ "i", "t" }, "<C-h>", "<left>")                                                          -- <C-h> to move left
-map({ "i", "t" }, "<C-l>", "<right>")                                                         -- <C-l> to move right
-map("n", "<leader>;", "<cmd> Pick grep_live <CR>")                                            -- Search project
-map("n", "<leader>fs", "<cmd>w<CR>")                                                          -- Save file
-map("n", "<leader><leader>", "<cmd> Pick files <CR>")                                         -- Find files
-map("n", "<leader>qq", "<cmd> q <CR>")                                                        -- Quit
-map("n", "<leader>qQ", "<cmd> q! <CR>")                                                       -- Force quit
--- map("n", "<leader>?", "<cmd> Telescope current_buffer_fuzzy_find <CR>")  -- Search current file
-map("n", "<leader>fc", "<cmd> Pick files cwd='~/.config/nvim/' <CR>")                         -- Modify config
-map("n", "<leader>fd", "<cmd> Pick buffer_lines <CR>")                                        -- Search current file
+map({ "i", "t" }, "<C-k>", "<up>")                                                               -- <C-k> to move up
+map({ "i", "t" }, "<C-j>", "<down>")                                                             -- <C-j> to move down
+map({ "i", "t" }, "<C-h>", "<left>")                                                             -- <C-h> to move left
+map({ "i", "t" }, "<C-l>", "<right>")                                                            -- <C-l> to move right
+map("n", "<leader>;", "<cmd> Pick grep_live <CR>")                                               -- Search project
+map("n", "<leader>fs", "<cmd>w<CR>")                                                             -- Save file
+map("n", "<leader><leader>", "<cmd> Pick files <CR>")                                            -- Find files
+map("n", "<leader>qq", "<cmd> q <CR>")                                                           -- Quit
+map("n", "<leader>qQ", "<cmd> q! <CR>")                                                          -- Force quit
+map("n", "<leader>fc", "<cmd> Pick files cwd='~/.config/nvim/' <CR>")                            -- Modify config
+map("n", "<leader>/", "<cmd> Pick buf_lines scope='current' <CR>")                               -- Search current file
+map("n", "<leader>fd", "<cmd> Pick buf_lines scope='current' <CR>")                              -- Search current file
 -- map("n", "<leader>ft", "<cmd> Telescope filetypes <CR>")                                                 -- Change file type
-map("n", "<leader>fR", "<cmd> edit! <CR>")                                                    -- Reload file
-map("n", "<leader>of", "<cmd> lua MiniFiles.open('~') <CR>")                                  -- Open file
--- map("n", "<leader>:", "<cmd> Telescope commands <CR>")                                                   -- Telescope commands
-map("n", "<leader>pp", "<cmd> lua require('pickaproject').start() <CR>")                      -- Projects
-map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/projects.txt <CR>")                    -- Edit projects file
-map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>") -- Format file
-map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>")                            -- LSP Code actions
--- map("n", "<leader>ld", "<cmd> Telescope diagnostics <CR>")                                               -- LSP Diagnostics
--- map("n", "<leader>ls", "<cmd> Telescope lsp_dynamic_workspace_symbols <CR>")                             -- LSP Symbols
+map("n", "<leader>fR", "<cmd> edit! <CR>")                                                       -- Reload file
+map("n", "<leader>of", "<cmd> Pick explorer cwd='$HOME' <CR>")                                   -- Open file
+map("n", "<leader>:", "<cmd> Pick commands <CR>")                                                -- Pick commands
+map("n", "<leader>pp", "<cmd> lua require('pickaproject').start() <CR>")                         -- Projects
+map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/projects.txt <CR>")                       -- Edit projects file
+map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>")    -- Format file
+map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>")                               -- LSP Code actions
+map("n", "<leader>ld", "<cmd> Pick diagnostic <CR>")                                             -- LSP Diagnostics
+map("n", "<leader>ls", "<cmd> Pick lsp scope='document_symbol' <CR>")                            -- LSP Symbols
 map("n", "<leader>lr", "<cmd> lua vim.lsp.buf.rename() <CR>")                                    -- Rename
 map("n", "<leader>sh", "<cmd> split <CR>")                                                       -- Horizontal split
 map("n", "<leader>sv", "<cmd> vsplit <CR>")                                                      -- Vertical split
@@ -36,12 +34,11 @@ map("n", "<leader>nc", function()
     local notes_dir = "~/Repos/notes/oneTimeNotes/Others/"
     local note = vim.fn.input("Note file name (.md added automatically): ") .. ".md"
     if note ~= ".md" then
-        vim.cmd("edit " .. notes_dir .. note)   -- open file in a new buf
-        vim.api.nvim_set_current_dir(notes_dir) -- change CWD to notes
+        vim.cmd("edit " .. notes_dir .. note)               -- open file in a new buf
+        vim.api.nvim_set_current_dir(notes_dir)             -- change CWD to notes
     end
-end)                                            -- Create new note (one time notes directory) and open it
--- map("n", "<leader>t<leader>", "<cmd> Telescope <CR>")   -- Telescope
--- map("n", "<leader>tj", "<cmd> Telescope jumplist <CR>") -- Jumplist
+end)                                                        -- Create new note (one time notes directory) and open it
+map("n", "<leader>tj", "<cmd> Pick list scope='jump' <CR>") -- Jumplist
 map("n", "<C-f>", function()
     local files = require("mini.files")
     if not files.close() then files.open() end
@@ -54,7 +51,7 @@ map("n", "<leader>tb", function()
     end
 end)                                         -- Show / hide tab bar
 map("n", "<leader>td", "<cmd> bdelete <CR>") -- Delete current buffer (and tab)
--- map("n", "<f2>", "<cmd> Telescope keymaps <CR>") -- Show keymaps
+map("n", "<f2>", "<cmd> Pick keymaps <CR>")  -- Show keymaps
 map("n", "K", function()
     local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
     if vim.tbl_isempty(line_diagnostics) then
@@ -62,10 +59,10 @@ map("n", "K", function()
     else
         vim.diagnostic.open_float()
     end
-end)                                                    -- LSP button
-map("n", "<C-k>", "<cmd> lua vim.lsp.buf.hover() <CR>") -- LSP show hover information
--- map("n", "gd", "<cmd> Telescope lsp_definitions <CR>")      -- Go to deifinition
--- map("n", "gD", "<cmd> Telescope lsp_references <CR>")       -- Go to references
+end)                                                        -- LSP button
+map("n", "<C-k>", "<cmd> lua vim.lsp.buf.hover() <CR>")     -- LSP show hover information
+map("n", "gd", "<cmd> Pick lsp scope='definition' <CR>")    -- Go to defifinition
+map("n", "gD", "<cmd> Pick lsp scope='references' <CR>")    -- Go to references
 map("n", "g]", "<cmd> Gitsigns next_hunk <CR>")             -- Go to next git hunk
 map("n", "g[", "<cmd> Gitsigns prev_hunk <CR>")             -- Go to previous git hunk
 map("n", "g}", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to next diagnostic

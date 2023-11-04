@@ -300,31 +300,25 @@ return {
                 },
                 options = {
                     use_cache = true,
-                }
+                },
+                -- TODO: better highlighting for current fuzzy match
+                -- window = {
+                --     config = function()
+                --         local height = math.floor(0.618 * vim.o.lines)
+                --         local width = math.floor(0.618 * vim.o.columns)
+                --         return {
+                --             anchor = 'NW', height = height, width = width,
+                --             row = math.floor(0.5 * (vim.o.lines - height)),
+                --             col = math.floor(0.5 * (vim.o.columns - width)),
+                --             border = 'none',
+                --         }
+                --     end
+                -- }
             }
             MiniPick.registry.files = function(local_opts)
                 local opts = { source = { cwd = local_opts.cwd } }
                 local_opts.cwd = nil
                 return MiniPick.builtin.files(local_opts, opts)
-            end
-            -- TODO: use the version from the mini.extra
-            MiniPick.registry.buffer_lines = function(local_opts)
-                -- Parse options
-                local_opts = vim.tbl_deep_extend('force', { buf_id = nil, prompt = '' }, local_opts or {})
-                local buf_id, prompt = local_opts.buf_id, local_opts.prompt
-                local_opts.buf_id, local_opts.prompt = nil, nil
-
-                -- Construct items
-                if buf_id == nil or buf_id == 0 then buf_id = vim.api.nvim_get_current_buf() end
-                local lines = vim.api.nvim_buf_get_lines(buf_id, 0, -1, false)
-                local items = {}
-                for i, l in ipairs(lines) do
-                    items[i] = { text = string.format('%d:%s', i, l), bufnr = buf_id, lnum = i }
-                end
-
-                -- Start picker while scheduling setting the query
-                vim.schedule(function() MiniPick.set_picker_query(vim.split(prompt, '')) end)
-                MiniPick.start({ source = { items = items, name = 'Buffer lines' } })
             end
         end
     },
@@ -401,6 +395,7 @@ return {
     --         --     use_cterm = true
     --         -- })
     --         -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets and mini.pairs)
+    --         -- TODO: use mini.git
     --         -- require("mini.pairs").setup {}
     --         -- require("mini.indentscope").setup {}
     --         -- require("mini.starter").setup {}
@@ -475,6 +470,7 @@ return {
     },
     "nvim-tree/nvim-web-devicons",
     "Ernest1338/termplug.nvim",
+    { "echasnovski/mini.extra", event = "VeryLazy", config = true },
 
     -- LOCAL PLUGIN DEVELOPMENT
     { "local/doctor",    dev = true },
