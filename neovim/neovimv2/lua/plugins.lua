@@ -302,19 +302,20 @@ return {
                     use_cache = true,
                 },
                 -- TODO: better highlighting for current fuzzy match
-                -- window = {
-                --     config = function()
-                --         local height = math.floor(0.618 * vim.o.lines)
-                --         local width = math.floor(0.618 * vim.o.columns)
-                --         return {
-                --             anchor = 'NW', height = height, width = width,
-                --             row = math.floor(0.5 * (vim.o.lines - height)),
-                --             col = math.floor(0.5 * (vim.o.columns - width)),
-                --             border = 'none',
-                --         }
-                --     end
-                -- }
+                window = {
+                    config = function()
+                        local height = math.floor(0.7 * vim.o.lines)
+                        local width = math.floor(0.7 * vim.o.columns)
+                        return {
+                            anchor = 'NW', height = height, width = width,
+                            row = math.floor(0.5 * (vim.o.lines - height)),
+                            col = math.floor(0.5 * (vim.o.columns - width)),
+                            border = 'rounded',
+                        }
+                    end
+                }
             }
+            vim.cmd("hi MiniPickMatchRanges guifg=#51A0CF")
             MiniPick.registry.files = function(local_opts)
                 local opts = { source = { cwd = local_opts.cwd } }
                 local_opts.cwd = nil
