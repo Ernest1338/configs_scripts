@@ -254,21 +254,20 @@ return {
     },
     {
         "echasnovski/mini.tabline",
-        -- event = "VeryLazy",
-        lazy = false,
+        event = "BufEnter",
         config = true,
     },
-    {
-        "echasnovski/mini.statusline",
-        lazy = false,
-        config = function()
-            require("mini.statusline").setup {
-                content = {
-                    inactive = require("mini.statusline").active, -- HACK for termcol process exit
-                },
-            }
-        end
-    },
+    -- {
+    --     "echasnovski/mini.statusline",
+    --     event = "BufEnter",
+    --     config = function()
+    --         require("mini.statusline").setup {
+    --             content = {
+    --                 inactive = require("mini.statusline").active, -- HACK for termcol process exit
+    --             },
+    --         }
+    --     end
+    -- },
     -- {
     --     "echasnovski/mini.cursorword",
     --     event = "VeryLazy",
@@ -301,13 +300,14 @@ return {
                 options = {
                     use_cache = true,
                 },
-                -- TODO: better highlighting for current fuzzy match
                 window = {
                     config = function()
                         local height = math.floor(0.7 * vim.o.lines)
                         local width = math.floor(0.7 * vim.o.columns)
                         return {
-                            anchor = 'NW', height = height, width = width,
+                            anchor = 'NW',
+                            height = height,
+                            width = width,
                             row = math.floor(0.5 * (vim.o.lines - height)),
                             col = math.floor(0.5 * (vim.o.columns - width)),
                             border = 'rounded',
@@ -474,9 +474,10 @@ return {
     { "echasnovski/mini.extra", event = "VeryLazy", config = true },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",    dev = true },
-    { "local/wordcount", dev = true },
-    { "local/training",  dev = true },
+    { "local/doctor",           dev = true },
+    { "local/wordcount",        dev = true },
+    { "local/training",         dev = true },
+    { "local/statusline",       dev = true,         event = "BufEnter", config = true },
     -- { "local/termplug.nvim",              dev = true },
     -- { "local/mini.pickaproject",    dev = true },
     -- { "local/nightfox.nvim",              dev = true },
