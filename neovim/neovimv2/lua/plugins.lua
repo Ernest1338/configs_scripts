@@ -257,17 +257,17 @@ return {
         event = "BufEnter",
         config = true,
     },
-    -- {
-    --     "echasnovski/mini.statusline",
-    --     event = "BufEnter",
-    --     config = function()
-    --         require("mini.statusline").setup {
-    --             content = {
-    --                 inactive = require("mini.statusline").active, -- HACK for termcol process exit
-    --             },
-    --         }
-    --     end
-    -- },
+    {
+        "echasnovski/mini.statusline",
+        event = "BufEnter",
+        config = function()
+            require("mini.statusline").setup {
+                content = {
+                    inactive = require("mini.statusline").active, -- HACK for termcol process exit
+                },
+            }
+        end
+    },
     -- {
     --     "echasnovski/mini.cursorword",
     --     event = "VeryLazy",
@@ -477,7 +477,8 @@ return {
     { "local/doctor",           dev = true },
     { "local/wordcount",        dev = true },
     { "local/training",         dev = true },
-    { "local/statusline",       dev = true,         event = "BufEnter", config = true },
+    { "local/statusline",       dev = true },
+    -- { "local/statusline",       dev = true,         event = "BufEnter", config = true },
     -- { "local/termplug.nvim",              dev = true },
     -- { "local/mini.pickaproject",    dev = true },
     -- { "local/nightfox.nvim",              dev = true },
