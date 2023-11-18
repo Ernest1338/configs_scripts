@@ -21,7 +21,7 @@ vim.g.maplocalleader = " "
 
 require("lazy").setup("plugins", {
     defaults    = { lazy = true },
-    install     = { colorscheme = { "gruvbox" } },
+    install     = { colorscheme = { "gruvbox8" } },
     dev         = {
         path = "~/Repos/lua-fun/NvimPlugs",
         patterns = { "local" },

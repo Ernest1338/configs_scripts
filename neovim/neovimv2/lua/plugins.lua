@@ -1,6 +1,7 @@
 return {
     -- { "ellisonleao/gruvbox.nvim",    priority = 1000 },
-    { "tanvirtin/monokai.nvim",      priority = 1000 },
+    -- { "tanvirtin/monokai.nvim",      priority = 1000 },
+    { "Ernest1338/egruvbox",         priority = 1000 },
     --{
     -- "Ernest1338/nightfox.nvim",
     -- priority = 1000,
