@@ -69,7 +69,7 @@ vim.o.splitkeep = "topline"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- gives one more line to work with
-vim.o.cmdheight = 0           -- switching to eg-statusline fixed the statusline disapearing problem
+vim.o.cmdheight = 0            -- switching to eg-statusline fixed the statusline disapearing problem
 vim.opt.shortmess:append("cI") -- might be needed for proper cmdheight + don't show intro message
 
 -- neovide configs
