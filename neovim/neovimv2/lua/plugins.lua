@@ -1,35 +1,12 @@
 return {
+    -- My plugins
+    { "Ernest1338/egruvbox",           priority = 1000 },
+    "Ernest1338/mini.pickaproject",
+    "Ernest1338/termplug.nvim",
+    { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
+
     -- { "ellisonleao/gruvbox.nvim",    priority = 1000 },
     -- { "tanvirtin/monokai.nvim",      priority = 1000 },
-    { "Ernest1338/egruvbox",         priority = 1000 },
-    --{
-    -- "Ernest1338/nightfox.nvim",
-    -- priority = 1000,
-    -- },
-    -- {
-    --     "nvim-telescope/telescope.nvim",
-    --     event = "VeryLazy", -- might want to lazy load, comment that out
-    --     dependencies = {
-    --         { "nvim-lua/plenary.nvim" },
-    --         { "nvim-telescope/telescope-project.nvim" },
-    --     },
-    --     config = function()
-    --         local ts = require("telescope")
-    --         local ts_actions = require("telescope.actions")
-    --         ts.load_extension("project")
-    --         ts.setup {
-    --             defaults = {
-    --                 mappings = {
-    --                     i = {
-    --                         ["<C-j>"] = ts_actions.move_selection_next,
-    --                         ["<C-k>"] = ts_actions.move_selection_previous,
-    --                     },
-    --                 },
-    --             },
-    --         }
-    --     end,
-    --     cmd = "Telescope"
-    -- },
     {
         "nvim-treesitter/nvim-treesitter",
         -- event = { "BufReadPre", "BufNewFile" },
@@ -218,35 +195,6 @@ return {
             }
         }
     },
-    -- {
-    --     "echasnovski/mini.base16",
-    --     lazy = false,
-    --     config = function()
-    --          require("mini.base16").setup({
-    --              palette = {
-    --                  -- base00 = "#1d2021",
-    --                  -- base00 = "#1f2223",
-    --                  base00 = "#282828",
-    --                  base01 = "#3c3836",
-    --                  base02 = "#504945",
-    --                  base03 = "#665c54",
-    --                  base04 = "#bdae93",
-    --                  base05 = "#d5c4a1",
-    --                  base06 = "#ebdbb2",
-    --                  base07 = "#fbf1c7",
-    --                  base08 = "#fb4934",
-    --                  base09 = "#fe8019",
-    --                  base0A = "#fabd2f",
-    --                  base0B = "#b8bb26",
-    --                  base0C = "#8ec07c",
-    --                  base0D = "#83a598",
-    --                  base0E = "#d3869b",
-    --                  base0F = "#d65d0e",
-    --              },
-    --              use_cterm = true
-    --          })
-    --     end
-    -- },
     {
         "echasnovski/mini.jump2d",
         event = "VeryLazy",
@@ -325,85 +273,20 @@ return {
                 local_opts.cwd = nil
                 return MiniPick.builtin.files(local_opts, opts)
             end
+            MiniPick.registry.filetype = function()
+                local filetype = MiniPick.start({ source = { items = vim.fn.getcompletion("", "filetype") } })
+                vim.api.nvim_buf_set_option(0, 'filetype', filetype)
+            end
         end
     },
-    "Ernest1338/mini.pickaproject",
     -- {
     --     "echasnovski/mini.nvim",
     --     lazy = false,
     --     -- event = "VeryLazy",
     --     config = function()
-    --         require("mini.pick").setup {
-    --             mappings = {
-    --                 move_up = "<C-k>",
-    --                 move_down = "<C-j>",
-    --             },
-    --             -- options = {
-    --             --     content_from_bottom = true,
-    --             --     use_cache = true,
-    --             -- }
-    --         }
-    --         MiniPick.registry.files = function(local_opts)
-    --             local opts = { source = { cwd = local_opts.cwd } }
-    --             local_opts.cwd = nil
-    --             return MiniPick.builtin.files(local_opts, opts)
-    --         end
-    --         require("mini.comment").setup {
-    --             mappings = {
-    --                 comment = "<leader>/",
-    --             },
-    --         }
-    --         require("mini.tabline").setup {}
-    --         require("mini.jump2d").setup {
-    --             mappings = {
-    --                 start_jumping = "<leader>j",
-    --             },
-    --         }
-    --         require("mini.statusline").setup {
-    --             content = {
-    --                 inactive = require("mini.statusline").active, -- HACK for termcol process exit
-    --             },
-    --         }
-    --         require("mini.files").setup {
-    --             mappings = {
-    --                 go_in_plus = "<CR>",
-    --             },
-    --             -- windows = {
-    --             --     preview = true,
-    --             -- },
-    --             options = {
-    --                 permanent_delete = false,
-    --             },
-    --         }
-    --         require("mini.cursorword").setup { delay = 500 }
-    --         -- require("mini.base16").setup({
-    --         --     palette = {
-    --         --         -- base00 = "#1d2021",
-    --         --         -- base00 = "#1f2223",
-    --         --         base00 = "#282828",
-    --         --         base01 = "#3c3836",
-    --         --         base02 = "#504945",
-    --         --         base03 = "#665c54",
-    --         --         base04 = "#bdae93",
-    --         --         base05 = "#d5c4a1",
-    --         --         base06 = "#ebdbb2",
-    --         --         base07 = "#fbf1c7",
-    --         --         base08 = "#fb4934",
-    --         --         base09 = "#fe8019",
-    --         --         base0A = "#fabd2f",
-    --         --         base0B = "#b8bb26",
-    --         --         base0C = "#8ec07c",
-    --         --         base0D = "#83a598",
-    --         --         base0E = "#d3869b",
-    --         --         base0F = "#d65d0e",
-    --         --     },
-    --         --     use_cterm = true
-    --         -- })
     --         -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets and mini.pairs)
     --         -- TODO: use mini.git
-    --         -- require("mini.pairs").setup {}
-    --         -- require("mini.indentscope").setup {}
-    --         -- require("mini.starter").setup {}
+    --         -- TODO: when mini.places releases, mappings: <l>kc - create, <l>kf - forward, <l>kF - backward
     --         -- local hipatterns = require("mini.hipatterns")
     --         -- hipatterns.setup {
     --         --     highlighters = {
@@ -415,51 +298,6 @@ return {
     --         --         scroll = 500,
     --         --     }
     --         -- }
-    --         -- local miniclue = require('mini.clue')
-    --         -- miniclue.setup({
-    --         --     triggers = {
-    --         --         -- Leader triggers
-    --         --         { mode = 'n', keys = '<Leader>' },
-    --         --         { mode = 'x', keys = '<Leader>' },
-    --         --
-    --         --         -- Built-in completion
-    --         --         { mode = 'i', keys = '<C-x>' },
-    --         --
-    --         --         -- `g` key
-    --         --         { mode = 'n', keys = 'g' },
-    --         --         { mode = 'x', keys = 'g' },
-    --         --
-    --         --         -- Marks
-    --         --         { mode = 'n', keys = "'" },
-    --         --         { mode = 'n', keys = '`' },
-    --         --         { mode = 'x', keys = "'" },
-    --         --         { mode = 'x', keys = '`' },
-    --         --
-    --         --         -- Registers
-    --         --         { mode = 'n', keys = '"' },
-    --         --         { mode = 'x', keys = '"' },
-    --         --         { mode = 'i', keys = '<C-r>' },
-    --         --         { mode = 'c', keys = '<C-r>' },
-    --         --
-    --         --         -- Window commands
-    --         --         { mode = 'n', keys = '<C-w>' },
-    --         --
-    --         --         -- `z` key
-    --         --         { mode = 'n', keys = 'z' },
-    --         --         { mode = 'x', keys = 'z' },
-    --         --     },
-    --         --
-    --         --     clues = {
-    --         --         -- Enhance this by adding descriptions for <Leader> mapping groups
-    --         --         miniclue.gen_clues.builtin_completion(),
-    --         --         miniclue.gen_clues.g(),
-    --         --         miniclue.gen_clues.marks(),
-    --         --         miniclue.gen_clues.registers(),
-    --         --         miniclue.gen_clues.windows(),
-    --         --         miniclue.gen_clues.z(),
-    --         --     },
-    --         -- })
-    --         -- NOTE: when mini.places releases, mappings: <l>kc - create, <l>kf - forward, <l>kF - backward
     --     end
     -- },
     {
@@ -474,14 +312,12 @@ return {
         config = true
     },
     "nvim-tree/nvim-web-devicons",
-    "Ernest1338/termplug.nvim",
-    { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
-    { "echasnovski/mini.extra",        event = "VeryLazy", config = true },
+    { "echasnovski/mini.extra",      event = "VeryLazy", config = true },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",                  dev = true },
-    { "local/wordcount",               dev = true },
-    { "local/training",                dev = true },
+    { "local/doctor",                dev = true },
+    { "local/wordcount",             dev = true },
+    { "local/training",              dev = true },
     -- { "local/statusline",       dev = true,         event = "BufEnter", config = true },
     -- { "local/termplug.nvim",              dev = true },
     -- { "local/mini.pickaproject",    dev = true },

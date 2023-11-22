@@ -14,7 +14,7 @@ map("n", "<leader>qQ", "<cmd> q! <CR>")                                         
 map("n", "<leader>fc", "<cmd> Pick files cwd='~/.config/nvim/' <CR>")                            -- Modify config
 map("n", "<leader>/", "<cmd> Pick buf_lines scope='current' <CR>")                               -- Search current file
 map("n", "<leader>fd", "<cmd> Pick buf_lines scope='current' <CR>")                              -- Search current file
--- map("n", "<leader>ft", "<cmd> Telescope filetypes <CR>")                                                 -- Change file type
+map("n", "<leader>ft", "<cmd> Pick filetype <CR>")                                               -- Change file type
 map("n", "<leader>fR", "<cmd> edit! <CR>")                                                       -- Reload file
 map("n", "<leader>of", "<cmd> Pick explorer cwd='$HOME' <CR>")                                   -- Open file
 map("n", "<leader>:", "<cmd> Pick commands <CR>")                                                -- Pick commands
