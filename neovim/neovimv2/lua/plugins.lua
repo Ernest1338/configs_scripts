@@ -95,6 +95,9 @@ return {
             nvim_lsp["gopls"].setup {
                 on_attach = on_attach,
             }
+            nvim_lsp["clangd"].setup {
+                on_attach = on_attach,
+            }
         end
     },
     {
@@ -258,17 +261,17 @@ return {
         event = "BufEnter",
         config = true,
     },
-    {
-        "echasnovski/mini.statusline",
-        event = "BufEnter",
-        config = function()
-            require("mini.statusline").setup {
-                content = {
-                    inactive = require("mini.statusline").active, -- HACK for termcol process exit
-                },
-            }
-        end
-    },
+    -- {
+    --     "echasnovski/mini.statusline",
+    --     event = "BufEnter",
+    --     config = function()
+    --         require("mini.statusline").setup {
+    --             content = {
+    --                 inactive = require("mini.statusline").active, -- HACK for termcol process exit
+    --             },
+    --         }
+    --     end
+    -- },
     -- {
     --     "echasnovski/mini.cursorword",
     --     event = "VeryLazy",
@@ -472,13 +475,13 @@ return {
     },
     "nvim-tree/nvim-web-devicons",
     "Ernest1338/termplug.nvim",
-    { "echasnovski/mini.extra", event = "VeryLazy", config = true },
+    { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
+    { "echasnovski/mini.extra",        event = "VeryLazy", config = true },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",           dev = true },
-    { "local/wordcount",        dev = true },
-    { "local/training",         dev = true },
-    { "local/statusline",       dev = true },
+    { "local/doctor",                  dev = true },
+    { "local/wordcount",               dev = true },
+    { "local/training",                dev = true },
     -- { "local/statusline",       dev = true,         event = "BufEnter", config = true },
     -- { "local/termplug.nvim",              dev = true },
     -- { "local/mini.pickaproject",    dev = true },
