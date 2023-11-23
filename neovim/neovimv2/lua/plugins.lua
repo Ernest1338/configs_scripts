@@ -275,7 +275,9 @@ return {
             end
             MiniPick.registry.filetype = function()
                 local filetype = MiniPick.start({ source = { items = vim.fn.getcompletion("", "filetype") } })
-                vim.api.nvim_buf_set_option(0, 'filetype', filetype)
+                if filetype ~= nil then
+                    vim.api.nvim_buf_set_option(0, 'filetype', filetype)
+                end
             end
         end
     },
