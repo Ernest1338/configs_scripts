@@ -87,9 +87,6 @@ vim.o.termguicolors = true
 -- Set the color scheme
 vim.cmd([[colorscheme gruvbox8]])
 
--- Current word highlight change (for mini.cursorword)
--- vim.cmd([[hi MiniCursorword guifg=NONE guibg=#2e323c gui=NONE cterm=NONE]])
-
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {

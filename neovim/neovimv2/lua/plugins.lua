@@ -209,22 +209,6 @@ return {
         event = "BufEnter",
         config = true,
     },
-    -- {
-    --     "echasnovski/mini.statusline",
-    --     event = "BufEnter",
-    --     config = function()
-    --         require("mini.statusline").setup {
-    --             content = {
-    --                 inactive = require("mini.statusline").active, -- HACK for termcol process exit
-    --             },
-    --         }
-    --     end
-    -- },
-    -- {
-    --     "echasnovski/mini.cursorword",
-    --     event = "VeryLazy",
-    --     config = { delay = 1000 }
-    -- },
     {
         "echasnovski/mini.files",
         event = "VeryLazy",
@@ -267,7 +251,6 @@ return {
                     end
                 }
             }
-            vim.cmd("hi MiniPickMatchRanges guifg=#51A0CF")
             MiniPick.registry.files = function(local_opts)
                 local opts = { source = { cwd = local_opts.cwd } }
                 local_opts.cwd = nil
@@ -281,6 +264,16 @@ return {
             end
         end
     },
+    -- {
+    --     "echasnovski/mini.visits",
+    --     event = "VeryLazy",
+    --     config = true
+    -- },
+    -- {
+    --     "echasnovski/mini.cursorword",
+    --     event = "VeryLazy",
+    --     config = { delay = 1000 }
+    -- },
     -- {
     --     "echasnovski/mini.nvim",
     --     lazy = false,
