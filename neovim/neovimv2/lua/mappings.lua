@@ -7,7 +7,7 @@ map({ "i", "t" }, "<C-j>", "<down>")                                            
 map({ "i", "t" }, "<C-h>", "<left>")                                                             -- <C-h> to move left
 map({ "i", "t" }, "<C-l>", "<right>")                                                            -- <C-l> to move right
 map("n", "<leader>;", "<cmd> Pick grep_live <CR>")                                               -- Search project
-map("n", "<leader>fs", "<cmd>w<CR>")                                                             -- Save file
+map("n", "<leader>fs", "<cmd>:silent w<CR>")                                                     -- Save file
 map("n", "<leader><leader>", "<cmd> Pick files <CR>")                                            -- Find files
 map("n", "<leader>qq", "<cmd> q <CR>")                                                           -- Quit
 map("n", "<leader>qQ", "<cmd> q! <CR>")                                                          -- Force quit
