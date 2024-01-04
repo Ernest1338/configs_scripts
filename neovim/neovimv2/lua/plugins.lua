@@ -105,6 +105,10 @@ return {
                         luasnip.lsp_expand(args.body)
                     end,
                 },
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
                 sources = {
                     { name = "nvim_lsp", keyword_length = 1 },
                     { name = "path" },
@@ -264,6 +268,11 @@ return {
             end
         end
     },
+    -- {
+    --     "echasnovski/mini.notify",
+    --     event = "VeryLazy",
+    --     config = true
+    -- },
     -- {
     --     "echasnovski/mini.visits",
     --     event = "VeryLazy",
