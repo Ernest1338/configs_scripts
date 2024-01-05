@@ -46,12 +46,6 @@ vim.o.undofile = true
 -- automatically change CWD (should not cause issues but does - telescope project wide search breakes)
 -- vim.o.autochdir = true
 
--- Lsp hover window border
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    { border = 'rounded' }
-)
-
 vim.cmd([[
 sign define DiagnosticSignError text=✘ texthl=DiagnosticSignError linehl= numhl=
 sign define DiagnosticSignWarn text=» texthl=DiagnosticSignWarn linehl= numhl=
