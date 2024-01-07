@@ -1,3 +1,5 @@
+# File location: ~/.config/alacritty/alacritty.toml
+
 [colors.bright]
 black = "0x928374"
 blue = "0x83a598"
