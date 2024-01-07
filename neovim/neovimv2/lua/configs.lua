@@ -46,21 +46,6 @@ vim.o.undofile = true
 -- automatically change CWD (should not cause issues but does - telescope project wide search breakes)
 -- vim.o.autochdir = true
 
-vim.cmd([[
-sign define DiagnosticSignError text=✘ texthl=DiagnosticSignError linehl= numhl=
-sign define DiagnosticSignWarn text=» texthl=DiagnosticSignWarn linehl= numhl=
-sign define DiagnosticSignHint text=⚑ texthl=DiagnosticSignHint linehl= numhl=
-sign define DiagnosticSignInfo text=* texthl=DiagnosticSignInfo linehl= numhl=
-]])
-
--- diagnostic popup config
-vim.diagnostic.config({
-    -- virtual_text = true,
-    -- virtual_lines = true,
-    --signs = false,
-    float = { border = "rounded" },
-})
-
 -- avoid disapearing status line
 vim.o.showmode = false
 vim.o.showcmd = false

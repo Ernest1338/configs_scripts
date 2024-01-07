@@ -188,11 +188,28 @@ return {
                     require("nvim-autopairs.completion.cmp").on_confirm_done()
                 )
             }
+
             -- Lsp hover window border
             vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
                 vim.lsp.handlers.hover,
                 { border = 'rounded' }
             )
+
+            -- Change diagnostic symbols
+            vim.cmd([[
+            sign define DiagnosticSignError text=✘ texthl=DiagnosticSignError linehl= numhl=
+            sign define DiagnosticSignWarn text=» texthl=DiagnosticSignWarn linehl= numhl=
+            sign define DiagnosticSignHint text=⚑ texthl=DiagnosticSignHint linehl= numhl=
+            sign define DiagnosticSignInfo text=* texthl=DiagnosticSignInfo linehl= numhl=
+            ]])
+
+            -- diagnostic popup config
+            vim.diagnostic.config({
+                -- virtual_text = true,
+                -- virtual_lines = true,
+                --signs = false,
+                float = { border = "rounded" },
+            })
         end
     },
     {
