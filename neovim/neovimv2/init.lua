@@ -26,10 +26,15 @@ require("lazy").setup("plugins", {
         path = "~/Repos/lua-fun/NvimPlugs",
         patterns = { "local" },
     },
+    ui          = {
+        border = "rounded",
+        title = "Lazy.nvim - Plugin Manager",
+    },
     performance = {
-        cache = {
-            enabled = true,
-        },
+        -- I believe this is the default now
+        -- cache = {
+        --     enabled = true,
+        -- },
         rtp = {
             disabled_plugins = {
                 "gzip",
