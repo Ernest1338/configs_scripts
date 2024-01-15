@@ -77,7 +77,7 @@ vim.opt.shortmess:append("cI") -- might be needed for proper cmdheight + don't s
 vim.o.termguicolors = true
 
 -- Set the color scheme
-vim.cmd([[colorscheme gruvbox8]])
+vim.cmd("colorscheme gruvbox8")
 
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })

@@ -61,7 +61,7 @@ return {
                 settings = {
                     Lua = {
                         diagnostics = {
-                            globals = { "vim", "jit" },
+                            globals = { "vim", "jit", "MiniPick" },
                         },
                     },
                 },
