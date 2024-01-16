@@ -4,15 +4,19 @@ vim.g.maplocalleader = " "
 
 -- disable some builtin plugins
 local builtin_plugs = {
-    "shada_plugin",
     "gzip",
+    "man",
     "matchit",
     "matchparen",
     "netrwPlugin",
     "tarPlugin",
+    "tohtml",
+    "tutor",
+    "zipPlugin",
+    "shada_plugin",
     "2html_plugin",
     "tutor_mode_plugin",
-    "zipPlugin",
+    "remote_plugins"
 }
 for i = 1, #builtin_plugs do
     vim.g["loaded_" .. builtin_plugs[i]] = true
