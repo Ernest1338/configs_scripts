@@ -1,9 +1,11 @@
 return {
     -- My plugins
-    { "Ernest1338/egruvbox",           priority = 1000 },
+    -- { "Ernest1338/egruvbox",           priority = 1000 },
+    { "Ernest1338/nightsky.vim",       priority = 1000 },
     "Ernest1338/mini.pickaproject",
     "Ernest1338/termplug.nvim",
     { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
+    -- { "Ernest1338/whiskyline.nvim", event = "BufEnter", config = true }, -- TODO: when nightly drops
 
     -- { "ellisonleao/gruvbox.nvim",    priority = 1000 },
     -- { "tanvirtin/monokai.nvim",      priority = 1000 },
@@ -291,9 +293,27 @@ return {
         end
     },
     -- {
+    --     'nvimdev/indentmini.nvim',
+    --     event = 'BufEnter',
+    --     config = function()
+    --         require('indentmini').setup()
+    --         vim.cmd.highlight("IndentLine guifg=#323232")
+    --     end,
+    -- },
+    -- {
     --     "echasnovski/mini.notify",
     --     event = "VeryLazy",
-    --     config = true
+    --     config = {
+    --         content = {
+    --             format = function(notif) return notif.msg end,
+    --         },
+    --         window = {
+    --             config = {
+    --                 border = 'none',
+    --             },
+    --             winblend = 50,
+    --         }
+    --     }
     -- },
     -- {
     --     "echasnovski/mini.visits",
