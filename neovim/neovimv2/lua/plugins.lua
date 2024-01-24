@@ -1,3 +1,19 @@
+--[[
+
+TODOs:
+- mini terminal
+- mini deps
+- mini git
+- mini completion + mini snippets + mini pairs
+- mini cursorword highlights colorscheme
+- colorscheme rebrand (nightsky)
+
+- when new version drops (fork, change name, remove unused things (lsp name), change modes to long names)
+- { "nvimdev/whiskyline.nvim", event = "BufEnter", config = true },
+
+]]
+--
+
 return {
     -- My plugins
     -- { "Ernest1338/egruvbox",           priority = 1000 },
@@ -5,7 +21,6 @@ return {
     "Ernest1338/mini.pickaproject",
     "Ernest1338/termplug.nvim",
     { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
-    -- { "Ernest1338/whiskyline.nvim", event = "BufEnter", config = true }, -- TODO: when nightly drops
 
     -- { "ellisonleao/gruvbox.nvim",    priority = 1000 },
     -- { "tanvirtin/monokai.nvim",      priority = 1000 },
@@ -318,6 +333,7 @@ return {
     -- {
     --     "echasnovski/mini.visits",
     --     event = "VeryLazy",
+    --     -- mappings?: <l>kc - create, <l>kf - forward, <l>kF - backward
     --     config = true
     -- },
     -- {
@@ -330,9 +346,6 @@ return {
     --     lazy = false,
     --     -- event = "VeryLazy",
     --     config = function()
-    --         -- TODO: switch to mini.completion when mini.snippets is available (and switch to mini.snippets and mini.pairs)
-    --         -- TODO: use mini.git
-    --         -- TODO: when mini.places releases, mappings: <l>kc - create, <l>kf - forward, <l>kF - backward
     --         -- local hipatterns = require("mini.hipatterns")
     --         -- hipatterns.setup {
     --         --     highlighters = {
