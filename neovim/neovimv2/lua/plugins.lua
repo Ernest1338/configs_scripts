@@ -27,7 +27,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         -- event = { "BufReadPre", "BufNewFile" },
-        event = "VeryLazy",
+        event = "VeryLazy", -- BufEnter might be better
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup {
