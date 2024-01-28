@@ -17,7 +17,7 @@ TODOs:
 return {
     -- My plugins
     -- { "Ernest1338/egruvbox",           priority = 1000 },
-    { "Ernest1338/nightsky.vim",       priority = 1000 },
+    { "Ernest1338/egcolors.vim",       priority = 1000 },
     "Ernest1338/mini.pickaproject",
     "Ernest1338/termplug.nvim",
     { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
