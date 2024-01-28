@@ -5,10 +5,8 @@ TODOs:
 - mini deps
 - mini git
 - mini completion + mini snippets + mini pairs
-- mini cursorword highlights colorscheme
-- colorscheme rebrand (nightsky)
 
-- when new version drops (fork, change name, remove unused things (lsp name), change modes to long names)
+- when new nvim version drops (fork, change name, remove unused things (lsp name), change modes to long names)
 - { "nvimdev/whiskyline.nvim", event = "BufEnter", config = true },
 
 ]]
