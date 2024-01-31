@@ -85,9 +85,11 @@ map({ "n", "t" }, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>")
 map("t", "<A-Esc>", "<C-\\><C-n>") -- Terminal enter normal mode
 map("t", "<A-k>", "<Up><Cr>")      -- Alt+k to repeat previous command
 
--- lazygit mappings
+-- git mappings
 map("n", "<leader>gg", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
 map({ "n", "t" }, "<C-g>", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
+map("n", "<leader>gp", "<cmd> Gitsigns preview_hunk <CR>")
+map("n", "<leader>gt", "<cmd> Gitsigns toggle_current_line_blame <CR>")
 
 -- mini.completion mappings
 -- vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })
