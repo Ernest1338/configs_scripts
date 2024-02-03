@@ -19,6 +19,10 @@ vim.loader.enable()
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- codeium
+vim.g.codeium_disable_bindings = 1
+vim.g.codeium_manual = true
+
 require("lazy").setup("plugins", {
     defaults    = { lazy = true },
     install     = { colorscheme = { "gruvbox8" } },
