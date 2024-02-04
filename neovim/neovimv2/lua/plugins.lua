@@ -24,18 +24,18 @@ return {
     -- { "tanvirtin/monokai.nvim",      priority = 1000 },
 
     -- AI
-    {
-        "Exafunction/codeium.vim",
-        event = "VeryLazy",
-        config = function()
-            local map = vim.keymap.set
-            map('i', '<M-Bslash>', function() return vim.fn['codeium#Complete']() end, { expr = true, silent = true })
-            map('i', '<M-]>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-            map('i', '<M-[>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
-                { expr = true, silent = true })
-            map('i', '<M-Enter>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-        end
-    },
+    -- {
+    --     "Exafunction/codeium.vim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         local map = vim.keymap.set
+    --         map('i', '<M-Bslash>', function() return vim.fn['codeium#Complete']() end, { expr = true, silent = true })
+    --         map('i', '<M-]>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+    --         map('i', '<M-[>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
+    --             { expr = true, silent = true })
+    --         map('i', '<M-Enter>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    --     end
+    -- },
 
     {
         "nvim-treesitter/nvim-treesitter",

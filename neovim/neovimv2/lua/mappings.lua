@@ -16,6 +16,7 @@ map("n", "<leader>/", "<cmd> Pick buf_lines scope='current' <CR>")              
 map("n", "<leader>fd", "<cmd> Pick buf_lines scope='current' <CR>")                              -- Search current file
 map("n", "<leader>ft", "<cmd> Pick filetype <CR>")                                               -- Change file type
 map("n", "<leader>fr", "<cmd> edit! <CR>")                                                       -- Reload file
+map("n", "<leader>fR", "<cmd> Pick oldfiles <CR>")                                               -- Recent files
 map("n", "<leader>of", "<cmd> Pick explorer cwd='$HOME' <CR>")                                   -- Open file
 map("n", "<leader>:", "<cmd> Pick commands <CR>")                                                -- Pick commands
 map("n", "<leader>pp", "<cmd> lua require('pickaproject').start() <CR>")                         -- Projects
