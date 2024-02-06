@@ -386,10 +386,52 @@ return {
     "nvim-tree/nvim-web-devicons",
     { "echasnovski/mini.extra",      event = "VeryLazy", config = true },
 
+    -- { "echasnovski/mini.starter",    event = "VimEnter", config = true },
+    -- {
+    --     "nvimdev/dashboard-nvim",
+    --     event = "VimEnter",
+    --     config = {
+    --         theme = "hyper",
+    --         config = {
+    --             -- header = {
+    --             --     " ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓",
+    --             --     " ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒",
+    --             --     "▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░",
+    --             --     "▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██ ",
+    --             --     "▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒",
+    --             --     "░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░",
+    --             --     "░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░",
+    --             --     "   ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░   ",
+    --             --     "         ░    ░  ░    ░ ░        ░   ░         ░   ",
+    --             --     "                                ░                  ",
+    --             --     ""
+    --             -- },
+    --             header = {
+    --                 "███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗     ██████╗ ██╗  ██╗ ██████╗ ███████╗ ██████╗███████╗",
+    --                 "████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║    ██╔═████╗╚██╗██╔╝██╔════╝ ██╔════╝██╔════╝╚════██║",
+    --                 "██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║    ██║██╔██║ ╚███╔╝ ███████╗ ███████╗███████╗    ██╔╝",
+    --                 "██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║    ████╔╝██║ ██╔██╗ ██╔═══██╗╚════██║██╔═══██╗  ██╔╝ ",
+    --                 "██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║    ╚██████╔╝██╔╝ ██╗╚██████╔╝███████║╚██████╔╝  ██║  ",
+    --                 "╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝   ╚═╝  ",
+    --                 ""
+    --             },
+    --             shortcut = {
+    --                 { desc = '[  Github]', group = 'DashboardShortCut' },
+    --                 { desc = '[  Ernest1338]', group = 'DashboardShortCut' },
+    --                 { desc = '[  v69.420]', group = 'DashboardShortCut' },
+    --             },
+    --             project = {
+    --                 action = function(path) vim.cmd("Pick files cwd='" .. path .. "'") end
+    --             },
+    --         }
+    --     }
+    -- },
+
     -- LOCAL PLUGIN DEVELOPMENT
     { "local/doctor",                dev = true },
     { "local/wordcount",             dev = true },
     { "local/training",              dev = true },
+    { "local/cube-timer",            dev = true },
     -- { "local/statusline",       dev = true,         event = "BufEnter", config = true },
     -- { "local/termplug.nvim",              dev = true },
     -- { "local/mini.pickaproject",    dev = true },
