@@ -14,14 +14,14 @@ TODOs:
 
 return {
     -- My plugins
-    -- { "Ernest1338/egruvbox",           priority = 1000 },
     { "Ernest1338/egcolors.vim",       priority = 1000 },
     "Ernest1338/mini.pickaproject",
     "Ernest1338/termplug.nvim",
     { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
 
-    -- { "ellisonleao/gruvbox.nvim",    priority = 1000 },
-    -- { "tanvirtin/monokai.nvim",      priority = 1000 },
+    { "shortcuts/no-neck-pain.nvim",   cmd = "NoNeckPain", opts = { width = 120 } },
+    "nvim-tree/nvim-web-devicons",
+    { "echasnovski/mini.extra", event = "VeryLazy", config = true },
 
     -- AI
     -- {
@@ -97,9 +97,7 @@ return {
                                 maxLineLength = 120,
                                 ignore = { "E265", "E722" }
                             },
-                            mccabe = {
-                                enabled = false
-                            }
+                            mccabe = { enabled = false }
                         }
                     }
                 },
@@ -115,10 +113,10 @@ return {
                 clangd = {}
             }
 
-            for server, config in pairs(servers) do
+            for server, settings in pairs(servers) do
                 nvim_lsp[server].setup {
                     on_attach = on_attach,
-                    settings = config
+                    settings = settings
                 }
             end
         end
@@ -259,6 +257,11 @@ return {
         end
     },
     {
+        "windwp/nvim-autopairs",
+        event = "VeryLazy",
+        config = true
+    },
+    {
         "echasnovski/mini.comment",
         event = "VeryLazy",
         opts = {
@@ -336,58 +339,6 @@ return {
             end
         end
     },
-    -- {
-    --     'nvimdev/indentmini.nvim',
-    --     event = 'BufEnter',
-    --     config = function()
-    --         require('indentmini').setup()
-    --         vim.cmd.highlight("IndentLine guifg=#323232")
-    --     end,
-    -- },
-    -- {
-    --     "echasnovski/mini.notify",
-    --     event = "VeryLazy",
-    --     config = {
-    --         content = {
-    --             format = function(notif) return notif.msg end,
-    --         },
-    --         window = {
-    --             config = {
-    --                 border = 'none',
-    --             },
-    --             winblend = 50,
-    --         }
-    --     }
-    -- },
-    -- {
-    --     "echasnovski/mini.visits",
-    --     event = "VeryLazy",
-    --     -- mappings?: <l>kc - create, <l>kf - forward, <l>kF - backward
-    --     config = true
-    -- },
-    -- {
-    --     "echasnovski/mini.cursorword",
-    --     event = "VeryLazy",
-    --     config = { delay = 1000 }
-    -- },
-    -- {
-    --     "echasnovski/mini.nvim",
-    --     lazy = false,
-    --     -- event = "VeryLazy",
-    --     config = function()
-    --         -- local hipatterns = require("mini.hipatterns")
-    --         -- hipatterns.setup {
-    --         --     highlighters = {
-    --         --         -- Highlight hex color strings (`#rrggbb`) using that color
-    --         --         hex_color = hipatterns.gen_highlighter.hex_color(),
-    --         --     },
-    --         --     delay = {
-    --         --         text_change = 500,
-    --         --         scroll = 500,
-    --         --     }
-    --         -- }
-    --     end
-    -- },
     {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
@@ -436,15 +387,58 @@ return {
             }
         end
     },
-    { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
-    {
-        "windwp/nvim-autopairs",
-        event = "VeryLazy",
-        config = true
-    },
-    "nvim-tree/nvim-web-devicons",
-    { "echasnovski/mini.extra",      event = "VeryLazy", config = true },
 
+    -- {
+    --     'nvimdev/indentmini.nvim',
+    --     event = 'BufEnter',
+    --     config = function()
+    --         require('indentmini').setup()
+    --         vim.cmd.highlight("IndentLine guifg=#222738")
+    --     end,
+    -- },
+    -- {
+    --     "echasnovski/mini.notify",
+    --     event = "VeryLazy",
+    --     config = {
+    --         content = {
+    --             format = function(notif) return notif.msg end,
+    --         },
+    --         window = {
+    --             config = {
+    --                 border = 'none',
+    --             },
+    --             winblend = 50,
+    --         }
+    --     }
+    -- },
+    -- {
+    --     "echasnovski/mini.visits",
+    --     event = "VeryLazy",
+    --     -- mappings?: <l>kc - create, <l>kf - forward, <l>kF - backward
+    --     config = true
+    -- },
+    -- {
+    --     "echasnovski/mini.cursorword",
+    --     event = "VeryLazy",
+    --     config = { delay = 1000 }
+    -- },
+    -- {
+    --     "echasnovski/mini.hipatterns",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         local hipatterns = require("mini.hipatterns")
+    --         hipatterns.setup {
+    --             highlighters = {
+    --                 -- Highlight hex color strings (`#rrggbb`) using that color
+    --                 hex_color = hipatterns.gen_highlighter.hex_color(),
+    --             },
+    --             delay = {
+    --                 text_change = 500,
+    --                 scroll = 500,
+    --             }
+    --         }
+    --     end
+    -- },
     -- { "echasnovski/mini.starter",    event = "VimEnter", config = true },
     -- {
     --     "nvimdev/dashboard-nvim",
@@ -487,10 +481,10 @@ return {
     -- },
 
     -- LOCAL PLUGIN DEVELOPMENT
-    { "local/doctor",                dev = true },
-    { "local/wordcount",             dev = true },
-    { "local/training",              dev = true },
-    { "local/cube-timer",            dev = true },
+    { "local/doctor",           dev = true },
+    { "local/wordcount",        dev = true },
+    { "local/training",         dev = true },
+    { "local/cube-timer",       dev = true },
     -- { "local/statusline",       dev = true,         event = "BufEnter", config = true },
     -- { "local/termplug.nvim",              dev = true },
     -- { "local/mini.pickaproject",    dev = true },
