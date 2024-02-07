@@ -21,11 +21,6 @@ map("n", "<leader>of", "<cmd> Pick explorer cwd='$HOME' <CR>")                  
 map("n", "<leader>:", "<cmd> Pick commands <CR>")                                                -- Pick commands
 map("n", "<leader>pp", "<cmd> lua require('pickaproject').start() <CR>")                         -- Projects
 map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/projects.txt <CR>")                       -- Edit projects file
-map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>")    -- Format file
-map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>")                               -- LSP Code actions
-map("n", "<leader>ld", "<cmd> Pick diagnostic <CR>")                                             -- LSP Diagnostics
-map("n", "<leader>ls", "<cmd> Pick lsp scope='document_symbol' <CR>")                            -- LSP Symbols
-map("n", "<leader>lr", "<cmd> lua vim.lsp.buf.rename() <CR>")                                    -- Rename
 map("n", "<leader>sh", "<cmd> split <CR>")                                                       -- Horizontal split
 map("n", "<leader>sv", "<cmd> vsplit <CR>")                                                      -- Vertical split
 map("n", "<leader>wd", "<cmd> close <CR>")                                                       -- Window close
@@ -53,19 +48,6 @@ map("n", "<leader>tb", function()
 end)                                         -- Show / hide tab bar
 map("n", "<leader>td", "<cmd> bdelete <CR>") -- Delete current buffer (and tab)
 map("n", "<f2>", "<cmd> Pick keymaps <CR>")  -- Show keymaps
-map("n", "K", function()
-    local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
-    if vim.tbl_isempty(line_diagnostics) then
-        vim.lsp.buf.hover()
-    else
-        vim.diagnostic.open_float()
-    end
-end)                                                        -- LSP button
-map("n", "<C-k>", "<cmd> lua vim.lsp.buf.hover() <CR>")     -- LSP show hover information
-map("n", "gd", "<cmd> Pick lsp scope='definition' <CR>")    -- Go to defifinition
-map("n", "gD", "<cmd> Pick lsp scope='references' <CR>")    -- Go to references
-map("n", "g]", "<cmd> Gitsigns next_hunk <CR>")             -- Go to next git hunk
-map("n", "g[", "<cmd> Gitsigns prev_hunk <CR>")             -- Go to previous git hunk
 map("n", "g}", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to next diagnostic
 map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous diagnostic
 map("n", "<tab>", "<cmd> bnext <CR>")                       -- Next buffer

@@ -54,26 +54,44 @@ return {
         event = "VeryLazy",
         config = function()
             local nvim_lsp = require("lspconfig")
+
             local on_attach = function(client, _) -- _ = bufnr
                 -- disabled, because it breaks highlighting and makes it slugish
                 client.server_capabilities.semanticTokensProvider = nil
+
+                -- LSP mappings
+                local map = vim.keymap.set
+
+                map("n", "K", function()
+                    local line_diagnostics = vim.lsp.diagnostic.get_line_diagnostics()
+                    if vim.tbl_isempty(line_diagnostics) then
+                        vim.lsp.buf.hover()
+                    else
+                        vim.diagnostic.open_float()
+                    end
+                end)                                                                                          -- LSP button
+                map("n", "<leader>lf", "<cmd> lua vim.lsp.buf.format({ async = true, timeout = 2000 }) <CR>") -- Format file
+                map("n", "<leader>la", "<cmd> lua vim.lsp.buf.code_action() <CR>")                            -- LSP Code actions
+                map("n", "<leader>ld", "<cmd> Pick diagnostic <CR>")                                          -- LSP Diagnostics
+                map("n", "<leader>ls", "<cmd> Pick lsp scope='document_symbol' <CR>")                         -- LSP Symbols
+                map("n", "<leader>lr", "<cmd> lua vim.lsp.buf.rename() <CR>")                                 -- Rename
+                map("n", "<C-k>", "<cmd> lua vim.lsp.buf.hover() <CR>")                                       -- LSP show hover information
+                map("n", "gd", "<cmd> Pick lsp scope='definition' <CR>")                                      -- Go to defifinition
+                map("n", "gD", "<cmd> Pick lsp scope='references' <CR>")                                      -- Go to references
             end
-            nvim_lsp["rust_analyzer"].setup {
-                on_attach = on_attach,
-                settings = {
-                    ["rust-analyzer"] = {
+
+            local servers = {
+                rust_analyzer = {
+                    ["rust_analyzer"] = {
                         diagnostics = {
                             enable = true,
                             disabled = { "unresolved-proc-macro" },
                             --enableExperimental = true,
-                        },
-                    },
+                        }
+                    }
                 },
-            }
-            nvim_lsp["pylsp"].setup {
-                on_attach = on_attach,
-                settings = {
-                    pylsp = {
+                pylsp = {
+                    ["pylsp"] = {
                         plugins = {
                             pycodestyle = {
                                 maxLineLength = 120,
@@ -84,27 +102,25 @@ return {
                             }
                         }
                     }
-                }
-            }
-            nvim_lsp["lua_ls"].setup {
-                on_attach = on_attach,
-                settings = {
+                },
+                lua_ls = {
                     Lua = {
                         diagnostics = {
                             globals = { "vim", "jit", "MiniPick" },
                         },
                     },
                 },
+                zls = {},
+                gopls = {},
+                clangd = {}
             }
-            nvim_lsp["zls"].setup {
-                on_attach = on_attach,
-            }
-            nvim_lsp["gopls"].setup {
-                on_attach = on_attach,
-            }
-            nvim_lsp["clangd"].setup {
-                on_attach = on_attach,
-            }
+
+            for server, config in pairs(servers) do
+                nvim_lsp[server].setup {
+                    on_attach = on_attach,
+                    settings = config
+                }
+            end
         end
     },
     {
@@ -375,7 +391,50 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
-        config = true
+        config = function()
+            require('gitsigns').setup {
+                on_attach = function(bufnr)
+                    local gs = package.loaded.gitsigns
+
+                    local function map(mode, l, r, opts)
+                        opts = opts or {}
+                        opts.buffer = bufnr
+                        vim.keymap.set(mode, l, r, opts)
+                    end
+
+                    -- Navigation
+                    map('n', 'g]', function()
+                        if vim.wo.diff then return ']c' end
+                        vim.schedule(function() gs.next_hunk() end)
+                        return '<Ignore>'
+                    end, { expr = true })
+
+                    map('n', 'g[', function()
+                        if vim.wo.diff then return '[c' end
+                        vim.schedule(function() gs.prev_hunk() end)
+                        return '<Ignore>'
+                    end, { expr = true })
+
+                    -- Actions
+                    -- map('n', '<leader>hs', gs.stage_hunk)
+                    -- map('n', '<leader>hr', gs.reset_hunk)
+                    -- map('v', '<leader>hs', function() gs.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end)
+                    -- map('v', '<leader>hr', function() gs.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end)
+                    -- map('n', '<leader>hS', gs.stage_buffer)
+                    -- map('n', '<leader>hu', gs.undo_stage_hunk)
+                    -- map('n', '<leader>hR', gs.reset_buffer)
+                    -- map('n', '<leader>hp', gs.preview_hunk)
+                    -- map('n', '<leader>hb', function() gs.blame_line { full = true } end)
+                    -- map('n', '<leader>tb', gs.toggle_current_line_blame)
+                    -- map('n', '<leader>hd', gs.diffthis)
+                    -- map('n', '<leader>hD', function() gs.diffthis('~') end)
+                    -- map('n', '<leader>td', gs.toggle_deleted)
+
+                    -- Text object
+                    -- map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+                end
+            }
+        end
     },
     { "shortcuts/no-neck-pain.nvim", cmd = "NoNeckPain", opts = { width = 120 } },
     {
