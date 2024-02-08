@@ -1,13 +1,12 @@
 --[[
 
 TODOs:
-- mini terminal
 - mini deps
-- mini git
 - mini completion + mini snippets + mini pairs
-
 - when new nvim version drops (fork, change name, remove unused things (lsp name), change modes to long names)
-- { "nvimdev/whiskyline.nvim", event = "BufEnter", config = true },
+  { "nvimdev/whiskyline.nvim", event = "BufEnter", config = true },
+- ? mini terminal
+- ? mini git
 
 ]]
 --
