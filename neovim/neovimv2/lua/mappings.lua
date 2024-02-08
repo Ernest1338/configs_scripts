@@ -45,9 +45,10 @@ map("n", "<leader>tb", function()
     else
         vim.o.showtabline = 2
     end
-end)                                         -- Show / hide tab bar
-map("n", "<leader>td", "<cmd> bdelete <CR>") -- Delete current buffer (and tab)
-map("n", "<f2>", "<cmd> Pick keymaps <CR>")  -- Show keymaps
+end)                                                        -- Show / hide tab bar
+map("n", "<leader>td", "<cmd> bdelete <CR>")                -- Delete current buffer (and tab)
+map("n", "<f2>", "<cmd> Pick keymaps <CR>")                 -- Show keymaps
+map("n", "<f3>", "<cmd> Pick help <CR>")                    -- Neovim help pages
 map("n", "g}", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to next diagnostic
 map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous diagnostic
 map("n", "<tab>", "<cmd> bnext <CR>")                       -- Next buffer
@@ -71,8 +72,6 @@ map("t", "<A-k>", "<Up><Cr>")      -- Alt+k to repeat previous command
 -- git mappings
 map("n", "<leader>gg", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
 map({ "n", "t" }, "<C-g>", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
-map("n", "<leader>gp", "<cmd> Gitsigns preview_hunk <CR>")
-map("n", "<leader>gt", "<cmd> Gitsigns toggle_current_line_blame <CR>")
 
 -- mini.completion mappings
 -- vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })
