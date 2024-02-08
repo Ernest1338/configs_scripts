@@ -14,8 +14,8 @@ TODOs:
 
 return {
     -- My plugins
-    { "Ernest1338/egcolors.vim",       priority = 1000 },
-    "Ernest1338/mini.pickaproject",
+    { "Ernest1338/egcolors.vim",      priority = 1000 },
+    { "Ernest1338/mini.pickaproject", cmd = "PickAProject", config = true },
     "Ernest1338/termplug.nvim",
     { "Ernest1338/eg-statusline.nvim", event = "BufEnter", config = true },
 
@@ -301,7 +301,8 @@ return {
     },
     {
         "echasnovski/mini.pick",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
+        cmd = "Pick",
         config = function()
             require("mini.pick").setup {
                 mappings = {
