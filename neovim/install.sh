@@ -6,6 +6,7 @@ echo_help () {
     - lunarvim
     - neovim
     - neovimv2
+    - neovimv3
     - nvchad
     - neovim_lightweight
     - lazyvim"
@@ -18,6 +19,7 @@ else
         || "$1" = "lunarvim"
         || "$1" = "neovim"
         || "$1" = "neovimv2"
+        || "$1" = "neovimv3"
         || "$1" = "neovim_lightweight"
         || "$1" = "lazyvim" ]]; then
         if [ -L "$HOME/.config/nvim" ]; then
