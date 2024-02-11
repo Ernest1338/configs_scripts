@@ -60,6 +60,8 @@ vim.o.colorcolumn = "90"
 -- keep the top line when creating a split
 vim.o.splitkeep = "topline"
 
+vim.o.termguicolors = true
+
 -- folding support with treesitter
 -- vim.o.foldmethod = "expr"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
@@ -77,11 +79,6 @@ vim.opt.shortmess:append("cI") -- might be needed for proper cmdheight + don't s
 
 -- gui font
 --vim.o.guifont="Hack:h12"
-
-vim.o.termguicolors = true
-
--- Set the color scheme
-vim.cmd("colorscheme mirage")
 
 -- Highlight on yank
 local yank_grp = vim.api.nvim_create_augroup("YankHighlight", { clear = true })

@@ -16,7 +16,10 @@ now(function() require("mini.tabline").setup() end)
 
 -- now(function() require("mini.starter").setup() end)
 
-now(function() add("Ernest1338/egcolors.vim") end)
+now(function()
+    add("Ernest1338/egcolors.vim")
+    vim.cmd("colorscheme mirage")
+end)
 
 now(function()
     add("Ernest1338/eg-statusline.nvim")
