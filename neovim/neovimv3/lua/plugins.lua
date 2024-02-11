@@ -69,6 +69,8 @@ now(function() add("nvim-tree/nvim-web-devicons") end)
 
 later(function() require("mini.extra").setup() end)
 
+later(function() vim.notify = require("mini.notify").make_notify() end)
+
 later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
 
 later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" } }) end)
@@ -397,3 +399,13 @@ end)
 --     require("indentmini").setup()
 --     vim.cmd.highlight("IndentLine guifg=#222738")
 -- end)
+
+-- LOCAL PLUGIN DEV
+
+vim.o.runtimepath = vim.o.runtimepath
+    .. ",~/Repos/lua-fun/NvimPlugs/cube-timer"
+    .. ",~/Repos/lua-fun/NvimPlugs/doctor"
+    .. ",~/Repos/lua-fun/NvimPlugs/training"
+    .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
+
+later(function() require("cube-timer").setup() end)
