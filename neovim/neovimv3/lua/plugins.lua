@@ -198,20 +198,17 @@ later(function()
     end
 end)
 
--- FIXME: later
-now(function()
+later(function()
     add({ source = "L3MON4D3/LuaSnip", depends = { "rafamadriz/friendly-snippets" } })
     require("luasnip.loaders.from_vscode").lazy_load()
 end)
 
--- FIXME: later
-now(function()
+later(function()
     add("windwp/nvim-autopairs")
     require("nvim-autopairs").setup()
 end)
 
--- FIXME: later
-now(function()
+later(function()
     add({
         source = "hrsh7th/nvim-cmp",
         depends = {
