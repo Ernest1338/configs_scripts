@@ -114,7 +114,10 @@ later(function()
     end
 end)
 
-later(function() add("Ernest1338/termplug.nvim") end)
+later(function()
+    add("Ernest1338/termplug.nvim")
+    require("termplug").setup()
+end)
 
 later(function() add("Ernest1338/mini.pickaproject") end)
 
@@ -416,3 +419,6 @@ later(function() require("typing-test").setup() end)
 
 -- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/egcolors.vim"
 -- now(function() vim.cmd("colorscheme mirage") end)
+
+-- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/termplug.nvim"
+-- now(function() require("termplug").setup() end)

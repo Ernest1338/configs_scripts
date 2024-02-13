@@ -64,13 +64,13 @@ map("v", "K", ":m '<-2<CR>gv==jgvo<esc>=jgvo")              -- Move highlighted 
 map("v", "J", ":m '>+1<CR>gv==kgvo<esc>=kgvo")              -- Move highlighted text down
 
 -- terminal mappings
-map({ "n", "t" }, "<A-i>", "<cmd> lua require('termplug').toggle() <CR>")
+map({ "n", "t" }, "<A-i>", "<cmd> Term <CR>")
 map("t", "<A-Esc>", "<C-\\><C-n>") -- Terminal enter normal mode
 map("t", "<A-k>", "<Up><Cr>")      -- Alt+k to repeat previous command
 
 -- git mappings
-map("n", "<leader>gg", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
-map({ "n", "t" }, "<C-g>", "<cmd> lua require('termplug').toggle('lazygit') <CR>")
+map("n", "<leader>gg", "<cmd> Term lazygit <CR>")
+map({ "n", "t" }, "<C-g>", "<cmd> Term lazygit <CR>")
 
 -- mini.completion mappings
 -- vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })

@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 
 -- relative numbers
 vim.wo.number = true
-vim.wo.relativenumber = true
+-- vim.wo.relativenumber = true
 
 -- incremental search
 vim.o.incsearch = true
