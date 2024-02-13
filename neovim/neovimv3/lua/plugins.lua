@@ -427,3 +427,6 @@ later(function() require("typing-test").setup() end)
 
 -- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/termplug.nvim"
 -- now(function() require("termplug").setup() end)
+
+-- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/eg-statusline.nvim"
+-- now(function() require("statusline").setup() end)
