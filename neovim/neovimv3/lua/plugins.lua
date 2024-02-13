@@ -67,9 +67,16 @@ now(function() add("nvim-tree/nvim-web-devicons") end)
 --     })
 -- end)
 
-later(function() require("mini.extra").setup() end)
+later(function() add("Ernest1338/mini.pickaproject") end)
+
+later(function()
+    add("Ernest1338/termplug.nvim")
+    require("termplug").setup()
+end)
 
 later(function() vim.notify = require("mini.notify").make_notify() end)
+
+later(function() require("mini.extra").setup() end)
 
 later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
 
@@ -113,13 +120,6 @@ later(function()
         end
     end
 end)
-
-later(function()
-    add("Ernest1338/termplug.nvim")
-    require("termplug").setup()
-end)
-
-later(function() add("Ernest1338/mini.pickaproject") end)
 
 later(function() add("shortcuts/no-neck-pain.nvim") end)
 
@@ -401,6 +401,11 @@ end)
 --     add("nvimdev/indentmini.nvim")
 --     require("indentmini").setup()
 --     vim.cmd.highlight("IndentLine guifg=#222738")
+-- end)
+
+-- later(function()
+--     add("kwakzalver/duckytype.nvim")
+--     require("duckytype").setup()
 -- end)
 
 -- LOCAL PLUGIN DEV, DISABLE BY DEFAULT
