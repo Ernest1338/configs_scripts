@@ -2,6 +2,9 @@
 	this directory contains the fully custom config
 
 # neovimv2
+    this directory contains the previous main config
+
+# neovimv3
     this directory contains the new and rewriteen neovim config, now main
 
 # neovim_lightweight

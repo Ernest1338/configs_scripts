@@ -188,9 +188,9 @@ later(function()
                 },
             },
         },
-        zls = {},
         gopls = {},
-        clangd = {}
+        -- zls = {},
+        -- clangd = {}
     }
 
     for server, settings in pairs(servers) do
