@@ -400,7 +400,8 @@ end)
 --     vim.cmd.highlight("IndentLine guifg=#222738")
 -- end)
 
--- LOCAL PLUGIN DEV
+-- LOCAL PLUGIN DEV, DISABLE BY DEFAULT
+if true then return end
 
 vim.o.runtimepath = vim.o.runtimepath
     .. ",~/Repos/lua-fun/NvimPlugs/cube-timer"
@@ -409,3 +410,6 @@ vim.o.runtimepath = vim.o.runtimepath
     .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
 
 later(function() require("cube-timer").setup() end)
+
+-- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/egcolors.vim"
+-- now(function() vim.cmd("colorscheme mirage") end)
