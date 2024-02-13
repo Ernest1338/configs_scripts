@@ -408,8 +408,11 @@ vim.o.runtimepath = vim.o.runtimepath
     .. ",~/Repos/lua-fun/NvimPlugs/doctor"
     .. ",~/Repos/lua-fun/NvimPlugs/training"
     .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
+    .. ",~/Repos/lua-fun/NvimPlugs/typing-test"
 
 later(function() require("cube-timer").setup() end)
+later(function() require("training").setup() end)
+later(function() require("typing-test").setup() end)
 
 -- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/egcolors.vim"
 -- now(function() vim.cmd("colorscheme mirage") end)
