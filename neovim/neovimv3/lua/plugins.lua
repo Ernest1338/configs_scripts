@@ -67,7 +67,10 @@ now(function() add("nvim-tree/nvim-web-devicons") end)
 --     })
 -- end)
 
-later(function() add("Ernest1338/mini.pickaproject") end)
+later(function()
+    add("Ernest1338/mini.pickaproject")
+    require("mini.pickaproject").setup()
+end)
 
 later(function()
     add("Ernest1338/termplug.nvim")
@@ -430,3 +433,6 @@ later(function() require("typing-test").setup() end)
 
 -- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/eg-statusline.nvim"
 -- now(function() require("statusline").setup() end)
+
+-- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/mini.pickaproject"
+-- now(function() require("mini.pickaproject").setup() end)

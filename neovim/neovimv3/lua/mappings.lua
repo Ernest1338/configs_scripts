@@ -19,7 +19,7 @@ map("n", "<leader>fr", "<cmd> edit! <CR>")                                      
 map("n", "<leader>fR", "<cmd> Pick oldfiles <CR>")                                               -- Recent files
 map("n", "<leader>of", "<cmd> Pick explorer cwd='$HOME' <CR>")                                   -- Open file
 map("n", "<leader>:", "<cmd> Pick commands <CR>")                                                -- Pick commands
-map("n", "<leader>pp", "<cmd> lua require('mini.pickaproject').start() <CR>")                         -- Projects
+map("n", "<leader>pp", "<cmd> PickAProject <CR>")                                                -- Projects
 map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/projects.txt <CR>")                       -- Edit projects file
 map("n", "<leader>sh", "<cmd> split <CR>")                                                       -- Horizontal split
 map("n", "<leader>sv", "<cmd> vsplit <CR>")                                                      -- Vertical split
