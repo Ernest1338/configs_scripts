@@ -79,8 +79,6 @@ end)
 
 later(function() vim.notify = require("mini.notify").make_notify() end)
 
-later(function() require("mini.extra").setup() end)
-
 later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
 
 later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" } }) end)
@@ -367,6 +365,9 @@ later(function()
         end
     })
 end)
+
+-- Needs to be after every other mini module
+later(function() require("mini.extra").setup() end)
 
 -- later(function()
 --     require("mini.notify").setup({
