@@ -366,6 +366,16 @@ later(function()
     })
 end)
 
+later(function()
+    add("Ernest1338/cube-timer.nvim")
+    require("cube-timer").setup()
+end)
+
+later(function()
+    add("Ernest1338/training.nvim")
+    require("training").setup()
+end)
+
 -- Needs to be after every other mini module
 later(function() require("mini.extra").setup() end)
 
@@ -416,14 +426,10 @@ later(function() require("mini.extra").setup() end)
 if true then return end
 
 vim.o.runtimepath = vim.o.runtimepath
-    .. ",~/Repos/lua-fun/NvimPlugs/cube-timer"
     .. ",~/Repos/lua-fun/NvimPlugs/doctor"
-    .. ",~/Repos/lua-fun/NvimPlugs/training"
     .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
     .. ",~/Repos/lua-fun/NvimPlugs/typing-test"
 
-later(function() require("cube-timer").setup() end)
-later(function() require("training").setup() end)
 later(function() require("typing-test").setup() end)
 
 -- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/egcolors.vim"
