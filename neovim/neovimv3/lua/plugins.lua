@@ -28,45 +28,9 @@ end)
 
 now(function() add("nvim-tree/nvim-web-devicons") end)
 
--- now(function()
---     add("nvimdev/dashboard-nvim")
---     require("dashboard").setup({
---         theme = "hyper",
---         config = {
---             -- header = {
---             --     " ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓",
---             --     " ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒",
---             --     "▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░",
---             --     "▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██ ",
---             --     "▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒",
---             --     "░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░",
---             --     "░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░",
---             --     "   ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░   ",
---             --     "         ░    ░  ░    ░ ░        ░   ░         ░   ",
---             --     "                                ░                  ",
---             --     ""
---             -- },
---             header = {
---                 "███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗     ██████╗ ██╗  ██╗ ██████╗ ███████╗ ██████╗███████╗",
---                 "████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║    ██╔═████╗╚██╗██╔╝██╔════╝ ██╔════╝██╔════╝╚════██║",
---                 "██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║    ██║██╔██║ ╚███╔╝ ███████╗ ███████╗███████╗    ██╔╝",
---                 "██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║    ████╔╝██║ ██╔██╗ ██╔═══██╗╚════██║██╔═══██╗  ██╔╝ ",
---                 "██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║    ╚██████╔╝██╔╝ ██╗╚██████╔╝███████║╚██████╔╝  ██║  ",
---                 "╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝   ╚═╝  ",
---                 ""
---             },
---             shortcut = {
---                 { desc = '[  Github]', group = 'DashboardShortCut' },
---                 { desc = '[  Ernest1338]', group = 'DashboardShortCut' },
---                 { desc = '[  v69.420]', group = 'DashboardShortCut' },
---             },
---             project = {
---                 action = function(path) vim.cmd("Pick files cwd='" .. path .. "'") end
---             },
---         }
---     })
--- end)
-
+--
+-- [[ MY PLUGINS ]] --
+--
 later(function()
     add("Ernest1338/mini.pickaproject")
     require("mini.pickaproject").setup()
@@ -76,6 +40,17 @@ later(function()
     add("Ernest1338/termplug.nvim")
     require("termplug").setup()
 end)
+
+later(function()
+    add("Ernest1338/cube-timer.nvim")
+    require("cube-timer").setup()
+end)
+
+later(function()
+    add("Ernest1338/training.nvim")
+    require("training").setup()
+end)
+
 
 later(function() vim.notify = require("mini.notify").make_notify() end)
 
@@ -366,18 +341,47 @@ later(function()
     })
 end)
 
-later(function()
-    add("Ernest1338/cube-timer.nvim")
-    require("cube-timer").setup()
-end)
-
-later(function()
-    add("Ernest1338/training.nvim")
-    require("training").setup()
-end)
-
--- Needs to be after every other mini module
+-- Needs to be after every other mini module, I think
 later(function() require("mini.extra").setup() end)
+
+-- now(function()
+--     add("nvimdev/dashboard-nvim")
+--     require("dashboard").setup({
+--         theme = "hyper",
+--         config = {
+--             -- header = {
+--             --     " ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓",
+--             --     " ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒",
+--             --     "▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░",
+--             --     "▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██ ",
+--             --     "▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒",
+--             --     "░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░",
+--             --     "░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░",
+--             --     "   ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░   ",
+--             --     "         ░    ░  ░    ░ ░        ░   ░         ░   ",
+--             --     "                                ░                  ",
+--             --     ""
+--             -- },
+--             header = {
+--                 "███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗     ██████╗ ██╗  ██╗ ██████╗ ███████╗ ██████╗███████╗",
+--                 "████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║    ██╔═████╗╚██╗██╔╝██╔════╝ ██╔════╝██╔════╝╚════██║",
+--                 "██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║    ██║██╔██║ ╚███╔╝ ███████╗ ███████╗███████╗    ██╔╝",
+--                 "██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║    ████╔╝██║ ██╔██╗ ██╔═══██╗╚════██║██╔═══██╗  ██╔╝ ",
+--                 "██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║    ╚██████╔╝██╔╝ ██╗╚██████╔╝███████║╚██████╔╝  ██║  ",
+--                 "╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝   ╚═╝  ",
+--                 ""
+--             },
+--             shortcut = {
+--                 { desc = '[  Github]', group = 'DashboardShortCut' },
+--                 { desc = '[  Ernest1338]', group = 'DashboardShortCut' },
+--                 { desc = '[  v69.420]', group = 'DashboardShortCut' },
+--             },
+--             project = {
+--                 action = function(path) vim.cmd("Pick files cwd='" .. path .. "'") end
+--             },
+--         }
+--     })
+-- end)
 
 -- later(function()
 --     require("mini.notify").setup({
@@ -422,24 +426,26 @@ later(function() require("mini.extra").setup() end)
 --     require("duckytype").setup()
 -- end)
 
--- LOCAL PLUGIN DEV, DISABLE BY DEFAULT
 if true then return end
+
+--
+-- [[ LOCAL PLUGIN DEV, DISABLED BY DEFAULT ]] --
+--
+-- if true then return end
 
 vim.o.runtimepath = vim.o.runtimepath
     .. ",~/Repos/lua-fun/NvimPlugs/doctor"
     .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
     .. ",~/Repos/lua-fun/NvimPlugs/typing-test"
+    -- .. ",~/Repos/egcolors.vim"
+    -- .. ",~/Repos/termplug.nvim"
+    -- .. ",~/Repos/eg-statusline.nvim"
+    -- .. ",~/Repos/mini.pickaproject"
+    -- .. ",~/Repos/training.nvim"
 
 later(function() require("typing-test").setup() end)
-
--- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/egcolors.vim"
--- now(function() vim.cmd("colorscheme mirage") end)
-
--- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/termplug.nvim"
--- now(function() require("termplug").setup() end)
-
--- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/eg-statusline.nvim"
--- now(function() require("statusline").setup() end)
-
--- vim.o.runtimepath = vim.o.runtimepath .. ",~/Repos/mini.pickaproject"
--- now(function() require("mini.pickaproject").setup() end)
+-- later(function() vim.cmd("colorscheme mirage") end)
+-- later(function() require("termplug").setup() end)
+-- later(function() require("statusline").setup() end)
+-- later(function() require("mini.pickaproject").setup() end)
+-- later(function() require("training").setup() end)
