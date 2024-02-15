@@ -426,12 +426,10 @@ later(function() require("mini.extra").setup() end)
 --     require("duckytype").setup()
 -- end)
 
-if true then return end
-
 --
 -- [[ LOCAL PLUGIN DEV, DISABLED BY DEFAULT ]] --
 --
--- if true then return end
+if true then return end
 
 vim.o.runtimepath = vim.o.runtimepath
     .. ",~/Repos/lua-fun/NvimPlugs/doctor"
