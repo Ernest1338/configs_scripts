@@ -1,3 +1,6 @@
+-- enable the experimental lua-loader
+vim.loader.enable()
+
 local path_package = vim.fn.stdpath("data") .. "/site/"
 
 -- Bootstrap mini if not already installed
@@ -28,9 +31,6 @@ local builtin_plugs = {
 for i = 1, #builtin_plugs do
     vim.g["loaded_" .. builtin_plugs[i]] = true
 end
-
--- enable the experimental lua-loader
-vim.loader.enable()
 
 require("configs")
 require("mappings")
