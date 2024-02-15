@@ -18,7 +18,7 @@ map("n", "<leader>ft", "<cmd> Pick filetype <CR>")                              
 map("n", "<leader>fr", "<cmd> edit! <CR>")                                                       -- Reload file
 map("n", "<leader>fR", "<cmd> Pick oldfiles <CR>")                                               -- Recent files
 map("n", "<leader>of", "<cmd> Pick explorer cwd='$HOME' <CR>")                                   -- Open file
-map("n", "<leader>ot", "<cmd> Pick grep pattern='TODO' <CR>")                                    -- Open TODOs
+map("n", "<leader>ot", "<cmd> Pick grep pattern='TODO|FIXME|NOTE|WARNING|HACK|PERF|FIX' <CR>")   -- Open TODOs and similar
 map("n", "<leader>:", "<cmd> Pick commands <CR>")                                                -- Pick commands
 map("n", "<leader>pp", "<cmd> PickAProject <CR>")                                                -- Projects
 map("n", "<leader>pe", "<cmd> edit ~/.local/share/nvim/projects.txt <CR>")                       -- Edit projects file
