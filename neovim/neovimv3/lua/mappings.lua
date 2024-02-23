@@ -37,8 +37,7 @@ map("n", "<leader>nc", function()
 end)                                                        -- Create new note (one time notes directory) and open it
 map("n", "<leader>tj", "<cmd> Pick list scope='jump' <CR>") -- Jumplist
 map("n", "<C-f>", function()
-    local files = require("mini.files")
-    if not files.close() then files.open() end
+    if not MiniFiles.close() then MiniFiles.open() end
 end) -- Toggle file tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then
@@ -46,19 +45,19 @@ map("n", "<leader>tb", function()
     else
         vim.o.showtabline = 2
     end
-end)                                                        -- Show / hide tab bar
-map("n", "<leader>td", "<cmd> bdelete <CR>")                -- Delete current buffer (and tab)
-map("n", "<f2>", "<cmd> Pick keymaps <CR>")                 -- Show keymaps
-map("n", "<f3>", "<cmd> Pick help <CR>")                    -- Neovim help pages
-map("n", "<tab>", "<cmd> bnext <CR>")                       -- Next buffer
-map("n", "<S-tab>", "<cmd> bprev <CR>")                     -- Previous buffer
-map("v", "Y", "\"+y<Esc>")                                  -- Y To copy to system clipboard
-map({ "n", "v" }, "<C-d>", "<C-d>zz")                       -- Center C-d
-map({ "n", "v" }, "<C-u>", "<C-u>zz")                       -- Center C-u
-map("n", "n", "nzzzv")                                      -- Center search
-map("n", "N", "Nzzzv")                                      -- Center backwards search
-map("v", "y", "ygv<esc>")                                   -- Prevent cursor jump when copying
-map("n", ";", ":")                                          -- Quick command
+end)                                         -- Show / hide tab bar
+map("n", "<leader>td", "<cmd> bdelete <CR>") -- Delete current buffer (and tab)
+map("n", "<f2>", "<cmd> Pick keymaps <CR>")  -- Show keymaps
+map("n", "<f3>", "<cmd> Pick help <CR>")     -- Neovim help pages
+map("n", "<tab>", "<cmd> bnext <CR>")        -- Next buffer
+map("n", "<S-tab>", "<cmd> bprev <CR>")      -- Previous buffer
+map("v", "Y", "\"+y<Esc>")                   -- Y To copy to system clipboard
+map({ "n", "v" }, "<C-d>", "<C-d>zz")        -- Center C-d
+map({ "n", "v" }, "<C-u>", "<C-u>zz")        -- Center C-u
+map("n", "n", "nzzzv")                       -- Center search
+map("n", "N", "Nzzzv")                       -- Center backwards search
+map("v", "y", "ygv<esc>")                    -- Prevent cursor jump when copying
+map("n", ";", ":")                           -- Quick command
 
 -- terminal mappings
 map({ "n", "t" }, "<A-i>", "<cmd> Term <CR>")

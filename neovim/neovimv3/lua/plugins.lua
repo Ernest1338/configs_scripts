@@ -178,7 +178,7 @@ later(function()
         lua_ls = {
             Lua = {
                 diagnostics = {
-                    globals = { "vim", "jit", "MiniPick", "MiniDeps" },
+                    globals = { "vim", "jit", "MiniPick", "MiniDeps", "MiniFiles" },
                 },
             },
         },
