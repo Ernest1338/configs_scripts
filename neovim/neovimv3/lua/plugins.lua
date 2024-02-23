@@ -26,7 +26,7 @@ now(function()
     require("statusline").setup()
 end)
 
-now(function() add("nvim-tree/nvim-web-devicons") end)
+later(function() add("nvim-tree/nvim-web-devicons") end)
 
 --
 -- [[ MY PLUGINS ]] --
