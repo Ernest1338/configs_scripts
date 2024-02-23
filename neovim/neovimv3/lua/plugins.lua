@@ -51,14 +51,32 @@ later(function()
     require("training").setup()
 end)
 
-
-later(function() vim.notify = require("mini.notify").make_notify() end)
+later(function()
+    -- require("mini.notify").setup({
+    --     content = {
+    --         format = function(notif) return notif.msg end,
+    --     },
+    --     window = {
+    --         config = {
+    --             border = "none",
+    --             anchor = "SE",
+    --             row = vim.o.lines - 1
+    --         },
+    --         winblend = 100,
+    --     }
+    -- })
+    vim.notify = require("mini.notify").make_notify()
+end)
 
 later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
 
 later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" } }) end)
 
 later(function() require("mini.files").setup({ mappings = { go_in_plus = "<CR>" }, options = { permanent_delete = false } }) end)
+
+later(function() require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } }) end)
+
+later(function() require("mini.bracketed").setup() end)
 
 later(function()
     require("mini.pick").setup({
@@ -383,23 +401,9 @@ later(function() require("mini.extra").setup() end)
 --     })
 -- end)
 
--- later(function()
---     require("mini.notify").setup({
---         content = {
---             format = function(notif) return notif.msg end,
---         },
---         window = {
---             config = {
---                 border = 'none',
---             },
---             winblend = 100,
---         }
---     })
--- end)
-
 -- later(function() require("mini.visits").setup() end)
 
--- later(function() require("mini.cursorword").setup({ delay = 1000 }) end)
+-- later(function() require("mini.cursorword").setup({ delay = 500 }) end)
 
 -- later(function()
 --     local hipatterns = require("mini.hipatterns")
@@ -435,11 +439,11 @@ vim.o.runtimepath = vim.o.runtimepath
     .. ",~/Repos/lua-fun/NvimPlugs/doctor"
     .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
     .. ",~/Repos/lua-fun/NvimPlugs/typing-test"
-    -- .. ",~/Repos/egcolors.vim"
-    -- .. ",~/Repos/termplug.nvim"
-    -- .. ",~/Repos/eg-statusline.nvim"
-    -- .. ",~/Repos/mini.pickaproject"
-    -- .. ",~/Repos/training.nvim"
+-- .. ",~/Repos/egcolors.vim"
+-- .. ",~/Repos/termplug.nvim"
+-- .. ",~/Repos/eg-statusline.nvim"
+-- .. ",~/Repos/mini.pickaproject"
+-- .. ",~/Repos/training.nvim"
 
 later(function() require("typing-test").setup() end)
 -- later(function() vim.cmd("colorscheme mirage") end)

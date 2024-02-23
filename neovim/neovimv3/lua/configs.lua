@@ -89,7 +89,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = yank_grp,
 })
 
--- auto remove trailing spaces on write
+-- Auto remove trailing spaces on write
 local trailing_grp = vim.api.nvim_create_augroup("TrailingSpaces", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function()

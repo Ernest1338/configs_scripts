@@ -31,8 +31,8 @@ map("n", "<leader>nc", function()
     local notes_dir = "~/Repos/notes/oneTimeNotes/Others/"
     local note = vim.fn.input("Note file name (.md added automatically): ") .. ".md"
     if note ~= ".md" then
-        vim.cmd("edit " .. notes_dir .. note)               -- open file in a new buf
-        vim.api.nvim_set_current_dir(notes_dir)             -- change CWD to notes
+        vim.cmd("edit " .. notes_dir .. note)               -- Open file in a new buf
+        vim.api.nvim_set_current_dir(notes_dir)             -- Change CWD to notes
     end
 end)                                                        -- Create new note (one time notes directory) and open it
 map("n", "<leader>tj", "<cmd> Pick list scope='jump' <CR>") -- Jumplist
@@ -50,19 +50,15 @@ end)                                                        -- Show / hide tab b
 map("n", "<leader>td", "<cmd> bdelete <CR>")                -- Delete current buffer (and tab)
 map("n", "<f2>", "<cmd> Pick keymaps <CR>")                 -- Show keymaps
 map("n", "<f3>", "<cmd> Pick help <CR>")                    -- Neovim help pages
-map("n", "g}", "<cmd> lua vim.diagnostic.goto_next() <CR>") -- Go to next diagnostic
-map("n", "g{", "<cmd> lua vim.diagnostic.goto_prev() <CR>") -- Go to previous diagnostic
 map("n", "<tab>", "<cmd> bnext <CR>")                       -- Next buffer
 map("n", "<S-tab>", "<cmd> bprev <CR>")                     -- Previous buffer
 map("v", "Y", "\"+y<Esc>")                                  -- Y To copy to system clipboard
 map({ "n", "v" }, "<C-d>", "<C-d>zz")                       -- Center C-d
 map({ "n", "v" }, "<C-u>", "<C-u>zz")                       -- Center C-u
 map("n", "n", "nzzzv")                                      -- Center search
-map("n", "N", "Nzzzv")                                      -- center backwards search
+map("n", "N", "Nzzzv")                                      -- Center backwards search
 map("v", "y", "ygv<esc>")                                   -- Prevent cursor jump when copying
 map("n", ";", ":")                                          -- Quick command
-map("v", "K", ":m '<-2<CR>gv==jgvo<esc>=jgvo")              -- Move highlighted text up
-map("v", "J", ":m '>+1<CR>gv==kgvo<esc>=kgvo")              -- Move highlighted text down
 
 -- terminal mappings
 map({ "n", "t" }, "<A-i>", "<cmd> Term <CR>")
