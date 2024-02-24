@@ -193,6 +193,9 @@ later(function()
             settings = settings
         }
     end
+
+    -- Auto start lsp on single file sessions
+    vim.cmd("LspStart")
 end)
 
 later(function()
