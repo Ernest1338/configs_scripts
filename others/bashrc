@@ -70,8 +70,10 @@ alias up='paru; flatpak update; rustup update'
 
 tm () { # tmux st (simple terminal) split
     tmux new-session -c '/home/dvdarch/Files/SomeScripts/' \; \
-         split-window -p 70 -h 'ncmpcpp' \; \
+         split-window -l 135 -h 'ncmpcpp' \; \
          set-option -t 0 status off \;
+
+         # split-window -p 70 -h 'ncmpcpp' \; \ # NOTE: This SHOULD work
 }
 
 # enables X11 in docker containers
