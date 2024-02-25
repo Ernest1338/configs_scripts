@@ -6,14 +6,13 @@ map({ "i", "t" }, "<C-k>", "<up>")                                              
 map({ "i", "t" }, "<C-j>", "<down>")                                                             -- <C-j> to move down
 map({ "i", "t" }, "<C-h>", "<left>")                                                             -- <C-h> to move left
 map({ "i", "t" }, "<C-l>", "<right>")                                                            -- <C-l> to move right
-map("n", "<leader>;", "<cmd> Pick grep_live <CR>")                                               -- Search project
+map("n", "<leader>fd", "<cmd> Pick grep_live <CR>")                                              -- Search project
+map("n", "<leader>fD", "<cmd> Pick buf_lines scope='current' <CR>")                              -- Search current file
 map("n", "<leader>fs", "<cmd>:silent w<CR>")                                                     -- Save file
 map("n", "<leader><leader>", "<cmd> Pick files <CR>")                                            -- Find files
 map("n", "<leader>qq", "<cmd> q <CR>")                                                           -- Quit
 map("n", "<leader>qQ", "<cmd> q! <CR>")                                                          -- Force quit
 map("n", "<leader>fc", "<cmd> Pick files cwd='~/.config/nvim/' <CR>")                            -- Modify config
-map("n", "<leader>/", "<cmd> Pick buf_lines scope='current' <CR>")                               -- Search current file
-map("n", "<leader>fd", "<cmd> Pick buf_lines scope='current' <CR>")                              -- Search current file
 map("n", "<leader>ft", "<cmd> Pick filetype <CR>")                                               -- Change file type
 map("n", "<leader>fr", "<cmd> edit! <CR>")                                                       -- Reload file
 map("n", "<leader>fR", "<cmd> Pick oldfiles <CR>")                                               -- Recent files
