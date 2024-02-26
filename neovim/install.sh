@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo_help () {
     echo "Provide proper name of the config you wish to install, available ones:
