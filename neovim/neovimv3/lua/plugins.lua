@@ -362,8 +362,38 @@ later(function()
     })
 end)
 
+-- later(function() require("mini.visits").setup() end)
+
+-- later(function() require("mini.cursorword").setup({ delay = 500 }) end)
+
+later(function()
+    local hipatterns = require("mini.hipatterns")
+    hipatterns.setup {
+        highlighters = {
+            fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+            hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+            todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+            note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+            warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
+            -- Highlight hex color strings (`#rrggbb`) using that color
+            hex_color = hipatterns.gen_highlighter.hex_color(),
+        },
+        delay = {
+            text_change = 500,
+            scroll = 500,
+        }
+    }
+    vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { default = true, link = "DiagnosticWarn" })
+end)
+
 -- Needs to be after every other mini module, I think
 later(function() require("mini.extra").setup() end)
+
+-- later(function()
+--     add("nvimdev/indentmini.nvim")
+--     require("indentmini").setup()
+--     vim.cmd.highlight("IndentLine guifg=#222738")
+-- end)
 
 -- now(function()
 --     add("nvimdev/dashboard-nvim")
@@ -402,36 +432,6 @@ later(function() require("mini.extra").setup() end)
 --             },
 --         }
 --     })
--- end)
-
--- later(function() require("mini.visits").setup() end)
-
--- later(function() require("mini.cursorword").setup({ delay = 500 }) end)
-
--- later(function()
---     local hipatterns = require("mini.hipatterns")
---     hipatterns.setup {
---         highlighters = {
---             fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
---             hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
---             todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
---             note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
---             warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
---             -- Highlight hex color strings (`#rrggbb`) using that color
---             hex_color = hipatterns.gen_highlighter.hex_color(),
---         },
---         delay = {
---             text_change = 500,
---             scroll = 500,
---         }
---     }
---     vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { default = true, link = "DiagnosticWarn" })
--- end)
-
--- later(function()
---     add("nvimdev/indentmini.nvim")
---     require("indentmini").setup()
---     vim.cmd.highlight("IndentLine guifg=#222738")
 -- end)
 
 -- later(function()
