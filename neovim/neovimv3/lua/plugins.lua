@@ -412,6 +412,11 @@ later(function() require("mini.extra").setup() end)
 --     local hipatterns = require("mini.hipatterns")
 --     hipatterns.setup {
 --         highlighters = {
+--             fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+--             hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+--             todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+--             note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+--             warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
 --             -- Highlight hex color strings (`#rrggbb`) using that color
 --             hex_color = hipatterns.gen_highlighter.hex_color(),
 --         },
@@ -420,6 +425,7 @@ later(function() require("mini.extra").setup() end)
 --             scroll = 500,
 --         }
 --     }
+--     vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { default = true, link = "DiagnosticWarn" })
 -- end)
 
 -- later(function()
