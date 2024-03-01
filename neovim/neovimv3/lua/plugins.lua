@@ -1,6 +1,6 @@
 --[[
 
-TODOs:
+TODO:
 - mini completion + mini snippets + mini pairs
 - when new nvim version drops (fork, change name, remove unused things (lsp name), change modes to long names)
   { "nvimdev/whiskyline.nvim", event = "BufEnter", config = true },
@@ -375,6 +375,7 @@ later(function()
             todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
             note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
             warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
+            perf      = { pattern = '%f[%w]()PERF()%f[%W]', group = 'MiniHipatternsPerf' },
             -- Highlight hex color strings (`#rrggbb`) using that color
             hex_color = hipatterns.gen_highlighter.hex_color(),
         },
@@ -383,7 +384,12 @@ later(function()
             scroll = 500,
         }
     }
-    vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { default = true, link = "DiagnosticWarn" })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsFixme', { fg = "#ffffff", bg = "#ff5f59" })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsHack', { fg = "#000000", bg = "#e0af68" })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsTodo', { fg = "#000000", bg = "#0db9d7" })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsNote', { fg = "#000000", bg = "#10b981" })
+    vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { fg = "#000000", bg = "#e0af68" })
+    vim.api.nvim_set_hl(0, "MiniHipatternsPerf", { fg = "#000000", bg = "#bb9af7" })
 end)
 
 -- Needs to be after every other mini module, I think
