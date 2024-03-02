@@ -12,8 +12,8 @@ end
 function Main()
     local start = cmd_output("date +%s%3N")
 
-    --os.execute("nvim +Tutor")
-    os.execute("TERM=xterm-256color WINIT_UNIX_BACKEND=x11 neovide --multigrid --nofork +Tutor")
+    os.execute("nvim +Tutor")
+    -- os.execute("TERM=xterm-256color WINIT_UNIX_BACKEND=x11 neovide --multigrid --nofork +Tutor")
 
     local end_time = cmd_output("date +%s%3N") - start
 
