@@ -4,6 +4,7 @@ TODO:
 - mini completion + mini snippets + mini pairs
 - when new nvim version drops (fork, change name, remove unused things (lsp name), change modes to long names)
   { "nvimdev/whiskyline.nvim", event = "BufEnter", config = true },
+- statusline disappear when using <leaderlf (format) fix
 - ? mini terminal
 - ? mini git
 
