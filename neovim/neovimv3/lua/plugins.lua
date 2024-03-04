@@ -371,11 +371,12 @@ later(function()
     local hipatterns = require("mini.hipatterns")
     hipatterns.setup {
         highlighters = {
-            fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
-            hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+            fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFix' },
+            fix       = { pattern = '%f[%w]()FIX()%f[%W]', group = 'MiniHipatternsFix' },
+            warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
+            hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsWarning' },
             todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
             note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-            warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
             perf      = { pattern = '%f[%w]()PERF()%f[%W]', group = 'MiniHipatternsPerf' },
             -- Highlight hex color strings (`#rrggbb`) using that color
             hex_color = hipatterns.gen_highlighter.hex_color(),
@@ -385,12 +386,12 @@ later(function()
             scroll = 500,
         }
     }
-    vim.api.nvim_set_hl(0, 'MiniHipatternsFixme', { fg = "#ffffff", bg = "#ff5f59" })
-    vim.api.nvim_set_hl(0, 'MiniHipatternsHack', { fg = "#000000", bg = "#e0af68" })
-    vim.api.nvim_set_hl(0, 'MiniHipatternsTodo', { fg = "#000000", bg = "#0db9d7" })
-    vim.api.nvim_set_hl(0, 'MiniHipatternsNote', { fg = "#000000", bg = "#10b981" })
-    vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { fg = "#000000", bg = "#e0af68" })
-    vim.api.nvim_set_hl(0, "MiniHipatternsPerf", { fg = "#000000", bg = "#bb9af7" })
+    local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsFix', { fg = "#ffffff", bg = "#ff5f59", bold = true })
+    vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { fg = normal["bg"], bg = "#e0af68", bold = true })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsTodo', { fg = normal["bg"], bg = "#0db9d7", bold = true })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsNote', { fg = normal["bg"], bg = "#10b981", bold = true })
+    vim.api.nvim_set_hl(0, "MiniHipatternsPerf", { fg = normal["bg"], bg = "#bb9af7", bold = true })
 end)
 
 -- Needs to be after every other mini module, I think
