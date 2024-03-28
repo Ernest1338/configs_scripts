@@ -3,8 +3,8 @@
 TODO:
 - mini completion + mini snippets + mini pairs
 - when new nvim version drops (fork, change name, remove unused things (lsp name), change modes to long names)
+  it probably will still disappear (nvim-cmp problem), might also address format <leader>lf diappearing problem
   { "nvimdev/whiskyline.nvim", event = "BufEnter", config = true },
-- statusline disappear when using <leaderlf (format) fix
 - ? mini terminal
 - ? mini git
 
@@ -77,7 +77,7 @@ later(function() require("mini.files").setup({ mappings = { go_in_plus = "<CR>" 
 
 later(function() require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } }) end)
 
-later(function() require("mini.bracketed").setup() end)
+-- later(function() require("mini.bracketed").setup() end)
 
 later(function()
     require("mini.pick").setup({
@@ -116,7 +116,14 @@ later(function()
     end
 end)
 
-later(function() add("shortcuts/no-neck-pain.nvim") end)
+later(function()
+    require("mini.diff").setup({
+        view = { style = 'sign', signs = { add = '┃', change = '┃', delete = '▁' }, },
+        delay = {
+            text_change = 500,
+        },
+    })
+end)
 
 later(function()
     add({ source = "nvim-treesitter/nvim-treesitter", hooks = { post_checkout = function() vim.cmd('TSUpdate') end } })
@@ -331,37 +338,37 @@ later(function()
     })
 end)
 
-later(function()
-    add("lewis6991/gitsigns.nvim")
-    require('gitsigns').setup({
-        on_attach = function(bufnr)
-            local gs = package.loaded.gitsigns
-
-            local function map(mode, l, r, opts)
-                opts = opts or {}
-                opts.buffer = bufnr
-                vim.keymap.set(mode, l, r, opts)
-            end
-
-            -- Navigation
-            map('n', ']h', function()
-                if vim.wo.diff then return ']c' end
-                vim.schedule(function() gs.next_hunk() end)
-                return '<Ignore>'
-            end, { expr = true })
-
-            map('n', '[h', function()
-                if vim.wo.diff then return '[c' end
-                vim.schedule(function() gs.prev_hunk() end)
-                return '<Ignore>'
-            end, { expr = true })
-
-            map('n', '<leader>gp', gs.preview_hunk)
-            map('n', '<leader>gt', gs.toggle_current_line_blame)
-            -- NOTE: maybe more mappings?
-        end
-    })
-end)
+-- later(function()
+--     add("lewis6991/gitsigns.nvim")
+--     require('gitsigns').setup({
+--         on_attach = function(bufnr)
+--             local gs = package.loaded.gitsigns
+--
+--             local function map(mode, l, r, opts)
+--                 opts = opts or {}
+--                 opts.buffer = bufnr
+--                 vim.keymap.set(mode, l, r, opts)
+--             end
+--
+--             -- Navigation
+--             map('n', ']h', function()
+--                 if vim.wo.diff then return ']c' end
+--                 vim.schedule(function() gs.next_hunk() end)
+--                 return '<Ignore>'
+--             end, { expr = true })
+--
+--             map('n', '[h', function()
+--                 if vim.wo.diff then return '[c' end
+--                 vim.schedule(function() gs.prev_hunk() end)
+--                 return '<Ignore>'
+--             end, { expr = true })
+--
+--             map('n', '<leader>gp', gs.preview_hunk)
+--             map('n', '<leader>gt', gs.toggle_current_line_blame)
+--             -- NOTE: maybe more mappings?
+--         end
+--     })
+-- end)
 
 -- later(function() require("mini.visits").setup() end)
 
@@ -396,6 +403,8 @@ end)
 
 -- Needs to be after every other mini module, I think
 later(function() require("mini.extra").setup() end)
+
+-- later(function() add("shortcuts/no-neck-pain.nvim") end)
 
 -- later(function()
 --     add("nvimdev/indentmini.nvim")
