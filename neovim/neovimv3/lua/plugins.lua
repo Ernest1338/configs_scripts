@@ -77,6 +77,8 @@ later(function() require("mini.files").setup({ mappings = { go_in_plus = "<CR>" 
 
 later(function() require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } }) end)
 
+later(function() require("mini.diff").setup({ view = { style = 'sign', signs = { add = '┃', change = '┃', delete = '▁' } } }) end)
+
 -- later(function() require("mini.bracketed").setup() end)
 
 later(function()
@@ -114,15 +116,6 @@ later(function()
             vim.api.nvim_buf_set_option(0, 'filetype', filetype)
         end
     end
-end)
-
-later(function()
-    require("mini.diff").setup({
-        view = { style = 'sign', signs = { add = '┃', change = '┃', delete = '▁' }, },
-        delay = {
-            text_change = 500,
-        },
-    })
 end)
 
 later(function()
