@@ -73,11 +73,17 @@ later(function() require("mini.comment").setup({ mappings = { comment_visual = "
 
 later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" } }) end)
 
-later(function() require("mini.files").setup({ mappings = { go_in_plus = "<CR>" }, options = { permanent_delete = false } }) end)
+later(function()
+    require("mini.files").setup({ mappings = { go_in_plus = "<CR>" }, options = { permanent_delete = false } })
+    vim.keymap.set("n", "<C-f>", "<Cmd>lua if not MiniFiles.close() then MiniFiles.open() end<CR>") -- Toggle file tree
+end)
 
 later(function() require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } }) end)
 
-later(function() require("mini.diff").setup({ view = { style = 'sign', signs = { add = '┃', change = '┃', delete = '▁' } } }) end)
+later(function()
+    require("mini.diff").setup({ view = { style = 'sign', signs = { add = '┃', change = '┃', delete = '▁' } } })
+    vim.keymap.set("n", "go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>") -- Toggle overlay
+end)
 
 -- later(function() require("mini.bracketed").setup() end)
 
@@ -463,6 +469,7 @@ vim.o.runtimepath = vim.o.runtimepath
 -- .. ",~/Repos/eg-statusline.nvim"
 -- .. ",~/Repos/mini.pickaproject"
 -- .. ",~/Repos/training.nvim"
+-- .. ",~/Repos/lua-fun/NvimPlugs/startupscreen.nvim"
 
 later(function() require("typing-test").setup() end)
 -- later(function() vim.cmd("colorscheme mirage") end)
@@ -470,3 +477,4 @@ later(function() require("typing-test").setup() end)
 -- later(function() require("statusline").setup() end)
 -- later(function() require("mini.pickaproject").setup() end)
 -- later(function() require("training").setup() end)
+-- later(function() require("startupscreen").setup() end)

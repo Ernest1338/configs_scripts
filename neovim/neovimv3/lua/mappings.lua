@@ -35,9 +35,6 @@ map("n", "<leader>nc", function()
     end
 end)                                                        -- Create new note (one time notes directory) and open it
 map("n", "<leader>tj", "<cmd> Pick list scope='jump' <CR>") -- Jumplist
-map("n", "<C-f>", function()
-    if not MiniFiles.close() then MiniFiles.open() end
-end) -- Toggle file tree
 map("n", "<leader>tb", function()
     if vim.o.showtabline ~= 0 then
         vim.o.showtabline = 0
