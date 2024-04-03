@@ -1,5 +1,9 @@
 local map = vim.keymap.set
 
+-- map leader key as space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- NOTE: <leader>k - special group of bindings (will be eventually) (not needed now)
 
 map({ "i", "t" }, "<C-k>", "<up>")                                                               -- <C-k> to move up

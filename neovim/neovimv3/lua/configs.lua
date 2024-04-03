@@ -1,7 +1,3 @@
--- map leader key as space
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- relative numbers
 vim.wo.number = true
 -- vim.wo.relativenumber = true

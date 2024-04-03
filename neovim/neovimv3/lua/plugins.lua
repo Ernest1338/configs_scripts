@@ -32,6 +32,7 @@ later(function() add("nvim-tree/nvim-web-devicons") end)
 --
 -- [[ MY PLUGINS ]] --
 --
+
 later(function()
     add("Ernest1338/mini.pickaproject")
     require("mini.pickaproject").setup()
@@ -42,15 +43,17 @@ later(function()
     require("termplug").setup()
 end)
 
-later(function()
-    add("Ernest1338/cube-timer.nvim")
-    require("cube-timer").setup()
-end)
+-- later(function()
+--     add("Ernest1338/cube-timer.nvim")
+--     require("cube-timer").setup()
+-- end)
 
-later(function()
-    add("Ernest1338/training.nvim")
-    require("training").setup()
-end)
+-- later(function()
+--     add("Ernest1338/training.nvim")
+--     require("training").setup()
+-- end)
+
+-- [[ ---------- ]] --
 
 later(function()
     -- require("mini.notify").setup({
@@ -337,38 +340,6 @@ later(function()
     })
 end)
 
--- later(function()
---     add("lewis6991/gitsigns.nvim")
---     require('gitsigns').setup({
---         on_attach = function(bufnr)
---             local gs = package.loaded.gitsigns
---
---             local function map(mode, l, r, opts)
---                 opts = opts or {}
---                 opts.buffer = bufnr
---                 vim.keymap.set(mode, l, r, opts)
---             end
---
---             -- Navigation
---             map('n', ']h', function()
---                 if vim.wo.diff then return ']c' end
---                 vim.schedule(function() gs.next_hunk() end)
---                 return '<Ignore>'
---             end, { expr = true })
---
---             map('n', '[h', function()
---                 if vim.wo.diff then return '[c' end
---                 vim.schedule(function() gs.prev_hunk() end)
---                 return '<Ignore>'
---             end, { expr = true })
---
---             map('n', '<leader>gp', gs.preview_hunk)
---             map('n', '<leader>gt', gs.toggle_current_line_blame)
---             -- NOTE: maybe more mappings?
---         end
---     })
--- end)
-
 -- later(function() require("mini.visits").setup() end)
 
 -- later(function() require("mini.cursorword").setup({ delay = 500 }) end)
@@ -386,10 +357,6 @@ later(function()
             perf      = { pattern = '%f[%w]()PERF()%f[%W]', group = 'MiniHipatternsPerf' },
             -- Highlight hex color strings (`#rrggbb`) using that color
             hex_color = hipatterns.gen_highlighter.hex_color(),
-        },
-        delay = {
-            text_change = 500,
-            scroll = 500,
         }
     }
     local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
@@ -463,7 +430,7 @@ if true then return end
 vim.o.runtimepath = vim.o.runtimepath
     .. ",~/Repos/lua-fun/NvimPlugs/doctor"
     .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
-    .. ",~/Repos/lua-fun/NvimPlugs/typing-test"
+-- .. ",~/Repos/lua-fun/NvimPlugs/typing-test"
 -- .. ",~/Repos/egcolors.vim"
 -- .. ",~/Repos/termplug.nvim"
 -- .. ",~/Repos/eg-statusline.nvim"
@@ -471,7 +438,7 @@ vim.o.runtimepath = vim.o.runtimepath
 -- .. ",~/Repos/training.nvim"
 -- .. ",~/Repos/lua-fun/NvimPlugs/startupscreen.nvim"
 
-later(function() require("typing-test").setup() end)
+-- later(function() require("typing-test").setup() end)
 -- later(function() vim.cmd("colorscheme mirage") end)
 -- later(function() require("termplug").setup() end)
 -- later(function() require("statusline").setup() end)
