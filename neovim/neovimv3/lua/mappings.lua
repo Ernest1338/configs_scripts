@@ -67,7 +67,3 @@ map("t", "<A-k>", "<Up><Cr>")      -- Alt+k to repeat previous command
 -- git mappings
 map("n", "<leader>gg", "<cmd> Term lazygit <CR>")
 map({ "n", "t" }, "<C-g>", "<cmd> Term lazygit <CR>")
-
--- mini.completion mappings
--- vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })
--- vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })

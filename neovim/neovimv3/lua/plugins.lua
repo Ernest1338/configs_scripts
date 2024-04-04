@@ -17,6 +17,10 @@ now(function() require("mini.tabline").setup() end)
 
 -- now(function() require("mini.starter").setup() end)
 
+--
+-- [[ MY PLUGINS ]] --
+--
+
 now(function()
     add("Ernest1338/egcolors.vim")
     vim.cmd("colorscheme mirage")
@@ -26,12 +30,6 @@ now(function()
     add("Ernest1338/eg-statusline.nvim")
     require("statusline").setup()
 end)
-
-later(function() add("nvim-tree/nvim-web-devicons") end)
-
---
--- [[ MY PLUGINS ]] --
---
 
 later(function()
     add("Ernest1338/mini.pickaproject")
@@ -55,6 +53,34 @@ end)
 
 -- [[ ---------- ]] --
 
+later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
+
+later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" } }) end)
+
+later(function()
+    require("mini.files").setup({ mappings = { go_in_plus = "<CR>" }, options = { permanent_delete = false } })
+    vim.keymap.set("n", "<C-f>", "<Cmd>lua if not MiniFiles.close() then MiniFiles.open() end<CR>") -- Toggle file tree
+end)
+
+later(function() require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } }) end)
+
+later(function()
+    require("mini.diff").setup({
+        view = {
+            style = 'sign',
+            signs = {
+                add = '┃',
+                change = '┃',
+                delete = '▁'
+            }
+        },
+        options = {
+            wrap_goto = true
+        }
+    })
+    vim.keymap.set("n", "go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>") -- Toggle overlay
+end)
+
 later(function()
     -- require("mini.notify").setup({
     --     content = {
@@ -71,24 +97,6 @@ later(function()
     -- })
     vim.notify = require("mini.notify").make_notify()
 end)
-
-later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
-
-later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" } }) end)
-
-later(function()
-    require("mini.files").setup({ mappings = { go_in_plus = "<CR>" }, options = { permanent_delete = false } })
-    vim.keymap.set("n", "<C-f>", "<Cmd>lua if not MiniFiles.close() then MiniFiles.open() end<CR>") -- Toggle file tree
-end)
-
-later(function() require("mini.move").setup({ mappings = { left = "H", right = "L", down = "J", up = "K" } }) end)
-
-later(function()
-    require("mini.diff").setup({ view = { style = 'sign', signs = { add = '┃', change = '┃', delete = '▁' } } })
-    vim.keymap.set("n", "go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>") -- Toggle overlay
-end)
-
--- later(function() require("mini.bracketed").setup() end)
 
 later(function()
     require("mini.pick").setup({
@@ -126,6 +134,48 @@ later(function()
         end
     end
 end)
+
+later(function()
+    local hipatterns = require("mini.hipatterns")
+    hipatterns.setup {
+        highlighters = {
+            fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFix' },
+            fix       = { pattern = '%f[%w]()FIX()%f[%W]', group = 'MiniHipatternsFix' },
+            warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
+            hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsWarning' },
+            todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+            note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+            perf      = { pattern = '%f[%w]()PERF()%f[%W]', group = 'MiniHipatternsPerf' },
+            -- Highlight hex color strings (`#rrggbb`) using that color
+            hex_color = hipatterns.gen_highlighter.hex_color(),
+        }
+    }
+    local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsFix', { fg = "#ffffff", bg = "#ff5f59", bold = true })
+    vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { fg = normal["bg"], bg = "#e0af68", bold = true })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsTodo', { fg = normal["bg"], bg = "#0db9d7", bold = true })
+    vim.api.nvim_set_hl(0, 'MiniHipatternsNote', { fg = normal["bg"], bg = "#10b981", bold = true })
+    vim.api.nvim_set_hl(0, "MiniHipatternsPerf", { fg = normal["bg"], bg = "#bb9af7", bold = true })
+end)
+
+-- later(function()
+--     require("mini.completion").setup()
+--     vim.api.nvim_set_keymap('i', '<Tab>', [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { noremap = true, expr = true })
+--     vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
+-- end)
+
+-- later(function() require("mini.pairs").setup() end)
+
+-- later(function() require("mini.visits").setup() end)
+
+-- later(function() require("mini.cursorword").setup({ delay = 500 }) end)
+
+-- later(function() require("mini.bracketed").setup() end)
+
+-- Needs to be after every other mini module, I think
+later(function() require("mini.extra").setup() end)
+
+later(function() add("nvim-tree/nvim-web-devicons") end)
 
 later(function()
     add({ source = "nvim-treesitter/nvim-treesitter", hooks = { post_checkout = function() vim.cmd('TSUpdate') end } })
@@ -339,36 +389,6 @@ later(function()
         float = { border = "rounded" },
     })
 end)
-
--- later(function() require("mini.visits").setup() end)
-
--- later(function() require("mini.cursorword").setup({ delay = 500 }) end)
-
-later(function()
-    local hipatterns = require("mini.hipatterns")
-    hipatterns.setup {
-        highlighters = {
-            fixme     = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFix' },
-            fix       = { pattern = '%f[%w]()FIX()%f[%W]', group = 'MiniHipatternsFix' },
-            warning   = { pattern = '%f[%w]()WARNING()%f[%W]', group = 'MiniHipatternsWarning' },
-            hack      = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsWarning' },
-            todo      = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
-            note      = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
-            perf      = { pattern = '%f[%w]()PERF()%f[%W]', group = 'MiniHipatternsPerf' },
-            -- Highlight hex color strings (`#rrggbb`) using that color
-            hex_color = hipatterns.gen_highlighter.hex_color(),
-        }
-    }
-    local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
-    vim.api.nvim_set_hl(0, 'MiniHipatternsFix', { fg = "#ffffff", bg = "#ff5f59", bold = true })
-    vim.api.nvim_set_hl(0, "MiniHipatternsWarning", { fg = normal["bg"], bg = "#e0af68", bold = true })
-    vim.api.nvim_set_hl(0, 'MiniHipatternsTodo', { fg = normal["bg"], bg = "#0db9d7", bold = true })
-    vim.api.nvim_set_hl(0, 'MiniHipatternsNote', { fg = normal["bg"], bg = "#10b981", bold = true })
-    vim.api.nvim_set_hl(0, "MiniHipatternsPerf", { fg = normal["bg"], bg = "#bb9af7", bold = true })
-end)
-
--- Needs to be after every other mini module, I think
-later(function() require("mini.extra").setup() end)
 
 -- later(function() add("shortcuts/no-neck-pain.nvim") end)
 
