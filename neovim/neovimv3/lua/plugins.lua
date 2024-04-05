@@ -55,7 +55,7 @@ end)
 
 later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
 
-later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" } }) end)
+later(function() require("mini.jump2d").setup({ mappings = { start_jumping = "<leader>j" }, view = { n_steps_ahead = 1 } }) end)
 
 later(function()
     require("mini.files").setup({ mappings = { go_in_plus = "<CR>" }, options = { permanent_delete = false } })
