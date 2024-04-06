@@ -23,7 +23,7 @@ now(function() require("mini.tabline").setup() end)
 
 now(function()
     add("Ernest1338/egcolors.vim")
-    vim.cmd("colorscheme mirage")
+    vim.cmd("colorscheme tokyonight")
 end)
 
 now(function()
