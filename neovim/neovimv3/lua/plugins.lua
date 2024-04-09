@@ -41,16 +41,6 @@ later(function()
     require("termplug").setup()
 end)
 
--- later(function()
---     add("Ernest1338/cube-timer.nvim")
---     require("cube-timer").setup()
--- end)
-
--- later(function()
---     add("Ernest1338/training.nvim")
---     require("training").setup()
--- end)
-
 -- [[ ---------- ]] --
 
 later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
@@ -129,9 +119,7 @@ later(function()
     end
     MiniPick.registry.filetype = function()
         local filetype = MiniPick.start({ source = { items = vim.fn.getcompletion("", "filetype") } })
-        if filetype ~= nil then
-            vim.api.nvim_buf_set_option(0, 'filetype', filetype)
-        end
+        if filetype ~= nil then vim.api.nvim_buf_set_option(0, 'filetype', filetype) end
     end
 end)
 
@@ -171,6 +159,20 @@ end)
 -- later(function() require("mini.cursorword").setup({ delay = 500 }) end)
 
 -- later(function() require("mini.bracketed").setup() end)
+
+-- later(function()
+--     local map = require("mini.map")
+--     require("mini.map").setup({
+--         integrations = {
+--             map.gen_integration.builtin_search(),
+--             map.gen_integration.diff(),
+--             map.gen_integration.diagnostic(),
+--         },
+--         -- window = {
+--         --     width = 1,
+--         -- }
+--     })
+-- end)
 
 -- Needs to be after every other mini module, I think
 later(function() require("mini.extra").setup() end)
@@ -437,31 +439,33 @@ end)
 --     })
 -- end)
 
--- later(function()
---     add("kwakzalver/duckytype.nvim")
---     require("duckytype").setup()
--- end)
-
 --
--- [[ LOCAL PLUGIN DEV, DISABLED BY DEFAULT ]] --
+-- [[ LOCAL PLUGIN DEV ]] --
 --
-if true then return end
 
-vim.o.runtimepath = vim.o.runtimepath
-    .. ",~/Repos/lua-fun/NvimPlugs/doctor"
-    .. ",~/Repos/lua-fun/NvimPlugs/wordcount"
--- .. ",~/Repos/lua-fun/NvimPlugs/typing-test"
--- .. ",~/Repos/egcolors.vim"
--- .. ",~/Repos/termplug.nvim"
--- .. ",~/Repos/eg-statusline.nvim"
--- .. ",~/Repos/mini.pickaproject"
--- .. ",~/Repos/training.nvim"
--- .. ",~/Repos/lua-fun/NvimPlugs/startupscreen.nvim"
+local function runtime_add(path) vim.o.runtimepath = vim.o.runtimepath .. "," .. path end
 
+-- runtime_add("~/Repos/lua-fun/NvimPlugs/doctor")
+
+-- runtime_add("~/Repos/lua-fun/NvimPlugs/wordcount")
+
+-- runtime_add("~/Repos/lua-fun/NvimPlugs/typing-test")
 -- later(function() require("typing-test").setup() end)
+
+-- runtime_add("~/Repos/egcolors.vim")
 -- later(function() vim.cmd("colorscheme mirage") end)
+
+-- runtime_add("~/Repos/termplug.nvim")
 -- later(function() require("termplug").setup() end)
+
+-- runtime_add("~/Repos/eg-statusline.nvim")
 -- later(function() require("statusline").setup() end)
+
+-- runtime_add("~/Repos/mini.pickaproject")
 -- later(function() require("mini.pickaproject").setup() end)
+
+-- runtime_add("~/Repos/training.nvim")
 -- later(function() require("training").setup() end)
+
+-- runtime_add("~/Repos/lua-fun/NvimPlugs/startupscreen.nvim")
 -- later(function() require("startupscreen").setup() end)
