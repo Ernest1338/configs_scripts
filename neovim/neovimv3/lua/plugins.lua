@@ -152,7 +152,9 @@ end)
 --     vim.api.nvim_set_keymap('i', '<S-Tab>', [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]], { noremap = true, expr = true })
 -- end)
 
--- later(function() require("mini.pairs").setup() end)
+-- later(function() require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = true } }) end)
+
+-- later(function() require("mini.indentscope").setup() end)
 
 -- later(function() require("mini.visits").setup() end)
 
@@ -392,13 +394,12 @@ later(function()
     })
 end)
 
--- later(function() add("shortcuts/no-neck-pain.nvim") end)
-
 -- later(function()
 --     add("nvimdev/indentmini.nvim")
 --     require("indentmini").setup()
---     vim.cmd.highlight("IndentLine guifg=#222738")
 -- end)
+
+-- later(function() add("shortcuts/no-neck-pain.nvim") end)
 
 -- now(function()
 --     add("nvimdev/dashboard-nvim")
