@@ -30,6 +30,11 @@ map("n", "<leader>sv", "<cmd> vsplit <CR>")                                     
 map("n", "<leader>wd", "<cmd> close <CR>")                                                       -- Window close
 map("n", "<leader>bb", "<cmd> Pick buffers <CR>")                                                -- Buffers
 map("n", "<leader>nn", "<cmd> cd ~/Repos/notes/ <CR><cmd> Pick files cwd='~/Repos/notes/' <CR>") -- Browse notes
+map("n", "<leader>co", "<cmd> Pick colorscheme <CR>")                                            -- Choose colorscheme
+-- map("n", "<C-e>", function()
+--     local result = vim.treesitter.get_captures_at_cursor(0)
+--     print(vim.inspect(result))
+-- end) -- Show highlight group at cursor
 map("n", "<leader>nc", function()
     local notes_dir = "~/Repos/notes/oneTimeNotes/Others/"
     local note = vim.fn.input("Note file name (.md added automatically): ") .. ".md"

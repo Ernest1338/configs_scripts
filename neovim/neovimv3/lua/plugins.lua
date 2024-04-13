@@ -121,6 +121,10 @@ later(function()
         local filetype = MiniPick.start({ source = { items = vim.fn.getcompletion("", "filetype") } })
         if filetype ~= nil then vim.api.nvim_buf_set_option(0, 'filetype', filetype) end
     end
+    MiniPick.registry.colorscheme = function()
+        local colorscheme = MiniPick.start({ source = { items = vim.fn.getcompletion("", "color") } })
+        if colorscheme ~= nil then vim.cmd("colorscheme " .. colorscheme) end
+    end
 end)
 
 later(function()
