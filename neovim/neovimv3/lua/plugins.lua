@@ -107,11 +107,14 @@ later(function()
         return MiniPick.builtin.files(local_opts, opts)
     end
     MiniPick.registry.filetype = function()
-        local filetype = MiniPick.start({ source = { items = vim.fn.getcompletion("", "filetype") } })
+        local items = vim.fn.getcompletion("", "filetype")
+        local filetype = MiniPick.start({ source = { items = items } })
         if filetype ~= nil then vim.api.nvim_buf_set_option(0, 'filetype', filetype) end
     end
     MiniPick.registry.colorscheme = function()
-        local colorscheme = MiniPick.start({ source = { items = vim.fn.getcompletion("", "color") } })
+        local items = vim.fn.getcompletion("", "color")
+        local preview = function(_, item) vim.cmd("colorscheme " .. item) end
+        local colorscheme = MiniPick.start({ source = { items = items, preview = preview } })
         if colorscheme ~= nil then vim.cmd("colorscheme " .. colorscheme) end
     end
     add("Ernest1338/mini.pickaproject")
