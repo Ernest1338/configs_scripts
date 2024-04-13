@@ -17,10 +17,6 @@ now(function() require("mini.tabline").setup() end)
 
 now(function() require("mini.starter").setup() end)
 
---
--- [[ MY PLUGINS ]] --
---
-
 now(function()
     add("Ernest1338/egcolors.vim")
     vim.cmd("colorscheme tokyonight")
@@ -32,16 +28,9 @@ now(function()
 end)
 
 later(function()
-    add("Ernest1338/mini.pickaproject")
-    require("mini.pickaproject").setup()
-end)
-
-later(function()
     add("Ernest1338/termplug.nvim")
     require("termplug").setup()
 end)
-
--- [[ ---------- ]] --
 
 later(function() require("mini.comment").setup({ mappings = { comment_visual = "<leader>/" } }) end)
 
@@ -125,6 +114,8 @@ later(function()
         local colorscheme = MiniPick.start({ source = { items = vim.fn.getcompletion("", "color") } })
         if colorscheme ~= nil then vim.cmd("colorscheme " .. colorscheme) end
     end
+    add("Ernest1338/mini.pickaproject")
+    require("mini.pickaproject").setup()
 end)
 
 later(function()
