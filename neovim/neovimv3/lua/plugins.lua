@@ -452,7 +452,7 @@ local function runtime_add(path) vim.o.runtimepath = vim.o.runtimepath .. "," ..
 -- later(function() require("typing-test").setup() end)
 
 -- runtime_add("~/Repos/egcolors.vim")
--- later(function() vim.cmd("colorscheme mirage") end)
+-- later(function() vim.cmd("colorscheme tokyonight") end)
 
 -- runtime_add("~/Repos/termplug.nvim")
 -- later(function() require("termplug").setup() end)
