@@ -5,14 +5,14 @@ return {
   ["cmp-path"] = "91ff86cd9c29299a64f968ebb45846c485725f23",
   cmp_luasnip = "05a9ab28b53f71d1aece421ef32fee2cb857a843",
   ["eg-statusline.nvim"] = "dceb4462a8d9964b3da6769b745eeb717828ab9d",
-  ["egcolors.vim"] = "a37ea0032e1eacf1dbf6d331e751c16481f0dc74",
+  ["egcolors.vim"] = "67d8e68e0f419a0ec332df5ebb16a3c2c1473e95",
   ["friendly-snippets"] = "ea068f1becd91bcd4591fceb6420d4335e2e14d3",
   ["mini.nvim"] = "e3d13e2c89a9dfda51c69c825360d1fe5be0e322",
   ["mini.pickaproject"] = "5d273d7b1f0aa282cda0cae431fd4c4b9e23cbac",
   ["nvim-autopairs"] = "4f41e5940bc0443fdbe5f995e2a596847215cd2a",
   ["nvim-cmp"] = "ce16de5665c766f39c271705b17fff06f7bcb84f",
-  ["nvim-lspconfig"] = "b73f30d113ace671bcf1f731dfc66987880410e6",
-  ["nvim-treesitter"] = "40e8c92f99ef26625ff2206f5e183ac3109f20ba",
-  ["nvim-web-devicons"] = "6e355632387a085f15a66ad68cf681c1d7374a04",
+  ["nvim-lspconfig"] = "9266dc26862d8f3556c2ca77602e811472b4c5b8",
+  ["nvim-treesitter"] = "2a95ff14764af20d32ec1edb27e11c38a84b9478",
+  ["nvim-web-devicons"] = "b3468391470034353f0e5110c70babb5c62967d3",
   ["termplug.nvim"] = "5b124beee8c6a91ff2fc18baec3afd82c735c9fd"
 }
