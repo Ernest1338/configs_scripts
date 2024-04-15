@@ -1,7 +1,7 @@
 # file location: ~/.config/lazygit/config.yml
 # install: ln -s ~/Repos/configs_scripts/others/lazygit.yml ~/.config/lazygit/config.yml
 
-keybinding:
-  files:
-    commitChanges: 'C'
-    commitChangesWithEditor: 'c'
+# keybinding:
+#   files:
+#     commitChanges: 'C'
+#     commitChangesWithEditor: 'c'
