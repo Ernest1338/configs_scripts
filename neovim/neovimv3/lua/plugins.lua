@@ -57,7 +57,7 @@ later(function()
             wrap_goto = true
         }
     })
-    vim.keymap.set("n", "go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>") -- Toggle overlay
+    vim.keymap.set("n", "<leader>go", "<Cmd>lua MiniDiff.toggle_overlay()<CR>") -- Toggle overlay
 end)
 
 later(function()
