@@ -5,7 +5,7 @@ return {
   ["cmp-path"] = "91ff86cd9c29299a64f968ebb45846c485725f23",
   cmp_luasnip = "05a9ab28b53f71d1aece421ef32fee2cb857a843",
   ["eg-statusline.nvim"] = "dceb4462a8d9964b3da6769b745eeb717828ab9d",
-  ["egcolors.vim"] = "67d8e68e0f419a0ec332df5ebb16a3c2c1473e95",
+  ["egcolors.vim"] = "4f047d3e4c8b383fc6b462d86d06f2fb6af8b6de",
   ["friendly-snippets"] = "ea068f1becd91bcd4591fceb6420d4335e2e14d3",
   ["mini.nvim"] = "e3d13e2c89a9dfda51c69c825360d1fe5be0e322",
   ["mini.pickaproject"] = "5d273d7b1f0aa282cda0cae431fd4c4b9e23cbac",

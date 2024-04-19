@@ -19,7 +19,7 @@ now(function() require("mini.starter").setup() end)
 
 now(function()
     add("Ernest1338/egcolors.vim")
-    vim.cmd("colorscheme tokyonight")
+    vim.cmd("colorscheme monokai-pro")
 end)
 
 now(function()
