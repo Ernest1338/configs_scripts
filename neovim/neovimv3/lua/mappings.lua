@@ -58,7 +58,7 @@ map({ "n", "v" }, "<C-u>", "<C-u>zz")        -- Center C-u
 map("n", "n", "nzzzv")                       -- Center search
 map("n", "N", "Nzzzv")                       -- Center backwards search
 map("v", "y", "ygv<esc>")                    -- Prevent cursor jump when copying
-map("n", ";", ":")                           -- Quick command
+map("n", ";", "<cmd> Pick commands <CR>")    -- Quick command
 -- map("n", "<C-e>", function() vim.print(vim.treesitter.get_captures_at_cursor(0)) end)            -- Show highlight group at cursor
 
 -- terminal mappings
