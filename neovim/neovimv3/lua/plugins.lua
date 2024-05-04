@@ -345,7 +345,7 @@ later(function()
                     Class = "©",
                     Interface = "",
                     Module = "",
-                    Property = "ﰠ",
+                    Property = "℗",
                     Unit = "",
                     Value = "⮈",
                     Enum = "",
